@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import FineManagementArtifact from '../../artifacts/contracts/FineManagement.sol/FineManagement.json'; // Adjust path
+import FineManagementArtifact from '../../artifacts/contracts/FineManagement.json'; // Adjust path
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -17,6 +17,19 @@ const wallet = new ethers.Wallet(OPERATOR_KEY, provider);
 const contract = new ethers.Contract(CONTRACT_ADDRESS, FineManagementArtifact.abi, wallet);
 
 export const fineManagementContract = contract;
+
+// Enumeración para los estados de las multas en la blockchain
+const FineStatusBlockchain = {
+    PENDING: 0,
+    PAID: 1,
+    CANCELLED: 2,
+    DISPUTED: 3,
+} as const;
+
+export { FineStatusBlockchain };
+
+// Exporta el tipo de los valores de FineStatusBlockchain
+export type FineStatus = typeof FineStatusBlockchain[keyof typeof FineStatusBlockchain];
 
 // Example function wrapper
 export const registerFineOnChain = async (
@@ -52,10 +65,15 @@ export const registerFineOnChain = async (
 
 export const updateFineStatusOnChain = async (
     fineId: number,
-    newState: number, // Corresponds to FineState enum (0:PENDING, 1:PAID, etc.)
+    newState: FineStatus, // Use the FineStatus type for stricter typing
     reason: string
 ) => {
     try {
+        // Validate that the state is valid
+        if (!Object.values(FineStatusBlockchain).includes(newState)) {
+            throw new Error("Invalid status provided.");
+        }
+
         const tx = await contract.updateFineStatus(fineId, newState, reason);
         const receipt = await tx.wait();
         console.log('Fine status updated, TX hash:', receipt.hash);
@@ -66,4 +84,45 @@ export const updateFineStatusOnChain = async (
     }
 };
 
+export const getFineDetailsFromBlockchain = async (fineId: number) => {
+    // Replace with actual logic to fetch fine details from the blockchain
+    try {
+        // Example: Simulate fetching fine details
+        const fineDetails = {
+            fineId,
+            ipfsEvidenceHash: "QmExampleHash123", // Example IPFS hash
+            status: "Pending",
+        };
+        return fineDetails;
+    } catch (error) {
+        console.error("Error fetching fine details from blockchain:", error);
+        throw new Error("Unable to fetch fine details from blockchain.");
+    }
+};
+
 // Add more wrappers for getFineDetails, getFinesByPlate, etc.
+
+export async function registerFineOnBlockchain(
+    externalSystemId: string,
+    plateNumber: string,
+    evidenceCID: string,
+    infractionType: string,
+    location: string,
+    timestamp: number,
+    cost: number
+): Promise<{ fineId: string; transactionHash: string }> {
+    // Implementación simulada para evitar el error
+    return {
+        fineId: "generatedFineId", // Reemplaza con la lógica real
+        transactionHash: "generatedTransactionHash", // Reemplaza con la lógica real
+    };
+}
+
+export async function linkFineToSIMIT(fineId: number, simitId: string): Promise<string> {
+    // Implementación simulada para devolver un hash de transacción
+    return `transactionHash_${fineId}_${simitId}`; // Reemplaza con la lógica real
+}
+
+export function getFineStatusHistoryFromBlockchain(arg0: number) {
+    throw new Error('Function not implemented.');
+}

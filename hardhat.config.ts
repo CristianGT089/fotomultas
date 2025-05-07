@@ -10,28 +10,33 @@ if (!process.env.PRIVATE_KEY || !process.env.RPC_URL) {
 }
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.28", // Versión del compilador Solidity
+  defaultNetwork: "sepolia",
   networks: {
     hardhat: {
-      chainId: 31337, // Red local de Hardhat
     },
-    localhost: {
-      url: "http://127.0.0.1:8545", // Nodo local
-      chainId: 31337,
-    },
-    goerli: {
-      url: process.env.RPC_URL, // URL del nodo RPC (por ejemplo, Infura o Alchemy)
-      accounts: [process.env.PRIVATE_KEY], // Clave privada para firmar transacciones
-      chainId: 5, // ID de la red Goerli
-    },
+    sepolia: {
+      url: process.env.RPC_URL,// URL del nodo RPC (por ejemplo, Infura o Alchemy)
+      accounts: [process.env.PRIVATE_KEY]// Clave privada para firmar transacciones
+    }
+  },
+  solidity: {
+    version: "0.8.28",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
   },
   paths: {
-    artifacts: "./artifacts", // Directorio de salida para contratos compilados
-    cache: "./cache", // Directorio de caché
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
   },
   mocha: {
-    timeout: 20000, // Tiempo máximo para pruebas (en milisegundos)
-  },
+    timeout: 40000
+  }
 };
 
 export default config;

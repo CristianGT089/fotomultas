@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { createFine, updateFineStatus, getFine, getFineEvidence, getFineFromSIMIT } from './fineController';
+import { createFine, updateFineStatus, getFine, getFineEvidence, getFineFromSIMIT } from './ fineController';
 
 const router = express.Router();
 

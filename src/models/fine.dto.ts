@@ -11,7 +11,7 @@ export interface RegisterFineDto {
 }
 
 export interface UpdateFineStatusDto {
-    newState: number; // 0: PENDING, 1: PAID, 2: APPEALED, 3: RESOLVED_APPEAL, 4: CANCELLED
+    newState: "PENDING" | "PAID" | "CANCELLED" | "DISPUTED";
     reason: string;
 }
 

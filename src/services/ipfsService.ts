@@ -6,13 +6,15 @@ let helia: any;
 let fs: any;
 
 // Inicializar Helia
-try {
-    helia = await createHelia();
-    fs = unixfs(helia);
-    console.log('Connected to Helia (IPFS replacement)');
-} catch (error) {
-    console.error('Failed to initialize Helia:', error);
-}
+(async () => {
+    try {
+        helia = await createHelia();
+        fs = unixfs(helia);
+        console.log('Connected to Helia (IPFS replacement)');
+    } catch (error) {
+        console.error('Failed to initialize Helia:', error);
+    }
+})();
 
 /**
  * Sube un archivo a Helia.

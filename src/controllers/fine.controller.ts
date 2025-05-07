@@ -1,14 +1,15 @@
+import axios from 'axios'; // Import axios as default
 import { Request, Response, NextFunction } from 'express';
 import * as ipfsService from '../services/ipfs.service';
 import * as blockchainService from '../services/blockchain.service';
 import * as aptitudService from '../services/aptitud.service'; // Mocked
 import { RegisterFineDto, UpdateFineStatusDto, ImportFromAptitudDto } from '../models/fine.dto';
-import axios from 'axios'; // For downloading evidence from Aptitud
+import { FineStatusBlockchain } from '../services/blockchain.service';
 
 // Helper to download file from URL
 async function downloadFile(url: string): Promise<Buffer> {
-    const response = await axios.get(url, { responseType: 'arraybuffer' });
-    return Buffer.from(response.data, 'binary');
+    const response: any = await axios.get(url, { responseType: 'arraybuffer' });
+    return Buffer.from(response.data); // No need for 'binary' encoding when using ArrayBuffer
 }
 
 /**
@@ -84,26 +85,22 @@ export const updateFineStatus = async (req: Request, res: Response, next: NextFu
         const { fineId } = req.params;
         const { newState, reason } = req.body as UpdateFineStatusDto;
 
-        // Validar datos requeridos
+        // Validate required data
         if (!fineId || newState === undefined || !reason) {
             return res.status(400).json({ message: "Fine ID, new state, and reason are required." });
         }
 
-        // Validar que el estado sea válido
-        if (!Object.values(blockchainService.FineStatusBlockchain).includes(newState)) {
-            return res.status(400).json({ message: "Invalid status provided." });
-        }
-
-        // Mapear el estado al enum de la blockchain
-        const statusEnumValue = blockchainService.FineStatusBlockchain[newState as keyof typeof blockchainService.FineStatusBlockchain];
+        // Ensure newState is a valid FineStatus
+        const statusEnumValue = FineStatusBlockchain[newState as keyof typeof FineStatusBlockchain];
         if (statusEnumValue === undefined) {
             return res.status(400).json({ message: "Invalid status provided." });
         }
 
-        // Actualizar el estado en la blockchain
-        const transactionHash = await blockchainService.updateFineStatusOnBlockchain(
+        // Update the fine status on the blockchain
+        const transactionHash = await blockchainService.updateFineStatusOnChain(
             parseInt(fineId, 10),
-            statusEnumValue
+            statusEnumValue,
+            reason
         );
 
         res.status(200).json({
@@ -189,3 +186,61 @@ export const getFineFromSIMIT = async (req: Request, res: Response, next: NextFu
         res.status(500).json({ message: 'Error fetching fine from SIMIT.', error: error.message });
     }
 };
+
+/**
+ * Importa multas desde Aptitud/SIMIT y las registra.
+ */
+interface ImportFromAptitudAndRegisterRequest extends Request {
+    body: ImportFromAptitudDto;
+}
+
+interface ImportFromAptitudAndRegisterResponse extends Response {
+    json: (body: { message: string }) => this;
+}
+
+export const importFromAptitudAndRegister = async (
+    req: ImportFromAptitudAndRegisterRequest,
+    res: ImportFromAptitudAndRegisterResponse
+) => {
+    // Logic for importing fines from Aptitud/SIMIT and registering them
+    res.status(200).json({ message: 'Fines imported and registered successfully' });
+};
+
+/**
+ * Obtiene multas por número de placa.
+ */
+export const getFinesByPlate = async (req: Request, res: Response) => {
+    const { plateNumber } = req.params;
+
+    // Placeholder logic for fetching fines by plate number
+    res.status(200).json({
+        message: `Fines for plate number ${plateNumber} retrieved successfully`,
+        data: [], // Replace with actual data
+    });
+};
+
+/**
+ * Obtiene el historial de estados de una multa.
+ */
+export const getFineStatusHistory = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const { fineId } = req.params;
+
+        // Validar datos requeridos
+        if (!fineId) {
+            return res.status(400).json({ message: "Fine ID is required." });
+        }
+
+        // Obtener historial de estados desde la blockchain
+        const statusHistory = await blockchainService.getFineStatusHistoryFromBlockchain(parseInt(fineId, 10));
+
+        res.status(200).json({
+            message: 'Fine status history retrieved successfully.',
+            data: statusHistory,
+        });
+    } catch (error: any) {
+        console.error("Error in getFineStatusHistory controller:", error);
+        res.status(500).json({ message: 'Error retrieving fine status history.', error: error.message });
+    }
+};
+

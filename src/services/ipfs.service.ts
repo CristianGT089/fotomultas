@@ -1,41 +1,52 @@
-import { create, IPFSHTTPClient } from 'kubo-rpc-client';
+import { createHelia } from 'helia';
+import { unixfs } from '@helia/unixfs';
+import { CID } from 'multiformats/cid';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-let ipfs: IPFSHTTPClient | undefined;
+let helia: any;
+let fs: any;
 
-try {
-    ipfs = create({ url: process.env.IPFS_API_URL });
-    console.log('Connected to IPFS node at:', process.env.IPFS_API_URL);
-} catch (error) {
-    console.error('Failed to connect to IPFS node:', error);
-    ipfs = undefined;
-}
+const initializeHelia = async () => {
+    try {
+        helia = await createHelia();
+        fs = unixfs(helia);
+        console.log('Helia instance created successfully');
+    } catch (error) {
+        console.error('Failed to initialize Helia:', error);
+        helia = undefined;
+        fs = undefined;
+    }
 
-if (!ipfs) {
-    throw new Error('Failed to initialize IPFS client. Check your IPFS node or configuration.');
-}
+    if (!helia || !fs) {
+        throw new Error('Failed to initialize Helia. Check your configuration.');
+    }
+};
+
+initializeHelia();
 
 export const uploadToIPFS = async (fileBuffer: Buffer, fileName: string): Promise<string> => {
-    if (!ipfs) throw new Error('IPFS client not initialized');
+    if (!fs) throw new Error('Helia UnixFS not initialized');
     try {
-        const result = await ipfs.add({
-            path: fileName,
-            content: fileBuffer,
-        });
-        console.log('Uploaded to IPFS, CID:', result.cid.toString());
-        return result.cid.toString();
+        const cid = await fs.addBytes(fileBuffer);
+        console.log('Uploaded to IPFS, CID:', cid.toString());
+        return cid.toString();
     } catch (error) {
         console.error('Error uploading to IPFS:', error);
         throw error;
     }
 };
 
-export const getFromIPFS = async (cid: string): Promise<AsyncIterable<Uint8Array>> => {
-    if (!ipfs) throw new Error('IPFS client not initialized');
+export const getFromIPFS = async (cid: string): Promise<Uint8Array[]> => {
+    if (!fs) throw new Error('Helia UnixFS not initialized');
     try {
-        return ipfs.cat(cid);
+        const cidObj = CID.parse(cid);
+        const chunks: Uint8Array[] = [];
+        for await (const chunk of fs.cat(cidObj)) {
+            chunks.push(chunk);
+        }
+        return chunks;
     } catch (error) {
         console.error('Error fetching from IPFS:', error);
         throw error;
