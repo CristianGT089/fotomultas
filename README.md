@@ -8,7 +8,7 @@ ipfs --version
 ```
 
 # To Start
-Se recomienda usar (node v.20)
+Se recomienda usar (node v.20.18.0)
 ```shell
 nvm use 20 
 npm install
@@ -25,9 +25,8 @@ npx ts-node src/server.ts
 helia: https://ipfs.github.io/helia/modules/helia.html
 apitude: https://apitude.co/es/docs/services/simit-co/
 hardhat: https://hardhat.org/hardhat-runner/docs/getting-started#overview
-metaMask: https://developer.metamask.io/
 alchemy: https://dashboard.alchemy.com/
-
+openZeppelin: https://docs.openzeppelin.com/
 # Comandos Hardhat
 ```shell
 npx hardhat help

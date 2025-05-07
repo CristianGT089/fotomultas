@@ -2,11 +2,9 @@
 pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract FineManagement is Ownable {
-    using Counters for Counters.Counter;
-    Counters.Counter private _fineIds;
+    uint256 private _fineIds;
 
     enum FineState { PENDING, PAID, APPEALED, RESOLVED_APPEAL, CANCELLED }
 
@@ -97,8 +95,9 @@ contract FineManagement is Ownable {
         require(bytes(_infractionType).length > 0, "Infraction type is required");
         require(_cost > 0, "Cost must be greater than zero");
 
-        _fineIds.increment();
-        uint256 newFineId = _fineIds.current();
+        // Incrementa manualmente el contador
+        _fineIds += 1;
+        uint256 newFineId = _fineIds;
 
         fines[newFineId] = Fine({
             id: newFineId,
@@ -174,7 +173,7 @@ contract FineManagement is Ownable {
      * Obtiene el número total de multas registradas.
      */
     function getAllFineCount() public view returns (uint256) {
-        return _fineIds.current();
+        return _fineIds;
     }
 
     /**
