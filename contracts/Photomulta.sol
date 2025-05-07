@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/access/Ownable.sol"; // Para control de acceso básico
 
-contract Fotocomparendo is Ownable {
+contract Photomulta is Ownable {
     // Estados posibles de una multa
     enum FineStatus {
         Pending,
@@ -56,8 +56,8 @@ contract Fotocomparendo is Ownable {
         _;
     }
 
-    // Constructor: inicializa el contador de multas
-    constructor() {
+    // Constructor: inicializa el contador de multas y llama al constructor de Ownable
+    constructor() Ownable(msg.sender) {
         nextFineId = 1;
     }
 

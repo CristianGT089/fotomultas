@@ -1,19 +1,20 @@
-import { ethers } from "hardhat";
+import { ethers } from "ethers"; // Import ethers from the ethers package
+// import { ethers as hardhatEthers } from "hardhat"; // Import Hardhat's ethers wrapper
 
 async function main() {
-  const FotocomparendoFactory = await ethers.getContractFactory("Fotocomparendo");
-  console.log("Deploying Fotocomparendo contract...");
-  const fotocomparendo = await FotocomparendoFactory.deploy();
+  const PhotomultaFactory = await ethers.getContractFactory("Fotocomparendo");
+  console.log("Deploying Photomulta contract...");
+  const Photomulta = await PhotomultaFactory.deploy();
 
   // Wait for the deployment transaction to be mined
-  const deploymentTx = await fotocomparendo.deploymentTransaction();
+  const deploymentTx = await Photomulta.deploymentTransaction();
   if (deploymentTx) {
     await deploymentTx.wait();
   } else {
     throw new Error("Deployment transaction is null.");
   }
 
-  console.log("Fotocomparendo contract deployed to:", fotocomparendo.target);
+  console.log("Fotocomparendo contract deployed to:",Photomulta.target);
   // The deployer of the contract will be the owner by default due to OpenZeppelin's Ownable
 }
 

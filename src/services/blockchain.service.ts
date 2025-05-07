@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import FineManagementArtifact from '../../artifacts/contracts/FineManagement.json'; // Adjust path
+import FineManagementArtifact from '../../artifacts/contracts/FineManagement.sol/FineManagement.json'; // Adjust path
 import dotenv from 'dotenv';
 
 dotenv.config();

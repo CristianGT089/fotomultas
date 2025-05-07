@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -59,8 +59,8 @@ contract FineManagement is Ownable {
         _;
     }
 
-    constructor() {
-        operators[msg.sender] = true; // El deployer es un operador por defecto
+    constructor() Ownable(msg.sender) {
+        operators[msg.sender] = true; // The deployer is an operator by default
     }
 
     /**
@@ -182,7 +182,7 @@ contract FineManagement is Ownable {
     function getPaginatedFines(uint256 _page, uint256 _pageSize) public view returns (Fine[] memory) {
         require(_pageSize > 0, "Page size must be greater than zero");
 
-        uint256 totalFines = _fineIds.current();
+        uint256 totalFines = _fineIds; // Usar _fineIds directamente
         uint256 startIndex = (_page - 1) * _pageSize;
         uint256 endIndex = startIndex + _pageSize;
 

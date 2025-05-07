@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { config } from '../config';
-import FotocomparendoABI from '../config/Fotocomparendo.json'; // Ajusta la ruta si es necesario
+import FotocomparendoABI from '../../artifacts/contracts/Photomulta.sol/Photomulta.json'; // Ajusta la ruta si es necesario
 
 const provider = new ethers.JsonRpcProvider(config.rpcUrl);
 const wallet = new ethers.Wallet(config.privateKey, provider);
