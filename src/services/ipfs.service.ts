@@ -1,12 +1,14 @@
 import { createHelia } from 'helia';
 import { unixfs } from '@helia/unixfs';
 import { CID } from 'multiformats/cid';
+import type { Helia } from '@helia/interface';
+import type { UnixFS } from '@helia/unixfs';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-let helia: any;
-let fs: any;
+let helia: Helia | undefined;
+let fs: UnixFS | undefined;
 
 const initializeHelia = async () => {
     try {
@@ -24,7 +26,11 @@ const initializeHelia = async () => {
     }
 };
 
-initializeHelia();
+// Initialize Helia when the module is imported
+initializeHelia().catch(error => {
+    console.error('Failed to initialize Helia:', error);
+    process.exit(1);
+});
 
 export const uploadToIPFS = async (fileBuffer: Buffer, fileName: string): Promise<string> => {
     if (!fs) throw new Error('Helia UnixFS not initialized');
