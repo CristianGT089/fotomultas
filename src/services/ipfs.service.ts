@@ -30,7 +30,11 @@ const initializeHelia = async () => {
     }
 };
 
-initializeHelia();
+// Initialize Helia when the module is imported
+initializeHelia().catch(error => {
+    console.error('Failed to initialize Helia:', error);
+    process.exit(1);
+});
 
 export const uploadToIPFS = async (fileBuffer: Buffer, fileName: string): Promise<string> => {
     if (!fs) throw new Error('Helia UnixFS not initialized');

@@ -10,11 +10,11 @@ ipfs --version
 # To Start
 Se recomienda usar (node v.20.18.0)
 ```shell
-nvm use 20 
+nvm use 20.18.0
 npm install
 npx hardhat compile
-npx hardhat run scripts/deploy.ts --network localhost
 npx hardhat node
+npx hardhat run scripts/deploy.ts --network localhost
 ipfs init
 ipfs daemon
 npx ts-node src/server.ts
