@@ -1,15 +1,20 @@
-import { createHelia } from 'helia';
-import { unixfs } from '@helia/unixfs';
-import { CID } from 'multiformats/cid';
+// import { createHelia } from 'helia';
+// import { unixfs } from '@helia/unixfs';
+// import { CID } from 'multiformats/cid';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 let helia: any;
 let fs: any;
+let CID: any;
 
 const initializeHelia = async () => {
     try {
+        const { createHelia } = await import('helia');
+        const { unixfs } = await import('@helia/unixfs');
+        const { CID: CIDModule } = await import('multiformats/cid');
+        CID = CIDModule;
         helia = await createHelia();
         fs = unixfs(helia);
         console.log('Helia instance created successfully');
@@ -17,6 +22,7 @@ const initializeHelia = async () => {
         console.error('Failed to initialize Helia:', error);
         helia = undefined;
         fs = undefined;
+        CID = undefined;
     }
 
     if (!helia || !fs) {

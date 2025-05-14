@@ -4,13 +4,13 @@ import * as dotenv from "dotenv";
 
 dotenv.config(); // Cargar variables de entorno desde .env
 
-// Validar variables críticas
-if (!process.env.MNEMONIC || !process.env.RPC_URL) {
+// Validar variables críticas solo para Sepolia
+if (process.env.NETWORK === 'sepolia' && (!process.env.MNEMONIC || !process.env.RPC_URL)) {
   throw new Error("Missing critical environment variables: MNEMONIC or RPC_URL");
 }
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "sepolia",
+  defaultNetwork: "localhost",
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545"
@@ -18,9 +18,9 @@ const config: HardhatUserConfig = {
     hardhat: {
     },
     sepolia: {
-      url: process.env.RPC_URL,// URL del nodo RPC (por ejemplo, Infura o Alchemy)
+      url: process.env.RPC_URL || "",
       accounts: {
-        mnemonic: process.env.MNEMONIC,
+        mnemonic: process.env.MNEMONIC || "",
         path: "m/44'/60'/0'/0",
         initialIndex: 0,
         count: 20,

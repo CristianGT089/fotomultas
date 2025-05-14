@@ -1,8 +1,8 @@
-import { ethers } from "ethers"; // Import ethers from the ethers package
+import { ethers } from "hardhat"; // Import ethers from the ethers package
 // import { ethers as hardhatEthers } from "hardhat"; // Import Hardhat's ethers wrapper
 
 async function main() {
-  const PhotomultaFactory = await ethers.getContractFactory("Fotocomparendo");
+  const PhotomultaFactory = await ethers.getContractFactory("Photomulta");
   console.log("Deploying Photomulta contract...");
   const Photomulta = await PhotomultaFactory.deploy();
 
