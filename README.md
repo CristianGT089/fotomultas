@@ -25,8 +25,8 @@ npx ts-node src/server.ts
 helia: https://ipfs.github.io/helia/modules/helia.html
 apitude: https://apitude.co/es/docs/services/simit-co/
 hardhat: https://hardhat.org/hardhat-runner/docs/getting-started#overview
-alchemy: https://dashboard.alchemy.com/
 openZeppelin: https://docs.openzeppelin.com/
+
 # Comandos Hardhat
 ```shell
 npx hardhat help

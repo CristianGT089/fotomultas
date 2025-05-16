@@ -23,7 +23,7 @@ contract FineManagement is Ownable {
     }
 
     struct FineStatusUpdate {
-        uint256 timestamp; // Marca de tiempo de la actualización
+        uint256 lastUpdatedTimestamp; // Marca de tiempo de la actualización
         FineState oldState; // Estado anterior
         FineState newState; // Nuevo estado
         string reason; // Razón del cambio de estado
@@ -144,7 +144,7 @@ contract FineManagement is Ownable {
         fine.currentState = _newState;
 
         fineStatusHistory[_fineId].push(FineStatusUpdate({
-            timestamp: block.timestamp,
+            lastUpdatedTimestamp: block.timestamp,
             oldState: oldState,
             newState: _newState,
             reason: _reason,

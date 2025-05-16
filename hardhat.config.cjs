@@ -1,15 +1,13 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import * as dotenv from "dotenv";
-
-dotenv.config(); // Cargar variables de entorno desde .env
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
 // Validar variables críticas solo para Sepolia
 if (process.env.NETWORK === 'sepolia' && (!process.env.MNEMONIC || !process.env.RPC_URL)) {
   throw new Error("Missing critical environment variables: MNEMONIC or RPC_URL");
 }
 
-const config: HardhatUserConfig = {
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
   defaultNetwork: "localhost",
   networks: {
     localhost: {
@@ -46,6 +44,4 @@ const config: HardhatUserConfig = {
   mocha: {
     timeout: 40000
   }
-};
-
-export default config;
+}; 
