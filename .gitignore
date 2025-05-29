@@ -7,6 +7,10 @@ package-lock.json
 /cache
 /artifacts
 
+# Hardhat build artifacts
+/hardhat-cache
+/bin
+
 # TypeChain files
 /typechain
 /typechain-types

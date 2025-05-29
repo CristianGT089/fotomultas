@@ -65,6 +65,7 @@ contract FineManagement is Ownable {
 
     /**
      * Agrega un operador autorizado.
+     * @param _operator Dirección del operador a agregar
      */
     function addOperator(address _operator) public onlyOwner {
         operators[_operator] = true;
@@ -72,6 +73,7 @@ contract FineManagement is Ownable {
 
     /**
      * Elimina un operador autorizado.
+     * @param _operator Dirección del operador a eliminar
      */
     function removeOperator(address _operator) public onlyOwner {
         operators[_operator] = false;
@@ -79,6 +81,13 @@ contract FineManagement is Ownable {
 
     /**
      * Registra una nueva multa.
+     * @param _plateNumber Número de placa
+     * @param _evidenceCID CID de IPFS de la evidencia
+     * @param _location Ubicación de la infracción
+     * @param _infractionType Tipo de infracción
+     * @param _cost Costo de la multa
+     * @param _ownerIdentifier Identificador del propietario
+     * @param _externalSystemId ID externo (opcional)
      */
     function registerFine(
         string memory _plateNumber,
@@ -130,6 +139,9 @@ contract FineManagement is Ownable {
 
     /**
      * Actualiza el estado de una multa.
+     * @param _fineId ID de la multa
+     * @param _newState Nuevo estado de la multa
+     * @param _reason Razón del cambio de estado
      */
     function updateFineStatus(
         uint256 _fineId,
@@ -156,6 +168,8 @@ contract FineManagement is Ownable {
 
     /**
      * Obtiene los detalles de una multa.
+     * @param _fineId ID de la multa
+     * @return fine Detalles de la multa
      */
     function getFineDetails(uint256 _fineId) public view returns (Fine memory) {
         require(fines[_fineId].id != 0, "Fine does not exist");
@@ -164,6 +178,8 @@ contract FineManagement is Ownable {
 
     /**
      * Obtiene los IDs de multas asociadas a un número de placa.
+     * @param _plateNumber Número de placa
+     * @return finesByPlate Array de IDs de multas
      */
     function getFinesByPlate(string memory _plateNumber) public view returns (uint256[] memory) {
         return finesByPlate[_plateNumber];
@@ -171,6 +187,7 @@ contract FineManagement is Ownable {
 
     /**
      * Obtiene el número total de multas registradas.
+     * @return totalFines Número total de multas
      */
     function getAllFineCount() public view returns (uint256) {
         return _fineIds;
@@ -178,6 +195,9 @@ contract FineManagement is Ownable {
 
     /**
      * Obtiene multas paginadas.
+     * @param _page Número de página (comienza en 1)
+     * @param _pageSize Tamaño de la página
+     * @return paginatedFines Array de multas paginadas
      */
     function getPaginatedFines(uint256 _page, uint256 _pageSize) public view returns (Fine[] memory) {
         require(_pageSize > 0, "Page size must be greater than zero");
@@ -200,5 +220,71 @@ contract FineManagement is Ownable {
         }
 
         return paginatedFines;
+    }
+
+    /**
+    * Obtiene los detalles de registro de una multa.
+    * @param _fineId ID de la multa
+    * @return blockNumber Número del bloque donde se registró la multa
+    * @return timestamp Timestamp del bloque
+    * @return statusHistoryLength Longitud del historial de estados
+    * @return registeredBy Dirección que registró la multa
+    * @return externalSystemId ID externo de la multa (si existe)
+    */
+    function getFineRegistrationDetails(uint256 _fineId) public view returns (
+        uint256 blockNumber,
+        uint256 timestamp,
+        uint256 statusHistoryLength,
+        address registeredBy,
+        string memory externalSystemId
+    ) {
+        require(fines[_fineId].id != 0, "Fine does not exist");
+        
+        Fine storage fine = fines[_fineId];
+        
+        return (
+            block.number,
+            block.timestamp,
+            fineStatusHistory[_fineId].length,
+            fine.registeredBy,
+            fine.externalSystemId
+        );
+    }
+
+    /**
+     * Obtiene el historial de estados de una multa de forma paginada.
+     * @param _fineId ID de la multa
+     * @param _page Número de página (comienza en 1)
+     * @param _pageSize Tamaño de la página
+     * @return updates Array de actualizaciones de estado
+     * @return totalUpdates Número total de actualizaciones
+     */
+    function getFineStatusHistory(
+        uint256 _fineId,
+        uint256 _page,
+        uint256 _pageSize
+    ) public view returns (FineStatusUpdate[] memory updates, uint256 totalUpdates) {
+        require(fines[_fineId].id != 0, "Fine does not exist");
+        require(_pageSize > 0, "Page size must be greater than zero");
+        
+        FineStatusUpdate[] storage history = fineStatusHistory[_fineId];
+        totalUpdates = history.length;
+        
+        uint256 startIndex = (_page - 1) * _pageSize;
+        if (startIndex >= totalUpdates) {
+            return (new FineStatusUpdate[](0), totalUpdates);
+        }
+        
+        uint256 endIndex = startIndex + _pageSize;
+        if (endIndex > totalUpdates) {
+            endIndex = totalUpdates;
+        }
+        
+        updates = new FineStatusUpdate[](endIndex - startIndex);
+        for (uint256 i = startIndex; i < endIndex; i++) {
+            updates[i - startIndex] = history[i];
+        }
+        
+        return (updates, totalUpdates);
     }
 }
