@@ -9,15 +9,22 @@ ipfs --version
 
 # To Start
 Se recomienda usar (node v.20.18.0)
+Simular una red local
 ```shell
 nvm use 20.18.0
 npm install
 npx hardhat compile
 npx hardhat node
-npx hardhat run scripts/deploy.ts --network localhost
+```
+En otra terminal iniciar ipfs
+```shell
 ipfs init
 ipfs daemon
-npx ts-node src/server.ts
+```
+
+En otra terminal iniciar el contrato
+```shell
+npx hardhat run scripts/deploy.mjs --network localhost
 ```
 
 # Tecnologias
