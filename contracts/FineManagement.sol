@@ -125,6 +125,15 @@ contract FineManagement is Ownable {
         finesByPlate[_plateNumber].push(newFineId);
         finesByOwner[_ownerIdentifier].push(newFineId);
 
+        // Registrar el primer estado en el historial de la multa
+        fineStatusHistory[newFineId].push(FineStatusUpdate({
+            lastUpdatedTimestamp: block.timestamp,
+            oldState: FineState.PENDING,
+            newState: FineState.PENDING,
+            reason: "Fine registered",
+            updatedBy: msg.sender
+        }));
+
         emit FineRegistered(
             newFineId,
             _plateNumber,
