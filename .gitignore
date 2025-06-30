@@ -1,23 +1,65 @@
-node_modules
-.env
+# Archivos auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.xdy
+*.thm
+*.tdo
+*.upa
+*.upb
+*.spl
+*.idx
+*.ilg
+*.ind
+*.loa
+*.lsg
+*.nav
+*.snm
+*.vrb
 
-package-lock.json
+# Salidas de compilación
+*.pdf
+*.synctex.gz
+*.pdfsync
 
-# Hardhat files
-/cache
-/artifacts
+# Archivos temporales
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
 
-# Hardhat build artifacts
-/hardhat-cache
-/bin
+# Carpetas de salida de editores
+.vscode/
+.idea/
+*.DS_Store
 
-# TypeChain files
-/typechain
-/typechain-types
+# Archivos de latexmk
+latexmkrc
 
-# solidity-coverage files
-/coverage
-/coverage.json
+# Archivos de pruebas de Cursor
+.cursor/
 
-# Hardhat Ignition default folder for deployments against a local node
-ignition/deployments/chain-31337

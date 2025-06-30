@@ -1,0 +1,40 @@
+% Tabla de casos de prueba de inmutabilidad
+\paragraph{Pruebas de Inmutabilidad}
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{Casos de Prueba de Inmutabilidad}
+    \begin{tabular}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.28\textwidth}|>{\raggedright\arraybackslash}p{0.45\textwidth}|}
+        \hline
+        \textbf{ID Caso} & \textbf{Descripción del Caso de Prueba} & \textbf{Pasos de Ejecución} \\
+        \hline
+        \textbf{IM-001} & Intento de modificar metadatos en el ledger post-registro & 1. Identificar una multa registrada (FT-001). \newline 2. (Simulado/Acceso directo) Intentar modificar un metadato (ej. placa) directamente en el ledger, sin usar la app. \\
+        \hline
+        \textbf{IM-002} & Intento de modificar imagen en IPFS después de registro & 1. Intentar modificar el archivo original \texttt{evidencia01.jpg} y subirlo a IPFS nuevamente. \newline 2. Intentar reemplazar el archivo en IPFS asociado al CID original. \\
+        \hline
+        \textbf{IM-003} & Verificación de la cadena de bloques (historial de transacciones) & 1. Realizar varias operaciones (registro, actualización de estado). \newline 2. Utilizar herramientas de Hyperledger Fabric para inspeccionar la cadena de bloques. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+% Tabla resumen de casos de prueba de inmutabilidad
+\subsection{Tabla Resumen de Casos de Prueba de Inmutabilidad}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.5cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{2.2cm}|}
+\hline
+\textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
+\hline
+Registro de comparendo con CID válido & Verificar registro inicial & Registro exitoso e inmutable & Registro correcto \\
+\hline
+Intento de modificación de metadatos post-registro & Comprobar resistencia a cambios internos & Transacción rechazada o inconsistente detectada & Inconsistencia detectada \\
+\hline
+Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones en imagen & CID diferente, evidencia no válida & CID distinto generado \\
+\hline
+Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
+\hline
+\end{tabular}
+\caption{Casos de prueba de inmutabilidad y verificabilidad}
+\end{table} 

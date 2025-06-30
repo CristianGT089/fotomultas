@@ -1,0 +1,61 @@
+% Tablas de resultados de pruebas
+
+\subsection{Casos de Prueba Funcionales}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|p{8cm}|c|}
+\hline
+\textbf{ID} & \textbf{Descripción} & \textbf{¿Ejecutada?} \\
+\hline
+FT-001 & Registro exitoso de fotocomparendo &  Sí \\
+\hline
+FT-002 & Consulta y verificación de fotocomparendo por Agente o Administrador &  Sí \\
+\hline
+FT-003 & Consulta ciudadana de fotocomparendo mediante formulario & Sí \\
+\hline
+FT-004 & Intento de registro con datos incompletos o inválidos & Sí \\
+\hline
+FT-005 & Actualización del estado de una multa (Ej. "Apelada", "Pagada") & Sí \\
+\hline
+FT-006 & Consistencia entre los datos registrados en el ledger y los archivos en IPFS & Sí \\
+\hline
+\end{tabular}
+\caption{Resumen de casos de prueba funcionales ejecutados}
+\end{table}
+
+\subsection{Casos de Prueba de Inmutabilidad}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|p{8cm}|c|}
+\hline
+\textbf{ID} & \textbf{Descripción} & \textbf{¿Ejecutada?} \\
+\hline
+IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Sí \\
+\hline
+IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Sí \\
+\hline
+IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Sí \\
+\hline
+\end{tabular}
+\caption{Resumen de casos de prueba de inmutabilidad ejecutados}
+\end{table}
+
+\subsection{Pruebas de Rendimiento Básico}
+
+Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Operación} & \textbf{Tiempo Promedio (segundos)} \\
+\hline
+Registro completo (Blockchain + IPFS) & 1.60 \\
+Consulta de evidencia desde IPFS & 0.80 \\
+Validación de integridad & 0.90 \\
+\hline
+\end{tabular}
+\caption{Tiempos promedio de operaciones en el entorno de prueba}
+\end{table} 
