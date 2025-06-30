@@ -1,70 +1,28 @@
 % Tabla de casos de prueba funcionales
-\paragraph{Pruebas Funcionales}
 \begin{table}[htbp]
+    \begin{flushleft}
+        \textbf{Tabla 2}\\
+        \textit{Casos de prueba funcionales para validar operaciones básicas del sistema}
+    \end{flushleft}
     \centering
-    \footnotesize
-    \caption{Casos de Prueba Funcionales}
-    \label{tab:casos_funcionales}
-
-    \begin{tabular}{|
-        >{\raggedright\arraybackslash}p{0.07\textwidth}|
-        >{\raggedright\arraybackslash}p{0.20\textwidth}|
-        >{\raggedright\arraybackslash}p{0.40\textwidth}|
-        >{\raggedright\arraybackslash}p{0.20\textwidth}|}
-        \hline
-        \textbf{ID} & \textbf{Descripción} & \textbf{Pasos de Ejecución} & \textbf{Datos de Entrada} \\
-        \hline
-        % Fila 1
-        \textbf{FT-001} & 
-        Registro exitoso de fotocomparendo & 
-        1. Login en SisFotocomp. \newline 
-        2. Ir a "Registrar nueva multa". \newline 
-        3. Ingresar datos (placa, fecha, tipo). \newline 
-        4. Adjuntar imagen. \newline 
-        5. Enviar. & 
-        Placa: XYZ789, Fecha: [Hoy], Tipo: Exceso Velocidad, Imagen: evidencia01.jpg \\
-        \hline
-        % Fila 2
-        \textbf{FT-002} & 
-        Consulta y verificación (Agente/Admin) & 
-        1. Login como Agente/Admin. \newline 
-        2. Ir a "Gestión de multas". \newline 
-        3. Buscar multa FT-001 por ID o placa. \newline 
-        4. Ver detalles. \newline 
-        5. Verificar información e imagen IPFS. & 
-        ID/Placa de la multa FT-001. \\
-        \hline
-        % Fila 3
-        \textbf{FT-003} & 
-        Consulta ciudadana & 
-        1. Acceder a "Consulta de Multas". \newline 
-        2. Ingresar documento, número y placa. \newline 
-        3. Ingresar CAPTCHA. \newline 
-        4. Consultar. & 
-        Datos del propietario/vehículo de FT-001. \\
-        \hline
-        % Fila 4
-        \textbf{FT-004} & 
-        Registro con datos incompletos & 
-        1. Intentar registrar multa sin placa o sin imagen. & 
-        Placa: Vacía, Imagen: No adjuntada. \\
-        \hline
-        % Fila 5
-        \textbf{FT-005} & 
-        Actualización de estado & 
-        1. Seleccionar multa FT-001. \newline 
-        2. Cambiar estado (ej. "Apelada", "Pagada"). \newline 
-        3. Guardar. & 
-        Multa FT-001, Nuevo estado: "Apelada". \\
-        \hline
-        % Fila 6
-        \textbf{FT-006} & 
-        Consistencia Ledger-IPFS & 
-        1. Registrar multa (similar a FT-001). \newline 
-        2. Anotar CID de IPFS y metadatos. \newline 
-        3. Recuperar transacción del ledger. \newline 
-        4. Recuperar imagen de IPFS. & 
-        Nueva multa, nueva imagen. \\
-        \hline
+    \begin{tabular}{|p{2cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Precondiciones} & \textbf{Acciones} & \textbf{Resultado Esperado} \\
+    \hline
+    FP-001 & Registro de fotocomparendo & Usuario autenticado, imagen disponible & 1. Cargar imagen a IPFS\newline 2. Registrar metadatos en Blockchain & CID generado, transacción exitosa \\
+    \hline
+    FP-002 & Consulta de comparendo & Comparendo registrado previamente & 1. Ingresar ID de comparendo\newline 2. Consultar en Blockchain & Datos completos mostrados \\
+    \hline
+    FP-003 & Verificación de evidencia & CID válido en Blockchain & 1. Extraer CID de transacción\newline 2. Recuperar imagen de IPFS & Imagen original recuperada \\
+    \hline
+    FP-004 & Actualización de estado & Comparendo en estado "Pendiente" & 1. Cambiar estado a "Pagado"\newline 2. Registrar cambio en Blockchain & Estado actualizado inmutablemente \\
+    \hline
+    FP-005 & Validación de integridad & Comparendo con evidencia asociada & 1. Calcular hash de imagen actual\newline 2. Comparar con CID registrado & Integridad verificada \\
+    \hline
     \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:casos_prueba_funcionales}
 \end{table} 

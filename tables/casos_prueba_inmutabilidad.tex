@@ -1,40 +1,53 @@
 % Tabla de casos de prueba de inmutabilidad
-\paragraph{Pruebas de Inmutabilidad}
 \begin{table}[htbp]
+    \begin{flushleft}
+        \textbf{Tabla 3}\\
+        \textit{Casos de prueba de inmutabilidad para validar resistencia a modificaciones}
+    \end{flushleft}
     \centering
-    \small
-    \caption{Casos de Prueba de Inmutabilidad}
-    \begin{tabular}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.28\textwidth}|>{\raggedright\arraybackslash}p{0.45\textwidth}|}
-        \hline
-        \textbf{ID Caso} & \textbf{Descripción del Caso de Prueba} & \textbf{Pasos de Ejecución} \\
-        \hline
-        \textbf{IM-001} & Intento de modificar metadatos en el ledger post-registro & 1. Identificar una multa registrada (FT-001). \newline 2. (Simulado/Acceso directo) Intentar modificar un metadato (ej. placa) directamente en el ledger, sin usar la app. \\
-        \hline
-        \textbf{IM-002} & Intento de modificar imagen en IPFS después de registro & 1. Intentar modificar el archivo original \texttt{evidencia01.jpg} y subirlo a IPFS nuevamente. \newline 2. Intentar reemplazar el archivo en IPFS asociado al CID original. \\
-        \hline
-        \textbf{IM-003} & Verificación de la cadena de bloques (historial de transacciones) & 1. Realizar varias operaciones (registro, actualización de estado). \newline 2. Utilizar herramientas de Hyperledger Fabric para inspeccionar la cadena de bloques. \\
-        \hline
+    \begin{tabular}{|p{2cm}|p{6cm}|p{4cm}|}
+    \hline
+    \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
+    \hline
+    IM-001 & Intento de modificación directa en ledger & Verificar resistencia a cambios no autorizados \\
+    \hline
+    IM-002 & Alteración de imagen en IPFS & Validar detección de modificaciones en evidencia \\
+    \hline
+    IM-003 & Verificación de trazabilidad & Comprobar integridad del historial transaccional \\
+    \hline
+    IM-004 & Validación de consenso & Evaluar mecanismos de protección distribuida \\
+    \hline
     \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:casos_prueba_inmutabilidad}
 \end{table}
 
-% Tabla resumen de casos de prueba de inmutabilidad
-\subsection{Tabla Resumen de Casos de Prueba de Inmutabilidad}
-
+% Tabla de resultados de pruebas de inmutabilidad
 \begin{table}[htbp]
-\centering
-\small
-\begin{tabular}{|>{\raggedright\arraybackslash}p{4.5cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{2.2cm}|}
-\hline
-\textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-\hline
-Registro de comparendo con CID válido & Verificar registro inicial & Registro exitoso e inmutable & Registro correcto \\
-\hline
-Intento de modificación de metadatos post-registro & Comprobar resistencia a cambios internos & Transacción rechazada o inconsistente detectada & Inconsistencia detectada \\
-\hline
-Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones en imagen & CID diferente, evidencia no válida & CID distinto generado \\
-\hline
-Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
-\hline
-\end{tabular}
-\caption{Casos de prueba de inmutabilidad y verificabilidad}
+    \begin{flushleft}
+        \textbf{Tabla 4}\\
+        \textit{Resultados de pruebas de inmutabilidad del sistema}
+    \end{flushleft}
+    \centering
+    \begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
+    \hline
+    IM-001 & Modificación directa en ledger & Transacción rechazada & Rechazada correctamente \\
+    \hline
+    IM-002 & Cambio de imagen en IPFS & CID diferente generado & CID distinto detectado \\
+    \hline
+    IM-003 & Verificación de trazabilidad & Historial inmutable & Historial preservado \\
+    \hline
+    IM-004 & Validación de consenso & Consenso mantenido & Consenso validado \\
+    \hline
+    \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:resultados_inmutabilidad}
 \end{table} 

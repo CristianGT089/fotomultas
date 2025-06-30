@@ -3,59 +3,83 @@
 \subsection{Casos de Prueba Funcionales}
 
 \begin{table}[htbp]
-\centering
-\begin{tabular}{|c|p{8cm}|c|}
-\hline
-\textbf{ID} & \textbf{Descripción} & \textbf{¿Ejecutada?} \\
-\hline
-FT-001 & Registro exitoso de fotocomparendo &  Sí \\
-\hline
-FT-002 & Consulta y verificación de fotocomparendo por Agente o Administrador &  Sí \\
-\hline
-FT-003 & Consulta ciudadana de fotocomparendo mediante formulario & Sí \\
-\hline
-FT-004 & Intento de registro con datos incompletos o inválidos & Sí \\
-\hline
-FT-005 & Actualización del estado de una multa (Ej. "Apelada", "Pagada") & Sí \\
-\hline
-FT-006 & Consistencia entre los datos registrados en el ledger y los archivos en IPFS & Sí \\
-\hline
-\end{tabular}
-\caption{Resumen de casos de prueba funcionales ejecutados}
+    \begin{flushleft}
+        \textbf{Tabla 5}\\
+        \textit{Resultados de pruebas funcionales del sistema}
+    \end{flushleft}
+    \centering
+    \begin{tabular}{|p{2cm}|p{4cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
+    \hline
+    FP-001 & Registro de fotocomparendo & Registro exitoso con CID & Exitoso \\
+    \hline
+    FP-002 & Consulta de comparendo & Datos recuperados correctamente & Exitoso \\
+    \hline
+    FP-003 & Verificación de evidencia & Imagen recuperada desde IPFS & Exitoso \\
+    \hline
+    FP-004 & Actualización de estado & Estado actualizado en Blockchain & Exitoso \\
+    \hline
+    FP-005 & Validación de integridad & Integridad verificada & Exitoso \\
+    \hline
+    \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:resultados_funcionales}
 \end{table}
 
 \subsection{Casos de Prueba de Inmutabilidad}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|p{8cm}|c|}
-\hline
-\textbf{ID} & \textbf{Descripción} & \textbf{¿Ejecutada?} \\
-\hline
-IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Sí \\
-\hline
-IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Sí \\
-\hline
-IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Sí \\
-\hline
-\end{tabular}
-\caption{Resumen de casos de prueba de inmutabilidad ejecutados}
+\begin{table}[htbp]
+    \begin{flushleft}
+        \textbf{Tabla 6}\\
+        \textit{Resumen de casos de prueba de inmutabilidad ejecutados}
+    \end{flushleft}
+    \centering
+    \begin{tabular}{|p{2cm}|p{6cm}|p{3cm}|}
+    \hline
+    \textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+    \hline
+    IM-001 & Intento de modificar metadatos directamente en el ledger & Ejecutada \\
+    \hline
+    IM-002 & Alteración de imagen ya registrada en IPFS & Ejecutada \\
+    \hline
+    IM-003 & Verificación de trazabilidad e integridad del historial & Ejecutada \\
+    \hline
+    \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:resumen_inmutabilidad}
 \end{table}
 
 \subsection{Pruebas de Rendimiento Básico}
 
 Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Operación} & \textbf{Tiempo Promedio (segundos)} \\
-\hline
-Registro completo (Blockchain + IPFS) & 1.60 \\
-Consulta de evidencia desde IPFS & 0.80 \\
-Validación de integridad & 0.90 \\
-\hline
-\end{tabular}
-\caption{Tiempos promedio de operaciones en el entorno de prueba}
+\begin{table}[htbp]
+    \begin{flushleft}
+        \textbf{Tabla 7}\\
+        \textit{Tiempos promedio de operaciones en el entorno de prueba}
+    \end{flushleft}
+    \centering
+    \begin{tabular}{|p{4cm}|p{3cm}|}
+    \hline
+    \textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+    \hline
+    Registro completo (Blockchain + IPFS) & 1.60 \\
+    \hline
+    Consulta de evidencia desde IPFS & 0.80 \\
+    \hline
+    Validación de integridad & 0.90 \\
+    \hline
+    \end{tabular}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{tab:rendimiento}
 \end{table} 

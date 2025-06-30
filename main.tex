@@ -94,14 +94,19 @@ Este trabajo propone el diseño e implementación de un prototipo basado en Bloc
 \subsection{Formulación del problema}
 El sistema actual de gestión de fotocomparendos en Bogotá, enfrenta serias limitaciones en términos de transparencia, seguridad e integridad de la información, lo que genera desconfianza por parte de la ciudadanía y dificultades administrativas en su gestión. Según el Observatorio de Movilidad de Bogotá, entre enero de 2018 y agosto de 2024 se emitieron 5.575.982 comparendos, de los cuales el 48,91 \% fueron generados mediante dispositivos electrónicos de asistencia policial \parencite{ObservatorioComparendos2025}
 
-\begin{adjustbox}{
-    center,
-    caption=[{Tomado del Observatorio de Movilidad}]{\centering Tomado del Observatorio de Movilidad},
-    label={EstadisticasComparendos},
-    nofloat=figure, vspace={7px}}
-
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 1}\\
+        \textit{Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
+    \end{flushleft}
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/numComparendos.png}
-\end{adjustbox}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Tomado del Observatorio de Movilidad de Bogotá.
+    \end{flushleft}
+    \label{fig:estadisticas_comparendos}
+\end{figure}
 
 Estas cifras reflejan el papel protagónico que tienen las fotomultas en la regulación del tránsito en la ciudad, pero también resaltan la necesidad urgente de fortalecer los mecanismos de manejo, almacenamiento y verificación de evidencias.  
 
@@ -430,63 +435,294 @@ Explorar un modelo innovador de pago automatizado condicional basado en la verif
  \textbf{Descripción General:} Esta gráfica se compone de dos partes. La primera es un mapa mundial que utiliza una escala de color para representar la cantidad de producción científica por país. Las tonalidades más oscuras generalmente indican una mayor producción. La segunda parte es un gráfico de líneas que muestra la evolución de la producción científica (en artículos) a lo largo de los años para un conjunto específico de países. 
 \paragraph{Mapa Mundial:}
 El mapa muestra la distribución global de la producción científica en el área de estudio. Se observa una concentración significativa de publicaciones en países como Brasil, lo que sugiere un interés y actividad investigadora importante en Latinoamérica. Otros países con una producción notable incluyen México y España. Es importante notar que algunas regiones muestran una menor actividad, lo que podría indicar diferencias en el enfoque de investigación, financiamiento o acceso a recursos. 
-\begin{adjustbox}{
-    center,
-    caption=[{Mapa tomado de Bibliometrix}]{\centering Mapa tomado de Bibliometrix},
-    label={Mapa tomado de Bibliometrix},
-    nofloat=figure, vspace={7px}}
-\includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
-\end{adjustbox}
 
-\paragraph{Gráfico de Líneas:}
-El gráfico de líneas detalla la tendencia de la producción científica a lo largo del tiempo para varios países seleccionados. Se puede observar un crecimiento generalizado en el número de artículos publicados, lo que refleja una expansión del campo de estudio. Países como Brasil y México muestran un incremento sustancial en la producción en los últimos años, lo que podría indicar un aumento en la inversión en investigación o un mayor enfoque en el tema. Por otro lado, países como Peru exhiben un crecimiento más moderado. 
+% --- APA 7 para todas las figuras ---
+% Figura 2
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 2}\\
+        \textit{Distribución global de la producción científica en el área de estudio}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Tomado de Bibliometrix.
+    \end{flushleft}
+    \label{fig:mapa_bibliometrix}
+\end{figure}
 
-Es crucial analizar estos datos en el contexto de factores como políticas de investigación nacionales, financiamiento disponible y colaboración internacional para comprender las dinámicas detrás de estas tendencias. 
+% Figura 3
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 3}\\
+        \textit{Evolución de la producción científica a lo largo del tiempo por países}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Tomado de Bibliometrix.
+    \end{flushleft}
+    \label{fig:grafico_lineas}
+\end{figure}
 
-\begin{adjustbox}{
-    center,
-    caption=[{Grafico de Lineas tomado de Bibliometrix}]{\centering Grafico de Lineas tomado de Bibliometrix},
-    label={Grafico de Lineas tomado de Bibliometrix},
-    nofloat=figure, vspace={7px}}
-\includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
-\end{adjustbox}
+% Figura 4
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 4}\\
+        \textit{Nube de palabras que representa la frecuencia de términos en la literatura analizada}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Tomado de Bibliometrix.
+    \end{flushleft}
+    \label{fig:nube_palabras}
+\end{figure}
 
-\paragraph{Nube de Palabras (Word Cloud)}
-\textbf{Descripción General:} Una nube de palabras representa visualmente la frecuencia con la que aparecen ciertas palabras en un texto o conjunto de textos. Las palabras más grandes indican una mayor frecuencia o importancia. 
+% Figura 5
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 5}\\
+        \textit{Mapa temático que clasifica los temas de investigación según centralidad y densidad}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/MapaTematico.jpeg}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Tomado de Bibliometrix.
+    \end{flushleft}
+    \label{fig:mapa_tematico}
+\end{figure}
 
-\paragraph{Análisis Detallado y Texto Explicativo: }
-La nube de palabras ofrece una visión rápida de los términos más relevantes en el conjunto de datos analizado. Las palabras de mayor tamaño, como 'blockchain', 'technology', 'system', 'management', 'network', 'design', 'framework', 'electronic medical-records', 'traceability', 'secure', 'privacy', 'distributed', 'information-management', 'challenges', 'optimization', 'internet', 'things' y 'encryption', señalan los temas centrales y las áreas de enfoque predominantes en la literatura. Esto sugiere un fuerte énfasis en los aspectos técnicos de blockchain, así como en sus aplicaciones en áreas como la gestión de información, la seguridad, la privacidad y los registros médicos electrónicos. 
+% Figura 6
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 6}\\
+        \textit{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/CasosUso.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:casos_uso}
+\end{figure}
 
-La presencia de términos como 'challenges' y 'optimization' indica que la investigación también aborda los problemas y las mejoras potenciales de las tecnologías blockchain. La coexistencia de 'internet' y 'things' sugiere una conexión con el Internet de las Cosas (IoT) y su integración con blockchain. 
+% Figura 7
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 7}\\
+        \textit{Diagrama de despliegue de la arquitectura del sistema}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:diagrama_despliegue}
+\end{figure}
 
-\begin{adjustbox}{
-    center,
-    caption=[{Nube de Palabras tomado de Bibliometrix}]{\centering Nube de Palabras tomado de Bibliometrix},
-    label={Nube de Palabras tomado de Bibliometrix},
-    nofloat=figure, vspace={7px}}
-\includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
-\end{adjustbox}
+% Figura 8
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 8}\\
+        \textit{Diagrama de clases del sistema de gestión de multas}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/uml.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:diagrama_clases}
+\end{figure}
 
-\paragraph{Mapa Temático (Thematic Map) }
-\textbf{Descripción General:} Un mapa temático es una representación visual de los temas clave en un conjunto de documentos, organizado según su centralidad (relevancia) y densidad (desarrollo).  Los temas se representan como círculos, y su posición en el mapa indica su importancia y grado de desarrollo. 
+% Figura 9
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 9}\\
+        \textit{Diagrama de actividades para el proceso de apelación de multa}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:diagrama_apelacion}
+\end{figure}
 
-\paragraph{Análisis Detallado y Texto Explicativo: }
-El mapa temático clasifica los temas de investigación según su centralidad y densidad. Los temas ubicados en el cuadrante superior derecho, como 'Challenges framework electronic medical-records', son temas motores: están bien desarrollados y son importantes para el campo. Esto sugiere un enfoque significativo en los desafíos y marcos de trabajo relacionados con la aplicación de blockchain en los registros médicos electrónicos. 
+% Figura 10
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 10}\\
+        \textit{Diagrama de actividades para el proceso de creación de multa}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:diagrama_creacion_multa}
+\end{figure}
 
-Los temas en el cuadrante superior izquierdo, como 'system encryption', son temas muy desarrollados, pero menos centrales. Esto podría indicar áreas de investigación maduras que proporcionan la base teórica o metodológica para otros temas. Los temas en el cuadrante inferior derecho, como 'management secure network', son temas emergentes y centrales, lo que señala áreas de creciente interés e importancia para futuras investigaciones. El tema 'blockchain', ubicado en el cuadrante inferior izquierdo, es un tema básico, fundamental pero menos desarrollado en comparación con otros, lo que sugiere que es una tecnología fundacional que sustenta diversas áreas de investigación. 
+% Figura 11
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 11}\\
+        \textit{Diagrama de actividades para el proceso de apelación de multa}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:diagrama_apelacion_2}
+\end{figure}
 
-El tema 'design impact traceability' se encuentra en el centro, lo que podría indicar que actúa como un tema puente que conecta diferentes áreas de investigación. 
+% Figura 12
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 12}\\
+        \textit{Pantalla de login del sistema}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI1.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:login}
+\end{figure}
 
-\begin{adjustbox}{
-    center,
-    caption=[{Mapa Temático tomado de Bibliometrix}]{\centering Mapa Temático tomado de Bibliometrix},
-    label={Mapa Temático tomado de Bibliometrix},
-    nofloat=figure, vspace={7px}}
-\includegraphics[width=0.8\textwidth]{Images/MapaTematico.jpeg}
-\end{adjustbox}
+% Figura 13
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 13}\\
+        \textit{Pantalla de recuperación de contraseña}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI2.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:recuperar_password}
+\end{figure}
 
+% Figura 14
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 14}\\
+        \textit{Dashboard del agente de tránsito}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI3.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:dashboard_agente}
+\end{figure}
 
- \section{Alcance}
+% Figura 15
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 15}\\
+        \textit{Pantalla de consulta del estado de multa}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI4.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:consulta_estado_multa}
+\end{figure}
+
+% Figura 16
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 16}\\
+        \textit{Pantalla de consulta de detalle de multa}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI4.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:consulta_detalle_multa}
+\end{figure}
+
+% Figura 17
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 17}\\
+        \textit{Pantalla de consulta de multas para propietarios de vehículos}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/UI5.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:consulta_multas_propietario}
+\end{figure}
+
+% Figura 18
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 18}\\
+        \textit{Resumen de costos del proyecto}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=\textwidth]{Images/costos1.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:costos1}
+\end{figure}
+
+% Figura 19
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 19}\\
+        \textit{Estimación de costos mensuales de infraestructura}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=\textwidth]{Images/costos2.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:costos2}
+\end{figure}
+
+% Figura 20
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 20}\\
+        \textit{Estimación de costos de desarrollo del proyecto}
+    \end{flushleft}
+    \centering
+    \includegraphics[width=\textwidth]{Images/costos3.png}
+    \vspace{0.5em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \label{fig:costos3}
+\end{figure}
+
+\section{Alcance}
  El ámbito de aplicación de este estudio y desarrollo de prototipo se delimita estrictamente al entorno operativo y regulatorio de la Secretaría Distrital de Movilidad de Bogotá. Esta focalización geográfica y contextual se justifica por la heterogeneidad de los sistemas de gestión de infracciones a nivel regional en Colombia, permitiendo así un análisis pertinente y detallado. Consecuentemente, el diseño y la evaluación del prototipo adoptarán la perspectiva de la entidad administradora, con énfasis en asegurar la integridad registral, la cadena de custodia de la evidencia y la auditabilidad del sistema. La arquitectura tecnológica propuesta se basa en la utilización de Hyperledger Fabric para el registro distribuido y el sistema IPFS para el almacenamiento de evidencia, cuya funcionalidad y características de rendimiento básicas serán objeto de validación mediante pruebas en un ambiente controlado, verificando la operatividad del flujo propuesto y la inmutabilidad de la información registrada. 
 
   \section{Metodología }
@@ -514,117 +750,102 @@ Para el desarrollo de este proyecto, se adoptará la Metodología de Desarrollo 
 
 \subsection{Diagrama de casos de uso del sistema de gestión de infracciones de transito }
 % img
-\begin{adjustbox}{
-    center,
-    caption=[{Casos de Uso.}]{\centering Casos de Uso},
-    label={Casos de Uso},
-    nofloat=figure, vspace={7px}}
-
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/CasosUso.png}
-\end{adjustbox}
+    \caption{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito.}
+    \label{fig:casos_uso}
+\end{figure}
 
  \subsection{ Diagrama de Despliegue }
-\begin{adjustbox}{
-    center,
-    caption=[{Arquitectura}]{\centering Diagrama de Despliegue},
-    label={DiagramaDespliegue},
-    nofloat=figure, vspace={7px}}
-
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
-\end{adjustbox}
-En la Figura anterior se puede observar el diagrama de despliegue propuesto, donde cada nodo cuenta con la misma información, ya que esta se encontrará sincronizada. Así mismo, se encuentra conectada mediante Servicios Web a la base de datos de Apitude para como herramienta de terceros para acceder a la informacion existente en el Registro Único Nacional de Tránsito (RUNT) de donde se obtendrán los datos de conductores y vehículos y registro existente de infractores a nivel Bogotá y estado de las multas 
+    \caption{Diagrama de despliegue de la arquitectura del sistema.}
+    \label{fig:diagrama_despliegue}
+\end{figure}
+En la Figura \ref{fig:diagrama_despliegue} se puede observar el diagrama de despliegue propuesto, donde cada nodo cuenta con la misma información, ya que esta se encontrará sincronizada. Así mismo, se encuentra conectada mediante Servicios Web a la base de datos de Apitude para como herramienta de terceros para acceder a la informacion existente en el Registro Único Nacional de Tránsito (RUNT) de donde se obtendrán los datos de conductores y vehículos y registro existente de infractores a nivel Bogotá y estado de las multas 
 
 Hay que mencionar que existen dos soluciones para traer la información necesaria de estas entidades, la primera siendo un api llamado apitude de un tercero que trae la información del RUNT y del SIMIT, y segundo los datos que estas entidades públicas ya poseen en bases de datos tradicionales. 
  \subsection{ Diagrama de clases }
 Hay que considerar que se manejaran dos capas de lógica la primera enfocada en registrar los cambios en los estados de las multas a raves de blockchain y la segunda capa de lógica que se encarga de la administración general de las multas (manipular los datos que no son visibles ante el público) 
- \begin{adjustbox}{
-    center,
-    caption=[{Diagrama de clases}]{\centering Diagrama de clases},
-    label={Diagrama de clases},
-    nofloat=figure, vspace={7px}}
-
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/uml.png}
-\end{adjustbox}
-En la figura 3 se hace un esquema de la primera capa logica que se encarga de la administracion general de las multas y los datos que maneja
- \begin{adjustbox}{
-    center,
-    caption=[{Diagrama de clases part.2}]{\centering Diagrama de Apelacion de multa},
-    label={DiagramaApelacionMulta2},
-    nofloat=figure, vspace={7px}}
+    \caption{Diagrama de clases del sistema de gestión de multas.}
+    \label{fig:diagrama_clases}
+\end{figure}
+En la Figura \ref{fig:diagrama_clases} se hace un esquema de la primera capa lógica que se encarga de la administración general de las multas y los datos que maneja
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
-\end{adjustbox}
-En la figura 4 se hace mención en la segunda capa lógica la cual son los cambios generados en el registro de multas que registramos en la blockchain, que se traducen en los contratos realizados en solidity.
+    \caption{Diagrama de actividades para el proceso de apelación de multa.}
+    \label{fig:diagrama_apelacion}
+\end{figure}
+En la Figura \ref{fig:diagrama_apelacion} se hace mención en la segunda capa lógica la cual son los cambios generados en el registro de multas que registramos en la blockchain, que se traducen en los contratos realizados en solidity.
 \subsection{ Diagrama de actividades }
- \begin{adjustbox}{
-    center,
-    caption=[{Diagrama de clases part.2}]{\centering Diagrama de Creacion de multa},
-    label={DiagramaCreacionMulta},
-    nofloat=figure, vspace={7px}}
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
-\end{adjustbox}
- \begin{adjustbox}{
-    center,
-    caption=[{Diagrama de clases part.2}]{\centering Diagrama de Apelacion de multa},
-    label={Diagrama de clases part.2},
-    nofloat=figure, vspace={7px}}
+    \caption{Diagrama de actividades para el proceso de creación de multa.}
+    \label{fig:diagrama_creacion_multa}
+\end{figure}
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
-\end{adjustbox}
+    \caption{Diagrama de actividades para el proceso de apelación de multa.}
+    \label{fig:diagrama_apelacion_2}
+\end{figure}
 
 \subsection{Interfaz de Usuario}
 \paragraph{Compartidas}
- \begin{adjustbox}{
-    center,
-    caption=[{Login}]{\centering Login},
-    label={Login},
-    nofloat=figure, vspace={7px}}
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI1.png}
-\end{adjustbox}
+    \caption{Pantalla de login del sistema.}
+    \label{fig:login}
+\end{figure}
 
- \begin{adjustbox}{
-    center,
-    caption=[{Recuperar Contraseña}]{\centering Recuperar Contraseña},
-    label={Recuperar Contraseña},
-    nofloat=figure, vspace={7px}}
+ \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI2.png}
-\end{adjustbox}
+    \caption{Pantalla de recuperación de contraseña.}
+    \label{fig:recuperar_password}
+\end{figure}
 \paragraph{Vista Agente}
-\begin{adjustbox}{
-    center,
-    caption=[{Dashboard Agente de transito }]{\centering Dashboard Agente de transito},
-    label={Dashboard Agente de transito},
-    nofloat=figure, vspace={7px}}
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI3.png}
-\end{adjustbox}
-\begin{adjustbox}{
-    center,
-    caption=[{Consulta Estado de multa}]{\centering Consulta Estado de multa},
-    label={Consulta Estado de multa},
-    nofloat=figure, vspace={7px}}
+    \caption{Dashboard del agente de tránsito.}
+    \label{fig:dashboard_agente}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
-\end{adjustbox}
-\begin{adjustbox}{
-    center,
-    caption=[{Consulta Detalle de multa}]{\centering Consulta Detalle de multa},
-    label={Consulta Detalle de multa},
-    nofloat=figure, vspace={7px}}
+    \caption{Pantalla de consulta del estado de multa.}
+    \label{fig:consulta_estado_multa}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
-\end{adjustbox}
+    \caption{Pantalla de consulta de detalle de multa.}
+    \label{fig:consulta_detalle_multa}
+\end{figure}
 \paragraph{Vista Propietario de Vehiculo}
-\begin{adjustbox}{
-    center,
-    caption=[{Consulta multas}]{\centering Consulta multas},
-    label={Consulta multas},
-    nofloat=figure, vspace={7px}}
+\begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.8\textwidth]{Images/UI5.png}
-\end{adjustbox}
+    \caption{Pantalla de consulta de multas para propietarios de vehículos.}
+    \label{fig:consulta_multas_propietario}
+\end{figure}
 
 \section{Costos del Proyecto}
 \paragraph{Resumen de costos}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Images/costos1.png}
-    \caption{Resumen de Costos del Proyecto.}
+    \caption{Resumen de costos del proyecto.}
     \label{fig:costos1}
 \end{figure}
 
@@ -634,14 +855,14 @@ El costo total estimado del proyecto asciende a 62.887.000,00 COP. Este monto se
 
 \paragraph{Costos de Software y Hardware}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Images/costos2.png}
-    \caption{Estimación de Costos Mensuales de Infraestructura.}
+    \caption{Estimación de costos mensuales de infraestructura.}
     \label{fig:costos2}
 \end{figure}
 
-Esta tabla proyecta los costos mensuales recurrentes asociados con la infraestructura necesaria para desplegar y operar la aplicación. Ofrece tres escenarios (Bajo, Medio, Alto) para cada componente, reflejando diferentes niveles de capacidad, rendimiento o robustez. Los valores en esta tabla están originalmente en dólares (USD) y se han convertido a pesos colombianos (COP) utilizando una tasa de cambio de 4.200 COP/USD (según la celda indicada). Se ha seleccionado el escenario "Costo Alto (USD/mes)" para alimentar la tabla de "Resumen de Costos". 
+Esta tabla (ver Tabla \ref{fig:costos2}) proyecta los costos mensuales recurrentes asociados con la infraestructura necesaria para desplegar y operar la aplicación. Ofrece tres escenarios (Bajo, Medio, Alto) para cada componente, reflejando diferentes niveles de capacidad, rendimiento o robustez. Los valores en esta tabla están originalmente en dólares (USD) y se han convertido a pesos colombianos (COP) utilizando una tasa de cambio de 4.200 COP/USD (según la celda indicada). Se ha seleccionado el escenario "Costo Alto (USD/mes)" para alimentar la tabla de "Resumen de Costos". 
 
 \paragraph{Categorías Principales y Subcomponentes (basado en el escenario "Alto" seleccionado): }
 
@@ -668,14 +889,14 @@ Esta tabla proyecta los costos mensuales recurrentes asociados con la infraestru
 \textbf{GRAN TOTAL ESTIMADO MENSUAL (Escenario Alto):} El costo mensual recurrente total para la infraestructura y servicios, en el escenario alto, es de 24.402.000 COP. Nota: Este es el costo mensual. En la tabla de resumen de costos, algunos de estos se presentan como si fueran un costo único o para un periodo específico, lo cual habría que aclarar (ej. si el costo de Hyperledger Fabric de 23.100.000 COP es para el primer mes, o para un periodo de setup y algunos meses de operación). Si es mensual, el total del proyecto se dispararía si es para muchos meses. 
 
 \paragraph{Costo de Desarrollo }
-\begin{figure}[h!]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Images/costos3.png}
-    \caption{Estimación de Costos de Desarrollo.}
+    \caption{Estimación de costos de desarrollo del proyecto.}
     \label{fig:costos3}
 \end{figure}
 
-Esta tabla detalla el esfuerzo estimado para cada tarea específica del desarrollo del software. Utiliza la técnica PERT (Program Evaluation and Review Technique) para calcular un tiempo ponderado (columna "PERT (h)") basándose en estimaciones optimistas, más probables y pesimistas. Este esfuerzo en horas se traduce luego en un costo, asumiendo una tarifa por hora de programador de 30.000 COP (según la celda "programador (h)"). 
+Esta tabla (ver Tabla \ref{fig:costos3}) detalla el esfuerzo estimado para cada tarea específica del desarrollo del software. Utiliza la técnica PERT (Program Evaluation and Review Technique) para calcular un tiempo ponderado (columna "PERT (h)") basándose en estimaciones optimistas, más probables y pesimistas. Este esfuerzo en horas se traduce luego en un costo, asumiendo una tarifa por hora de programador de 30.000 COP (según la celda "programador (h)"). 
 \paragraph{Columnas Clave: }
 \begin{itemize}
 \item \textbf{Tarea:} Describe las actividades individuales de desarrollo, desde el levantamiento de requerimientos hasta el despliegue y diseño. 
@@ -792,17 +1013,17 @@ Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/int
 
 \subsection{Casos de Prueba de Inmutabilidad}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|c|p{8cm}|c|}
+\begin{tabular}{|p{2cm}|p{6cm}|p{3cm}|}
 \hline
-\textbf{ID} & \textbf{Descripción} & \textbf{¿Ejecutada?} \\
+\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
 \hline
-IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Sí \\
+IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Ejecutada \\
 \hline
-IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Sí \\
+IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Ejecutada \\
 \hline
-IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Sí \\
+IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Ejecutada \\
 \hline
 \end{tabular}
 \caption{Resumen de casos de prueba de inmutabilidad ejecutados}
@@ -813,14 +1034,16 @@ IM-003 & Verificación de trazabilidad e integridad del historial de transaccion
 
 Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|l|c|}
+\begin{tabular}{|p{4cm}|p{3cm}|}
 \hline
-\textbf{Operación} & \textbf{Tiempo Promedio (segundos)} \\
+\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
 \hline
 Registro completo (Blockchain + IPFS) & 1.60 \\
+\hline
 Consulta de evidencia desde IPFS & 0.80 \\
+\hline
 Validación de integridad & 0.90 \\
 \hline
 \end{tabular}
@@ -829,9 +1052,9 @@ Validación de integridad & 0.90 \\
 
 \subsection{Tabla Resumen de Casos de Prueba de Inmutabilidad}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|p{5.2cm}|p{4cm}|p{4cm}|p{3cm}|}
+\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
 \hline
 \textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
 \hline
@@ -844,7 +1067,7 @@ Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones
 Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
 \hline
 \end{tabular}
-\caption{Casos de prueba de inmutabilidad y verificabilidad}
+\caption{Casos de prueba de inmutabilidad y verificabilidad del sistema}
 \end{table}
 
 Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. El uso conjunto de \textbf{Blockchain permisionada} e \textbf{IPFS direccionable por contenido} garantiza que los registros de comparendos sean \textbf{inmutables, verificables y auditables}, eliminando los riesgos asociados a manipulación o pérdida de evidencia. Esta implementación representa un avance concreto hacia sistemas más confiables, resilientes y transparentes en el ámbito de la gestión de sanciones electrónicas.
