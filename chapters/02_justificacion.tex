@@ -1,0 +1,28 @@
+\section{\large Justificación}
+
+La gestión actual de los fotocomparendos en Bogotá, articulada principalmente a través del sistema FENIX —desarrollado por la Oficina de Tecnologías de la Información y las Comunicaciones con una inversión de \$3.800 millones de pesos colombianos— presenta limitaciones críticas que afectan la transparencia, seguridad y confianza pública en el proceso sancionatorio vial \parencite{resolucionFenix}.
+
+Uno de los principales desafíos es el riesgo constante de corrupción. Existen evidencias documentadas de prácticas ilícitas para borrar o manipular comparendos en distintas ciudades del país, como Bucaramanga, lo cual pone en entredicho la integridad de los sistemas actuales \parencite{blogAletta,procuraduriaBucaramanga}. Estas situaciones reflejan una debilidad estructural asociada al uso de bases de datos centralizadas que pueden ser alteradas por personal interno con permisos elevados.
+
+A esto se suman las falencias en ciberseguridad señaladas en el \textit{Informe Final de Auditoría AC-SDM-090 de 2023}, en el cual se identifican graves vulnerabilidades en los sistemas informáticos de la Secretaría Distrital de Movilidad, tales como insuficientes controles de acceso, falta de monitoreo efectivo y exposición innecesaria de datos sensibles\parencite{auditoriaSDM}. Estas deficiencias no solo incrementan el riesgo de ataques externos, sino que también debilitan la confianza ciudadana y la capacidad de las autoridades para defender la legitimidad de los comparendos emitidos.
+
+En este contexto, resulta pertinente analizar las diferencias estructurales y funcionales entre los sistemas tradicionales de gestión de información —basados en bases de datos centralizadas— y los modelos descentralizados que emplean tecnologías como Blockchain e IPFS. Las bases de datos convencionales, aunque ampliamente utilizadas, presentan limitaciones significativas en contextos donde la inmutabilidad, la trazabilidad y la resistencia a la manipulación son requisitos esenciales. Por el contrario, los sistemas distribuidos y criptográficamente seguros ofrecen un marco más robusto para garantizar la integridad y transparencia de la información.
+
+A continuación, se presenta una comparación entre ambos enfoques tecnológicos que permite esclarecer sus ventajas y desventajas en términos de seguridad, confiabilidad y gobernanza de los datos:
+
+\input{tables/comparacion_bd_blockchain}
+
+Como se observa, la tecnología blockchain resulta especialmente útil en escenarios donde la \textbf{integridad de los datos, la resistencia a la manipulación y la auditabilidad} son esenciales, como ocurre en la administración pública y particularmente en la gestión de evidencias sancionatorias. A diferencia de una base de datos central, donde un administrador podría alterar registros sin dejar rastro, en blockchain cualquier modificación es prácticamente inviable sin el consenso de toda la red.
+
+Esto es particularmente relevante para combatir la corrupción administrativa, ya que reduce la posibilidad de que funcionarios alteren o eliminen evidencias. A su vez, permite a ciudadanos, entes de control y entidades judiciales verificar el historial completo de cada comparendo sin necesidad de confiar ciegamente en la autoridad emisora.
+
+En resumen, la adopción de este prototipo permitirá:
+
+\begin{itemize}
+    \item \textbf{Prevenir la corrupción}, al eliminar la intervención humana en la manipulación de datos sancionatorios.
+    \item \textbf{Fortalecer la seguridad de la información}, al distribuirla en una red tolerante a fallos y ataques.
+    \item \textbf{Mejorar la confianza ciudadana}, al ofrecer mecanismos transparentes y verificables para validar las infracciones.
+    \item \textbf{Reducir los costos administrativos y legales}, mediante la automatización de registros, auditorías y procesos de verificación.
+\end{itemize}
+
+Además de responder a problemas técnicos y éticos actuales, esta solución se alinea con tendencias globales en gobernanza digital (\textit{GovTech}), sentando un precedente innovador para otras ciudades que enfrentan desafíos similares en la gestión de sanciones de tránsito. 
