@@ -967,6 +967,16 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
 
 \input{tables/casos_prueba_inmutabilidad}
 
+\subsection{Pruebas de Rendimiento Básico}
+
+Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
+
+\input{tables/pruebas_rendimiento_basico.tex}
+
+\subsection{Casos de Prueba de Inmutabilidad y Verificabilidad}
+
+\input{tables/casos_prueba_inmutabilidad_verificabilidad.tex}
+
 \subsection{Estrategia de pruebas del frontend}
 
 \paragraph{Introducción}
@@ -1010,65 +1020,6 @@ Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/int
 \subsection{Casos de Prueba Funcionales}
 
 \input{tables/resultados_pruebas}
-
-\subsection{Casos de Prueba de Inmutabilidad}
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|p{2cm}|p{6cm}|p{3cm}|}
-\hline
-\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
-\hline
-IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Ejecutada \\
-\hline
-IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Ejecutada \\
-\hline
-IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Ejecutada \\
-\hline
-\end{tabular}
-\caption{Resumen de casos de prueba de inmutabilidad ejecutados}
-\end{table}
-
-
-\subsection{Pruebas de Rendimiento Básico}
-
-Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|p{4cm}|p{3cm}|}
-\hline
-\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
-\hline
-Registro completo (Blockchain + IPFS) & 1.60 \\
-\hline
-Consulta de evidencia desde IPFS & 0.80 \\
-\hline
-Validación de integridad & 0.90 \\
-\hline
-\end{tabular}
-\caption{Tiempos promedio de operaciones en el entorno de prueba}
-\end{table}
-
-\subsection{Tabla Resumen de Casos de Prueba de Inmutabilidad}
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-\hline
-\textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-\hline
-Registro de comparendo con CID válido & Verificar registro inicial & Registro exitoso e inmutable & Registro correcto \\
-\hline
-Intento de modificación de metadatos post-registro & Comprobar resistencia a cambios internos & Transacción rechazada o inconsistente detectada & Inconsistencia detectada \\
-\hline
-Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones en imagen & CID diferente, evidencia no válida & CID distinto generado \\
-\hline
-Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
-\hline
-\end{tabular}
-\caption{Casos de prueba de inmutabilidad y verificabilidad del sistema}
-\end{table}
 
 Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. El uso conjunto de \textbf{Blockchain permisionada} e \textbf{IPFS direccionable por contenido} garantiza que los registros de comparendos sean \textbf{inmutables, verificables y auditables}, eliminando los riesgos asociados a manipulación o pérdida de evidencia. Esta implementación representa un avance concreto hacia sistemas más confiables, resilientes y transparentes en el ámbito de la gestión de sanciones electrónicas.
 

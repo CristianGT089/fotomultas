@@ -4,26 +4,23 @@
 
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 5}\\
+        \textbf{Tabla 5}\\[2em]
         \textit{Resultados de pruebas funcionales del sistema}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{2cm}|p{4cm}|p{3cm}|p{3cm}|}
-    \hline
-    \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
-    \hline
-    FP-001 & Registro de fotocomparendo & Registro exitoso con CID & Exitoso \\
-    \hline
-    FP-002 & Consulta de comparendo & Datos recuperados correctamente & Exitoso \\
-    \hline
-    FP-003 & Verificación de evidencia & Imagen recuperada desde IPFS & Exitoso \\
-    \hline
-    FP-004 & Actualización de estado & Estado actualizado en Blockchain & Exitoso \\
-    \hline
-    FP-005 & Validación de integridad & Integridad verificada & Exitoso \\
-    \hline
+    \begin{tabular}{p{2cm} p{4cm} p{3cm} p{3cm}}
+        \toprule
+        \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
+        \midrule
+        FP-001 & Registro de fotocomparendo & Registro exitoso con CID & Exitoso \\
+        FP-002 & Consulta de comparendo & Datos recuperados correctamente & Exitoso \\
+        FP-003 & Verificación de evidencia & Imagen recuperada desde IPFS & Exitoso \\
+        FP-004 & Actualización de estado & Estado actualizado en Blockchain & Exitoso \\
+        FP-005 & Validación de integridad & Integridad verificada & Exitoso \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
@@ -34,22 +31,21 @@
 
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 6}\\
+        \textbf{Tabla 6}\\[2em]
         \textit{Resumen de casos de prueba de inmutabilidad ejecutados}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{2cm}|p{6cm}|p{3cm}|}
-    \hline
-    \textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
-    \hline
-    IM-001 & Intento de modificar metadatos directamente en el ledger & Ejecutada \\
-    \hline
-    IM-002 & Alteración de imagen ya registrada en IPFS & Ejecutada \\
-    \hline
-    IM-003 & Verificación de trazabilidad e integridad del historial & Ejecutada \\
-    \hline
+    \begin{tabular}{p{2cm} p{6cm} p{3cm}}
+        \toprule
+        \textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+        \midrule
+        IM-001 & Intento de modificar metadatos directamente en el ledger & Ejecutada \\
+        IM-002 & Alteración de imagen ya registrada en IPFS & Ejecutada \\
+        IM-003 & Verificación de trazabilidad e integridad del historial & Ejecutada \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
@@ -62,22 +58,21 @@ Se midió el tiempo requerido para ejecutar operaciones clave en condiciones sim
 
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 7}\\
+        \textbf{Tabla 7}\\[2em]
         \textit{Tiempos promedio de operaciones en el entorno de prueba}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{4cm}|p{3cm}|}
-    \hline
-    \textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
-    \hline
-    Registro completo (Blockchain + IPFS) & 1.60 \\
-    \hline
-    Consulta de evidencia desde IPFS & 0.80 \\
-    \hline
-    Validación de integridad & 0.90 \\
-    \hline
+    \begin{tabular}{p{4cm} p{3cm}}
+        \toprule
+        \textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+        \midrule
+        Registro completo (Blockchain + IPFS) & 1.60 \\
+        Consulta de evidencia desde IPFS & 0.80 \\
+        Validación de integridad & 0.90 \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}

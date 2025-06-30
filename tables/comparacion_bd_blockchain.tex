@@ -1,32 +1,26 @@
-% Tabla de comparación entre bases de datos tradicionales y blockchain
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 1}\\
+        \textbf{Tabla 1}\\[2em]
         \textit{Comparación entre bases de datos tradicionales y blockchain para gestión de registros gubernamentales}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{4.5cm}|p{5.2cm}|p{5.2cm}|}
-    \hline
-    \textbf{Característica} & \textbf{Base de Datos Convencional} & \textbf{Blockchain} \\
-    \hline
-    Modelo de confianza & Se basa en un administrador central (entidad de TI) & Confianza distribuida entre múltiples nodos \\
-    \hline
-    Inmutabilidad & Registros pueden ser modificados o eliminados por administradores & Los registros son inmutables por diseño \\
-    \hline
-    Trazabilidad / Auditoría & Depende de la implementación y control interno & Historial completo e inalterable disponible \\
-    \hline
-    Riesgo de corrupción interna & Alto, si hay privilegios indebidos o colusión & Bajo, no se puede alterar sin consenso de la red \\
-    \hline
-    Seguridad criptográfica & Opcional, no siempre integrada nativamente & Integrada (firmas digitales, hashes, cifrado) \\
-    \hline
-    Disponibilidad / tolerancia a fallos & Riesgo de puntos únicos de falla & Alta disponibilidad por replicación descentralizada \\
-    \hline
-    Velocidad de operación & Alta velocidad en lectura/escritura & Menor velocidad, prioriza integridad y consenso \\
-    \hline
+    \begin{tabular}{p{4.5cm} p{5.2cm} p{5.2cm}}
+        \toprule
+        \textbf{Característica} & \textbf{Base de Datos Convencional} & \textbf{Blockchain} \\
+        \midrule
+        Modelo de confianza & Se basa en un administrador central (entidad de TI) & Confianza distribuida entre múltiples nodos \\
+        Inmutabilidad & Registros pueden ser modificados o eliminados por administradores & Los registros son inmutables por diseño \\
+        Trazabilidad / Auditoría & Depende de la implementación y control interno & Historial completo e inalterable disponible \\
+        Riesgo de corrupción interna & Alto, si hay privilegios indebidos o colusión & Bajo, no se puede alterar sin consenso de la red \\
+        Seguridad criptográfica & Opcional, no siempre integrada nativamente & Integrada (firmas digitales, hashes, cifrado) \\
+        Disponibilidad / tolerancia a fallos & Riesgo de puntos únicos de falla & Alta disponibilidad por replicación descentralizada \\
+        Velocidad de operación & Alta velocidad en lectura/escritura & Menor velocidad, prioriza integridad y consenso \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
     \label{tab:comparacion_bd_blockchain}
-\end{table} 
+\end{table}

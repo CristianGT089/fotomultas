@@ -1,24 +1,22 @@
 % Tabla de casos de prueba de inmutabilidad
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 3}\\
+        \textbf{Tabla 3}\\[2em]
         \textit{Casos de prueba de inmutabilidad para validar resistencia a modificaciones}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{2cm}|p{6cm}|p{4cm}|}
-    \hline
-    \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
-    \hline
-    IM-001 & Intento de modificación directa en ledger & Verificar resistencia a cambios no autorizados \\
-    \hline
-    IM-002 & Alteración de imagen en IPFS & Validar detección de modificaciones en evidencia \\
-    \hline
-    IM-003 & Verificación de trazabilidad & Comprobar integridad del historial transaccional \\
-    \hline
-    IM-004 & Validación de consenso & Evaluar mecanismos de protección distribuida \\
-    \hline
+    \begin{tabular}{p{2cm} p{6cm} p{4cm}}
+        \toprule
+        \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
+        \midrule
+        IM-001 & Intento de modificación directa en ledger & Verificar resistencia a cambios no autorizados \\
+        IM-002 & Alteración de imagen en IPFS & Validar detección de modificaciones en evidencia \\
+        IM-003 & Verificación de trazabilidad & Comprobar integridad del historial transaccional \\
+        IM-004 & Validación de consenso & Evaluar mecanismos de protección distribuida \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
@@ -28,24 +26,22 @@
 % Tabla de resultados de pruebas de inmutabilidad
 \begin{table}[htbp]
     \begin{flushleft}
-        \textbf{Tabla 4}\\
+        \textbf{Tabla 4}\\[2em]
         \textit{Resultados de pruebas de inmutabilidad del sistema}
     \end{flushleft}
+    \vspace{1em}
     \centering
-    \begin{tabular}{|p{3cm}|p{4cm}|p{3cm}|p{3cm}|}
-    \hline
-    \textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-    \hline
-    IM-001 & Modificación directa en ledger & Transacción rechazada & Rechazada correctamente \\
-    \hline
-    IM-002 & Cambio de imagen en IPFS & CID diferente generado & CID distinto detectado \\
-    \hline
-    IM-003 & Verificación de trazabilidad & Historial inmutable & Historial preservado \\
-    \hline
-    IM-004 & Validación de consenso & Consenso mantenido & Consenso validado \\
-    \hline
+    \begin{tabular}{p{3cm} p{4cm} p{3cm} p{3cm}}
+        \toprule
+        \textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
+        \midrule
+        IM-001 & Modificación directa en ledger & Transacción rechazada & Rechazada correctamente \\
+        IM-002 & Cambio de imagen en IPFS & CID diferente generado & CID distinto detectado \\
+        IM-003 & Verificación de trazabilidad & Historial inmutable & Historial preservado \\
+        IM-004 & Validación de consenso & Consenso mantenido & Consenso validado \\
+        \bottomrule
     \end{tabular}
-    \vspace{0.5em}
+    \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
