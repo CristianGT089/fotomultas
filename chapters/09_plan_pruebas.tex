@@ -50,9 +50,13 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
 
 \input{tables/casos_prueba_funcionales}
 
+\noindent En la Tabla~\ref{tab:casos_prueba_funcionales} se enumeran los casos de prueba funcionales definidos para verificar el comportamiento básico del sistema, desde el registro de un fotocomparendo hasta la validación de su integridad y actualización de estado. Cada caso detalla las precondiciones, las acciones a ejecutar y el resultado esperado, sirviendo como guía para las pruebas manuales y automatizadas.
+
 \subsection{Pruebas de Inmutabilidad}
 
 \input{tables/casos_prueba_inmutabilidad}
+
+\noindent La Tabla~\ref{tab:casos_prueba_inmutabilidad} detalla los escenarios diseñados para poner a prueba la inmutabilidad del sistema ante intentos de modificación no autorizada, mientras que la Tabla~\ref{tab:resultados_inmutabilidad} resume los resultados obtenidos en dichas pruebas, evidenciando la correcta detección y rechazo de cambios indebidos.
 
 \subsection{Pruebas de Rendimiento Básico}
 
@@ -81,31 +85,3 @@ El frontend de la aplicación de gestión de multas implementa una estrategia in
 \subsubsection{Pruebas Unitarias}
 
 \subsubsection{Pruebas de Integración}
-
-\section{Resultados de las Pruebas de Inmutabilidad y Verificabilidad del Prototipo}
-
-Con el fin de validar los principios fundamentales sobre los que se sustenta el presente prototipo —particularmente la \textbf{inmutabilidad}, \textbf{integridad de evidencia} y \textbf{verificabilidad independiente}— se diseñó y ejecutó un plan de pruebas en entorno simulado controlado, alineado con los objetivos del proyecto y los estándares técnicos de la literatura especializada. Las pruebas se enfocaron en evaluar el comportamiento del sistema frente a intentos de modificación, errores de integridad y recuperación de evidencia a través de mecanismos descentralizados.
-
-\subsection{Pruebas de Inmutabilidad en Blockchain}
-
-Se registraron comparendos en la red \textit{Hyperledger Fabric}, incluyendo el hash IPFS (CID) de la evidencia fotográfica y los metadatos del evento. Luego, se intentó simular una alteración directa sobre el estado del ledger.
-
-\textbf{Resultado:} El sistema rechazó cualquier intento de modificación, manteniendo el hash original y evidenciando que la estructura de bloques y el mecanismo de consenso impiden alteraciones sin detección. Esto confirma que el sistema ofrece \textbf{inmutabilidad verificable} en los registros sancionatorios.
-
-\subsection{Verificación de Integridad con IPFS}
-
-Se almacenaron imágenes en IPFS y se compararon los CIDs obtenidos con nuevos hashes locales generados al momento de la consulta.
-
-\textbf{Resultado:} Se comprobó que el CID siempre coincide con el contenido original. Cualquier cambio, incluso mínimo, genera un CID diferente, por lo que el sistema detecta automáticamente cualquier intento de manipulación. Esto demuestra que la evidencia permanece \textbf{íntegra y detectable ante alteraciones}.
-
-\subsection{Verificabilidad Transparente del Registro}
-
-Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/integrity}) que permite a cualquier parte autorizada extraer el CID desde la Blockchain y verificar que la evidencia recuperada desde IPFS corresponde al evento sancionado.
-
-\textbf{Resultado:} La verificación se ejecuta sin intervención humana, desde fuentes independientes, replicando los principios de \textbf{transparencia, auditabilidad y confianza descentralizada}.
-
-\subsection{Casos de Prueba Funcionales}
-
-\input{tables/resultados_pruebas}
-
-Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. El uso conjunto de \textbf{Blockchain permisionada} e \textbf{IPFS direccionable por contenido} garantiza que los registros de comparendos sean \textbf{inmutables, verificables y auditables}, eliminando los riesgos asociados a manipulación o pérdida de evidencia. Esta implementación representa un avance concreto hacia sistemas más confiables, resilientes y transparentes en el ámbito de la gestión de sanciones electrónicas. 
