@@ -54,6 +54,31 @@ Otra área fundamental donde emergen estándares es la Gestión de Evidencia Dig
     \item \textbf{Registro en Ledger Distribuido (DLT):} Utilizar la DLT como el libro contable distribuido para estos registros es el mecanismo reconocido para lograr inmutabilidad, transparencia controlada y auditabilidad \parencite{swan2015blockchain}, superando las limitaciones de las bases de datos centralizadas.
 \end{itemize}
 
+% --------- Implementaciones reales de Blockchain en Gobiernos ---------
+\subsection{Implementaciones reales de Blockchain en Gobiernos}
+
+\subsubsection{Registro de propiedad en Suecia}
+
+La autoridad catastral sueca \textit{Lantmäteriet} realizó entre 2016 y 2017 un piloto con una cadena permisionada y contratos inteligentes para registrar transacciones inmobiliarias. El proyecto buscó reducir la manipulación documental y agilizar los trámites que involucran a bancos, agentes inmobiliarios y entidades estatales. Los resultados mostraron que el tiempo de compraventa podría reducirse de 4--7~meses a tan solo unos días, con un ahorro estimado de \textasciitilde{}100~millones de euros anuales gracias a la eliminación de procesos en papel y la automatización parcial \parencite{lantmateriet2017,lantmateriet_cointelegraph2017,lantmateriet_cointelegraph2_2017}.
+
+Durante la segunda fase se incorporaron contratos inteligentes que ejecutaban automáticamente pasos como la firma digital de documentos y el registro de hipotecas cuando se cumplían condiciones predefinidas, demostrando la viabilidad técnica y la interoperabilidad entre actores.
+
+\subsubsection{Integridad de registros clínicos en Estonia}
+
+Desde 2016 la autoridad nacional de salud de Estonia, en colaboración con Guardtime, emplea la infraestructura KSI (\textit{Keyless Signature Infrastructure}) para asegurar la integridad de los expedientes médicos de más de un millón de ciudadanos. En lugar de almacenar datos sensibles en la cadena, el sistema registra huellas \textit{hash} de cada operación sobre la historia clínica, posibilitando auditorías en tiempo real y la detección inmediata de accesos o modificaciones no autorizadas \parencite{guardtime2016,reddit_estonia_blockchain}. Esta aproximación cumple los requisitos de privacidad y refuerza la confianza pública en el manejo de datos sanitarios.
+
+\subsubsection{Síntesis y relevancia para el proyecto}
+
+Estos casos evidencian que:
+\begin{itemize}
+  \item La tecnología blockchain coordina procesos complejos con múltiples partes interesadas, garantizando un registro único y verificable (ejemplo de Suecia).
+  \item Permite verificar de forma irrefutable la integridad de datos sensibles sin exponer su contenido, manteniendo el cumplimiento normativo (ejemplo de Estonia).
+\end{itemize}
+
+Las lecciones aprendidas refuerzan la pertinencia de aplicar una arquitectura basada en Blockchain e IPFS para gestionar evidencias de fotocomparendos en Bogotá, buscando niveles de transparencia, inmutabilidad y confianza comparables.
+
+% --------- Fin de nueva subsección ---------
+
 \subsection{Funcionamiento de los Fotocomparendos en Bogotá: Mecanismos, Regulación e Impacto} 
 El sistema de fotocomparendos en Bogotá (FENIX) representa un modelo tecnológico y regulatorio diseñado para mejorar la seguridad vial mediante la detección automatizada de infracciones de tránsito \parencite{mintransporte2023}. Basado en cámaras de fotodetección ubicadas en zonas autorizadas por el Ministerio de Transporte, este sistema combina vigilancia electrónica, validación humana y marcos legales específicos para sancionar conductas de riesgo \parencite{supertransporte2021}. Desde su implementación, ha logrado reducir siniestros en puntos críticos, aunque enfrenta desafíos técnicos y jurídicos. A continuación, se detalla su operación, criterios de aplicación y marco legal que lo regula \parencite{mintransporte2023}.
 
@@ -144,7 +169,7 @@ La persistencia y gestión a largo plazo de datos en IPFS (pinning), la escalabi
 La adopción de billeteras digitales para pagos gubernamentales, el uso de criptoactivos/stablecoins y la claridad legal sobre smart contracts en el sector público son obstáculos importantes (Tan et al., 2022).
 
 \paragraph{Política de Reserva de Información:}
- La Municipalidad Provincial del Cusco mantiene una política de reserva de información que restringe la divulgación completa de los datos almacenados en su base de datos. Esta política limita el acceso y la difusión de ciertos datos, lo que puede afectar la transparencia y la capacidad de realizar un análisis exhaustivo \parencite{choquevilca2024blockchain}.
+ Bogotá mantiene una política de reserva de información que restringe la divulgación completa de los datos almacenados en su base de datos. Esta política limita el acceso y la difusión de ciertos datos, lo que puede afectar la transparencia y la capacidad de realizar un análisis exhaustivo \parencite{choquevilca2024blockchain}.
 
 \paragraph{Actualización de Datos:}
 La actualización de los datos almacenados en la base de datos es un proceso que requiere tiempo. Dada la naturaleza progresiva de este proceso, que depende de la cantidad de datos que se agregan diariamente, la actualización completa de los datos con el sistema que se desarrollará puede llevar un tiempo considerable \parencite{choquevilca2024blockchain}. 
@@ -183,26 +208,54 @@ El mapa muestra la distribución global de la producción científica en el áre
 
 % --- Figuras Bibliometrix añadidas ---
 \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 5}\\[2em]
+        \textit{Distribución global de la producción científica sobre blockchain y gestión de infracciones}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 5. Distribución global de la producción científica sobre blockchain y gestión de infracciones}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
-    \caption{Distribución global de la producción científica sobre blockchain y gestión de infracciones.}
-    \label{fig:mapa_bibliometrix}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia con datos bibliométricos.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:mapa_bibliometrix}
 \end{figure}
 
 \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 6}\\[2em]
+        \textit{Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 6. Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
-    \caption{Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú).}
-    \label{fig:grafico_lineas}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia con datos bibliométricos.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:grafico_lineas}
+\end{figure}
+
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 7}\\[2em]
+        \textit{Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 7. Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia con datos bibliométricos.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:nube_palabras}
 \end{figure}
 
 \paragraph{Nube de Palabras}
 La Figura~\ref{fig:nube_palabras} muestra los términos más frecuentes en la literatura analizada. Destacan conceptos como \textit{blockchain}, \textit{challenges}, \textit{management} y \textit{secure}, lo que refleja el énfasis de la comunidad académica en los retos de seguridad y gestión al aplicar tecnologías DLT en contextos gubernamentales.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
-    \caption{Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones.}
-    \label{fig:nube_palabras}
-\end{figure}
 % --- Fin de figuras Bibliometrix ---

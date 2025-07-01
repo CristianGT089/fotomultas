@@ -21,98 +21,195 @@ El conjunto de diagramas que se incluye responde a la necesidad de modelar disti
 Cada uno de estos artefactos está alineado con los objetivos del proyecto y fue elaborado considerando tanto las necesidades funcionales como las características propias de las tecnologías involucradas, en particular el uso de Blockchain e IPFS. De esta forma, se busca garantizar coherencia técnica en el diseño y establecer una base sólida para el desarrollo e implementación de la solución.
 
 \subsection{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito }
-% img
 \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 8}\\[2em]
+        \textit{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 8. Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/CasosUso.png}
-    \caption{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito.}
-    \label{fig:casos_uso}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:casos_uso}
 \end{figure}
 
  \subsection{ Diagrama de Despliegue }
 \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 9}\\[2em]
+        \textit{Diagrama de despliegue de la arquitectura del sistema}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 9. Diagrama de despliegue de la arquitectura del sistema}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
-    \caption{Diagrama de despliegue de la arquitectura del sistema.}
-    \label{fig:diagrama_despliegue}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_despliegue}
 \end{figure}
+
 En la Figura \ref{fig:diagrama_despliegue} se puede observar el diagrama de despliegue propuesto, donde cada nodo cuenta con la misma información, ya que esta se encontrará sincronizada. Asimismo, se conecta mediante servicios web a la base de datos de Apitude como herramienta de terceros para acceder a la información existente en el Registro Único Nacional de Tránsito (RUNT), de donde se obtendrán los datos de conductores, vehículos y el registro de infractores en Bogotá, así como el estado de las multas.
 
 Hay que mencionar que existen dos soluciones para traer la información necesaria de estas entidades: la primera es una API llamada Apitude, de un tercero que provee la información del RUNT y del SIMIT; la segunda consiste en utilizar los datos que estas entidades públicas ya poseen en bases de datos tradicionales. 
+
  \subsection{ Diagrama de clases }
 Hay que considerar que se manejarán dos capas de lógica: la primera enfocada en registrar los cambios en los estados de las multas a través de blockchain y la segunda capa encargada de la administración general de las multas (manipular los datos que no son visibles al público). 
  \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 10}\\[2em]
+        \textit{Diagrama de clases del sistema de gestión de multas}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 10. Diagrama de clases del sistema de gestión de multas}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/uml.png}
-    \caption{Diagrama de clases del sistema de gestión de multas.}
-    \label{fig:diagrama_clases}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_clases}
 \end{figure}
 En la Figura \ref{fig:diagrama_clases} se hace un esquema de la primera capa lógica que se encarga de la administración general de las multas y los datos que maneja
  \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 11}\\[2em]
+        \textit{Diagrama de actividades para el proceso de apelación de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 11. Diagrama de actividades para el proceso de apelación de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
-    \caption{Diagrama de actividades para el proceso de apelación de multa.}
-    \label{fig:diagrama_apelacion}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_apelacion}
 \end{figure}
+
 En la Figura \ref{fig:diagrama_apelacion} se hace mención en la segunda capa lógica la cual son los cambios generados en el registro de multas que registramos en la blockchain, que se traducen en los contratos realizados en solidity.
+
 \subsection{ Diagrama de actividades }
  \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 12}\\[2em]
+        \textit{Diagrama de actividades para el proceso de creación de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 12. Diagrama de actividades para el proceso de creación de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
-    \caption{Diagrama de actividades para el proceso de creación de multa.}
-    \label{fig:diagrama_creacion_multa}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
 \end{figure}
-\% \begin{figure}[htbp]
-\%     \centering
-\%     \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
-\%     \caption{Diagrama de actividades para el proceso de apelación de multa.}
-\%     \label{fig:diagrama_apelacion_2}
-\% \end{figure}
 
 \subsection{Interfaz de Usuario}
 \paragraph{Compartidas}
  \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 13}\\[2em]
+        \textit{Pantalla de login del sistema}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 13. Pantalla de login del sistema}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI1.png}
-    \caption{Pantalla de login del sistema.}
-    \label{fig:login}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:login}
 \end{figure}
+
 En la Figura~\ref{fig:login} se aprecia la pantalla de inicio de sesión, punto de entrada para todos los usuarios autorizados del sistema.
 
  \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 14}\\[2em]
+        \textit{Pantalla de recuperación de contraseña}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 14. Pantalla de recuperación de contraseña}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI2.png}
-    \caption{Pantalla de recuperación de contraseña.}
-    \label{fig:recuperar_password}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:recuperar_password}
 \end{figure}
 La Figura~\ref{fig:recuperar_password} muestra el formulario para recuperar la contraseña, reforzando la experiencia de autoservicio y seguridad de la plataforma.
 \paragraph{Vista Agente}
 \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 15}\\[2em]
+        \textit{Dashboard del agente de tránsito}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 15. Dashboard del agente de tránsito}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI3.png}
-    \caption{Dashboard del agente de tránsito.}
-    \label{fig:dashboard_agente}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:dashboard_agente}
 \end{figure}
 En la Figura~\ref{fig:dashboard_agente} se presenta el tablero principal que resume las métricas de gestión de multas para el agente de tránsito.
-\begin{figure}[htbp]
+ \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 16}\\[2em]
+        \textit{Pantalla de consulta del estado de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 16. Pantalla de consulta del estado de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
-    \caption{Pantalla de consulta del estado de multa.}
-    \label{fig:consulta_estado_multa}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:consulta_estado_multa}
 \end{figure}
 La Figura~\ref{fig:consulta_estado_multa} ilustra la consulta rápida del estado de una multa, facilitando el seguimiento por parte del agente.
-\begin{figure}[htbp]
+ \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 17}\\[2em]
+        \textit{Pantalla de consulta de detalle de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 17. Pantalla de consulta de detalle de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
-    \caption{Pantalla de consulta de detalle de multa.}
-    \label{fig:consulta_detalle_multa}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:consulta_detalle_multa}
 \end{figure}
 En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de una multa específica, incluida la evidencia asociada.
-\paragraph{Vista Propietario de Vehículo}
-\begin{figure}[htbp]
+ \paragraph{Vista Propietario de Vehículo}
+ \begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 18}\\[2em]
+        \textit{Pantalla de consulta de multas para propietarios de vehículos}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 18. Pantalla de consulta de multas para propietarios de vehículos}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI5.png}
-    \caption{Pantalla de consulta de multas para propietarios de vehículos.}
-    \label{fig:consulta_multas_propietario}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:consulta_multas_propietario}
 \end{figure}
 Por último, la Figura~\ref{fig:consulta_multas_propietario} exhibe la vista que permite al propietario del vehículo revisar todas sus multas pendientes o en proceso. 
