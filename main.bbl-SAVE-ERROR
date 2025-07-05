@@ -1,0 +1,3615 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{blogAletta}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ef40bc4de926f6f1e16713e4df42b413}{%
+           family={{Aletta Legal}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{fullhash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{bibnamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authorbibnamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authornamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authorfullhash}{ef40bc4de926f6f1e16713e4df42b413}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{El oscuro secreto de borrar comparendos ilegalmente}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://aletta.com.co/blog/el-oscuro-secreto-de-borrar-comparendos-ilegalmente-consecuencias-impactantes-de-evitar-el-proceso/
+      \endverb
+      \verb{url}
+      \verb https://aletta.com.co/blog/el-oscuro-secreto-de-borrar-comparendos-ilegalmente-consecuencias-impactantes-de-evitar-el-proceso/
+      \endverb
+    \endentry
+    \entry{ManiJosephP2023SmartAS}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d0427387133084a0d380caee7d1a7b05}{%
+           family={Mani\bibnamedelimb Joseph\bibnamedelima P},
+           familyi={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Et},
+           giveni={E\bibinitperiod},
+           givenun=0,
+           prefix={al.},
+           prefixi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{fullhash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{bibnamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authorbibnamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authornamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authorfullhash}{d0427387133084a0d380caee7d1a7b05}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Recent and Innovation Trends in Computing and Communication}
+      \field{title}{Smart and Secure Blockchain Structure to Track Vehicle Record-keeping in the Sultanate of Oman}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:267330775
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:267330775
+      \endverb
+    \endentry
+    \entry{AnandSingh_ProjectReport_Year}{bachelorsthesis}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=039b2e34b6f4302bb6a67240d32f9545}{%
+           family={Anand},
+           familyi={A\bibinitperiod},
+           given={Tejas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba2fed43af96fce80ff88614ebc13139}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Vaishnavi},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {jaypee university of information technology}%
+      }
+      \list{location}{1}{%
+        {Waknaghat, India}%
+      }
+      \strng{namehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{fullhash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{bibnamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authorbibnamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authornamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authorfullhash}{911ce75043ae95073545b716d7a1ec6a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Submitted in partial fulfillment of the requirements for the Bachelor of Technology degree. Student IDs: Tejas Anand (201504), Vaishnavi Singh (201533).}
+      \field{title}{Traffic Violation Detection Using Blockchain}
+      \field{type}{Major Project Report, Bachelor of Technology in Computer Science \& Engineering / Information Technology}
+      \field{year}{2024}
+    \endentry
+    \entry{antonopoulos2023mastering}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a8107494556af1100a132bb87b1cbd5d}{%
+           family={Antonopoulos},
+           familyi={A\bibinitperiod},
+           given={Andreas\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edeeab41ed2ecc0caa3053edb9058c30}{%
+           family={Harding},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{fullhash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{bibnamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authorbibnamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authornamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authorfullhash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mastering Bitcoin: Programming the open blockchain}
+      \field{year}{2023}
+    \endentry
+    \entry{barbaro2011ticketfixing}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f8de3f92e3ee3aaeb792d2737aaa8f32}{%
+           family={Barbaro},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{fullhash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{bibnamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authorbibnamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authornamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authorfullhash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{The New York Times, April 17}
+      \field{title}{Big Inquiry Into Ticket-Fixing in New York}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.nytimes.com/2011/04/18/nyregion/ticket-fixing-by-police-investigated-in-new-york.html
+      \endverb
+      \verb{url}
+      \verb https://www.nytimes.com/2011/04/18/nyregion/ticket-fixing-by-police-investigated-in-new-york.html
+      \endverb
+    \endentry
+    \entry{benet2014ipfs}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ae8544cf985d862137480d00d30a318b}{%
+           family={Benet},
+           familyi={B\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{fullhash}{ae8544cf985d862137480d00d30a318b}
+      \strng{bibnamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authorbibnamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authornamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authorfullhash}{ae8544cf985d862137480d00d30a318b}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1407.3561}
+      \field{title}{Ipfs-content addressed, versioned, p2p file system}
+      \field{year}{2014}
+    \endentry
+    \entry{buterin2014next}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850981945102d0f671b6762173c8988a}{%
+           family={Buterin},
+           familyi={B\bibinitperiod},
+           given={Vitalik},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{fullhash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{bibnamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authorbibnamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authornamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authorfullhash}{fa265b80691610b5092f93ae4a80f9b7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{white paper}
+      \field{number}{37}
+      \field{title}{A next-generation smart contract and decentralized application platform}
+      \field{volume}{3}
+      \field{year}{2014}
+      \field{pages}{2\bibrangedash 1}
+      \range{pages}{0}
+    \endentry
+    \entry{cachin2018architecture}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=61f4a4d4aad7fed4999cd33172ca4ff3}{%
+           family={Cachin},
+           familyi={C\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{fullhash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{bibnamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authorbibnamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authornamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authorfullhash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1801.10228}
+      \field{note}{Accessed: YYYY-MM-DD}
+      \field{title}{Architecture of the Hyperledger Blockchain Fabric}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1801.10228
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1801.10228
+      \endverb
+    \endentry
+    \entry{chen2024blockchain}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=e731959be96016339cf4f94a6f0ad2cf}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chin-Ling},
+           giveni={C\bibinithyphendelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fa87be529a3e5783e84770eefc9d360}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Cheng-Yang},
+           giveni={C\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b520b4937521206aeeb5e414cc3ff352}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Yong-Yuan},
+           giveni={Y\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06783dd3a22b84a8680822f3cebb1105}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Der-Chen},
+           giveni={D\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60bb937fa7e3032bad80062f725f15f3}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ling-Chun},
+           giveni={L\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b44808a0442c3d0593bc500c4f342e88}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hsing-Chung},
+           giveni={H\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2760097d1c681f0fb1b2732251bd5fba}
+      \strng{fullhash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{bibnamehash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{authorbibnamehash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{authornamehash}{2760097d1c681f0fb1b2732251bd5fba}
+      \strng{authorfullhash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sustainable Cities: Smart Technologies and Cities}
+      \field{title}{Blockchain-enabled transparent traffic enforcement for sustainable road safety in cities}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{pages}{1426036}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/frsc.2024.1426036
+      \endverb
+    \endentry
+    \entry{choquevilca2024blockchain}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=31226348c073c2e9416e27f75de47ecd}{%
+           family={Choquevilca\bibnamedelima Quispe},
+           familyi={C\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           given={Jhon\bibnamedelima Frank},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4124f22b3901b0d6ea4e76746cf774d9}{%
+           family={Morales\bibnamedelima Valencia},
+           familyi={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Cristhian\bibnamedelima Daniel},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Nacional Mayor de San Marcos}%
+      }
+      \strng{namehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{fullhash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{bibnamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authorbibnamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authornamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authorfullhash}{c0beffc0e15f4a08f140f9016734c886}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista de Investigación en Tecnologías Emergentes}
+      \field{note}{ISSN: 2519-7122}
+      \field{number}{2}
+      \field{title}{Blockchain e IPFS en la gestión de infracciones de tránsito: una propuesta basada en contratos inteligentes}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{22\bibrangedash 39}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://revistas.unmsm.edu.pe/index.php/rite/article/view/27454
+      \endverb
+      \verb{url}
+      \verb https://revistas.unmsm.edu.pe/index.php/rite/article/view/27454
+      \endverb
+    \endentry
+    \entry{ley1843}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=999dc605a16e31da21406815f1fc332e}{%
+           family={{Congreso de Colombia}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{fullhash}{999dc605a16e31da21406815f1fc332e}
+      \strng{bibnamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authorbibnamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authornamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authorfullhash}{999dc605a16e31da21406815f1fc332e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Diario Oficial No. 50.238}
+      \field{subtitle}{Por medio de la cual se regula la instalación y puesta en marcha de sistemas automáticos, semiautomáticos y otros medios tecnológicos para la detección de infracciones y se dictan otras disposiciones}
+      \field{title}{Ley 1843 de 2017}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://www.suin-juriscol.gov.co/viewDocument.asp?id=30030416
+      \endverb
+      \verb{url}
+      \verb http://www.suin-juriscol.gov.co/viewDocument.asp?id=30030416
+      \endverb
+    \endentry
+    \entry{coulouris2011}{book}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=ba7558d26c2b47c68bbd9c3ae78afe6f}{%
+           family={Coulouris},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8575e961dd1a27c0844cbf89179dd13}{%
+           family={Dollimore},
+           familyi={D\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f331f31acb4f7411c14a757aeb826e85}{%
+           family={Kindberg},
+           familyi={K\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb77f648555e75d8fe09aeb77c01d058}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{730f1fe685590bb8a27a9d7bf7801863}
+      \strng{fullhash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{bibnamehash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{authorbibnamehash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{authornamehash}{730f1fe685590bb8a27a9d7bf7801863}
+      \strng{authorfullhash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{isbn}{978-0132143011}
+      \field{note}{Fifth Edition}
+      \field{title}{Distributed Systems: Concepts and Design}
+      \field{year}{2011}
+    \endentry
+    \entry{diffie2022new}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=15409de33b2fa29965e62538bedee6b5}{%
+           family={Diffie},
+           familyi={D\bibinitperiod},
+           given={Whitfield},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a26474253dac6b587d39e5d781d4aa1f}{%
+           family={Hellman},
+           familyi={H\bibinitperiod},
+           given={Martin\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{fullhash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{bibnamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authorbibnamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authornamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authorfullhash}{a73dc549f90eddde87be2be5b6c2778b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Democratizing Cryptography: The Work of Whitfield Diffie and Martin Hellman}
+      \field{title}{New directions in cryptography}
+      \field{year}{2022}
+      \field{pages}{365\bibrangedash 390}
+      \range{pages}{26}
+    \endentry
+    \entry{dutta2023solution}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=39a27a94416c8690e2498a544fa0354f}{%
+           family={Dutta},
+           familyi={D\bibinitperiod},
+           given={Hiren},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f76af067288d1e5b92edf6923578a946}{%
+           family={Nagesh},
+           familyi={N\bibinitperiod},
+           given={Saurabh},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db6a864d4cc78b8fb5556cc7df84c360}{%
+           family={Talluri},
+           familyi={T\bibinitperiod},
+           given={Jawahar},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40f44446ba52bc786beb3f760a1c656a}{%
+           family={Bhaumik},
+           familyi={B\bibinitperiod},
+           given={Parama},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0e36d8a6dcaa2276038c935a4007a499}
+      \strng{fullhash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{bibnamehash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{authorbibnamehash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{authornamehash}{0e36d8a6dcaa2276038c935a4007a499}
+      \strng{authorfullhash}{ad853c69e0f090961e074b00b925bb61}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Services Computing}
+      \field{number}{5}
+      \field{title}{A solution to blockchain smart contract based parametric transport and logistics insurance}
+      \field{volume}{16}
+      \field{year}{2023}
+      \field{pages}{3155\bibrangedash 3167}
+      \range{pages}{13}
+    \endentry
+    \entry{fielding2000architectural}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=87dbbd44b3977c28b71d826a931add3e}{%
+           family={Fielding},
+           familyi={F\bibinitperiod},
+           given={Roy\bibnamedelima Thomas},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of California, Irvine}%
+      }
+      \strng{namehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{fullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{bibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorbibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authornamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorfullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Architectural styles and the design of network-based software architectures}
+      \field{year}{2000}
+    \endentry
+    \entry{gilliland2008setting}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4dace3384dc05ba6668b20cb27b4a077}{%
+           family={Gilliland},
+           familyi={G\bibinitperiod},
+           given={Anne\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Online Edition, Version}%
+      }
+      \strng{namehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{fullhash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{bibnamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authorbibnamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authornamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authorfullhash}{4dace3384dc05ba6668b20cb27b4a077}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Introduction to metadata}
+      \field{number}{1-19}
+      \field{title}{Setting the stage}
+      \field{volume}{2}
+      \field{year}{2008}
+      \field{pages}{7}
+      \range{pages}{1}
+    \endentry
+    \entry{guardtime2016}{report}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c6f3682690653ebbc07c6ddc2995d239}{%
+           family={Guardtime},
+           familyi={G\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=38b30dc1bff72fe2c0a4ca799fad0a9f}{%
+           family={Authority},
+           familyi={A\bibinitperiod},
+           prefix={e-Health},
+           prefixi={e\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Guardtime}%
+      }
+      \strng{namehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{fullhash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{bibnamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authorbibnamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authornamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authorfullhash}{0b9faac99773e06d797ea83a52d08fd2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementation of medical blockchain technology in Estonia}
+      \field{type}{techreport}
+      \field{year}{2016}
+    \endentry
+    \entry{lantmateriet2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0c65498cfbca3562a2c29b246e2fd75a}{%
+           family={Haaramo},
+           familyi={H\bibinitperiod},
+           given={Eeva},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{fullhash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{bibnamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authorbibnamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authornamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authorfullhash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Weekly}
+      \field{month}{7}
+      \field{title}{Sweden's land registry authority trials blockchain for property transactions}
+      \field{year}{2017}
+    \endentry
+    \entry{auditoriaSDM}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.movilidadbogota.gov.co/web/sites/default/files/Paginas/09-11-2023/informe_final_ac_sdm_90.pdf}}
+      \field{note}{Secretaría Distrital de Movilidad}
+      \field{title}{Informe Final de Auditoría AC-SDM-090 de 2023}
+    \endentry
+    \entry{juit2024traffic}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bf5641bc7775ed1a2a91d5fe2608658e}{%
+           family={{JUIT Research Group}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{fullhash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{bibnamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authorbibnamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authornamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authorfullhash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Informe técnico, Universidad JUIT}
+      \field{note}{Disponible en línea: \url{http://www.ir.juit.ac.in:8080/jspui/bitstream/123456789/11502/1/Traffic\%20Violation\%20Detection\%20using\%20Blockchain.pdf}}
+      \field{title}{Traffic Violation Detection using Blockchain}
+      \field{year}{2024}
+    \endentry
+    \entry{katz2020introduction}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=85053e14c4a72772970b91a572b9b9c1}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e20af851262c583d34b7a667a7039cb4}{%
+           family={Lindell},
+           familyi={L\bibinitperiod},
+           given={Yehuda},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton, FL}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{fullhash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{bibnamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authorbibnamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authornamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authorfullhash}{071317b1567a0e9750e8234cb19c146d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Introduction to Modern Cryptography}
+      \field{year}{2020}
+    \endentry
+    \entry{king2012ppcoin}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7bcb1c75f895e90edae35d495464c4e9}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Sunny},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d89c01dd1a8471766dad25fd83caa96d}{%
+           family={Nadal},
+           familyi={N\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{fullhash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{bibnamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authorbibnamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authornamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authorfullhash}{e9034d9c8744e729e347b18d7d576e09}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{self-published paper, August}
+      \field{number}{1}
+      \field{title}{Ppcoin: Peer-to-peer crypto-currency with proof-of-stake}
+      \field{volume}{19}
+      \field{year}{2012}
+    \endentry
+    \entry{maymounkov2002kademlia}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=221556d7e71e3256de194f3347838327}{%
+           family={Maymounkov},
+           familyi={M\bibinitperiod},
+           given={Petar},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f74609e259322f9c7b6a2c775a7d8e29}{%
+           family={Mazieres},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{fullhash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{bibnamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authorbibnamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authornamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authorfullhash}{8301c8fd70416b42b1edda4450fbb598}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International workshop on peer-to-peer systems}
+      \field{title}{Kademlia: A peer-to-peer information system based on the xor metric}
+      \field{year}{2002}
+      \field{pages}{53\bibrangedash 65}
+      \range{pages}{13}
+    \endentry
+    \entry{menezes1996handbook}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=78e2730678cdcdff7cebb4f7d2732ff6}{%
+           family={Menezes},
+           familyi={M\bibinitperiod},
+           given={Alfred\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08db271ef76b77d199ec481e0c1dbebd}{%
+           family={Oorschot},
+           familyi={O\bibinitperiod},
+           given={Paul\bibnamedelima C.},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=e0be458da3b0a0595629254377376159}{%
+           family={Vanstone},
+           familyi={V\bibinitperiod},
+           given={Scott\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton, FL, USA}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{2c5719217d51c5f741fe25012b3f5c3b}
+      \strng{fullhash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{bibnamehash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{authorbibnamehash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{authornamehash}{2c5719217d51c5f741fe25012b3f5c3b}
+      \strng{authorfullhash}{c9251763f61f30015e4a71eefdf43f84}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0849385230}
+      \field{title}{Handbook of Applied Cryptography}
+      \field{year}{1996}
+      \verb{urlraw}
+      \verb http://cacr.uwaterloo.ca/hac/
+      \endverb
+      \verb{url}
+      \verb http://cacr.uwaterloo.ca/hac/
+      \endverb
+    \endentry
+    \entry{resolucion11245}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a2afa068263731f5051c84ce5978cae0}{%
+           family={{Ministerio de Transporte de Colombia}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{fullhash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{bibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorbibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authornamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorfullhash}{a2afa068263731f5051c84ce5978cae0}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{Consultado en junio de 2025}
+      \field{subtitle}{Por la cual se establecen los criterios técnicos de seguridad vial para la instalación y operación de los sistemas automáticos, semiautomáticos y otros medios tecnológicos para la detección de presuntas infracciones al tránsito y se dictan otras disposiciones}
+      \field{title}{Resolución 20203040011245 de 2020}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=96272
+      \endverb
+      \verb{url}
+      \verb https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=96272
+      \endverb
+    \endentry
+    \entry{mintransporte2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a2afa068263731f5051c84ce5978cae0}{%
+           family={{Ministerio de Transporte de Colombia}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{fullhash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{bibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorbibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authornamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorfullhash}{a2afa068263731f5051c84ce5978cae0}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://mintransporte.gov.co/publicaciones/5683/abc-de-las-fotomultas/}}
+      \field{month}{6}
+      \field{title}{ABC de las 'fotomultas'}
+      \field{year}{2023}
+    \endentry
+    \entry{nakamoto2008bitcoin}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1977190f018b398e43ede3de043de8ea}{%
+           family={Nakamoto},
+           familyi={N\bibinitperiod},
+           given={Satoshi},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{fullhash}{1977190f018b398e43ede3de043de8ea}
+      \strng{bibnamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authorbibnamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authornamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authorfullhash}{1977190f018b398e43ede3de043de8ea}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bitcoin: A peer-to-peer electronic cash system}
+      \field{year}{2008}
+    \endentry
+    \entry{narayanan2016bitcoin}{book}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=95dc795a2be14c50fb6a924acc135ff8}{%
+           family={Narayanan},
+           familyi={N\bibinitperiod},
+           given={Arvind},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e6eb78ec5f92eaff4e9d4b944aff4c9c}{%
+           family={Bonneau},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f7a7ca8a5b79afabc956229bd08f9d5}{%
+           family={Felten},
+           familyi={F\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=403caa7edb7a2770a6a678a46079869e}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=208ae2fb561a96b06fbdd96f6f18a33c}{%
+           family={Goldfeder},
+           familyi={G\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Princeton, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{1493becdacb9c2c2ea8e1f8e130cc6e9}
+      \strng{fullhash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{bibnamehash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{authorbibnamehash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{authornamehash}{1493becdacb9c2c2ea8e1f8e130cc6e9}
+      \strng{authorfullhash}{f512b13af32d34046a5ecb069096e94e}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0691171692}
+      \field{title}{Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://press.princeton.edu/books/hardcover/9780691171692/bitcoin-and-cryptocurrency-technologies
+      \endverb
+      \verb{url}
+      \verb https://press.princeton.edu/books/hardcover/9780691171692/bitcoin-and-cryptocurrency-technologies
+      \endverb
+    \endentry
+    \entry{ObservatorioComparendos2025}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f72d59f08a6c23939bdeb9902d12e330}{%
+           family={{Observatorio de Movilidad de Bogotá, Secretaría Distrital de Movilidad}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{fullhash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{bibnamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authorbibnamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authornamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authorfullhash}{f72d59f08a6c23939bdeb9902d12e330}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://observatorio.movilidadbogota.gov.co/movilidad-en-cifras/comparendos}}
+      \field{note}{Datos actualizados diariamente desde 2018. Recuperado el 26 de junio de 2025}
+      \field{title}{Comparendos}
+      \field{year}{2025}
+    \endentry
+    \entry{omar2024srtm}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=eaf9f22d64b0ad02493a410ffbc23307}{%
+           family={Omar},
+           familyi={O\bibinitperiod},
+           given={Mohamed\bibnamedelima Hasan},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3efad3d5be2dae56559829e2635c26c}{%
+           family={Taj{-}Eddin},
+           familyi={T\bibinitperiod},
+           given={Islam},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72c9d8a47772f28aeb473bde9a70719e}{%
+           family={Omar},
+           familyi={O\bibinitperiod},
+           given={Nagwa},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59a36f4f99c5d8e5fbb309c50a1fd4e7}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Hosny},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f04c9b0deeec28caf29508d6c4fd0e32}
+      \strng{fullhash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{bibnamehash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{authorbibnamehash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{authornamehash}{f04c9b0deeec28caf29508d6c4fd0e32}
+      \strng{authorfullhash}{3aec2e96d2619736d6f0b64c59cff053}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Propuesta de un sistema seguro de gestión de infracciones de tránsito usando IoT y blockchain, integrando deep learning para detección de matrículas y violaciones, con almacenamiento en Ethereum testnet para asegurar integridad y resistencia a manipulaciones}
+      \field{issn}{0258-2724}
+      \field{journaltitle}{Journal of Southwest Jiaotong University}
+      \field{number}{2}
+      \field{title}{SECURE ROAD TRAFFIC MANAGEMENT (SRTM) SYSTEM FOR TRAFFIC VIOLATION DETECTION AND RECORDING USING BLOCKCHAIN TECHNOLOGY}
+      \field{volume}{59}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.35741/issn.0258-2724.59.2.1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.35741/issn.0258-2724.59.2.1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.35741/issn.0258-2724.59.2.1
+      \endverb
+    \endentry
+    \entry{procuraduriaBucaramanga}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{title}{Presunta corrupción por comparendos: Procuraduría indaga funcionarios en Bucaramanga}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.procuraduria.gov.co/Pages/presunta-corrupcion-comparendos-procuraduria-indaga-funcionarios-transito-bucaramanga.aspx
+      \endverb
+      \verb{url}
+      \verb https://www.procuraduria.gov.co/Pages/presunta-corrupcion-comparendos-procuraduria-indaga-funcionarios-transito-bucaramanga.aspx
+      \endverb
+    \endentry
+    \entry{reddit_estonia_blockchain}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=676b4c6ab04acb0d1bb673c0472a15a1}{%
+           family={{Reddit user}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{fullhash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{bibnamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authorbibnamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authornamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authorfullhash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.reddit.com/...}}
+      \field{title}{Estonia uses blockchain in day to day life via KSI by Guardtime}
+      \field{year}{2021}
+    \endentry
+    \entry{rezabala2025blockchain}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=73ac4dd4524c83ac36b787b825eb8383}{%
+           family={Rezabala\bibnamedelima Loor},
+           familyi={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Johnny\bibnamedelima Fabricio},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d218ab27972a019d73b2c8d6cc7ad44}{%
+           family={Alcívar\bibnamedelima Cevallos},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Roberth\bibnamedelima Abel},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{fullhash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{bibnamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authorbibnamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authornamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authorfullhash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2737-6389}
+      \field{journaltitle}{Revista Científica de Informática ENCRIPTAR}
+      \field{number}{15}
+      \field{title}{Blockchain aplicado a servicios gubernamentales: revisión sistemática de la literatura}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{217\bibrangedash 244}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.56124/encriptar.v8i15.012
+      \endverb
+      \verb{urlraw}
+      \verb https://publicacionescd.uleam.edu.ec/index.php/encriptar/article/view/1288
+      \endverb
+      \verb{url}
+      \verb https://publicacionescd.uleam.edu.ec/index.php/encriptar/article/view/1288
+      \endverb
+    \endentry
+    \entry{rivest1978method}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71b77dd8ab33fe646ef25cded49e9881}{%
+           family={Shamir},
+           familyi={S\bibinitperiod},
+           given={Adi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e447382dbbbea2f29b7878ddd0e7318c}{%
+           family={Adleman},
+           familyi={A\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{40bc8b4fa99fd3229ead4b931058d71d}
+      \strng{fullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{bibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authorbibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authornamehash}{40bc8b4fa99fd3229ead4b931058d71d}
+      \strng{authorfullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{2}
+      \field{title}{A method for obtaining digital signatures and public-key cryptosystems}
+      \field{volume}{21}
+      \field{year}{1978}
+      \field{pages}{120\bibrangedash 126}
+      \range{pages}{7}
+    \endentry
+    \entry{schneier2007applied}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8df23ab843a37bf97ea40354db74d15}{%
+           family={Schneier},
+           familyi={S\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {john wiley \& sons}%
+      }
+      \strng{namehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{fullhash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{bibnamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authorbibnamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authornamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authorfullhash}{d8df23ab843a37bf97ea40354db74d15}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Applied cryptography: protocols, algorithms, and source code in C}
+      \field{year}{2007}
+    \endentry
+    \entry{sdm_camaras2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fec977126a945d5eecdf389d0d78457c}{%
+           family={{Secretaría Distrital de Movilidad}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{fullhash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{bibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorbibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authornamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorfullhash}{fec977126a945d5eecdf389d0d78457c}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Consultado en junio de 2025}
+      \field{title}{¿Cómo identificar si una cámara de detección electrónica se encuentra autorizada?}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.movilidadbogota.gov.co/web/preguntas_frecuentes/como_identificar_si_una_camara_de_deteccion_electronica_se_encuentra_autorizada
+      \endverb
+      \verb{url}
+      \verb https://www.movilidadbogota.gov.co/web/preguntas_frecuentes/como_identificar_si_una_camara_de_deteccion_electronica_se_encuentra_autorizada
+      \endverb
+    \endentry
+    \entry{secretaria_movilidad2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fec977126a945d5eecdf389d0d78457c}{%
+           family={{Secretaría Distrital de Movilidad}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{fullhash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{bibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorbibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authornamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorfullhash}{fec977126a945d5eecdf389d0d78457c}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.movilidadbogota.gov.co/web/Noticia/secretaria_de_movilidad_aclara_informacion_sobre_imposicion_de_comparendos_y_procesos}}
+      \field{month}{2}
+      \field{title}{Secretaría de Movilidad aclara información sobre imposición de comparendos y procesos contravencionales y sancionatorios}
+      \field{year}{2023}
+    \endentry
+    \entry{lantmateriet_cointelegraph2_2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4cb715643aeb7bcdf43f040bd2ea7abc}{%
+           family={Suberg},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{fullhash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{bibnamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authorbibnamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authornamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authorfullhash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cointelegraph}
+      \field{month}{4}
+      \field{title}{Blockchain land registry trial in Sweden concludes second phase}
+      \field{year}{2017}
+    \endentry
+    \entry{supertransporte2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b5273de99fc82975f3ae16903811ea70}{%
+           family={{Superintendencia de Transporte}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{fullhash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{bibnamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authorbibnamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authornamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authorfullhash}{b5273de99fc82975f3ae16903811ea70}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.supertransporte.gov.co/documentos/2021/Marzo/Comunicaciones_30/ABC-fotodeteccion.pdf}}
+      \field{title}{ABC para la gestión de procesos sancionatorios derivados de la detección de infracciones de tránsito mediante Sistemas automáticos}
+      \field{year}{2021}
+    \endentry
+    \entry{swan2015blockchain}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=89ec8ae9aa0976203a1a25b6f9536a64}{%
+           family={Swan},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{fullhash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{bibnamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authorbibnamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authornamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authorfullhash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Blockchain: Blueprint for a new economy}
+      \field{year}{2015}
+    \endentry
+    \entry{szabo1997smart}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7a8fa37f931a316fe587067d55ea90fb}{%
+           family={Szabo},
+           familyi={S\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{fullhash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{bibnamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authorbibnamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authornamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authorfullhash}{7a8fa37f931a316fe587067d55ea90fb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_idea.html}}
+      \field{note}{Accessed: 2025-05-07}
+      \field{title}{The Idea of Smart Contracts}
+      \field{year}{1997}
+    \endentry
+    \entry{ukgov2016dlt}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=53515a3a89f2da2949320804aefad60e}{%
+           family={{UK Government Office for Science}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {UK Government Office for Science}%
+      }
+      \list{location}{1}{%
+        {London, United Kingdom}%
+      }
+      \strng{namehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{fullhash}{53515a3a89f2da2949320804aefad60e}
+      \strng{bibnamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authorbibnamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authornamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authorfullhash}{53515a3a89f2da2949320804aefad60e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Chief Scientific Adviser Report}
+      \field{title}{Distributed Ledger Technology: Beyond Block Chain}
+      \field{type}{techreport}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.gov.uk/government/publications/distributed-ledger-technology-blackett-review
+      \endverb
+      \verb{url}
+      \verb https://www.gov.uk/government/publications/distributed-ledger-technology-blackett-review
+      \endverb
+    \endentry
+    \entry{vanSteen2017}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7ef720d0b57800861b86b5ce45425837}{%
+           family={Steen},
+           familyi={S\bibinitperiod},
+           given={Maarten},
+           giveni={M\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=2414455c999bc471f803cd14fdea939d}{%
+           family={Tanenbaum},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {distributed-systems.net}%
+      }
+      \strng{namehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{fullhash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{bibnamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authorbibnamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authornamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authorfullhash}{b0f07de745346f2f323b551444bfd1ca}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{note}{Traducción de Distributed Systems, 3rd edition}
+      \field{title}{Sistemas Distribuidos}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.distributed-systems.net/index.php/books/ds3/
+      \endverb
+      \verb{url}
+      \verb https://www.distributed-systems.net/index.php/books/ds3/
+      \endverb
+    \endentry
+    \entry{vogels2008eventually}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=288122751d34bf910fc7f5f89e9d3300}{%
+           family={Vogels},
+           familyi={V\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{fullhash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{bibnamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authorbibnamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authornamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authorfullhash}{288122751d34bf910fc7f5f89e9d3300}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Queue}
+      \field{number}{6}
+      \field{title}{Eventually Consistent: Building reliable distributed systems at a worldwide scale demands trade-offs? between consistency and availability.}
+      \field{volume}{6}
+      \field{year}{2008}
+      \field{pages}{14\bibrangedash 19}
+      \range{pages}{6}
+    \endentry
+    \entry{voigt2017gdpr}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8aef9e0f23b70b1c39c75ca94410f5f6}{%
+           family={Voigt},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c4139cca47516ecd5be5c644fab117e}{%
+           family={Bussche},
+           familyi={B\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod},
+           givenun=0,
+           prefix={von\bibnamedelima dem},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{fullhash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{bibnamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authorbibnamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authornamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authorfullhash}{3df72863eb256a7680b8c8e1114cde7d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-13398-3}
+      \field{note}{Practical guide to GDPR compliance}
+      \field{title}{The EU General Data Protection Regulation (GDPR): A Practical Guide}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/978-3-658-13399-0
+      \endverb
+    \endentry
+    \entry{vukolic2015quest}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=315162164fd9e68fe8c921224a6af08d}{%
+           family={Vukolić},
+           familyi={V\bibinitperiod},
+           given={Marko},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{fullhash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{bibnamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authorbibnamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authornamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authorfullhash}{315162164fd9e68fe8c921224a6af08d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Open Problems in Network Security (iNetSec)}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{The Quest for Scalable Blockchain Fabric: Proof-of-Work vs. BFT Replication}
+      \field{volume}{9591}
+      \field{year}{2015}
+      \field{pages}{112\bibrangedash 125}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/978-3-319-39028-4_9
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-39028-4_9
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-39028-4_9
+      \endverb
+    \endentry
+    \entry{wood2014ethereum}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9f252fbc7b8ff3c128b3e8dd806afa9b}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Gavin},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Ethereum Project}%
+      }
+      \strng{namehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{fullhash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{bibnamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authorbibnamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authornamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authorfullhash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Ethereum Yellow Paper}
+      \field{number}{EIP-150 revision 2e819d}
+      \field{title}{Ethereum: A Secure Decentralised Generalised Transaction Ledger}
+      \field{type}{techreport}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://ethereum.github.io/yellowpaper/paper.pdf
+      \endverb
+      \verb{url}
+      \verb https://ethereum.github.io/yellowpaper/paper.pdf
+      \endverb
+    \endentry
+    \entry{xu2019taxonomy}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=268fd6e7a95a4d5d0ad195cf0a184d4c}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xiwei},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=abc750fbcc7dcb3bfa0e713bc89d28ff}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Ingo},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0073d81416d89f2456421b06265dfe39}{%
+           family={Staples},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c10b260d67a13ae922e9d8c5819ce74d}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Liming},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3903018fc17327f32ca2eb9248c90100}{%
+           family={Bosch},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97196c0aaced1368c3042b9299a9b34b}{%
+           family={Bass},
+           familyi={B\bibinitperiod},
+           given={Len},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72f4c42f181b1843dc1b20d49f768775}{%
+           family={Pautasso},
+           familyi={P\bibinitperiod},
+           given={Cesare},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ae2c6115458d9e2350e17bd72824c10}{%
+           family={Rimba},
+           familyi={R\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5e3e8ce512d55bf8efb207bffd5c1008}
+      \strng{fullhash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{bibnamehash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{authorbibnamehash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{authornamehash}{5e3e8ce512d55bf8efb207bffd5c1008}
+      \strng{authorfullhash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{number}{1}
+      \field{title}{A Taxonomy of Blockchain-Based Systems for Architecture Design}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/TSE.2019.2946175
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/TSE.2019.2946175
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/TSE.2019.2946175
+      \endverb
+    \endentry
+    \entry{lantmateriet_cointelegraph2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a80ea65c35264862c62abf6af3e871f9}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{fullhash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{bibnamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authorbibnamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authornamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authorfullhash}{a80ea65c35264862c62abf6af3e871f9}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cointelegraph}
+      \field{month}{7}
+      \field{title}{Sweden officially started using Blockchain to register land and properties}
+      \field{year}{2017}
+    \endentry
+    \entry{yousfi2022its}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=2c25ed04f90938d00f8ca56898392e89}{%
+           family={Yousfi},
+           familyi={Y\bibinitperiod},
+           given={Nihed},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6d532855ab8707a3a47f513959d913fc}{%
+           family={Kmimech},
+           familyi={K\bibinitperiod},
+           given={Mourad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72f8381d52f322f4c93a795354c794a0}{%
+           family={Abbassi},
+           familyi={A\bibinitperiod},
+           given={Imed},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4705c2ca009a92baf4e6cd1db709840b}{%
+           family={Hamdi},
+           familyi={H\bibinitperiod},
+           given={Hedi},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66609feb7404e28a7f82894e6895e542}{%
+           family={Graiet},
+           familyi={G\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ee661281c9322ed7b4ee6cfc1d95b64f}
+      \strng{fullhash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{bibnamehash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{authorbibnamehash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{authornamehash}{ee661281c9322ed7b4ee6cfc1d95b64f}
+      \strng{authorfullhash}{608be60a5a8d857ae49c53055d7472c8}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Computational Collective Intelligence}
+      \field{title}{ITS Traffic Violation Regulation Based on Blockchain Smart Contracts}
+      \field{year}{2022}
+      \field{pages}{459\bibrangedash 471}
+      \range{pages}{13}
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global}
+    \entry{blogAletta}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ef40bc4de926f6f1e16713e4df42b413}{%
+           family={{Aletta Legal}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{fullhash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{bibnamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authorbibnamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authornamehash}{ef40bc4de926f6f1e16713e4df42b413}
+      \strng{authorfullhash}{ef40bc4de926f6f1e16713e4df42b413}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{El oscuro secreto de borrar comparendos ilegalmente}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://aletta.com.co/blog/el-oscuro-secreto-de-borrar-comparendos-ilegalmente-consecuencias-impactantes-de-evitar-el-proceso/
+      \endverb
+      \verb{url}
+      \verb https://aletta.com.co/blog/el-oscuro-secreto-de-borrar-comparendos-ilegalmente-consecuencias-impactantes-de-evitar-el-proceso/
+      \endverb
+    \endentry
+    \entry{ManiJosephP2023SmartAS}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d0427387133084a0d380caee7d1a7b05}{%
+           family={Mani\bibnamedelimb Joseph\bibnamedelima P},
+           familyi={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Et},
+           giveni={E\bibinitperiod},
+           givenun=0,
+           prefix={al.},
+           prefixi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{fullhash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{bibnamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authorbibnamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authornamehash}{d0427387133084a0d380caee7d1a7b05}
+      \strng{authorfullhash}{d0427387133084a0d380caee7d1a7b05}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Recent and Innovation Trends in Computing and Communication}
+      \field{title}{Smart and Secure Blockchain Structure to Track Vehicle Record-keeping in the Sultanate of Oman}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:267330775
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:267330775
+      \endverb
+    \endentry
+    \entry{AnandSingh_ProjectReport_Year}{bachelorsthesis}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=039b2e34b6f4302bb6a67240d32f9545}{%
+           family={Anand},
+           familyi={A\bibinitperiod},
+           given={Tejas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba2fed43af96fce80ff88614ebc13139}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Vaishnavi},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {jaypee university of information technology}%
+      }
+      \list{location}{1}{%
+        {Waknaghat, India}%
+      }
+      \strng{namehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{fullhash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{bibnamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authorbibnamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authornamehash}{911ce75043ae95073545b716d7a1ec6a}
+      \strng{authorfullhash}{911ce75043ae95073545b716d7a1ec6a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Submitted in partial fulfillment of the requirements for the Bachelor of Technology degree. Student IDs: Tejas Anand (201504), Vaishnavi Singh (201533).}
+      \field{title}{Traffic Violation Detection Using Blockchain}
+      \field{type}{Major Project Report, Bachelor of Technology in Computer Science \& Engineering / Information Technology}
+      \field{year}{2024}
+    \endentry
+    \entry{antonopoulos2023mastering}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a8107494556af1100a132bb87b1cbd5d}{%
+           family={Antonopoulos},
+           familyi={A\bibinitperiod},
+           given={Andreas\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edeeab41ed2ecc0caa3053edb9058c30}{%
+           family={Harding},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{fullhash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{bibnamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authorbibnamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authornamehash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \strng{authorfullhash}{e2b154c2947e90cd75fb2a1727fd4b0f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mastering Bitcoin: Programming the open blockchain}
+      \field{year}{2023}
+    \endentry
+    \entry{barbaro2011ticketfixing}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f8de3f92e3ee3aaeb792d2737aaa8f32}{%
+           family={Barbaro},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{fullhash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{bibnamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authorbibnamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authornamehash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \strng{authorfullhash}{f8de3f92e3ee3aaeb792d2737aaa8f32}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{The New York Times, April 17}
+      \field{title}{Big Inquiry Into Ticket-Fixing in New York}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.nytimes.com/2011/04/18/nyregion/ticket-fixing-by-police-investigated-in-new-york.html
+      \endverb
+      \verb{url}
+      \verb https://www.nytimes.com/2011/04/18/nyregion/ticket-fixing-by-police-investigated-in-new-york.html
+      \endverb
+    \endentry
+    \entry{benet2014ipfs}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ae8544cf985d862137480d00d30a318b}{%
+           family={Benet},
+           familyi={B\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{fullhash}{ae8544cf985d862137480d00d30a318b}
+      \strng{bibnamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authorbibnamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authornamehash}{ae8544cf985d862137480d00d30a318b}
+      \strng{authorfullhash}{ae8544cf985d862137480d00d30a318b}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1407.3561}
+      \field{title}{Ipfs-content addressed, versioned, p2p file system}
+      \field{year}{2014}
+    \endentry
+    \entry{buterin2014next}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850981945102d0f671b6762173c8988a}{%
+           family={Buterin},
+           familyi={B\bibinitperiod},
+           given={Vitalik},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{fullhash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{bibnamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authorbibnamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authornamehash}{fa265b80691610b5092f93ae4a80f9b7}
+      \strng{authorfullhash}{fa265b80691610b5092f93ae4a80f9b7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{white paper}
+      \field{number}{37}
+      \field{title}{A next-generation smart contract and decentralized application platform}
+      \field{volume}{3}
+      \field{year}{2014}
+      \field{pages}{2\bibrangedash 1}
+      \range{pages}{0}
+    \endentry
+    \entry{cachin2018architecture}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=61f4a4d4aad7fed4999cd33172ca4ff3}{%
+           family={Cachin},
+           familyi={C\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{fullhash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{bibnamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authorbibnamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authornamehash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \strng{authorfullhash}{61f4a4d4aad7fed4999cd33172ca4ff3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1801.10228}
+      \field{note}{Accessed: YYYY-MM-DD}
+      \field{title}{Architecture of the Hyperledger Blockchain Fabric}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1801.10228
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1801.10228
+      \endverb
+    \endentry
+    \entry{chen2024blockchain}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=e731959be96016339cf4f94a6f0ad2cf}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chin-Ling},
+           giveni={C\bibinithyphendelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fa87be529a3e5783e84770eefc9d360}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Cheng-Yang},
+           giveni={C\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b520b4937521206aeeb5e414cc3ff352}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Yong-Yuan},
+           giveni={Y\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06783dd3a22b84a8680822f3cebb1105}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Der-Chen},
+           giveni={D\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60bb937fa7e3032bad80062f725f15f3}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ling-Chun},
+           giveni={L\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b44808a0442c3d0593bc500c4f342e88}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hsing-Chung},
+           giveni={H\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2760097d1c681f0fb1b2732251bd5fba}
+      \strng{fullhash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{bibnamehash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{authorbibnamehash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \strng{authornamehash}{2760097d1c681f0fb1b2732251bd5fba}
+      \strng{authorfullhash}{ef96ce81ebca5b3ad224466eb28e10c2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sustainable Cities: Smart Technologies and Cities}
+      \field{title}{Blockchain-enabled transparent traffic enforcement for sustainable road safety in cities}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{pages}{1426036}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/frsc.2024.1426036
+      \endverb
+    \endentry
+    \entry{choquevilca2024blockchain}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=31226348c073c2e9416e27f75de47ecd}{%
+           family={Choquevilca\bibnamedelima Quispe},
+           familyi={C\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           given={Jhon\bibnamedelima Frank},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4124f22b3901b0d6ea4e76746cf774d9}{%
+           family={Morales\bibnamedelima Valencia},
+           familyi={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Cristhian\bibnamedelima Daniel},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Nacional Mayor de San Marcos}%
+      }
+      \strng{namehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{fullhash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{bibnamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authorbibnamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authornamehash}{c0beffc0e15f4a08f140f9016734c886}
+      \strng{authorfullhash}{c0beffc0e15f4a08f140f9016734c886}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista de Investigación en Tecnologías Emergentes}
+      \field{note}{ISSN: 2519-7122}
+      \field{number}{2}
+      \field{title}{Blockchain e IPFS en la gestión de infracciones de tránsito: una propuesta basada en contratos inteligentes}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{22\bibrangedash 39}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://revistas.unmsm.edu.pe/index.php/rite/article/view/27454
+      \endverb
+      \verb{url}
+      \verb https://revistas.unmsm.edu.pe/index.php/rite/article/view/27454
+      \endverb
+    \endentry
+    \entry{ley1843}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=999dc605a16e31da21406815f1fc332e}{%
+           family={{Congreso de Colombia}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{fullhash}{999dc605a16e31da21406815f1fc332e}
+      \strng{bibnamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authorbibnamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authornamehash}{999dc605a16e31da21406815f1fc332e}
+      \strng{authorfullhash}{999dc605a16e31da21406815f1fc332e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Diario Oficial No. 50.238}
+      \field{subtitle}{Por medio de la cual se regula la instalación y puesta en marcha de sistemas automáticos, semiautomáticos y otros medios tecnológicos para la detección de infracciones y se dictan otras disposiciones}
+      \field{title}{Ley 1843 de 2017}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb http://www.suin-juriscol.gov.co/viewDocument.asp?id=30030416
+      \endverb
+      \verb{url}
+      \verb http://www.suin-juriscol.gov.co/viewDocument.asp?id=30030416
+      \endverb
+    \endentry
+    \entry{coulouris2011}{book}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=ba7558d26c2b47c68bbd9c3ae78afe6f}{%
+           family={Coulouris},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8575e961dd1a27c0844cbf89179dd13}{%
+           family={Dollimore},
+           familyi={D\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f331f31acb4f7411c14a757aeb826e85}{%
+           family={Kindberg},
+           familyi={K\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb77f648555e75d8fe09aeb77c01d058}{%
+           family={Blair},
+           familyi={B\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{730f1fe685590bb8a27a9d7bf7801863}
+      \strng{fullhash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{bibnamehash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{authorbibnamehash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \strng{authornamehash}{730f1fe685590bb8a27a9d7bf7801863}
+      \strng{authorfullhash}{914dc5a7cfb5b71f39fea221cfbef156}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{isbn}{978-0132143011}
+      \field{note}{Fifth Edition}
+      \field{title}{Distributed Systems: Concepts and Design}
+      \field{year}{2011}
+    \endentry
+    \entry{diffie2022new}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=15409de33b2fa29965e62538bedee6b5}{%
+           family={Diffie},
+           familyi={D\bibinitperiod},
+           given={Whitfield},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a26474253dac6b587d39e5d781d4aa1f}{%
+           family={Hellman},
+           familyi={H\bibinitperiod},
+           given={Martin\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{fullhash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{bibnamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authorbibnamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authornamehash}{a73dc549f90eddde87be2be5b6c2778b}
+      \strng{authorfullhash}{a73dc549f90eddde87be2be5b6c2778b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Democratizing Cryptography: The Work of Whitfield Diffie and Martin Hellman}
+      \field{title}{New directions in cryptography}
+      \field{year}{2022}
+      \field{pages}{365\bibrangedash 390}
+      \range{pages}{26}
+    \endentry
+    \entry{dutta2023solution}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=39a27a94416c8690e2498a544fa0354f}{%
+           family={Dutta},
+           familyi={D\bibinitperiod},
+           given={Hiren},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f76af067288d1e5b92edf6923578a946}{%
+           family={Nagesh},
+           familyi={N\bibinitperiod},
+           given={Saurabh},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db6a864d4cc78b8fb5556cc7df84c360}{%
+           family={Talluri},
+           familyi={T\bibinitperiod},
+           given={Jawahar},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40f44446ba52bc786beb3f760a1c656a}{%
+           family={Bhaumik},
+           familyi={B\bibinitperiod},
+           given={Parama},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0e36d8a6dcaa2276038c935a4007a499}
+      \strng{fullhash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{bibnamehash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{authorbibnamehash}{ad853c69e0f090961e074b00b925bb61}
+      \strng{authornamehash}{0e36d8a6dcaa2276038c935a4007a499}
+      \strng{authorfullhash}{ad853c69e0f090961e074b00b925bb61}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Services Computing}
+      \field{number}{5}
+      \field{title}{A solution to blockchain smart contract based parametric transport and logistics insurance}
+      \field{volume}{16}
+      \field{year}{2023}
+      \field{pages}{3155\bibrangedash 3167}
+      \range{pages}{13}
+    \endentry
+    \entry{fielding2000architectural}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=87dbbd44b3977c28b71d826a931add3e}{%
+           family={Fielding},
+           familyi={F\bibinitperiod},
+           given={Roy\bibnamedelima Thomas},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of California, Irvine}%
+      }
+      \strng{namehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{fullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{bibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorbibnamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authornamehash}{87dbbd44b3977c28b71d826a931add3e}
+      \strng{authorfullhash}{87dbbd44b3977c28b71d826a931add3e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Architectural styles and the design of network-based software architectures}
+      \field{year}{2000}
+    \endentry
+    \entry{gilliland2008setting}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4dace3384dc05ba6668b20cb27b4a077}{%
+           family={Gilliland},
+           familyi={G\bibinitperiod},
+           given={Anne\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Online Edition, Version}%
+      }
+      \strng{namehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{fullhash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{bibnamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authorbibnamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authornamehash}{4dace3384dc05ba6668b20cb27b4a077}
+      \strng{authorfullhash}{4dace3384dc05ba6668b20cb27b4a077}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Introduction to metadata}
+      \field{number}{1-19}
+      \field{title}{Setting the stage}
+      \field{volume}{2}
+      \field{year}{2008}
+      \field{pages}{7}
+      \range{pages}{1}
+    \endentry
+    \entry{guardtime2016}{report}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c6f3682690653ebbc07c6ddc2995d239}{%
+           family={Guardtime},
+           familyi={G\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=38b30dc1bff72fe2c0a4ca799fad0a9f}{%
+           family={Authority},
+           familyi={A\bibinitperiod},
+           prefix={e-Health},
+           prefixi={e\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Guardtime}%
+      }
+      \strng{namehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{fullhash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{bibnamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authorbibnamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authornamehash}{0b9faac99773e06d797ea83a52d08fd2}
+      \strng{authorfullhash}{0b9faac99773e06d797ea83a52d08fd2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementation of medical blockchain technology in Estonia}
+      \field{type}{techreport}
+      \field{year}{2016}
+    \endentry
+    \entry{lantmateriet2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0c65498cfbca3562a2c29b246e2fd75a}{%
+           family={Haaramo},
+           familyi={H\bibinitperiod},
+           given={Eeva},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{fullhash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{bibnamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authorbibnamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authornamehash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \strng{authorfullhash}{0c65498cfbca3562a2c29b246e2fd75a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Weekly}
+      \field{month}{7}
+      \field{title}{Sweden's land registry authority trials blockchain for property transactions}
+      \field{year}{2017}
+    \endentry
+    \entry{auditoriaSDM}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.movilidadbogota.gov.co/web/sites/default/files/Paginas/09-11-2023/informe_final_ac_sdm_90.pdf}}
+      \field{note}{Secretaría Distrital de Movilidad}
+      \field{title}{Informe Final de Auditoría AC-SDM-090 de 2023}
+    \endentry
+    \entry{juit2024traffic}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bf5641bc7775ed1a2a91d5fe2608658e}{%
+           family={{JUIT Research Group}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{fullhash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{bibnamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authorbibnamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authornamehash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \strng{authorfullhash}{bf5641bc7775ed1a2a91d5fe2608658e}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Informe técnico, Universidad JUIT}
+      \field{note}{Disponible en línea: \url{http://www.ir.juit.ac.in:8080/jspui/bitstream/123456789/11502/1/Traffic\%20Violation\%20Detection\%20using\%20Blockchain.pdf}}
+      \field{title}{Traffic Violation Detection using Blockchain}
+      \field{year}{2024}
+    \endentry
+    \entry{katz2020introduction}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=85053e14c4a72772970b91a572b9b9c1}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e20af851262c583d34b7a667a7039cb4}{%
+           family={Lindell},
+           familyi={L\bibinitperiod},
+           given={Yehuda},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton, FL}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{fullhash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{bibnamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authorbibnamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authornamehash}{071317b1567a0e9750e8234cb19c146d}
+      \strng{authorfullhash}{071317b1567a0e9750e8234cb19c146d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Introduction to Modern Cryptography}
+      \field{year}{2020}
+    \endentry
+    \entry{king2012ppcoin}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7bcb1c75f895e90edae35d495464c4e9}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Sunny},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d89c01dd1a8471766dad25fd83caa96d}{%
+           family={Nadal},
+           familyi={N\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{fullhash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{bibnamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authorbibnamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authornamehash}{e9034d9c8744e729e347b18d7d576e09}
+      \strng{authorfullhash}{e9034d9c8744e729e347b18d7d576e09}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{self-published paper, August}
+      \field{number}{1}
+      \field{title}{Ppcoin: Peer-to-peer crypto-currency with proof-of-stake}
+      \field{volume}{19}
+      \field{year}{2012}
+    \endentry
+    \entry{maymounkov2002kademlia}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=221556d7e71e3256de194f3347838327}{%
+           family={Maymounkov},
+           familyi={M\bibinitperiod},
+           given={Petar},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f74609e259322f9c7b6a2c775a7d8e29}{%
+           family={Mazieres},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{fullhash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{bibnamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authorbibnamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authornamehash}{8301c8fd70416b42b1edda4450fbb598}
+      \strng{authorfullhash}{8301c8fd70416b42b1edda4450fbb598}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International workshop on peer-to-peer systems}
+      \field{title}{Kademlia: A peer-to-peer information system based on the xor metric}
+      \field{year}{2002}
+      \field{pages}{53\bibrangedash 65}
+      \range{pages}{13}
+    \endentry
+    \entry{menezes1996handbook}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=78e2730678cdcdff7cebb4f7d2732ff6}{%
+           family={Menezes},
+           familyi={M\bibinitperiod},
+           given={Alfred\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08db271ef76b77d199ec481e0c1dbebd}{%
+           family={Oorschot},
+           familyi={O\bibinitperiod},
+           given={Paul\bibnamedelima C.},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=e0be458da3b0a0595629254377376159}{%
+           family={Vanstone},
+           familyi={V\bibinitperiod},
+           given={Scott\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton, FL, USA}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{2c5719217d51c5f741fe25012b3f5c3b}
+      \strng{fullhash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{bibnamehash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{authorbibnamehash}{c9251763f61f30015e4a71eefdf43f84}
+      \strng{authornamehash}{2c5719217d51c5f741fe25012b3f5c3b}
+      \strng{authorfullhash}{c9251763f61f30015e4a71eefdf43f84}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0849385230}
+      \field{title}{Handbook of Applied Cryptography}
+      \field{year}{1996}
+      \verb{urlraw}
+      \verb http://cacr.uwaterloo.ca/hac/
+      \endverb
+      \verb{url}
+      \verb http://cacr.uwaterloo.ca/hac/
+      \endverb
+    \endentry
+    \entry{resolucion11245}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a2afa068263731f5051c84ce5978cae0}{%
+           family={{Ministerio de Transporte de Colombia}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{fullhash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{bibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorbibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authornamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorfullhash}{a2afa068263731f5051c84ce5978cae0}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{Consultado en junio de 2025}
+      \field{subtitle}{Por la cual se establecen los criterios técnicos de seguridad vial para la instalación y operación de los sistemas automáticos, semiautomáticos y otros medios tecnológicos para la detección de presuntas infracciones al tránsito y se dictan otras disposiciones}
+      \field{title}{Resolución 20203040011245 de 2020}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=96272
+      \endverb
+      \verb{url}
+      \verb https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=96272
+      \endverb
+    \endentry
+    \entry{mintransporte2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a2afa068263731f5051c84ce5978cae0}{%
+           family={{Ministerio de Transporte de Colombia}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{fullhash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{bibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorbibnamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authornamehash}{a2afa068263731f5051c84ce5978cae0}
+      \strng{authorfullhash}{a2afa068263731f5051c84ce5978cae0}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://mintransporte.gov.co/publicaciones/5683/abc-de-las-fotomultas/}}
+      \field{month}{6}
+      \field{title}{ABC de las 'fotomultas'}
+      \field{year}{2023}
+    \endentry
+    \entry{nakamoto2008bitcoin}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1977190f018b398e43ede3de043de8ea}{%
+           family={Nakamoto},
+           familyi={N\bibinitperiod},
+           given={Satoshi},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{fullhash}{1977190f018b398e43ede3de043de8ea}
+      \strng{bibnamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authorbibnamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authornamehash}{1977190f018b398e43ede3de043de8ea}
+      \strng{authorfullhash}{1977190f018b398e43ede3de043de8ea}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bitcoin: A peer-to-peer electronic cash system}
+      \field{year}{2008}
+    \endentry
+    \entry{narayanan2016bitcoin}{book}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=95dc795a2be14c50fb6a924acc135ff8}{%
+           family={Narayanan},
+           familyi={N\bibinitperiod},
+           given={Arvind},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e6eb78ec5f92eaff4e9d4b944aff4c9c}{%
+           family={Bonneau},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f7a7ca8a5b79afabc956229bd08f9d5}{%
+           family={Felten},
+           familyi={F\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=403caa7edb7a2770a6a678a46079869e}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=208ae2fb561a96b06fbdd96f6f18a33c}{%
+           family={Goldfeder},
+           familyi={G\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Princeton, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{1493becdacb9c2c2ea8e1f8e130cc6e9}
+      \strng{fullhash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{bibnamehash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{authorbibnamehash}{f512b13af32d34046a5ecb069096e94e}
+      \strng{authornamehash}{1493becdacb9c2c2ea8e1f8e130cc6e9}
+      \strng{authorfullhash}{f512b13af32d34046a5ecb069096e94e}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0691171692}
+      \field{title}{Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://press.princeton.edu/books/hardcover/9780691171692/bitcoin-and-cryptocurrency-technologies
+      \endverb
+      \verb{url}
+      \verb https://press.princeton.edu/books/hardcover/9780691171692/bitcoin-and-cryptocurrency-technologies
+      \endverb
+    \endentry
+    \entry{ObservatorioComparendos2025}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f72d59f08a6c23939bdeb9902d12e330}{%
+           family={{Observatorio de Movilidad de Bogotá, Secretaría Distrital de Movilidad}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{fullhash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{bibnamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authorbibnamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authornamehash}{f72d59f08a6c23939bdeb9902d12e330}
+      \strng{authorfullhash}{f72d59f08a6c23939bdeb9902d12e330}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://observatorio.movilidadbogota.gov.co/movilidad-en-cifras/comparendos}}
+      \field{note}{Datos actualizados diariamente desde 2018. Recuperado el 26 de junio de 2025}
+      \field{title}{Comparendos}
+      \field{year}{2025}
+    \endentry
+    \entry{omar2024srtm}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=eaf9f22d64b0ad02493a410ffbc23307}{%
+           family={Omar},
+           familyi={O\bibinitperiod},
+           given={Mohamed\bibnamedelima Hasan},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3efad3d5be2dae56559829e2635c26c}{%
+           family={Taj{-}Eddin},
+           familyi={T\bibinitperiod},
+           given={Islam},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72c9d8a47772f28aeb473bde9a70719e}{%
+           family={Omar},
+           familyi={O\bibinitperiod},
+           given={Nagwa},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59a36f4f99c5d8e5fbb309c50a1fd4e7}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Hosny},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f04c9b0deeec28caf29508d6c4fd0e32}
+      \strng{fullhash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{bibnamehash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{authorbibnamehash}{3aec2e96d2619736d6f0b64c59cff053}
+      \strng{authornamehash}{f04c9b0deeec28caf29508d6c4fd0e32}
+      \strng{authorfullhash}{3aec2e96d2619736d6f0b64c59cff053}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Propuesta de un sistema seguro de gestión de infracciones de tránsito usando IoT y blockchain, integrando deep learning para detección de matrículas y violaciones, con almacenamiento en Ethereum testnet para asegurar integridad y resistencia a manipulaciones}
+      \field{issn}{0258-2724}
+      \field{journaltitle}{Journal of Southwest Jiaotong University}
+      \field{number}{2}
+      \field{title}{SECURE ROAD TRAFFIC MANAGEMENT (SRTM) SYSTEM FOR TRAFFIC VIOLATION DETECTION AND RECORDING USING BLOCKCHAIN TECHNOLOGY}
+      \field{volume}{59}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.35741/issn.0258-2724.59.2.1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.35741/issn.0258-2724.59.2.1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.35741/issn.0258-2724.59.2.1
+      \endverb
+    \endentry
+    \entry{procuraduriaBucaramanga}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{title}{Presunta corrupción por comparendos: Procuraduría indaga funcionarios en Bucaramanga}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.procuraduria.gov.co/Pages/presunta-corrupcion-comparendos-procuraduria-indaga-funcionarios-transito-bucaramanga.aspx
+      \endverb
+      \verb{url}
+      \verb https://www.procuraduria.gov.co/Pages/presunta-corrupcion-comparendos-procuraduria-indaga-funcionarios-transito-bucaramanga.aspx
+      \endverb
+    \endentry
+    \entry{reddit_estonia_blockchain}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=676b4c6ab04acb0d1bb673c0472a15a1}{%
+           family={{Reddit user}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{fullhash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{bibnamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authorbibnamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authornamehash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \strng{authorfullhash}{676b4c6ab04acb0d1bb673c0472a15a1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.reddit.com/...}}
+      \field{title}{Estonia uses blockchain in day to day life via KSI by Guardtime}
+      \field{year}{2021}
+    \endentry
+    \entry{rezabala2025blockchain}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=73ac4dd4524c83ac36b787b825eb8383}{%
+           family={Rezabala\bibnamedelima Loor},
+           familyi={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Johnny\bibnamedelima Fabricio},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d218ab27972a019d73b2c8d6cc7ad44}{%
+           family={Alcívar\bibnamedelima Cevallos},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Roberth\bibnamedelima Abel},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{fullhash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{bibnamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authorbibnamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authornamehash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \strng{authorfullhash}{7de715b6c5bbf1ade95ce7010f9ab77a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2737-6389}
+      \field{journaltitle}{Revista Científica de Informática ENCRIPTAR}
+      \field{number}{15}
+      \field{title}{Blockchain aplicado a servicios gubernamentales: revisión sistemática de la literatura}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{217\bibrangedash 244}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.56124/encriptar.v8i15.012
+      \endverb
+      \verb{urlraw}
+      \verb https://publicacionescd.uleam.edu.ec/index.php/encriptar/article/view/1288
+      \endverb
+      \verb{url}
+      \verb https://publicacionescd.uleam.edu.ec/index.php/encriptar/article/view/1288
+      \endverb
+    \endentry
+    \entry{rivest1978method}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71b77dd8ab33fe646ef25cded49e9881}{%
+           family={Shamir},
+           familyi={S\bibinitperiod},
+           given={Adi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e447382dbbbea2f29b7878ddd0e7318c}{%
+           family={Adleman},
+           familyi={A\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{40bc8b4fa99fd3229ead4b931058d71d}
+      \strng{fullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{bibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authorbibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authornamehash}{40bc8b4fa99fd3229ead4b931058d71d}
+      \strng{authorfullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{2}
+      \field{title}{A method for obtaining digital signatures and public-key cryptosystems}
+      \field{volume}{21}
+      \field{year}{1978}
+      \field{pages}{120\bibrangedash 126}
+      \range{pages}{7}
+    \endentry
+    \entry{schneier2007applied}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d8df23ab843a37bf97ea40354db74d15}{%
+           family={Schneier},
+           familyi={S\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {john wiley \& sons}%
+      }
+      \strng{namehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{fullhash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{bibnamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authorbibnamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authornamehash}{d8df23ab843a37bf97ea40354db74d15}
+      \strng{authorfullhash}{d8df23ab843a37bf97ea40354db74d15}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Applied cryptography: protocols, algorithms, and source code in C}
+      \field{year}{2007}
+    \endentry
+    \entry{sdm_camaras2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fec977126a945d5eecdf389d0d78457c}{%
+           family={{Secretaría Distrital de Movilidad}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{fullhash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{bibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorbibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authornamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorfullhash}{fec977126a945d5eecdf389d0d78457c}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Consultado en junio de 2025}
+      \field{title}{¿Cómo identificar si una cámara de detección electrónica se encuentra autorizada?}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.movilidadbogota.gov.co/web/preguntas_frecuentes/como_identificar_si_una_camara_de_deteccion_electronica_se_encuentra_autorizada
+      \endverb
+      \verb{url}
+      \verb https://www.movilidadbogota.gov.co/web/preguntas_frecuentes/como_identificar_si_una_camara_de_deteccion_electronica_se_encuentra_autorizada
+      \endverb
+    \endentry
+    \entry{secretaria_movilidad2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fec977126a945d5eecdf389d0d78457c}{%
+           family={{Secretaría Distrital de Movilidad}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{fullhash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{bibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorbibnamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authornamehash}{fec977126a945d5eecdf389d0d78457c}
+      \strng{authorfullhash}{fec977126a945d5eecdf389d0d78457c}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.movilidadbogota.gov.co/web/Noticia/secretaria_de_movilidad_aclara_informacion_sobre_imposicion_de_comparendos_y_procesos}}
+      \field{month}{2}
+      \field{title}{Secretaría de Movilidad aclara información sobre imposición de comparendos y procesos contravencionales y sancionatorios}
+      \field{year}{2023}
+    \endentry
+    \entry{lantmateriet_cointelegraph2_2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4cb715643aeb7bcdf43f040bd2ea7abc}{%
+           family={Suberg},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{fullhash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{bibnamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authorbibnamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authornamehash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \strng{authorfullhash}{4cb715643aeb7bcdf43f040bd2ea7abc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cointelegraph}
+      \field{month}{4}
+      \field{title}{Blockchain land registry trial in Sweden concludes second phase}
+      \field{year}{2017}
+    \endentry
+    \entry{supertransporte2021}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b5273de99fc82975f3ae16903811ea70}{%
+           family={{Superintendencia de Transporte}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{fullhash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{bibnamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authorbibnamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authornamehash}{b5273de99fc82975f3ae16903811ea70}
+      \strng{authorfullhash}{b5273de99fc82975f3ae16903811ea70}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.supertransporte.gov.co/documentos/2021/Marzo/Comunicaciones_30/ABC-fotodeteccion.pdf}}
+      \field{title}{ABC para la gestión de procesos sancionatorios derivados de la detección de infracciones de tránsito mediante Sistemas automáticos}
+      \field{year}{2021}
+    \endentry
+    \entry{swan2015blockchain}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=89ec8ae9aa0976203a1a25b6f9536a64}{%
+           family={Swan},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {" O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{fullhash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{bibnamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authorbibnamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authornamehash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \strng{authorfullhash}{89ec8ae9aa0976203a1a25b6f9536a64}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Blockchain: Blueprint for a new economy}
+      \field{year}{2015}
+    \endentry
+    \entry{szabo1997smart}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7a8fa37f931a316fe587067d55ea90fb}{%
+           family={Szabo},
+           familyi={S\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{fullhash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{bibnamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authorbibnamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authornamehash}{7a8fa37f931a316fe587067d55ea90fb}
+      \strng{authorfullhash}{7a8fa37f931a316fe587067d55ea90fb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_idea.html}}
+      \field{note}{Accessed: 2025-05-07}
+      \field{title}{The Idea of Smart Contracts}
+      \field{year}{1997}
+    \endentry
+    \entry{ukgov2016dlt}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=53515a3a89f2da2949320804aefad60e}{%
+           family={{UK Government Office for Science}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {UK Government Office for Science}%
+      }
+      \list{location}{1}{%
+        {London, United Kingdom}%
+      }
+      \strng{namehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{fullhash}{53515a3a89f2da2949320804aefad60e}
+      \strng{bibnamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authorbibnamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authornamehash}{53515a3a89f2da2949320804aefad60e}
+      \strng{authorfullhash}{53515a3a89f2da2949320804aefad60e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Chief Scientific Adviser Report}
+      \field{title}{Distributed Ledger Technology: Beyond Block Chain}
+      \field{type}{techreport}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.gov.uk/government/publications/distributed-ledger-technology-blackett-review
+      \endverb
+      \verb{url}
+      \verb https://www.gov.uk/government/publications/distributed-ledger-technology-blackett-review
+      \endverb
+    \endentry
+    \entry{vanSteen2017}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7ef720d0b57800861b86b5ce45425837}{%
+           family={Steen},
+           familyi={S\bibinitperiod},
+           given={Maarten},
+           giveni={M\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=2414455c999bc471f803cd14fdea939d}{%
+           family={Tanenbaum},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {distributed-systems.net}%
+      }
+      \strng{namehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{fullhash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{bibnamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authorbibnamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authornamehash}{b0f07de745346f2f323b551444bfd1ca}
+      \strng{authorfullhash}{b0f07de745346f2f323b551444bfd1ca}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{note}{Traducción de Distributed Systems, 3rd edition}
+      \field{title}{Sistemas Distribuidos}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.distributed-systems.net/index.php/books/ds3/
+      \endverb
+      \verb{url}
+      \verb https://www.distributed-systems.net/index.php/books/ds3/
+      \endverb
+    \endentry
+    \entry{vogels2008eventually}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=288122751d34bf910fc7f5f89e9d3300}{%
+           family={Vogels},
+           familyi={V\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{fullhash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{bibnamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authorbibnamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authornamehash}{288122751d34bf910fc7f5f89e9d3300}
+      \strng{authorfullhash}{288122751d34bf910fc7f5f89e9d3300}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Queue}
+      \field{number}{6}
+      \field{title}{Eventually Consistent: Building reliable distributed systems at a worldwide scale demands trade-offs? between consistency and availability.}
+      \field{volume}{6}
+      \field{year}{2008}
+      \field{pages}{14\bibrangedash 19}
+      \range{pages}{6}
+    \endentry
+    \entry{voigt2017gdpr}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8aef9e0f23b70b1c39c75ca94410f5f6}{%
+           family={Voigt},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c4139cca47516ecd5be5c644fab117e}{%
+           family={Bussche},
+           familyi={B\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod},
+           givenun=0,
+           prefix={von\bibnamedelima dem},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Wiesbaden, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{fullhash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{bibnamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authorbibnamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authornamehash}{3df72863eb256a7680b8c8e1114cde7d}
+      \strng{authorfullhash}{3df72863eb256a7680b8c8e1114cde7d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-13398-3}
+      \field{note}{Practical guide to GDPR compliance}
+      \field{title}{The EU General Data Protection Regulation (GDPR): A Practical Guide}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1007/978-3-658-13399-0
+      \endverb
+    \endentry
+    \entry{vukolic2015quest}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=315162164fd9e68fe8c921224a6af08d}{%
+           family={Vukolić},
+           familyi={V\bibinitperiod},
+           given={Marko},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{fullhash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{bibnamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authorbibnamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authornamehash}{315162164fd9e68fe8c921224a6af08d}
+      \strng{authorfullhash}{315162164fd9e68fe8c921224a6af08d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Open Problems in Network Security (iNetSec)}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{The Quest for Scalable Blockchain Fabric: Proof-of-Work vs. BFT Replication}
+      \field{volume}{9591}
+      \field{year}{2015}
+      \field{pages}{112\bibrangedash 125}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/978-3-319-39028-4_9
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-39028-4_9
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-39028-4_9
+      \endverb
+    \endentry
+    \entry{wood2014ethereum}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9f252fbc7b8ff3c128b3e8dd806afa9b}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Gavin},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Ethereum Project}%
+      }
+      \strng{namehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{fullhash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{bibnamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authorbibnamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authornamehash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \strng{authorfullhash}{9f252fbc7b8ff3c128b3e8dd806afa9b}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Ethereum Yellow Paper}
+      \field{number}{EIP-150 revision 2e819d}
+      \field{title}{Ethereum: A Secure Decentralised Generalised Transaction Ledger}
+      \field{type}{techreport}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://ethereum.github.io/yellowpaper/paper.pdf
+      \endverb
+      \verb{url}
+      \verb https://ethereum.github.io/yellowpaper/paper.pdf
+      \endverb
+    \endentry
+    \entry{xu2019taxonomy}{article}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=268fd6e7a95a4d5d0ad195cf0a184d4c}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xiwei},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=abc750fbcc7dcb3bfa0e713bc89d28ff}{%
+           family={Weber},
+           familyi={W\bibinitperiod},
+           given={Ingo},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0073d81416d89f2456421b06265dfe39}{%
+           family={Staples},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c10b260d67a13ae922e9d8c5819ce74d}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Liming},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3903018fc17327f32ca2eb9248c90100}{%
+           family={Bosch},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97196c0aaced1368c3042b9299a9b34b}{%
+           family={Bass},
+           familyi={B\bibinitperiod},
+           given={Len},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72f4c42f181b1843dc1b20d49f768775}{%
+           family={Pautasso},
+           familyi={P\bibinitperiod},
+           given={Cesare},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ae2c6115458d9e2350e17bd72824c10}{%
+           family={Rimba},
+           familyi={R\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5e3e8ce512d55bf8efb207bffd5c1008}
+      \strng{fullhash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{bibnamehash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{authorbibnamehash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \strng{authornamehash}{5e3e8ce512d55bf8efb207bffd5c1008}
+      \strng{authorfullhash}{2dd2a62ac2d4e98c49b8cb2b8baa8c2c}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{number}{1}
+      \field{title}{A Taxonomy of Blockchain-Based Systems for Architecture Design}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/TSE.2019.2946175
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/TSE.2019.2946175
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/TSE.2019.2946175
+      \endverb
+    \endentry
+    \entry{lantmateriet_cointelegraph2017}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a80ea65c35264862c62abf6af3e871f9}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{fullhash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{bibnamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authorbibnamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authornamehash}{a80ea65c35264862c62abf6af3e871f9}
+      \strng{authorfullhash}{a80ea65c35264862c62abf6af3e871f9}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cointelegraph}
+      \field{month}{7}
+      \field{title}{Sweden officially started using Blockchain to register land and properties}
+      \field{year}{2017}
+    \endentry
+    \entry{yousfi2022its}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=2c25ed04f90938d00f8ca56898392e89}{%
+           family={Yousfi},
+           familyi={Y\bibinitperiod},
+           given={Nihed},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6d532855ab8707a3a47f513959d913fc}{%
+           family={Kmimech},
+           familyi={K\bibinitperiod},
+           given={Mourad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72f8381d52f322f4c93a795354c794a0}{%
+           family={Abbassi},
+           familyi={A\bibinitperiod},
+           given={Imed},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4705c2ca009a92baf4e6cd1db709840b}{%
+           family={Hamdi},
+           familyi={H\bibinitperiod},
+           given={Hedi},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66609feb7404e28a7f82894e6895e542}{%
+           family={Graiet},
+           familyi={G\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ee661281c9322ed7b4ee6cfc1d95b64f}
+      \strng{fullhash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{bibnamehash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{authorbibnamehash}{608be60a5a8d857ae49c53055d7472c8}
+      \strng{authornamehash}{ee661281c9322ed7b4ee6cfc1d95b64f}
+      \strng{authorfullhash}{608be60a5a8d857ae49c53055d7472c8}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Computational Collective Intelligence}
+      \field{title}{ITS Traffic Violation Regulation Based on Blockchain Smart Contracts}
+      \field{year}{2022}
+      \field{pages}{459\bibrangedash 471}
+      \range{pages}{13}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

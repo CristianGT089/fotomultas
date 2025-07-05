@@ -1,0 +1,80 @@
+\section{Alcance}
+
+\subsection{Enfoque y delimitación geográfica}
+Este trabajo se circunscribe al proceso de generación, gestión y verificación de \textbf{multas de tránsito automatizadas (fotomultas)} emitidas por la Secretaría Distrital de Movilidad de Bogotá.  Se excluyen deliberadamente:
+\begin{itemize}
+  \item Multas impuestas de forma presencial por agentes de tránsito.
+  \item Procesos sancionatorios de otras ciudades o entidades territoriales.
+  \item Funcionalidades de recaudo y pasarelas de pago (solo se registra el estado del pago, no se procesa el pago en sí).
+\end{itemize}
+
+\subsection{Componentes del prototipo}
+El prototipo aborda los siguientes módulos funcionales:
+
+\begin{enumerate}
+  \item \textbf{Registro inmutable de la infracción}  
+        Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la \emph{blockchain} (Hyperledger Fabric).
+  \item \textbf{Almacenamiento descentralizado de evidencias}  
+        Carga de la imagen o video de la fotomulta en IPFS y obtención de su \emph{hash}.
+  \item \textbf{Verificación pública}  
+        Servicio de consulta que permite contrastar el hash guardado en la cadena con el archivo almacenado en IPFS.
+  \item \textbf{Gestión del ciclo de vida de la multa}  
+        Estados: \textsf{Generada} $\rightarrow$ \textsf{Notificada} $\rightarrow$ \textsf{En apelación} $\rightarrow$ \textsf{Pagada} $\rightarrow$ \textsf{Cerrada}.  
+        Cada transición queda registrada mediante eventos de contrato inteligente.
+  \item \textbf{Interfaz mínima}  
+        Panel Web para: (i) agentes que registran la infracción y (ii) ciudadanos que consultan la autenticidad y el estado de su fotomulta.
+\end{enumerate}
+
+\subsection{Fuera del alcance}
+\begin{itemize}
+  \item Integración completa con sistemas legados del RUNT o SIMIT; se simula mediante datos de prueba.
+  \item Implementación de un modelo económico (tarifas de gas, costos operativos reales).
+  \item Implementación de algoritmos de detección automática de infracciones (visión por computador).  
+        Se parte de que la cámara ya detectó la infracción y generó la evidencia.
+\end{itemize}
+
+\subsection{Entregables}
+\begin{itemize}
+  \item Contrato inteligente en Solidity (o «chaincode» en Go, según la red seleccionada) con pruebas unitarias.
+  \item Script de despliegue de red Hyperledger Fabric e instalación de IPFS local.
+  \item Aplicación Web de demostración (\emph{frontend} ligero) conectada a los servicios anteriores.
+  \item Manual técnico que documenta la arquitectura y el flujo de datos.
+  \item Informe de resultados de las pruebas funcionales y de rendimiento básico.
+\end{itemize}
+
+\subsection{Criterios de éxito}
+\begin{enumerate}
+  \item Tiempo medio de publicación de una infracción $\leq$ 3 s en entorno de laboratorio.
+  \item Coincidencia 100 \% entre el hash almacenado en la cadena y la evidencia recuperada desde IPFS.
+  \item Trazabilidad completa del historial de estados para al menos 50 multas de prueba.
+  \item Ausencia de fallos críticos en pruebas de carga con 10 transacciones concurrentes.
+\end{enumerate}
+
+\section{Limitaciones del Prototipo}
+Es fundamental reconocer que, como prototipo desarrollado en un contexto académico, el presente estudio presenta ciertas limitaciones que definen el alcance de sus conclusiones y delinean claras oportunidades para futuras investigaciones. Las principales limitaciones son:
+
+\begin{enumerate}
+    \item \subsection{Entorno de Validación}
+    \begin{itemize}
+        \item \textbf{Validación en Entorno de Laboratorio:} El prototipo fue diseñado, desplegado y evaluado en un entorno de simulación controlado. No se sometió a pruebas en una infraestructura productiva real con la carga de transacciones y el volumen de usuarios que gestiona actualmente la Secretaría de Movilidad. Por lo tanto, su rendimiento, estabilidad y escalabilidad bajo condiciones de estrés real aún no han sido cuantificados.
+        \item \textbf{Uso de Datos Simulados:} Debido a estrictas normativas de privacidad y protección de datos personales que impiden el acceso a información real de ciudadanos y vehículos, todas las pruebas se realizaron con datos sintéticos. Esto implica que el prototipo no fue expuesto a la variabilidad, inconsistencias y casos atípicos que caracterizan a los datos del mundo real, lo cual podría influir en la lógica de negocio y en el manejo de errores en un entorno de producción.
+        \item \textbf{Suposiciones sobre la Calidad de la Evidencia:} El sistema asume que las evidencias fotográficas (imágenes de fotocomparendos) son capturadas con una calidad suficiente para su procesamiento. No se implementaron ni probaron mecanismos para manejar escenarios con imágenes de baja resolución, borrosas o con obstrucciones, que son comunes en la operación real.
+    \end{itemize}
+
+    \item \subsection{Integración y Comparación con Sistemas Existentes}
+    \begin{itemize}
+        \item \textbf{Integración Simulada con Sistemas Externos:} La interacción con plataformas gubernamentales clave como el RUNT y el SIMIT fue simulada a través de APIs de prueba (mocks). No se abordaron los desafíos técnicos y burocráticos de una integración real, como los protocolos de comunicación, los tiempos de respuesta, la disponibilidad de los servicios y los posibles cuellos de botella.
+        \item \textbf{Ausencia de Benchmarking Directo con el Sistema Actual (Fénix):} La falta de acceso al código fuente y a la arquitectura interna del sistema Fénix impidió realizar una comparación cuantitativa y directa en términos de rendimiento, costos operativos o eficiencia de procesos. El análisis comparativo se basó en las características conceptuales de ambas arquitecturas (centralizada vs. descentralizada).
+    \end{itemize}
+
+    \item \subsection{Aspectos Técnicos y de Escalabilidad}
+    \begin{itemize}
+        \item \textbf{Proyección de Costos como Escenario de Referencia:} Los costos de infraestructura y desarrollo estimados corresponden a un escenario de referencia. Los costos reales en un despliegue a gran escala podrían variar considerablemente dependiendo de factores como el número de nodos en la red, el volumen de almacenamiento en IPFS, el tráfico de red y la estrategia de persistencia de datos (pinning) que se adopte.
+        \item \textbf{Estrategia de Persistencia en IPFS:} Para que la evidencia digital permanezca disponible a largo plazo en IPFS, es necesario que al menos un nodo la mantenga ``pineada''. El prototipo no implementa una política de pinning distribuida y resiliente, lo cual sería un requisito crítico para garantizar la cadena de custodia digital en un sistema de producción.
+    \end{itemize}
+
+    \item \subsection{Seguridad y Robustez}
+    \begin{itemize}
+        \item \textbf{Ausencia de Pruebas de Seguridad Ofensivas:} El alcance del proyecto no incluyó la realización de auditorías de seguridad formales sobre los contratos inteligentes (chaincode) ni pruebas de penetración (pentesting) sobre la aplicación web. Aunque se siguieron buenas prácticas de desarrollo, no se ha verificado formalmente la resistencia del sistema ante ataques maliciosos especializados.
+    \end{itemize}
+\end{enumerate}
