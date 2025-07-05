@@ -1,4 +1,8 @@
-# Archivos auxiliares de LaTeX
+# ===========================================
+# ARCHIVOS AUXILIARES DE LATEX
+# ===========================================
+
+# Archivos auxiliares básicos
 *.aux
 *.log
 *.out
@@ -12,12 +16,18 @@
 *.blg
 *.run.xml
 *.bcf
+
+# Archivos de navegación y presentaciones
 *.nav
 *.snm
 *.vrb
+
+# Archivos de formato de salida
 *.xdv
 *.dvi
 *.ps
+
+# Archivos de glosarios y acrónimos
 *.acn
 *.acr
 *.alg
@@ -26,40 +36,153 @@
 *.gls
 *.ist
 *.xdy
-*.thm
-*.tdo
-*.upa
-*.upb
-*.spl
+
+# Archivos de índices
 *.idx
 *.ilg
 *.ind
 *.loa
 *.lsg
-*.nav
-*.snm
-*.vrb
 
-# Salidas de compilación
-*.pdf
+# Archivos de teoremas y definiciones
+*.thm
+*.tdo
+
+# Archivos de paquetes específicos
+*.upa
+*.upb
+*.spl
+
+# Archivos de BibTeX/Biber
+*.bcf
+*.run.xml
+*.blg
+*.bbl
+
+# ===========================================
+# ARCHIVOS DE SALIDA DE COMPILACIÓN
+# ===========================================
+
+# Documentos PDF (descomenta si no quieres versionar el PDF)
+# *.pdf
+
+# Archivos de sincronización
 *.synctex.gz
 *.pdfsync
 
-# Archivos temporales
+# ===========================================
+# ARCHIVOS TEMPORALES Y DE RESPALDO
+# ===========================================
+
+# Archivos temporales del sistema
 *~
 *.bak
 *.tmp
 *.swp
 *.swo
+*.orig
 
-# Carpetas de salida de editores
+# Archivos de macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===========================================
+# CARPETAS DE EDITORES Y IDEs
+# ===========================================
+
+# Visual Studio Code
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
 .idea/
-*.DS_Store
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN ESPECÍFICOS
+# ===========================================
 
 # Archivos de latexmk
 latexmkrc
+.latexmk
 
 # Archivos de pruebas de Cursor
 .cursor/
+
+# Archivos de respaldo de LaTeX
+*.aux-SAVE-ERROR
+*.bbl-SAVE-ERROR
+
+# ===========================================
+# ARCHIVOS DE LOGS Y DEBUGGING
+# ===========================================
+
+# Logs de compilación
+*.log
+*.blg
+
+# Archivos de debug
+debug.log
+*.debug
+
+# ===========================================
+# ARCHIVOS DE VERSIONADO
+# ===========================================
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# SVN
+.svn/
+*.svn-base
+
+# Mercurial
+.hg/
+.hgignore
+
+# ===========================================
+# ARCHIVOS DE ENTORNO Y CONFIGURACIÓN
+# ===========================================
+
+# Variables de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de configuración local
+config.local.*
+settings.local.*
 
