@@ -2,9 +2,11 @@
 La gestión actual de los fotocomparendos en Bogotá, centralizada en el sistema Fénix, presenta graves limitaciones de seguridad y transparencia que han erosionado la confianza pública en el proceso sancionatorio. Esta se manifiesta en un riesgo sistémico de corrupción, un fenómeno documentado tanto a nivel internacional, como el escándalo de «ticket-fixing» en Nueva York, como a nivel nacional, donde existen redes ilícitas que manipulan y eliminan comparendos en el sistema \parencite{barbaro2011ticketfixing, blogAletta, procuraduriaBucaramanga}.
 
 La raíz de este problema reside en la arquitectura centralizada de las bases de datos tradicionales, que permite a personal interno modificar registros sin dejar un rastro auditable, comprometiendo la integridad de todo el proceso. Esta debilidad se ve agravada por las deficiencias en ciberseguridad identificadas en el \textit{Informe Final de Auditoría AC-SDM-090 de 2023}, que señala controles de acceso insuficientes y falta de monitoreo en los sistemas de la Secretaría de Movilidad \parencite{auditoriaSDM}. Estas falencias no solo incrementan el riesgo de ataques, sino que debilitan la capacidad institucional para defender la legitimidad de las sanciones impuestas.
-Estas diferencias estructurales entre el modelo centralizado actual y la alternativa descentralizada se resumen en la Tabla~\ref{tab:comparacion_bd_blockchain}, evidenciando las ventajas de Blockchain en términos de seguridad, integridad y gobernanza de datos:
+Estas diferencias estructurales entre el modelo centralizado actual y la alternativa descentralizada se resumen en la Tabla~\ref{tab:comparacion_bd_blockchain}, evidenciando las ventajas de Blockchain en términos de seguridad, integridad y gobernanza de datos.
 
-\input{tables/comparacion_bd_blockchain}
+Con el fin de evidenciar las diferencias estructurales entre el modelo convencional y el prototipo propuesto, en la Tabla~\ref{tab:comparacion_modelos} se presenta una comparación detallada de sus características:
+
+\input{tables/comparacion_modelos}
 
 Frente a este escenario, la tecnología Blockchain, en conjunto con IPFS, ofrece un cambio de paradigma hacia un modelo más seguro y transparente. Como se observa en la comparación, a diferencia de un sistema centralizado donde la confianza recae en una única entidad falible, una solución Blockchain distribuye los datos en una red criptográficamente enlazada. Esto garantiza que cada registro, una vez validado, sea inmutable y verificable por todas las partes autorizadas, haciendo que cualquier intento de alteración sea computacionalmente inviable y fácilmente detectable. Se elimina así la dependencia de intermediarios y se crea una fuente única y confiable de verdad.
 

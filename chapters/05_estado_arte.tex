@@ -136,7 +136,9 @@ En 2018, la Personería de Bogotá identificó que el 15\% de las cámaras opera
 
 \subsection{Aplicaciones Específicas en Gestión de Tráfico e Infracciones} 
 
-Al revisar las Aplicaciones de Blockchain en la Gestión de Tráfico, Infracciones y Fotocomparendos, se observa que, si bien hay discusiones teóricas \parencite{yousfi2022its}, propuestas conceptuales \parencite{chen2024blockchain} y hasta una joven PYME española, las implementaciones prácticas que integren el flujo completo descrito en el prototipo (captura -> IPFS -> Blockchain -> Verificación -> Pago Automatizado con Billetera Digital) son escasas y se encuentran en fase de propuesta o son parciales \parencite{omar2024srtm,choquevilca2024blockchain}. 
+Al revisar las Aplicaciones de Blockchain en la Gestión de Tráfico, Infracciones y Fotocomparendos, como se observa en la Tabla~\ref{tab:estado_arte_comparativo}, se observa que, si bien hay discusiones teóricas \parencite{yousfi2022its}, propuestas conceptuales \parencite{chen2024blockchain} y hasta una joven PYME española, las implementaciones prácticas que integren el flujo completo descrito en el prototipo (captura -> IPFS -> Blockchain -> Verificación -> Pago Automatizado con Billetera Digital) son escasas y se encuentran en fase de propuesta o son parciales \parencite{omar2024srtm,choquevilca2024blockchain}.
+
+\input{tables/estado_arte_comparativo} 
 
 \paragraph{Análisis de Existencia}
 La literatura existente se centra más en componentes aislados \parencite{yousfi2022its}, uso de blockchain para registros vehiculares \parencite{mani2023smart}, seguros \parencite{dutta2023solution}, o gestión genérica de multas \parencite{omar2024srtm}, pero raramente combinando el almacenamiento de evidencia en IPFS con la automatización del pago vía billetera digital específicamente para fotocomparendos.
@@ -209,11 +211,11 @@ El mapa muestra la distribución global de la producción científica en el áre
 % --- Figuras Bibliometrix añadidas ---
 \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 5}\\[2em]
+        \textbf{Figura 2}\\[2em]
         \textit{Distribución global de la producción científica sobre blockchain y gestión de infracciones}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 5. Distribución global de la producción científica sobre blockchain y gestión de infracciones}
+    \addcontentsline{lof}{figure}{Figura 2. Distribución global de la producción científica sobre blockchain y gestión de infracciones}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
     \vspace{2em}
@@ -225,11 +227,11 @@ El mapa muestra la distribución global de la producción científica en el áre
 
 \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 6}\\[2em]
+        \textbf{Figura 3}\\[2em]
         \textit{Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 6. Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
+    \addcontentsline{lof}{figure}{Figura 3. Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
     \vspace{2em}
@@ -241,11 +243,11 @@ El mapa muestra la distribución global de la producción científica en el áre
 
 \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 7}\\[2em]
+        \textbf{Figura 4}\\[2em]
         \textit{Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 7. Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
+    \addcontentsline{lof}{figure}{Figura 4. Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
     \vspace{2em}
@@ -257,5 +259,28 @@ El mapa muestra la distribución global de la producción científica en el áre
 
 \paragraph{Nube de Palabras}
 La Figura~\ref{fig:nube_palabras} muestra los términos más frecuentes en la literatura analizada. Destacan conceptos como \textit{blockchain}, \textit{challenges}, \textit{management} y \textit{secure}, lo que refleja el énfasis de la comunidad académica en los retos de seguridad y gestión al aplicar tecnologías DLT en contextos gubernamentales.
+
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 5}\\[2em]
+        \textit{Mapa temático de los principales temas de investigación en el área}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 5. Mapa temático de los principales temas de investigación en el área}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/MapaTematico.jpeg}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia con datos bibliométricos.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:mapa_tematico}
+\end{figure}
+
+\paragraph{Mapa Temático}
+El mapa temático representa la distribución de los principales temas de investigación en el área, organizados según su grado de desarrollo (densidad) y relevancia (centralidad). En el cuadrante superior derecho se ubican los "temas motores", como "challenges, framework, model", que son altamente desarrollados y centrales en la literatura.
+
+En el cuadrante inferior derecho, los "temas básicos" como "management, secure, network" y "internet, architecture, things" son fundamentales pero menos desarrollados. El cuadrante superior izquierdo agrupa "temas nicho" como "system, encryption, iot" y "design, impact, traceability", que presentan alta especialización pero menor centralidad.
+
+Finalmente, en el cuadrante inferior izquierdo se encuentran los "temas emergentes o en declive", como "blockchain" y "optimization, technology", que muestran baja densidad y centralidad, indicando áreas de reciente aparición o menor desarrollo. Esta visualización permite identificar las tendencias, vacíos y oportunidades de investigación en el campo.
 
 % --- Fin de figuras Bibliometrix ---
