@@ -39,7 +39,7 @@ Los ledgers de Blockchain no están optimizados para almacenar grandes volúmene
 
 En este modelo, la identidad única de un archivo, su Content Identifier (CID), es un \textbf{hash criptográfico} derivado directamente de su contenido. Esto establece un vínculo intrínseco e inmutable: si el contenido del archivo cambia, incluso mínimamente, su CID también cambiará. IPFS es un protocolo y red P2P que utiliza este principio: divide los archivos en bloques, calcula sus hashes y permite su recuperación a través de su CID, utilizando mecanismos como DHT para localizar los nodos que los poseen \parencite{maymounkov2002kademlia, benet2014ipfs}.
 
-\subsection{Arquitectura de la Solución: Sinergia Blockchain-IPFS con el Patrón Off-Chain}
+\subsection{Arquitectura de la Solución: Sinergia Blockchain-IPFS con el Transacción Off-Chain}
 La integración de ambas tecnologías se materializa mediante el patrón de almacenamiento \textbf{off-chain}. El flujo de trabajo es el siguiente:
 \begin{enumerate}
     \item La imagen probatoria del comparendo se carga a un nodo IPFS, obteniendo su CID único.
