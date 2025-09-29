@@ -1,21 +1,28 @@
 \section{\large Justificación}
-La gestión actual de los fotocomparendos en Bogotá, centralizada en el sistema Fénix, presenta graves limitaciones de seguridad y transparencia que han erosionado la confianza pública en el proceso sancionatorio. Esta se manifiesta en un riesgo sistémico de corrupción, un fenómeno documentado tanto a nivel internacional, como el escándalo de «ticket-fixing» en Nueva York, como a nivel nacional, donde existen redes ilícitas que manipulan y eliminan comparendos en el sistema \parencite{barbaro2011ticketfixing, blogAletta, procuraduriaBucaramanga}.
+La gestión de registros públicos, como los fotocomparendos, en arquitecturas centralizadas presenta debilidades en materia de seguridad, transparencia y auditabilidad de la información. En el caso de Bogotá, el sistema FÉNIX sirve como un caso de estudio relevante. Auditorías oficiales de la Contraloría \parencite{Informe 170100-0054-24} \parencite{Informe de Cumplimiento No. 90, 2023} han documentado desafíos en su implementación y operación, incluyendo limitaciones en la integridad de los datos. Este escenario, sumado a la fricción operativa evidenciada por más de 153.000 PQRSD en un semestre, resalta la oportunidad de proponer nuevos modelos arquitectónicos que fortalezcan la confianza pública, que no dependa exclusivamente de la confianza en los procedimientos y administradores internos, pasando de un sistema donde la integridad se presume y audita a posteriori, a uno donde la integridad es una propiedad intrínseca, criptográficamente verificable desde su origen.
 
-La raíz de este problema reside en la arquitectura centralizada de las bases de datos tradicionales, que permite a personal interno modificar registros sin dejar un rastro auditable, comprometiendo la integridad de todo el proceso. Esta debilidad se ve agravada por las deficiencias en ciberseguridad identificadas en el \textit{Informe Final de Auditoría AC-SDM-090 de 2023}, que señala controles de acceso insuficientes y falta de monitoreo en los sistemas de la Secretaría de Movilidad \parencite{auditoriaSDM}. Estas falencias no solo incrementan el riesgo de ataques, sino que debilitan la capacidad institucional para defender la legitimidad de las sanciones impuestas.
-Estas diferencias estructurales entre el modelo centralizado actual y la alternativa descentralizada se resumen en la Tabla~\ref{tab:comparacion_bd_blockchain}, evidenciando las ventajas de Blockchain en términos de seguridad, integridad y gobernanza de datos.
-
-Con el fin de evidenciar las diferencias estructurales entre el modelo convencional y el prototipo propuesto, en la Tabla~\ref{tab:comparacion_modelos} se presenta una comparación detallada de sus características:
+La finalidad de este proyecto no es proponer una modificación al sistema existente, sino diseñar y evaluar un prototipo autocontenido que demuestre un modelo de confianza fundamentalmente diferente. La propuesta busca. Con el fin de evidenciar las diferencias estructurales entre el modelo convencional y el prototipo propuesto, en la Tabla \ref{tab:comparacion_modelos} se presenta una comparación detallada de sus características:
 
 \input{tables/comparacion_modelos}
 
-Frente a este escenario, la tecnología Blockchain, en conjunto con IPFS, ofrece un cambio de paradigma hacia un modelo más seguro y transparente. Como se observa en la comparación, a diferencia de un sistema centralizado donde la confianza recae en una única entidad falible, una solución Blockchain distribuye los datos en una red criptográficamente enlazada. Esto garantiza que cada registro, una vez validado, sea inmutable y verificable por todas las partes autorizadas, haciendo que cualquier intento de alteración sea computacionalmente inviable y fácilmente detectable. Se elimina así la dependencia de intermediarios y se crea una fuente única y confiable de verdad.
-
-En síntesis, la adopción de este prototipo se justifica por su capacidad para:
+\subsection{Pertinencia social, tecnológica y legal} 
+La pertinencia de este proyecto se enmarca en tres dimensiones:
 \begin{itemize}
-\item \textbf{Mitigar la corrupción}, al garantizar la integridad de los datos y eliminar la posibilidad de manipulación unilateral.
-\item \textbf{Fortalecer la seguridad de la información}, mediante una arquitectura distribuida y tolerante a fallos.
-\item \textbf{Aumentar la confianza ciudadana}, al ofrecer mecanismos transparentes y auditables para la validación de infracciones.
-\item \textbf{Optimizar los procesos administrativos}, automatizando registros, auditorías y la verificación de evidencias.
+\item \textbf{Social y ciudadana:} Ofrece un modelo alternativo que responde a la necesidad de transparencia, permitiendo la verificación independiente y empoderando al ciudadano con herramientas de auditoría directa.
+\item \textbf{Tecnológica:}Demuestra cómo la integración de Blockchain (para registros inmutables) e IPFS (para evidencias con contenido direccionable) puede abordar los desafíos de seguridad y trazabilidad documentados en sistemas centralizados.
+\item \textbf{Legal e institucional:} El prototipo se alinea con los principios de eficiencia y transparencia exigidos por los organismos de control, sirviendo como un caso de estudio sobre cómo la tecnología puede fortalecer la rendición de cuentas.
 \end{itemize}
 
-Esta propuesta no solo responde a desafíos técnicos y éticos urgentes en Bogotá, sino que también se alinea con las tendencias globales en gobernanza digital (\textit{GovTech}), sentando un precedente innovador para la gestión de sanciones públicas con mayor fiabilidad y transparencia.
+\subsection{Originalidad e innovación}
+La innovación de esta monografía radica en la concepción del prototipo como un laboratorio para un nuevo modelo de confianza. Mientras los sistemas tradicionales se centran en controles administrativos, esta propuesta explora un modelo distribuido y resistente a la manipulación por diseño. La DApp funciona como una prueba de concepto que integra inmutabilidad, gobernanza automatizada y almacenamiento descentralizado para demostrar una solución a una clase de problemas que las bases de datos centralizadas, por su naturaleza, no pueden resolver de manera nativa.
+
+\subsection{Impacto esperado}
+El impacto del proyecto se manifiesta en varias dimensiones: 
+\begin{itemize}
+\item \textbf{Confianza por Diseño:} Muestra cómo la verificación independiente puede fortalecer la legitimidad de los procesos públicos.
+\item \textbf{Gobernanza Automatizada:}Ilustra cómo los contratos inteligentes pueden ejecutar reglas de negocio de forma predecible, reduciendo la dependencia de la supervisión humana.
+\item \textbf{Escalabilidad en GovTech:} Constituye un caso de uso transferible a otros procesos que demandan alta integridad, sirviendo como un precedente para futuras innovaciones en la administración pública.
+\end{itemize}
+
+\subsection{Relación con los objetivos del proyecto} 
+Este prototipo responde a una problemática documentada en Bogotá y se inserta en la tendencia global de GovTech. Por ello, la adopción de blockchain en esta propuesta no es una preferencia, sino una respuesta técnica deliberada a los desafíos de integridad y confianza inherentes a los modelos centralizados, proponiendo una arquitectura donde la veracidad es una propiedad intrínseca y verificable del sistema. 
