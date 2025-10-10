@@ -155,4 +155,247 @@ Próximo paso: solicitar al usuario detalles para las figuras marcadas ✘ o red
 - [ ] **T4a**: Agregar `\usepackage{caption}` y configurar `\captionsetup[figure]{labelformat=default,labelsep=period,name=Figura}` en `main.tex`.
 - [ ] ~~**T4b**: Eliminar numeración manual (bloques `\textbf{Figura X}`) de todos los archivos de capítulos.~~ (Rechazado: el profesor requiere mantener títulos y numeración estática encima de la figura).
 - [x] **T4c**: Párrafos descriptivos añadidos para las figuras de interfaz y las gráficas de costos.
-- [ ] **T4d**: Compilar y verificar numeración dinámica y funcionamiento de referencias.  
+- [ ] **T4d**: Compilar y verificar numeración dinámica y funcionamiento de referencias.
+
+## ANÁLISIS ARQUITECTÓNICO DEL BACKEND - PLANNER (Enero 2025)
+
+### Contexto del Análisis
+El usuario solicita un análisis completo del código backend del proyecto de fotomultas para identificar inconsistencias arquitectónicas, problemas y mejoras necesarias. El objetivo es crear un documento MD para pasar al equipo de desarrollo con recomendaciones específicas.
+
+### Arquitectura Actual Identificada
+
+#### **1. Stack Tecnológico**
+- **Backend**: Node.js + TypeScript + Express.js
+- **Blockchain**: Ethereum (Hardhat) + Ethers.js v6
+- **Almacenamiento**: IPFS (ipfs-http-client)
+- **Testing**: Vitest + Chai + Hardhat Testing
+- **Documentación**: Swagger/OpenAPI
+- **Build**: TypeScript Compiler + Hardhat
+
+#### **2. Patrón Arquitectónico**
+- **Patrón**: Controller-Service-Repository (CSR)
+- **Patrón Singleton**: Implementado en todos los servicios
+- **Separación de responsabilidades**: Bien definida entre capas
+
+#### **3. Estructura de Capas**
+
+```
+src/
+├── fine/
+│   ├── controllers/     # Controladores REST
+│   ├── services/        # Lógica de negocio
+│   ├── repositories/    # Acceso a datos (Blockchain, IPFS)
+│   ├── interfaces/     # Tipos TypeScript
+│   ├── routes/         # Definición de rutas
+│   └── utils/          # Utilidades
+├── config/             # Configuraciones
+├── middleware/         # Middleware Express
+└── validations/        # Validaciones Joi
+```
+
+### PROBLEMAS ARQUITECTÓNICOS IDENTIFICADOS
+
+#### **🔴 CRÍTICOS**
+
+1. **Inconsistencia en el Modelo de Blockchain**
+   - **Problema**: El contrato usa Ethereum público pero el documento habla de Hyperledger Fabric
+   - **Impacto**: Confusión conceptual grave entre blockchain pública vs privada
+   - **Evidencia**: 
+     - Contrato en Solidity para Ethereum
+     - Documento menciona Hyperledger Fabric como tecnología principal
+     - Configuración Hardhat para redes Ethereum
+
+2. **Arquitectura Híbrida No Documentada**
+   - **Problema**: Sistema mezcla blockchain pública con IPFS local
+   - **Impacto**: Inconsistencia en el modelo de descentralización
+   - **Evidencia**:
+     - IPFS local (nodo único)
+     - Blockchain Ethereum (red distribuida)
+     - APIs externas centralizadas (SIMIT)
+
+3. **Gestión de Estado Inconsistente**
+   - **Problema**: Estados de multas no siguen un flujo lógico
+   - **Impacto**: Confusión en el proceso de negocio
+   - **Evidencia**:
+     ```solidity
+     enum FineState { PENDING, PAID, APPEALED, RESOLVED_APPEAL, CANCELLED }
+     ```
+     - Falta estado "UNDER_REVIEW"
+     - No hay validación de transiciones de estado
+
+#### **🟡 IMPORTANTES**
+
+4. **Patrón Singleton Problemático**
+   - **Problema**: Todos los servicios usan Singleton sin justificación
+   - **Impacto**: Dificulta testing y escalabilidad
+   - **Evidencia**: `getInstance()` en todos los servicios
+
+5. **Manejo de Errores Inconsistente**
+   - **Problema**: Mezcla de try-catch y error handling
+   - **Impacto**: Dificulta debugging y mantenimiento
+   - **Evidencia**: Diferentes patrones en controllers vs services
+
+6. **Validaciones Duplicadas**
+   - **Problema**: Validaciones en múltiples capas
+   - **Impacto**: Código redundante y mantenimiento complejo
+   - **Evidencia**: Validaciones en routes, controllers y services
+
+#### **🟢 MENORES**
+
+7. **Configuración Hardcoded**
+   - **Problema**: URLs y configuraciones en código
+   - **Impacto**: Dificulta deployment en diferentes entornos
+
+8. **Falta de Logging Estructurado**
+   - **Problema**: Console.log disperso
+   - **Impacto**: Dificulta monitoreo en producción
+
+9. **Tests Incompletos**
+   - **Problema**: Cobertura de tests limitada
+   - **Impacto**: Riesgo de bugs en producción
+
+### INCONSISTENCIAS CON EL DOCUMENTO
+
+#### **1. Tecnología Blockchain**
+- **Documento**: Hyperledger Fabric (blockchain privada)
+- **Código**: Ethereum (blockchain pública)
+- **Impacto**: Arquitectura completamente diferente
+
+#### **2. Modelo de Confianza**
+- **Documento**: Red privada con nodos autorizados
+- **Código**: Red pública con operadores
+- **Impacto**: Modelo de seguridad diferente
+
+#### **3. Escalabilidad**
+- **Documento**: Enfoque en eficiencia y costos
+- **Código**: Gas fees de Ethereum (costos variables)
+
+### RECOMENDACIONES ARQUITECTÓNICAS
+
+#### **🎯 PRIORIDAD ALTA**
+
+1. **Decidir Tecnología Blockchain**
+   - **Opción A**: Migrar a Hyperledger Fabric (consistente con documento)
+   - **Opción B**: Actualizar documento para reflejar Ethereum
+   - **Recomendación**: Opción A para consistencia académica
+
+2. **Rediseñar Arquitectura de Servicios**
+   - Eliminar patrón Singleton innecesario
+   - Implementar inyección de dependencias
+   - Separar responsabilidades claramente
+
+3. **Estandarizar Manejo de Errores**
+   - Implementar error handling centralizado
+   - Usar códigos de error consistentes
+   - Logging estructurado
+
+#### **🎯 PRIORIDAD MEDIA**
+
+4. **Mejorar Validaciones**
+   - Centralizar validaciones en middleware
+   - Usar esquemas de validación consistentes
+   - Eliminar duplicación
+
+5. **Implementar Configuración Dinámica**
+   - Usar variables de entorno para todas las configuraciones
+   - Implementar configuración por ambiente
+   - Documentar variables requeridas
+
+#### **🎯 PRIORIDAD BAJA**
+
+6. **Mejorar Testing**
+   - Aumentar cobertura de tests
+   - Implementar tests de integración
+   - Tests de performance
+
+7. **Documentación Técnica**
+   - Documentar arquitectura actual
+   - Crear diagramas de flujo
+   - Documentar APIs
+
+### PRÓXIMOS PASOS RECOMENDADOS
+
+1. **Reunión de Alineación**: Decidir tecnología blockchain definitiva
+2. **Refactoring Arquitectónico**: Implementar cambios de prioridad alta
+3. **Testing Comprehensivo**: Validar funcionalidad después de cambios
+4. **Documentación Actualizada**: Sincronizar código con documento
+
+### PREGUNTAS PARA EL USUARIO
+
+1. ¿Cuál es la tecnología blockchain definitiva para el proyecto?
+2. ¿Se requiere mantener compatibilidad con el documento actual?
+3. ¿Cuál es el timeline para implementar los cambios?
+4. ¿Hay restricciones técnicas específicas del entorno de deployment?
+
+## RESPUESTAS DEL USUARIO Y DOCUMENTO CREADO
+
+### **Respuestas Recibidas:**
+1. **Tecnología Blockchain**: Arquitectura híbrida (Hyperledger Fabric + Ethereum)
+2. **Compatibilidad**: El documento debe mejorar y ajustar inconsistencias
+3. **Timeline**: Sin restricciones de tiempo
+4. **Restricciones**: No hay restricciones específicas
+
+### **Documento Creado:**
+✅ **ARQUITECTURA_HIBRIDA_RECOMENDACIONES.md** - Documento completo con:
+- Arquitectura híbrida propuesta
+- Modificaciones al documento académico
+- Plan de migración detallado
+- Mejoras específicas del código
+- Testing comprehensivo
+- Monitoreo y logging
+- Seguridad y auditoría
+- Escalabilidad y performance
+
+### **Próximos Pasos Identificados:**
+
+#### **FASE 1: ACTUALIZACIÓN DEL DOCUMENTO (Prioridad Alta)**
+- [ ] **Capítulo 3 - Marco Teórico**: Añadir sección "Arquitecturas Híbridas Blockchain"
+- [ ] **Capítulo 4 - Marco Conceptual**: Redefinir arquitectura como híbrida
+- [ ] **Capítulo 7 - Diseño del Prototipo**: Actualizar diagramas de despliegue
+- [ ] **Nuevas Secciones**: "Arquitectura Híbrida Blockchain" e "Interoperabilidad Blockchain"
+
+#### **FASE 2: REFACTORING DEL CÓDIGO (Después del documento)**
+- [ ] Implementar HyperledgerService
+- [ ] Refactorizar EthereumService
+- [ ] Crear SyncService
+- [ ] Eliminar patrón Singleton
+- [ ] Centralizar manejo de errores
+- [ ] Implementar validaciones centralizadas
+
+#### **FASE 3: TESTING Y VALIDACIÓN**
+- [ ] Tests unitarios para nuevos servicios
+- [ ] Tests de integración entre blockchains
+- [ ] Tests de sincronización
+- [ ] Validación de performance
+
+### **Recomendaciones Arquitectónicas Implementadas:**
+
+#### **🎯 ARQUITECTURA HÍBRIDA PROPUESTA**
+- **Hyperledger Fabric**: Datos sensibles, operaciones internas, control de acceso
+- **Ethereum**: Metadatos públicos, verificación de integridad, consultas ciudadanas
+- **IPFS**: Almacenamiento distribuido de evidencias
+- **APIs REST**: Comunicación entre servicios
+
+#### **🔧 MEJORAS TÉCNICAS IDENTIFICADAS**
+1. **Eliminación del patrón Singleton** → ServiceFactory
+2. **Manejo de errores centralizado** → HybridErrorHandler
+3. **Validaciones centralizadas** → hybridFineValidations
+4. **Configuración dinámica** → hybridConfig
+5. **Logging estructurado** → HybridLogger
+6. **Métricas de performance** → HybridMetrics
+7. **Auditoría de transacciones** → AuditService
+8. **Control de acceso** → AccessControlMiddleware
+
+### **Estado Actual: ✅ DOCUMENTO FINALIZADO**
+- ✅ Análisis arquitectónico completado
+- ✅ Documento de recomendaciones creado
+- ✅ Diagramas actualizados por el usuario
+- ✅ Capítulo 3 - Marco Teórico actualizado con arquitectura híbrida
+- ✅ Capítulo 7 - Diseño del Prototipo actualizado con descripciones híbridas
+- ✅ Capítulo 11 - Implementación del Prototipo CREADO
+- ✅ Capítulo 12 - Discusión y Análisis CREADO
+- ✅ Capítulo 13 - Conclusiones y Trabajo Futuro CREADO (mejorado)
+- ✅ Capítulo 14 - Anexos CREADO (Código, Manuales, Glosario)
+- ✅ main.tex actualizado con todos los capítulos
+- ✅ Documento compilado exitosamente (154 páginas)
+- ✅ RESUMEN_FINALIZACION_DOCUMENTO.md creado con plan actualizado  

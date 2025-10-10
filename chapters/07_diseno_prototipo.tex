@@ -46,12 +46,51 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
     \refstepcounter{figure}\label{fig:diagrama_despliegue}
 \end{figure}
 
-En la Figura \ref{fig:diagrama_despliegue} se puede observar el diagrama de despliegue propuesto, donde cada nodo cuenta con la misma información, ya que esta se encontrará sincronizada. Asimismo, se conecta mediante servicios web a la base de datos de Apitude como herramienta de terceros para acceder a la información existente en el Registro Único Nacional de Tránsito (RUNT), de donde se obtendrán los datos de conductores, vehículos y el registro de infractores en Bogotá, así como el estado de las multas.
+En la Figura \ref{fig:diagrama_despliegue} se presenta la arquitectura híbrida propuesta, que combina una red blockchain privada (Hyperledger Fabric) con una blockchain pública (Ethereum), implementando el concepto de transparencia selectiva. La arquitectura se compone de los siguientes elementos:
 
-Hay que mencionar que existen dos soluciones para traer la información necesaria de estas entidades: la primera es una API llamada Apitude, de un tercero que provee la información del RUNT y del SIMIT; la segunda consiste en utilizar los datos que estas entidades públicas ya poseen en bases de datos tradicionales. 
+\paragraph{Capa Privada - Hyperledger Fabric:}
+\begin{itemize}
+    \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan chaincode (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
+    \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo PBFT (Practical Byzantine Fault Tolerance), garantizando la validación eficiente de transacciones.
+    \item \textbf{Certificate Authority (CA):} Gestiona las identidades digitales y permisos de usuarios autorizados (administradores, agentes de tránsito).
+    \item \textbf{IPFS Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
+\end{itemize}
+
+\paragraph{Capa Pública - Ethereum:}
+\begin{itemize}
+    \item \textbf{Nodos Ethereum:} Ejecutan Smart Contracts que almacenan metadatos públicos de infracciones sin información personal sensible.
+    \item \textbf{IPFS Público:} Almacena hashes de evidencias para verificación ciudadana, sin exponer imágenes completas.
+\end{itemize}
+
+\paragraph{Servicio de Sincronización:}
+Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de Hyperledger Fabric y publicándolos en Ethereum junto con hashes de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de hashes criptográficos.
+
+La arquitectura se conecta mediante servicios web a APIs externas como Apitude para acceder a información del Registro Único Nacional de Tránsito (RUNT) y del Sistema Integrado de Información sobre Multas y Sanciones por Infracciones de Tránsito (SIMIT), obteniendo datos de conductores, vehículos y el estado de multas. Esta integración permite validar la información de infracciones contra registros oficiales sin comprometer la privacidad de los datos almacenados en la capa privada. 
 
  \subsection{ Diagrama de clases }
-Hay que considerar que se manejarán dos capas de lógica: la primera enfocada en registrar los cambios en los estados de las multas a través de blockchain y la segunda capa encargada de la administración general de las multas (manipular los datos que no son visibles al público). 
+La arquitectura de clases del sistema implementa el patrón Controller-Service-Repository, adaptado para soportar la arquitectura híbrida blockchain. Se distinguen tres capas principales de lógica de negocio:
+
+\paragraph{Primera Capa - Servicios de Blockchain Híbrida:}
+Gestiona la interacción con ambas blockchains de forma independiente:
+\begin{itemize}
+    \item \textbf{HyperledgerService:} Coordina operaciones con la red privada de Hyperledger Fabric, incluyendo registro completo de infracciones, gestión de apelaciones y control de acceso.
+    \item \textbf{EthereumService:} Maneja la publicación de metadatos en la blockchain pública de Ethereum y proporciona interfaces de consulta ciudadana.
+    \item \textbf{SyncService:} Implementa la lógica de sincronización entre blockchains, extrayendo metadatos públicos de Hyperledger y publicándolos en Ethereum con hashes de integridad.
+\end{itemize}
+
+\paragraph{Segunda Capa - Almacenamiento Distribuido Dual:}
+Separa el almacenamiento de evidencias según su nivel de sensibilidad:
+\begin{itemize}
+    \item \textbf{IPFSPrivateService:} Gestiona el almacenamiento de evidencias completas en IPFS privado, accesible solo para usuarios autorizados.
+    \item \textbf{IPFSPublicService:} Maneja la publicación de hashes de evidencias en IPFS público para verificación ciudadana.
+\end{itemize}
+
+\paragraph{Tercera Capa - Orquestación y Administración:}
+Coordina las operaciones entre todas las capas:
+\begin{itemize}
+    \item \textbf{FineService:} Orquesta el flujo completo de registro de infracciones, coordinando el almacenamiento en IPFS privado, registro en Hyperledger Fabric y sincronización a Ethereum.
+    \item \textbf{FineController:} Expone endpoints REST para las operaciones del sistema, diferenciando entre operaciones internas (requieren autenticación) y consultas públicas.
+\end{itemize} 
  \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 8}\\[2em]
@@ -67,7 +106,7 @@ Hay que considerar que se manejarán dos capas de lógica: la primera enfocada e
     \end{flushleft}
     \refstepcounter{figure}\label{fig:diagrama_clases}
 \end{figure}
-En la Figura \ref{fig:diagrama_clases} se hace un esquema de la primera capa lógica que se encarga de la administración general de las multas y los datos que maneja
+En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases completo del sistema, mostrando la separación entre servicios de Hyperledger Fabric (privado), Ethereum (público) y el servicio de sincronización que coordina la interoperabilidad entre ambas blockchains. El diagrama ilustra cómo el patrón Repository abstrae el acceso a cada blockchain mediante repositorios especializados (HyperledgerRepository y EthereumRepository), mientras que el patrón Service encapsula la lógica de negocio específica de cada capa
  \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 9}\\[2em]
@@ -84,7 +123,7 @@ En la Figura \ref{fig:diagrama_clases} se hace un esquema de la primera capa ló
     \refstepcounter{figure}\label{fig:diagrama_apelacion}
 \end{figure}
 
-En la Figura \ref{fig:diagrama_apelacion} se hace mención en la segunda capa lógica la cual son los cambios generados en el registro de multas que registramos en la blockchain, que se traducen en los contratos realizados en solidity.
+En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para la gestión de apelaciones de multas en la arquitectura híbrida. Este proceso se ejecuta en la capa privada de Hyperledger Fabric, garantizando la confidencialidad de las evidencias presentadas por el ciudadano. Una vez resuelta la apelación por el agente autorizado, el cambio de estado se sincroniza a la blockchain pública de Ethereum, permitiendo que el ciudadano verifique la resolución sin acceder a información sensible del proceso interno.
 
 \subsection{ Diagrama de actividades }
  \begin{figure}[htbp]
