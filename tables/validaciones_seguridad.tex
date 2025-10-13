@@ -1,0 +1,48 @@
+\begin{table}[htbp]
+\centering
+\caption{Validaciones de seguridad implementadas y verificadas}
+\label{tab:validaciones_seguridad}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}lp{6cm}p{5cm}@{}}
+\toprule
+\textbf{Categoría} & \textbf{Validaciones} & \textbf{Resultado Pruebas} \\
+\midrule
+
+\textbf{Prevención XSS} &
+Prevención de inyección de scripts maliciosos, sanitización de etiquetas HTML, validación de contenido en campos de texto &
+4/4 pruebas exitosas \\
+\addlinespace
+
+\textbf{Prevención de Inyección SQL} &
+Validación de caracteres especiales en número de placa y ubicación, prevención de comandos SQL maliciosos &
+2/2 pruebas exitosas \\
+\addlinespace
+
+\textbf{Prevención de Traversal de Rutas} &
+Validación de rutas en identificadores de contenido (CIDs), prevención de acceso no autorizado al sistema de archivos &
+1/1 prueba exitosa \\
+\addlinespace
+
+\textbf{Validación de Longitud de Entrada} &
+Límites máximos en campos de texto (ubicación, número de placa), validación de campos obligatorios &
+4/4 pruebas exitosas \\
+\addlinespace
+
+\textbf{Validación Numérica} &
+Rechazo de valores negativos, extremadamente grandes y no numéricos en campo de costo &
+5/5 pruebas exitosas \\
+\addlinespace
+
+\textbf{Validación de Tamaño de Archivo} &
+Límite de 10MB por archivo, rechazo de archivos excesivamente grandes &
+2/2 pruebas exitosas \\
+\addlinespace
+
+\textbf{Validación de Tipo de Archivo} &
+Solo imágenes permitidas (JPG, PNG, WEBP), rechazo de ejecutables, HTML y scripts &
+8/8 pruebas exitosas \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

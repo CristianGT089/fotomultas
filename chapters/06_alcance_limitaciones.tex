@@ -12,8 +12,8 @@ Este trabajo se circunscribe al proceso de generación, gestión y verificación
 El prototipo aborda los siguientes módulos funcionales:
 
 \begin{enumerate}
-  \item \textbf{Registro inmutable de la infracción}  
-        Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la \emph{blockchain} (Hyperledger Fabric).
+  \item \textbf{Registro inmutable de la infracción}
+        Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la \emph{blockchain} (Ethereum local con Hardhat para desarrollo, con arquitectura preparada para Hyperledger Fabric en producción).
   \item \textbf{Almacenamiento descentralizado de evidencias}  
         Carga de la imagen o video de la fotomulta en IPFS y obtención de su \emph{hash}.
   \item \textbf{Verificación pública}  
@@ -35,8 +35,8 @@ El prototipo aborda los siguientes módulos funcionales:
 
 \subsection{Entregables}
 \begin{itemize}
-  \item Contrato inteligente en Solidity (o «chaincode» en Go, según la red seleccionada) con pruebas unitarias.
-  \item Script de despliegue de red Hyperledger Fabric e instalación de IPFS local.
+  \item Contrato inteligente en Solidity con 80 pruebas automatizadas (97.5\% de éxito).
+  \item Script de despliegue de red Ethereum local (Hardhat) e instalación de IPFS local.
   \item Aplicación Web de demostración (\emph{frontend} ligero) conectada a los servicios anteriores.
   \item Manual técnico que documenta la arquitectura y el flujo de datos.
   \item Informe de resultados de las pruebas funcionales y de rendimiento básico.
@@ -75,6 +75,32 @@ Es fundamental reconocer que, como prototipo desarrollado en un contexto académ
 
     \item \subsection{Seguridad y Robustez}
     \begin{itemize}
-        \item \textbf{Ausencia de Pruebas de Seguridad Ofensivas:} El alcance del proyecto no incluyó la realización de auditorías de seguridad formales sobre los contratos inteligentes (chaincode) ni pruebas de penetración (pentesting) sobre la aplicación web. Aunque se siguieron buenas prácticas de desarrollo, no se ha verificado formalmente la resistencia del sistema ante ataques maliciosos especializados.
+        \item \textbf{Limitaciones en Pruebas de Seguridad Avanzadas:} Si bien el prototipo implementa validaciones básicas de entrada (XSS, SQL injection, path traversal) y manejo de errores a nivel de aplicación, validadas mediante 26 pruebas automatizadas con 100\% de éxito, el alcance del proyecto \textbf{no contempló auditorías de seguridad exhaustivas} como las siguientes:
+
+        \begin{itemize}
+            \item \textbf{Análisis estático de contratos inteligentes}: No se emplearon herramientas especializadas como \textit{Slither}, \textit{Mythril} o \textit{MythX} para detectar vulnerabilidades en el código Solidity del contrato \texttt{FineRegistry}.
+
+            \item \textbf{Pruebas de penetración (pentesting)}: No se realizaron ataques simulados avanzados sobre la API REST más allá de las validaciones básicas implementadas.
+
+            \item \textbf{Auditoría de permisos y autenticación}: El prototipo actual implementa validaciones básicas de entrada pero no incluye un sistema robusto de autenticación y autorización (JWT, OAuth2, RBAC) necesario para producción.
+
+            \item \textbf{Validación exhaustiva de límites de archivos IPFS}: Aunque se validan formatos de imagen (JPG, PNG, WEBP) y límites de tamaño (10MB), no se implementaron validaciones avanzadas contra contenido malicioso embebido (steganografía, malware).
+
+            \item \textbf{Protección contra ataques de denegación de servicio (DoS)}: No se implementaron mecanismos de \textit{rate limiting}, \textit{throttling} o \textit{CAPTCHA} para prevenir abusos en los endpoints públicos.
+        \end{itemize}
+
+        \paragraph{Trabajo Futuro en Seguridad}
+        Se recomienda que, en fases posteriores de desarrollo hacia producción, se incorporen las siguientes medidas:
+
+        \begin{enumerate}
+            \item Integración de herramientas de análisis estático como \textit{Slither} para contratos Solidity.
+            \item Implementación de un sistema de autenticación y autorización basado en roles (RBAC) con tokens JWT.
+            \item Auditoría de seguridad externa realizada por especialistas en \textit{blockchain security}.
+            \item Pruebas de penetración automatizadas utilizando herramientas como \textit{OWASP ZAP} o \textit{Burp Suite}.
+            \item Implementación de validación de archivos mediante \textit{magic numbers} y análisis de contenido.
+            \item Configuración de límites de tasa (\textit{rate limiting}) en la API REST.
+        \end{enumerate}
+
+        Estas limitaciones \textbf{no comprometen la validez de la prueba de concepto}, dado que el objetivo principal es demostrar la viabilidad técnica de un modelo de confianza descentralizado basado en inmutabilidad y verificabilidad, no el despliegue de un sistema en producción listo para operar en un entorno real con amenazas activas.
     \end{itemize}
 \end{enumerate}

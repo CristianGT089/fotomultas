@@ -4,7 +4,7 @@ Con el fin de validar los principios fundamentales sobre los que se sustenta el 
 
 \subsection{Pruebas de Inmutabilidad en Blockchain}
 
-Se registraron comparendos en la red \textit{Hyperledger Fabric}, incluyendo el hash IPFS (CID) de la evidencia fotográfica y los metadatos del evento. Luego, se intentó simular una alteración directa sobre el estado del ledger.
+Se registraron comparendos en la red \textit{Ethereum local (Hardhat)}, incluyendo el hash IPFS (CID) de la evidencia fotográfica y los metadatos del evento. Luego, se intentó simular una alteración directa sobre el estado del ledger.
 
 \textbf{Resultado:} El sistema rechazó cualquier intento de modificación, manteniendo el hash original y evidenciando que la estructura de bloques y el mecanismo de consenso impiden alteraciones sin detección. Esto confirma que el sistema ofrece \textbf{inmutabilidad verificable} en los registros sancionatorios.
 
@@ -24,4 +24,49 @@ Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/int
 
 \input{tables/resultados_pruebas}
 
-Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. Tal como se aprecia en la Tabla~\ref{tab:resultados_funcionales}, todas las pruebas funcionales finalizaron de forma exitosa; de manera análoga, la Tabla~\ref{tab:resumen_inmutabilidad} corrobora que los mecanismos de integridad impiden alteraciones, y la Tabla~\ref{tab:rendimiento} demuestra que los tiempos de operación se mantienen dentro de márgenes aceptables para un uso en producción. 
+Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. Tal como se aprecia en la Tabla~\ref{tab:resultados_funcionales}, todas las pruebas funcionales finalizaron de forma exitosa; de manera análoga, la Tabla~\ref{tab:resumen_inmutabilidad} corrobora que los mecanismos de integridad impiden alteraciones, y la Tabla~\ref{tab:rendimiento} demuestra que los tiempos de operación se mantienen dentro de márgenes aceptables para un uso en producción.
+
+\subsection{Cumplimiento de Objetivos Específicos}
+
+Con base en los resultados experimentales obtenidos, se presenta en la Tabla~\ref{tab:cumplimiento_objetivos} la relación directa entre cada objetivo específico planteado, las técnicas de validación empleadas y los resultados concretos alcanzados.
+
+\input{tables/cumplimiento_objetivos}
+
+\subsection{Resultados Detallados de Pruebas Backend}
+
+La evaluación del backend se realizó mediante el framework \textit{Vitest v3.2.4}, ejecutando 80 pruebas distribuidas en 6 módulos principales. Los resultados, presentados en la Tabla~\ref{tab:resultados_backend}, demuestran una alta confiabilidad del sistema.
+
+\input{tables/resultados_backend}
+
+\paragraph{Análisis de Resultados}
+El sistema alcanzó un \textbf{97.5\% de éxito} en las pruebas ejecutadas, con las siguientes observaciones:
+
+\begin{itemize}
+    \item \textbf{Pruebas exitosas (78/80)}: Incluyen validaciones de CRUD, integridad blockchain, almacenamiento IPFS, manejo de errores y 26 nuevas pruebas de seguridad.
+    \item \textbf{Pruebas omitidas (2)}: Corresponden a endpoints no críticos (\texttt{/status-history}, \texttt{/recent-history}), documentados como trabajo futuro de baja prioridad.
+\end{itemize}
+
+\paragraph{Validaciones de Seguridad Implementadas}
+Como parte integral del sistema, se implementaron 26 pruebas de seguridad que validan la protección contra amenazas comunes en aplicaciones web. La Tabla~\ref{tab:validaciones_seguridad} detalla las validaciones implementadas y sus resultados.
+
+\input{tables/validaciones_seguridad}
+
+Las validaciones de seguridad alcanzaron un \textbf{100\% de éxito}, demostrando que el sistema está protegido contra:
+
+\begin{itemize}
+    \item \textbf{XSS (Cross-Site Scripting)}: Sanitización de entradas con script tags y HTML injection.
+    \item \textbf{SQL Injection}: Validación de caracteres especiales en campos críticos como plate number y location.
+    \item \textbf{Path Traversal}: Prevención de acceso no autorizado al sistema de archivos mediante validación estricta de CIDs IPFS.
+    \item \textbf{Archivos Maliciosos}: Rechazo de ejecutables, HTML y scripts, permitiendo únicamente formatos de imagen válidos (JPG, PNG, WEBP) con límite de 10MB.
+\end{itemize}
+
+\paragraph{Evidencias de Funcionalidad}
+Las transacciones blockchain generadas durante las pruebas incluyen:
+
+\begin{itemize}
+    \item \textbf{TX Hash Registro}: \texttt{0xbc03e11f8c9ad5cfe8c66d05fb2532b205fe5bc488b8e21645e4ed3c42c3c069}
+    \item \textbf{TX Hash Actualización}: \texttt{0x611b696e7117480294986045969af2ed77250767adede497f120dc9d315f3e48}
+    \item \textbf{CID IPFS Evidencia}: \texttt{QmadhsypxKm7b2P2w6b6hUZazfM9dHjvuMvsKcusp8eKMF}
+\end{itemize}
+
+La consistencia de estos identificadores a través de múltiples ejecuciones valida la reproducibilidad del sistema y la inmutabilidad de los registros blockchain. 
