@@ -706,12 +706,23 @@ curl http://localhost:5173
 
 \subsection{Anexo E: Glosario de Términos}
 
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\begin{longtable}{|p{3.5cm}|p{10.5cm}|}
+\caption{Glosario de Términos Técnicos} \\
 \hline
 \textbf{Término} & \textbf{Definición} \\ \hline
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continuación de la página anterior}} \\
+\hline
+\textbf{Término} & \textbf{Definición} \\ \hline
+\endhead
+
+\hline \multicolumn{2}{r}{{}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
 ABI (Application Binary Interface) & Interfaz que define cómo llamar funciones de un Smart Contract desde aplicaciones externas. Contiene nombres de funciones, parámetros y tipos de retorno. \\ \hline
 Blockchain & Tecnología de registro distribuido que almacena datos en bloques encadenados mediante hashes criptográficos, garantizando inmutabilidad. \\ \hline
 CA (Certificate Authority) & Entidad que emite y gestiona certificados digitales en una red Hyperledger Fabric, controlando identidades y permisos. \\ \hline
@@ -742,6 +753,4 @@ Testnet & Red de prueba de blockchain que imita el funcionamiento de la red prin
 Transaction Hash & Identificador único de una transacción en blockchain, generado mediante hash criptográfico de su contenido. \\ \hline
 TypeScript & Superset de JavaScript con tipado estático, usado para desarrollo backend del proyecto. \\ \hline
 Wallet & Software que almacena claves privadas y permite firmar transacciones en blockchain. \\ \hline
-\end{tabular}
-\caption{Glosario de Términos Técnicos}
-\end{table}
+\end{longtable}
