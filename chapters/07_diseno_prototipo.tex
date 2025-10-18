@@ -1,6 +1,6 @@
-\section{Diseño del Prototipo }
+\section{Diseño del prototipo}
 Se hace mención de que, aunque la documentación para elaborar el software está en español, es un estándar escribir código en inglés y, por tanto, para mantener la coherencia, los diagramas mostrados a continuación usarán este idioma para los nombres de las variables, funciones y clases.
-\subsection{Definición de Requisitos:  }
+\subsection{Definición de requisitos}
     
 \begin{enumerate}
     \item \textbf{Datos sobre infracciones de tráfico:} La captura de datos detallados sobre infracciones de tráfico, como la hora de la infracción, las coordenadas GPS, el tipo de infracción, los datos de identificación del vehículo e imágenes o vídeos, garantiza que cada incidente se documenta exhaustivamente. Este registro exhaustivo proporciona transparencia y responsabilidad, ya que los datos son inmutables y a prueba de manipulaciones una vez almacenados en la cadena de bloques. La inclusión de pruebas mediáticas refuerza aún más la credibilidad y verificabilidad de cada infracción, haciendo que los registros sean sólidos a efectos legales y administrativos. 
@@ -12,7 +12,7 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
             \item \textbf{Opiniones de los usuarios: } La recopilación de opiniones de los usuarios, incluidos el tipo de opinión, los comentarios y las valoraciones de los usuarios, ayuda a los administradores del sistema a comprender las experiencias y percepciones de los usuarios. Esta información es valiosa para identificar áreas de mejora en y mejorar la usabilidad y funcionalidad del sistema. Involucrar a los usuarios de esta manera puede conducir a un diseño del sistema más centrado en el usuario, mejorando la satisfacción y la eficacia general. 
                 \item \textbf{Datos de cumplimiento: } El registro de los datos de cumplimiento, incluido el estado de cumplimiento y los detalles normativos, garantiza que el sistema se adhiere a las leyes y normativas de tráfico locales. Este seguimiento es vital para demostrar el cumplimiento de la normativa y evitar problemas legales. El mantenimiento de registros de cumplimiento detallados también facilita las auditorías reglamentarias en, proporcionando pruebas transparentes de que el sistema funciona dentro de las normas legales, lo que es esencial para generar confianza y credibilidad entre las partes interesadas.
 \end{enumerate}
-\subsection{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito }
+\subsection{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
 \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 6}\\[2em]
@@ -29,7 +29,7 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
     \refstepcounter{figure}\label{fig:casos_uso}
 \end{figure}
 
- \subsection{ Diagrama de Despliegue }
+\subsection{Diagrama de despliegue}
 \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 7}\\[2em]
@@ -48,7 +48,7 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
 
 En la Figura \ref{fig:diagrama_despliegue} se presenta la arquitectura híbrida propuesta, que combina una red blockchain privada (Hyperledger Fabric) con una blockchain pública (Ethereum), implementando el concepto de transparencia selectiva. La arquitectura se compone de los siguientes elementos:
 
-\paragraph{Capa Privada - Hyperledger Fabric:}
+\paragraph{Capa privada - Hyperledger Fabric}
 \begin{itemize}
     \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan chaincode (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
     \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo PBFT (Practical Byzantine Fault Tolerance), garantizando la validación eficiente de transacciones.
@@ -56,21 +56,21 @@ En la Figura \ref{fig:diagrama_despliegue} se presenta la arquitectura híbrida 
     \item \textbf{IPFS Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
 \end{itemize}
 
-\paragraph{Capa Pública - Ethereum:}
+\paragraph{Capa pública - Ethereum}
 \begin{itemize}
     \item \textbf{Nodos Ethereum:} Ejecutan Smart Contracts que almacenan metadatos públicos de infracciones sin información personal sensible.
     \item \textbf{IPFS Público:} Almacena hashes de evidencias para verificación ciudadana, sin exponer imágenes completas.
 \end{itemize}
 
-\paragraph{Servicio de Sincronización:}
+\paragraph{Servicio de sincronización}
 Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de Hyperledger Fabric y publicándolos en Ethereum junto con hashes de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de hashes criptográficos.
 
 La arquitectura se conecta mediante servicios web a APIs externas como Apitude para acceder a información del Registro Único Nacional de Tránsito (RUNT) y del Sistema Integrado de Información sobre Multas y Sanciones por Infracciones de Tránsito (SIMIT), obteniendo datos de conductores, vehículos y el estado de multas. Esta integración permite validar la información de infracciones contra registros oficiales sin comprometer la privacidad de los datos almacenados en la capa privada. 
 
- \subsection{ Diagrama de clases }
+\subsection{Diagrama de clases}
 La arquitectura de clases del sistema implementa el patrón Controller-Service-Repository, adaptado para soportar la arquitectura híbrida blockchain. Se distinguen tres capas principales de lógica de negocio:
 
-\paragraph{Primera Capa - Servicios de Blockchain Híbrida:}
+\paragraph{Primera capa - servicios de blockchain híbrida}
 Gestiona la interacción con ambas blockchains de forma independiente:
 \begin{itemize}
     \item \textbf{HyperledgerService:} Coordina operaciones con la red privada de Hyperledger Fabric, incluyendo registro completo de infracciones, gestión de apelaciones y control de acceso.
@@ -78,14 +78,14 @@ Gestiona la interacción con ambas blockchains de forma independiente:
     \item \textbf{SyncService:} Implementa la lógica de sincronización entre blockchains, extrayendo metadatos públicos de Hyperledger y publicándolos en Ethereum con hashes de integridad.
 \end{itemize}
 
-\paragraph{Segunda Capa - Almacenamiento Distribuido Dual:}
+\paragraph{Segunda capa - almacenamiento distribuido dual}
 Separa el almacenamiento de evidencias según su nivel de sensibilidad:
 \begin{itemize}
     \item \textbf{IPFSPrivateService:} Gestiona el almacenamiento de evidencias completas en IPFS privado, accesible solo para usuarios autorizados.
     \item \textbf{IPFSPublicService:} Maneja la publicación de hashes de evidencias en IPFS público para verificación ciudadana.
 \end{itemize}
 
-\paragraph{Tercera Capa - Orquestación y Administración:}
+\paragraph{Tercera capa - orquestación y administración}
 Coordina las operaciones entre todas las capas:
 \begin{itemize}
     \item \textbf{FineService:} Orquesta el flujo completo de registro de infracciones, coordinando el almacenamiento en IPFS privado, registro en Hyperledger Fabric y sincronización a Ethereum.
@@ -125,7 +125,7 @@ En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases complet
 
 En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para la gestión de apelaciones de multas en la arquitectura híbrida. Este proceso se ejecuta en la capa privada de Hyperledger Fabric, garantizando la confidencialidad de las evidencias presentadas por el ciudadano. Una vez resuelta la apelación por el agente autorizado, el cambio de estado se sincroniza a la blockchain pública de Ethereum, permitiendo que el ciudadano verifique la resolución sin acceder a información sensible del proceso interno.
 
-\subsection{ Diagrama de actividades }
+\subsection{Diagrama de actividades}
  \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 10}\\[2em]
@@ -142,7 +142,7 @@ En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para l
     \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
 \end{figure}
 
-\subsection{Interfaz de Usuario}
+\subsection{Interfaz de usuario}
 \paragraph{Compartidas}
  \begin{figure}[htbp]
     \begin{flushleft}
@@ -178,7 +178,7 @@ En la Figura~\ref{fig:login} se aprecia la pantalla de inicio de sesión, punto 
     \refstepcounter{figure}\label{fig:recuperar_password}
 \end{figure}
 La Figura~\ref{fig:recuperar_password} muestra el formulario para recuperar la contraseña, reforzando la experiencia de autoservicio y seguridad de la plataforma.
-\paragraph{Vista Agente}
+\paragraph{Vista agente}
 \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 13}\\[2em]
@@ -227,7 +227,7 @@ La Figura~\ref{fig:consulta_estado_multa} ilustra la consulta rápida del estado
     \refstepcounter{figure}\label{fig:consulta_detalle_multa}
 \end{figure}
 En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de una multa específica, incluida la evidencia asociada.
- \paragraph{Vista Propietario de Vehículo}
+ \paragraph{Vista propietario de vehículo}
  \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 16}\\[2em]

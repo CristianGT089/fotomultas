@@ -50,30 +50,30 @@ El prototipo aborda los siguientes módulos funcionales:
   \item Ausencia de fallos críticos en pruebas de carga con 10 transacciones concurrentes.
 \end{enumerate}
 
-\section{Limitaciones del Prototipo}
+\section{Limitaciones del prototipo}
 Es fundamental reconocer que, como prototipo desarrollado en un contexto académico, el presente estudio presenta ciertas limitaciones que definen el alcance de sus conclusiones y delinean claras oportunidades para futuras investigaciones. Las principales limitaciones son:
 
 \begin{enumerate}
-    \item \subsection{Entorno de Validación}
+    \item \subsection{Entorno de validación}
     \begin{itemize}
         \item \textbf{Validación en Entorno de Laboratorio:} El prototipo fue diseñado, desplegado y evaluado en un entorno de simulación controlado. No se sometió a pruebas en una infraestructura productiva real con la carga de transacciones y el volumen de usuarios que gestiona actualmente la Secretaría de Movilidad. Por lo tanto, su rendimiento, estabilidad y escalabilidad bajo condiciones de estrés real aún no han sido cuantificados.
         \item \textbf{Uso de Datos Simulados:} Debido a estrictas normativas de privacidad y protección de datos personales que impiden el acceso a información real de ciudadanos y vehículos, todas las pruebas se realizaron con datos sintéticos. Esto implica que el prototipo no fue expuesto a la variabilidad, inconsistencias y casos atípicos que caracterizan a los datos del mundo real, lo cual podría influir en la lógica de negocio y en el manejo de errores en un entorno de producción.
         \item \textbf{Suposiciones sobre la Calidad de la Evidencia:} El sistema asume que las evidencias fotográficas (imágenes de fotocomparendos) son capturadas con una calidad suficiente para su procesamiento. No se implementaron ni probaron mecanismos para manejar escenarios con imágenes de baja resolución, borrosas o con obstrucciones, que son comunes en la operación real.
     \end{itemize}
 
-    \item \subsection{Integración y Comparación con Sistemas Existentes}
+    \item \subsection{Integración y comparación con sistemas existentes}
     \begin{itemize}
         \item \textbf{Integración Simulada con Sistemas Externos:} La interacción con plataformas gubernamentales clave como el RUNT y el SIMIT fue simulada a través de APIs de prueba (mocks). No se abordaron los desafíos técnicos y burocráticos de una integración real, como los protocolos de comunicación, los tiempos de respuesta, la disponibilidad de los servicios y los posibles cuellos de botella.
         \item \textbf{Ausencia de Benchmarking Directo con el Sistema Actual (Fénix):} La falta de acceso al código fuente y a la arquitectura interna del sistema Fénix impidió realizar una comparación cuantitativa y directa en términos de rendimiento, costos operativos o eficiencia de procesos. El análisis comparativo se basó en las características conceptuales de ambas arquitecturas (centralizada vs. descentralizada).
     \end{itemize}
 
-    \item \subsection{Aspectos Técnicos y de Escalabilidad}
+    \item \subsection{Aspectos técnicos y de escalabilidad}
     \begin{itemize}
         \item \textbf{Proyección de Costos como Escenario de Referencia:} Los costos de infraestructura y desarrollo estimados corresponden a un escenario de referencia. Los costos reales en un despliegue a gran escala podrían variar considerablemente dependiendo de factores como el número de nodos en la red, el volumen de almacenamiento en IPFS, el tráfico de red y la estrategia de persistencia de datos (pinning) que se adopte.
         \item \textbf{Estrategia de Persistencia en IPFS:} Para que la evidencia digital permanezca disponible a largo plazo en IPFS, es necesario que al menos un nodo la mantenga ``pineada''. El prototipo no implementa una política de pinning distribuida y resiliente, lo cual sería un requisito crítico para garantizar la cadena de custodia digital en un sistema de producción.
     \end{itemize}
 
-    \item \subsection{Seguridad y Robustez}
+    \item \subsection{Seguridad y robustez}
     \begin{itemize}
         \item \textbf{Limitaciones en Pruebas de Seguridad Avanzadas:} Si bien el prototipo implementa validaciones básicas de entrada (XSS, SQL injection, path traversal) y manejo de errores a nivel de aplicación, validadas mediante 26 pruebas automatizadas con 100\% de éxito, el alcance del proyecto \textbf{no contempló auditorías de seguridad exhaustivas} como las siguientes:
 

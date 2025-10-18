@@ -1,42 +1,42 @@
-\section{Conclusiones y Trabajo Futuro}
+\section{Conclusiones y trabajo futuro}
 
 Este capítulo presenta las conclusiones del trabajo, estructuradas según los objetivos planteados, seguidas de las contribuciones académicas y técnicas del proyecto. Finalmente, se propone un roadmap detallado para el trabajo futuro y recomendaciones para la implementación en producción.
 
-\subsection{Conclusiones Generales}
+\subsection{Conclusiones generales}
 
 La arquitectura híbrida blockchain implementada en este trabajo demuestra que es técnicamente viable combinar Hyperledger Fabric para privacidad y Ethereum para transparencia pública en un sistema gubernamental de gestión de fotocomparendos. El prototipo desarrollado valida que las tecnologías de registro distribuido pueden garantizar simultáneamente la inmutabilidad de registros, la protección de datos sensibles y la verificación pública ciudadana, abordando así las limitaciones críticas identificadas en el sistema actual de Bogotá.
 
 Los resultados de las pruebas funcionales y de integridad confirman que el sistema cumple con los principios fundamentales propuestos: inmutabilidad verificable mediante hash criptográficos en blockchain, integridad de evidencias garantizada por el direccionamiento por contenido de IPFS y trazabilidad completa del ciclo de vida de las multas. La arquitectura dual permite que datos sensibles permanezcan privados en Hyperledger Fabric mientras que metadatos públicos en Ethereum habilitan la verificación ciudadana sin intermediarios.
 
-\subsection{Conclusiones por Objetivo Específico}
+\subsection{Conclusiones por objetivo específico}
 
-\subsubsection{Objetivo 1: Blockchain para Inmutabilidad}
+\subsubsection{Objetivo 1: blockchain para inmutabilidad}
 
 \textbf{Objetivo:} Implementar tecnología blockchain para garantizar la inmutabilidad de los registros de fotocomparendos.
 
 \textbf{Conclusión:} La implementación dual de Hyperledger Fabric y Ethereum proporciona inmutabilidad garantizada criptográficamente en ambas capas. Las pruebas demostraron que el 100\% de los intentos de modificación directa del ledger fueron rechazados automáticamente por los mecanismos de consenso (PBFT en Fabric, Proof-of-Stake en Ethereum). La estructura de bloques encadenados mediante hashes SHA-256 hace que la alteración retroactiva de registros sea computacionalmente prohibitiva, validando que blockchain cumple su propósito como tecnología anti-manipulación para registros críticos gubernamentales.
 
-\subsubsection{Objetivo 2: Almacenamiento Descentralizado con IPFS}
+\subsubsection{Objetivo 2: almacenamiento descentralizado con IPFS}
 
 \textbf{Objetivo:} Integrar IPFS para almacenamiento verificable de evidencias fotográficas.
 
 \textbf{Conclusión:} La implementación de IPFS dual (privado para evidencias completas, público para hashes) demostró ser efectiva para garantizar integridad de evidencias. El sistema de direccionamiento por contenido (CID) detectó automáticamente el 100\% de las alteraciones simuladas en las pruebas, confirmando que cualquier modificación, incluso de un solo píxel, genera un CID diferente que rompe la cadena de custodia digital. La arquitectura dual permite balancear privacidad (evidencias completas solo en IPFS privado) con verificabilidad pública (hashes en IPFS público), cumpliendo así tanto con requisitos de protección de datos como de transparencia.
 
-\subsubsection{Objetivo 3: API REST para Integración}
+\subsubsection{Objetivo 3: API REST para integración}
 
 \textbf{Objetivo:} Desarrollar una API REST que permita la integración de blockchain con aplicaciones web.
 
 \textbf{Conclusión:} El backend implementado con Express.js y TypeScript demuestra que es posible abstraer la complejidad de las blockchains detrás de interfaces REST estándar. Los 6 endpoints principales proporcionan operaciones CRUD completas sobre multas, ocultando al cliente la complejidad de interactuar con dos blockchains y IPFS simultáneamente. Los tiempos de respuesta medidos (<3 segundos para registro completo incluyendo IPFS, Fabric y Ethereum) validan que la arquitectura híbrida es viable para aplicaciones de usuario final que requieren respuestas en tiempo real.
 
-\subsubsection{Objetivo 4: Interfaz de Usuario Intuitiva}
+\subsubsection{Objetivo 4: interfaz de usuario intuitiva}
 
 \textbf{Objetivo:} Implementar una interfaz web moderna para agentes y ciudadanos.
 
 \textbf{Conclusión:} El frontend desarrollado con React, Tailwind CSS y Zustand demuestra que las tecnologías blockchain pueden integrarse con interfaces de usuario contemporáneas sin comprometer la experiencia del usuario. La separación en tres módulos (Panel de Agente, Panel Ciudadano, Dashboard Administrativo) permite que cada tipo de actor interactúe con el sistema según sus necesidades sin exposición a complejidades técnicas. El uso de gráficos con Recharts y diseño responsive valida que sistemas blockchain gubernamentales pueden tener UX comparable a aplicaciones web modernas.
 
-\subsection{Contribuciones del Trabajo}
+\subsection{Contribuciones del trabajo}
 
-\subsubsection{Contribución Académica}
+\subsubsection{Contribución académica}
 
 Este trabajo contribuye al cuerpo de conocimiento en blockchain gubernamental mediante:
 
@@ -48,7 +48,7 @@ Este trabajo contribuye al cuerpo de conocimiento en blockchain gubernamental me
     \item \textbf{Análisis comparativo de modelos de confianza:} Se documentó empíricamente la transición de confianza administrativa (sistema FÉNIX centralizado) a confianza criptográfica (blockchain híbrida), cuantificando ventajas en términos de inmutabilidad, auditabilidad y transparencia.
 \end{enumerate}
 
-\subsubsection{Contribución Técnica}
+\subsubsection{Contribución técnica}
 
 Las contribuciones técnicas implementadas incluyen:
 
@@ -62,7 +62,7 @@ Las contribuciones técnicas implementadas incluyen:
     \item \textbf{Documentación técnica completa:} Swagger API, README con instrucciones de despliegue, diagramas UML actualizados y tests automatizados con cobertura >90\%.
 \end{enumerate}
 
-\subsubsection{Contribución Social}
+\subsubsection{Contribución social}
 
 El impacto social proyectado incluye:
 
@@ -76,7 +76,7 @@ El impacto social proyectado incluye:
 
 \subsection{Recomendaciones}
 
-\subsubsection{Para Implementación en Producción}
+\subsubsection{Para implementación en producción}
 
 Basado en las lecciones aprendidas, se recomienda:
 
@@ -92,7 +92,7 @@ Basado en las lecciones aprendidas, se recomienda:
     \item \textbf{Estrategia de pinning distribuido:} Configurar cluster de nodos IPFS con políticas de replicación (mínimo 3 copias) y retención basada en normativa (5-10 años).
 \end{enumerate}
 
-\subsubsection{Para Adopción Institucional}
+\subsubsection{Para adopción institucional}
 
 Para facilitar la adopción por la Secretaría Distrital de Movilidad:
 
@@ -106,7 +106,7 @@ Para facilitar la adopción por la Secretaría Distrital de Movilidad:
     \item \textbf{SLA y acuerdos de servicio:} Definir niveles de servicio (uptime >99.5\%, latencia <5s) y procedimientos de escalamiento ante incidentes.
 \end{enumerate}
 
-\subsubsection{Para Replicación en Otros Municipios}
+\subsubsection{Para replicación en otros municipios}
 
 La arquitectura es replicable en otras ciudades colombianas:
 
@@ -120,8 +120,7 @@ La arquitectura es replicable en otras ciudades colombianas:
     \item \textbf{Estandarización de contratos:} Proponer estándar nacional de Smart Contract para fotomultas, facilitando portabilidad de multas entre jurisdicciones.
 \end{enumerate}
 
-\subsection{Trabajo Futuro}
-
+\subsection{Trabajo futuro}
 Se propone el siguiente roadmap para evolución del proyecto:
 
 \subsubsection{Fase 1: Completar Arquitectura Híbrida (3-6 meses)}
@@ -175,7 +174,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Investigación de soluciones Layer 2 (Polygon, Arbitrum) para reducción de costos de gas en Ethereum
 \end{itemize}
 
-\subsection{Reflexiones Finales}
+\subsection{Reflexiones finales}
 
 Este trabajo demuestra que la tecnología blockchain ha madurado lo suficiente para aplicaciones gubernamentales reales. La arquitectura híbrida propuesta resuelve el dilema fundamental entre privacidad y transparencia que enfrentan las instituciones públicas, proporcionando un modelo técnicamente viable y escalable.
 

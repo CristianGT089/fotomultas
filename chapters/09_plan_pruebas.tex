@@ -1,9 +1,9 @@
-\section{Plan de Pruebas}
+\section{Plan de pruebas}
 
-\subsection{Introducción y Propósito}
+\subsection{Introducción y propósito}
 El propósito de este plan es guiar la evaluación de la efectividad y viabilidad del prototipo desarrollado para la gestión de fotocomparendos utilizando Hyperledger Fabric e IPFS. Se busca validar que el prototipo cumple con los requisitos clave de inmutabilidad, transparencia, seguridad, y medir su rendimiento básico, comparándolo con las limitaciones identificadas en el sistema tradicional de Bogotá.
 
-\subsection{Alcance de las Pruebas}
+\subsection{Alcance de las pruebas}
 \begin{itemize}
     \item Proceso completo de registro de un fotocomparendo: captura simulada, carga de evidencia a IPFS, registro de metadatos y hash IPFS en el ledger.
     \item Consulta y verificación de fotocomparendos registrados.
@@ -13,7 +13,7 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
     \item Actualización del estado de la multa (ej. "Pagada", "Apelada").
 \end{itemize}
 
-\subsection{Fuera de Alcance}
+\subsection{Fuera de alcance}
 \begin{itemize}
     \item Pruebas de estrés o carga exhaustivas.
     \item Pruebas de penetración de seguridad avanzadas.
@@ -22,15 +22,15 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
     \item Funcionalidad de pago automatizado con billetera digital.
 \end{itemize}
 
-\subsection{Entorno de Pruebas (Simulación Controlada)}
-\paragraph{Hardware:}
+\subsection{Entorno de pruebas (simulación controlada)}
+\paragraph{Hardware}
 \begin{itemize}
     \item Servidor(es) para nodos Hyperledger Fabric (pueden ser VMs o contenedores Docker). 
     \item Servidor(es) para nodo(s) IPFS (pueden ser VMs o contenedores Docker). 
     \item Máquina para ejecutar la aplicación backend (Node.js/Express según). 
     \item Máquinas cliente para acceder a la interfaz web (simulando Agente de Movilidad y Ciudadano).
 \end{itemize}
-\paragraph{Software:}
+\paragraph{Software}
 \begin{itemize}
     \item Hyperledger Fabric (versión específica). 
     \item IPFS (Kubo/Helia, versión específica).
@@ -39,32 +39,31 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
         \item Aplicación frontend (navegador web). 
     \item Herramientas de monitoreo y logging.
 \end{itemize}
-\paragraph{Datos de Prueba:}
+\paragraph{Datos de prueba}
 \begin{itemize}
     \item Conjunto de imágenes de evidencia (JPG, PNG) de diferentes tamaños. 
     \item Datos de fotocomparendos ficticios (placas, fechas, ubicaciones, tipos de infracción). 
     \item Datos de usuarios simulados (Agentes de Movilidad, Administradores, Ciudadanos).
 \end{itemize}
 
-\subsection{Tipos de Pruebas y Casos de Prueba Detallados}
+\subsection{Tipos de pruebas y casos de prueba detallados}
 
 \input{tables/casos_prueba_funcionales}
 
 \noindent En la Tabla~\ref{tab:casos_prueba_funcionales} se enumeran los casos de prueba funcionales definidos para verificar el comportamiento básico del sistema, desde el registro de un fotocomparendo hasta la validación de su integridad y actualización de estado. Cada caso detalla las precondiciones, las acciones a ejecutar y el resultado esperado, sirviendo como guía para las pruebas manuales y automatizadas.
 
-\subsection{Pruebas de Inmutabilidad}
+\subsection{Pruebas de inmutabilidad}
 
 \input{tables/casos_prueba_inmutabilidad}
 
 \noindent La Tabla~\ref{tab:casos_prueba_inmutabilidad} detalla los escenarios diseñados para poner a prueba la inmutabilidad del sistema ante intentos de modificación no autorizada, mientras que la Tabla~\ref{tab:resultados_inmutabilidad} resume los resultados obtenidos en dichas pruebas, evidenciando la correcta detección y rechazo de cambios indebidos.
 
-\subsection{Pruebas de Rendimiento Básico}
-
+\subsection{Pruebas de rendimiento básico}
 Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
 
 \input{tables/pruebas_rendimiento_basico.tex}
 
-\subsection{Casos de Prueba de Inmutabilidad y Verificabilidad}
+\subsection{Casos de prueba de inmutabilidad y verificabilidad}
 
 \input{tables/casos_prueba_inmutabilidad_verificabilidad.tex}
 
@@ -73,7 +72,7 @@ Se midió el tiempo requerido para ejecutar operaciones clave en condiciones sim
 \paragraph{Introducción}
 El frontend de la aplicación de gestión de multas implementa una estrategia integral de pruebas que abarca tanto pruebas unitarias como de integración, utilizando las mejores prácticas de testing en React con TypeScript. Esta estrategia garantiza la calidad del código, facilita el mantenimiento y reduce la introducción de errores durante el desarrollo.
 
-\subsubsection{Herramientas y Tecnologías}
+\subsubsection{Herramientas y tecnologías}
 \begin{itemize}
     \item \textbf{Jest}: Framework principal de testing con soporte para TypeScript.
     \item \textbf{React Testing Library}: Biblioteca para testing de componentes React con enfoque en comportamiento del usuario.
@@ -82,6 +81,6 @@ El frontend de la aplicación de gestión de multas implementa una estrategia in
     \item \textbf{jsdom}: Entorno DOM para pruebas en Node.js.
 \end{itemize}
 
-\subsubsection{Pruebas Unitarias}
+\subsubsection{Pruebas unitarias}
 
-\subsubsection{Pruebas de Integración}
+\subsubsection{Pruebas de integración}
