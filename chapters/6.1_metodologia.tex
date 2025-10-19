@@ -1,14 +1,89 @@
 \section{Metodología}
 
-La realización de este proyecto se fundamentó en una estructura metodológica dual, diseñada para abordar tanto los requerimientos de la investigación académica como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación, se detallan la metodología de investigación que enmarcó el estudio y la metodología de desarrollo de software que guio la construcción del prototipo.
+La realización de este proyecto se estructuró bajo un enfoque metodológico dual, diseñado para abordar tanto los requerimientos de una investigación aplicada como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación se describen: (1) el enfoque metodológico de investigación, (2) la selección y justificación de la pila tecnológica, y (3) el modelo de desarrollo de software utilizado para construir el prototipo.
 
-\subsection{Metodología de Investigación}
+\subsection{Enfoque Metodológico de Investigación}
 
-El presente trabajo se clasifica como una \textbf{investigación aplicada}, ya que su objetivo principal es resolver un problema práctico y concreto: la falta de integridad, transparencia y confianza en el sistema de gestión de fotocomparendos en Bogotá. La investigación se orienta a la generación de una solución tecnológica que ofrezca mejoras tangibles sobre los sistemas existentes.
+Este trabajo se enmarca en una investigación aplicada, orientada a resolver un problema práctico y concreto: las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Además, adopta un enfoque descriptivo, ya que se detallan las características, arquitectura y funcionamiento de un sistema descentralizado basado en Blockchain e IPFS, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
 
-Adicionalmente, el estudio adopta un \textbf{enfoque descriptivo}, pues se encarga de detallar las características, la arquitectura y el funcionamiento de un sistema descentralizado basado en Blockchain e IPFS. Se especifican las propiedades, componentes y procesos que definen la solución propuesta, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
+\subsection{Selección y Justificación de la Pila Tecnológica}
 
-\subsection{Metodología de Desarrollo de Software: Enfoque por Prototipos}
+Una fase crítica fue la selección de las tecnologías de registro distribuido (DLT) que servirían como pilar del sistema. La decisión impacta directamente en:
+
+\begin{itemize}
+    \item Privacidad de datos personales (Ley 1581 de 2012).
+    \item Escalabilidad ante $\sim$457.000 comparendos semestrales.
+    \item Costos operativos predecibles (sin criptomonedas volátiles).
+    \item Modelo de gobernanza institucional.
+\end{itemize}
+
+La arquitectura del prototipo es híbrida:
+\begin{itemize}
+    \item \textbf{Capa privada (permisionada):} gestión interna y datos sensibles.
+    \item \textbf{Capa pública (blockchain):} verificación ciudadana sin intermediarios.
+\end{itemize}
+
+\subsubsection{Capa Privada: Hyperledger Fabric}
+
+Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo SMART (Tabla~\ref{tab:dlt_smart}) frente a otras DLT prominentes.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Comparativo SMART de plataformas DLT para la gestión de fotocomparendos}
+\begin{tabular}{p{2.4cm}p{2.2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
+\toprule
+\textbf{Criterio} & \textbf{Hyperledger Fabric} & \textbf{Ethereum} & \textbf{Corda} & \textbf{Solana} & \textbf{Polygon} \\
+\midrule
+Tipo de red & Permisionada & Pública & Permisionada & Pública & Pública \\
+Consenso & Raft / BFT & PoS & Notario & PoH + PoS & PoS \\
+TPS & 2 000 – 20 000 & $\sim$30 & $\sim$1 000 & 65 000+ & 7 000+ \\
+Privacidad & Alta$^{(1)}$ & Nula & Alta (P2P) & Nula & Nula \\
+Smart contracts & Go, Java, Node.js & Solidity & Kotlin/Java & Rust/C & Solidity \\
+Control de acceso & PKI / Roles & Abierto & Identidad & Abierto & Abierto \\
+Moneda nativa & No & ETH & No & SOL & MATIC \\
+Costo / tx & Sin gas & Gas variable & Sin gas & Muy bajo & Muy bajo \\
+Madurez Gob. & Alta$^{(2)}$ & Media & Alta (banca) & Baja (DeFi) & Media \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\footnotesize
+$^{(1)}$ Canales privados y "Private Data Collections".\\
+$^{(2)}$ Casos en Estonia, Suecia, Canadá y registros gubernamentales.
+\label{tab:dlt_smart}
+\end{table}
+
+\textbf{Razones de elección de Hyperledger Fabric:}
+
+\begin{itemize}
+    \item \textbf{Privacidad y confidencialidad:} canales y colecciones privadas permiten segmentar la información, garantizando que solo entidades autorizadas (agentes, auditores) accedan a datos sensibles, cumpliendo la Ley 1581 de 2012.
+    
+    \item \textbf{Rendimiento:} 2 000–20 000 TPS, suficiente para el volumen de Bogotá sin cuellos de botella.
+    
+    \item \textbf{Sin costos de gas:} elimina volatilidad y complejidad, crítico para presupuestos gubernamentales.
+    
+    \item \textbf{Control de acceso granular:} PKI + roles definidos internamente (admin, agente, auditor, ciudadano).
+\end{itemize}
+
+\textbf{Descarte de alternativas:}
+\begin{itemize}
+    \item \textbf{Ethereum / Solana / Polygon:} públicas $\Rightarrow$ exposición total de datos y costos variables.
+    \item \textbf{Corda:} orientada a finanzas; menor flexibilidad para evidencias fotográficas heterogéneas.
+\end{itemize}
+
+\subsubsection{Capa Pública: Ethereum}
+
+Para la verificación ciudadana se eligió Ethereum (testnet Sepolia) por:
+
+\begin{itemize}
+    \item \textbf{Máxima transparencia:} cualquier persona puede verificar metadatos sin permisos.
+    
+    \item \textbf{Ecosistema maduro:} mayor comunidad, herramientas (Ethers.js, Hardhat) y estándares (ERC-20, ERC-721).
+    
+    \item \textbf{Costo controlado:} solo se publican hashes y metadatos no sensibles, minimizando gastos de gas.
+\end{itemize}
+
+\subsection{Metodología de Desarrollo de Software: Modelo por Prototipos}
 
 Para la construcción del sistema, se seleccionó el \textbf{Modelo de Desarrollo por Prototipos} (\textit{Prototyping Model}). Esta elección metodológica fue estratégica y se fundamenta en las características inherentes al proyecto.
 
