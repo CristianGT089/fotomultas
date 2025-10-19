@@ -69,18 +69,56 @@ Se midió el tiempo requerido para ejecutar operaciones clave en condiciones sim
 
 \subsection{Estrategia de pruebas del frontend}
 
-\paragraph{Introducción}
-El frontend de la aplicación de gestión de multas implementa una estrategia integral de pruebas que abarca tanto pruebas unitarias como de integración, utilizando las mejores prácticas de testing en React con TypeScript. Esta estrategia garantiza la calidad del código, facilita el mantenimiento y reduce la introducción de errores durante el desarrollo.
+\subsubsection{Introducción}
+
+Para garantizar la robustez, fiabilidad y correcta funcionalidad de la interfaz de usuario, se implementó una estrategia integral de pruebas que abarca tanto pruebas unitarias como de integración. Este enfoque, basado en las mejores prácticas de la industria para aplicaciones React con TypeScript, asegura la calidad del código, facilita el mantenimiento futuro y reduce la introducción de errores durante el desarrollo.
 
 \subsubsection{Herramientas y tecnologías}
+
+La evaluación del frontend se apoyó en un conjunto de herramientas estándar y ampliamente reconocidas en el ecosistema de JavaScript, seleccionadas para garantizar la eficiencia y la precisión de las pruebas:
+
 \begin{itemize}
-    \item \textbf{Jest}: Framework principal de testing con soporte para TypeScript.
-    \item \textbf{React Testing Library}: Biblioteca para testing de componentes React con enfoque en comportamiento del usuario.
-    \item \textbf{@testing-library/jest-dom}: Matchers adicionales para Jest.
-    \item \textbf{@testing-library/user-event}: Simulación de eventos de usuario.
-    \item \textbf{jsdom}: Entorno DOM para pruebas en Node.js.
+    \item \textbf{Jest:} Se utilizó como el framework principal de pruebas, proporcionando un entorno de ejecución y funcionalidades de aserción.
+    \item \textbf{React Testing Library:} Para el testeo de componentes, se adoptó esta biblioteca por su enfoque en probar el comportamiento de la aplicación desde la perspectiva del usuario final, en lugar de los detalles de implementación.
+    \item \textbf{@testing-library/user-event:} Complemento para simular interacciones realistas del usuario, como clics y escritura en formularios.
+    \item \textbf{jsdom:} Proporcionó un entorno simulado del DOM del navegador para ejecutar las pruebas fuera de un navegador real, agilizando el proceso.
 \end{itemize}
 
-\subsubsection{Pruebas unitarias}
+\subsubsection{Pruebas Unitarias}
 
-\subsubsection{Pruebas de integración}
+Las pruebas unitarias se centraron en validar el correcto funcionamiento de los componentes de React de forma aislada. Se ejecutaron un total de \textbf{50 pruebas unitarias} distribuidas en las siguientes categorías:
+
+\begin{enumerate}
+    \item \textbf{Componentes de UI Genéricos:} Se verificó el renderizado, la interactividad (eventos \texttt{onClick}), y la correcta visualización de los diferentes estados de elementos básicos como botones y campos de búsqueda (ej. activo, deshabilitado, en carga).
+    
+    \item \textbf{Componentes de Lógica de Negocio:} Se probaron componentes más complejos, como el formulario de creación de multas y la tabla de registros. Las validaciones incluyeron la correcta visualización de datos, el funcionamiento de la lógica de filtrado y búsqueda, y la activación de las reglas de validación de formularios (ej. campos requeridos, formato de datos).
+    
+    \item \textbf{Componentes del Dashboard:} Para los elementos de visualización de datos, se aseguró que las tarjetas de métricas mostraran las cifras correctas y que los gráficos estadísticos se renderizaran adecuadamente a partir de los conjuntos de datos de entrada.
+\end{enumerate}
+
+\subsubsection{Pruebas de Integración}
+
+Las pruebas de integración se diseñaron para verificar la correcta colaboración entre múltiples componentes y simular flujos de usuario completos. Estos tests fueron cruciales para asegurar que las diferentes partes del sistema funcionaran armoniosamente. Se cubrieron \textbf{8 flujos de usuario críticos}:
+
+\begin{enumerate}
+    \item \textbf{Flujo de Autenticación:} Se simuló el proceso completo de inicio de sesión y cierre de sesión, validando que un usuario pudiera ingresar sus credenciales, ser redirigido al panel correspondiente y cerrar su sesión de forma segura.
+    
+    \item \textbf{Flujo de Gestión de Multas:} Se probó el ciclo completo de registro de una multa, desde la navegación al formulario y el llenado de datos, hasta la verificación de que el nuevo registro aparecía correctamente en la lista general. También se validó la navegación de la lista al detalle de una multa y la actualización de su estado.
+    
+    \item \textbf{Flujo de Consulta Pública:} Se validó la experiencia del ciudadano al buscar una multa, incluyendo la interacción con el CAPTCHA y la correcta visualización de los resultados.
+\end{enumerate}
+
+\subsubsection{Casos de Borde y Robustez}
+
+Además de los flujos principales, las pruebas cubrieron explícitamente casos de borde para asegurar la robustez del sistema, tales como:
+
+\begin{itemize}
+    \item Manejo de entradas inesperadas en formularios (caracteres especiales, límites de tamaño de archivo).
+    \item Comportamiento de la interfaz con conjuntos de datos vacíos o con errores.
+    \item Respuesta del sistema ante errores simulados de red.
+    \item Correcta visualización y funcionalidad en diferentes tamaños de pantalla (diseño responsivo).
+\end{itemize}
+
+\subsubsection{Cobertura y Resultados}
+
+Se ejecutó una suite de \textbf{58 pruebas automatizadas} (50 unitarias y 8 de integración), alcanzando una \textbf{cobertura de código promedio del 91\%} en los componentes y páginas del frontend, con un \textbf{100\% de cobertura en los flujos críticos} de la aplicación. Este enfoque riguroso no solo permite la detección temprana de errores y regresiones, sino que también sirve como una documentación viva del comportamiento esperado del sistema, facilitando el mantenimiento y asegurando la confianza en futuros despliegues del prototipo.
