@@ -1,14 +1,63 @@
 \section{Metodología}
-La metodología de este proyecto se divide en dos componentes principales: la metodología de investigación y la metodología de desarrollo de software.  
 
-\subsection{Metodología de investigación}
-La investigación se clasifica de la siguiente manera:
+La realización de este proyecto se fundamentó en una estructura metodológica dual, diseñada para abordar tanto los requerimientos de la investigación académica como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación, se detallan la metodología de investigación que enmarcó el estudio y la metodología de desarrollo de software que guio la construcción del prototipo.
+
+\subsection{Metodología de Investigación}
+
+El presente trabajo se clasifica como una \textbf{investigación aplicada}, ya que su objetivo principal es resolver un problema práctico y concreto: la falta de integridad, transparencia y confianza en el sistema de gestión de fotocomparendos en Bogotá. La investigación se orienta a la generación de una solución tecnológica que ofrezca mejoras tangibles sobre los sistemas existentes.
+
+Adicionalmente, el estudio adopta un \textbf{enfoque descriptivo}, pues se encarga de detallar las características, la arquitectura y el funcionamiento de un sistema descentralizado basado en Blockchain e IPFS. Se especifican las propiedades, componentes y procesos que definen la solución propuesta, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
+
+\subsection{Metodología de Desarrollo de Software: Enfoque por Prototipos}
+
+Para la construcción del sistema, se seleccionó el \textbf{Modelo de Desarrollo por Prototipos} (\textit{Prototyping Model}). Esta elección metodológica fue estratégica y se fundamenta en las características inherentes al proyecto.
+
+\subsubsection{Justificación de la Elección}
+
+La adopción de este modelo iterativo responde a tres factores cruciales:
+
+\begin{enumerate}
+    \item \textbf{Naturaleza Innovadora y Riesgo Tecnológico:} El proyecto combina tecnologías emergentes como Blockchain (Hyperledger Fabric y Ethereum) e IPFS en un dominio gubernamental donde no existían precedentes locales de una integración similar. La alta incertidumbre sobre el rendimiento, la seguridad de los contratos inteligentes y la viabilidad de la sincronización entre redes heterogéneas requería una validación temprana para mitigar riesgos técnicos fundamentales.
+    
+    \item \textbf{Requisitos Evolutivos:} Los requisitos funcionales y no funcionales de un sistema de esta naturaleza están sujetos a cambios, tanto por la evolución de la tecnología como por posibles ajustes en el marco normativo de las sanciones de tránsito. El enfoque por prototipos ofrece la flexibilidad necesaria para adaptar la solución de forma ágil a medida que se profundiza el entendimiento del problema.
+    
+    \item \textbf{Validación Temprana de Conceptos:} Era imperativo demostrar la hipótesis central del proyecto —que la combinación de Blockchain e IPFS puede garantizar la inmutabilidad y verificabilidad de la evidencia digital— antes de invertir recursos en el desarrollo de una plataforma completa. El prototipo sirvió como una prueba de concepto funcional para validar esta premisa.
+\end{enumerate}
+
+\subsubsection{Fases del Proceso de Desarrollo}
+
+El ciclo de vida del desarrollo siguió las fases iterativas del modelo de prototipos, adaptadas a los objetivos específicos del proyecto, como se describe en la Tabla~\ref{tab:fases_prototipos}.
+
+\begin{table}[h]
+\centering
+\caption{Fases del Modelo de Prototipos Aplicado al Proyecto}
+\label{tab:fases_prototipos}
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Fase} & \textbf{Descripción} & \textbf{Aplicación en el Proyecto} \\ \hline
+\textbf{1. Requisitos Iniciales} & Recopilación de los requisitos funcionales básicos y esenciales del sistema. & Se definieron las funcionalidades mínimas viables: registro inmutable de multas, almacenamiento de evidencia en IPFS, consulta pública y un mecanismo para la verificación de integridad. \\ \hline
+\textbf{2. Construcción del Prototipo} & Desarrollo rápido de una versión funcional reducida que implementa los requisitos iniciales. & Se implementó un prototipo funcional que incluía un Smart Contract en una red local de Ethereum, una API REST para la comunicación y un frontend básico para la interacción del usuario. \\ \hline
+\textbf{3. Evaluación del Prototipo} & Validación del prototipo mediante pruebas internas para evaluar su funcionalidad y alineación con los objetivos. & Se ejecutó un plan de pruebas exhaustivo (detallado en el Capítulo 9) para validar la inmutabilidad de los registros, la integridad de la evidencia y la usabilidad de la interfaz con datos simulados. \\ \hline
+\textbf{4. Refinamiento e Iteración} & Ajuste y mejora del prototipo basándose en los hallazgos de la evaluación. & Con base en los resultados, se optimizó el consumo de gas del Smart Contract, se mejoraron las validaciones de la API y se refinó la arquitectura para incorporar la capa privada con Hyperledger Fabric. \\ \hline
+\textbf{5. Documentación Final} & Una vez validado el concepto, se documenta la arquitectura final y se proponen los siguientes pasos. & Se consolidó el diseño de la arquitectura híbrida final y se elaboró un \textit{roadmap} detallado para una eventual implementación en un entorno de producción. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Ventajas y Limitaciones del Enfoque}
+
+La metodología por prototipos ofreció ventajas estratégicas determinantes para el éxito del proyecto, entre las que destacan la \textbf{validación temprana de la arquitectura híbrida}, la \textbf{mitigación de riesgos técnicos} relacionados con el rendimiento de IPFS y la \textbf{reducción de costos} al permitir ajustes antes de la fase final de desarrollo.
+
+No obstante, es importante reconocer las limitaciones inherentes a este enfoque en el contexto de este trabajo:
+
 \begin{itemize}
-  \item En función de su aplicación práctica, corresponde a una investigación aplicada, pues se orienta a resolver la falta de seguridad que existe en la gestión de infracciones de tránsito en la ciudad de Bogotá. De acuerdo con \parencite{coulouris2011}, la investigación aplicada o técnica se centra en ofrecer soluciones concretas o generar innovaciones y mejoras en procesos o productos.
-  \item Por su propósito, el estudio es de tipo descriptivo, ya que pretende identificar y detallar las características más relevantes de la implementación de un servicio web basado en Blockchain, con el objetivo de reforzar la seguridad en la gestión de las infracciones de tránsito en dicha municipalidad. Como señala \parencite{vanSteen2017}, los estudios descriptivos buscan especificar las propiedades, características y aspectos significativos del fenómeno que se analiza.
+    \item \textbf{Rendimiento no representativo:} El prototipo fue evaluado en un entorno de laboratorio controlado, por lo que su rendimiento no refleja las condiciones de una red pública con alta carga transaccional.
+    
+    \item \textbf{Gestión de expectativas:} Una versión funcional puede generar expectativas en los usuarios de que el sistema está casi terminado, cuando aún requiere fases críticas de seguridad y optimización.
+    
+    \item \textbf{Disciplina de desarrollo:} Se requirió una disciplina estricta para asegurar que el código del prototipo, concebido para validación, no se promoviera a un entorno de producción sin pasar por procesos formales de auditoría y refactorización.
 \end{itemize}
-\subsection{Metodología de desarrollo de software: enfoque por prototipos}
-Para el desarrollo de este proyecto, se adoptará la Metodología de Desarrollo por Prototipos. Esta elección se fundamenta en la naturaleza innovadora del proyecto, que combina tecnologías emergentes como Blockchain e IPFS en un dominio específico (gestión de fotocomparendos), donde los requisitos exactos y los desafíos técnicos pueden no ser completamente evidentes desde el inicio. La metodología por prototipos es inherentemente iterativa y se centra en la construcción rápida de versiones funcionales (prototipos) del sistema, permitiendo la validación temprana de conceptos, la recopilación de retroalimentación continua y la adaptación flexible a los descubrimientos realizados durante el desarrollo. 
+
+En conclusión, la metodología por prototipos fue fundamental para navegar la complejidad e incertidumbre del proyecto. Permitió demostrar de manera empírica que una arquitectura descentralizada es una solución técnica viable y socialmente pertinente para fortalecer la confianza en la gestión de fotocomparendos en Bogotá. 
 \subsection{Introducción a los artefactos técnicos del diseño}
 Con el fin de estructurar de manera clara el desarrollo de la solución propuesta, en esta sección se presentan los principales artefactos utilizados durante la etapa de diseño. Estos elementos permiten representar gráficamente tanto la lógica de funcionamiento como la arquitectura del sistema, sirviendo como guía para la implementación y posterior validación del prototipo.
 
