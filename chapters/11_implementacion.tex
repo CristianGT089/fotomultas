@@ -239,6 +239,94 @@ async function main() {
 \paragraph{Red de despliegue}
 El prototipo se desplegó inicialmente en la red local de Hardhat para desarrollo y pruebas. Para demostración pública, se configuró el despliegue en Sepolia Testnet, una red de pruebas de Ethereum que permite validación externa sin costos reales.
 
+\subsubsection{Configuración de infraestructura}
+
+\paragraph{Configuración de Hardhat}
+El framework Hardhat se configuró para soportar desarrollo local y despliegue en testnet:
+
+\begin{verbatim}
+module.exports = {
+  solidity: {
+    version: "0.8.28",
+    settings: {
+      optimizer: { enabled: true, runs: 200 }
+    }
+  },
+  networks: {
+    localhost: { url: "http://127.0.0.1:8545" },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 11155111
+    }
+  }
+};
+\end{verbatim}
+
+\paragraph{Configuración de Hyperledger Fabric}
+La red privada se orquestó mediante Docker Compose con tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría) y un nodo orderer con consenso Raft. La configuración incluye Certificate Authorities por organización y canales privados para separación de datos sensibles.
+
+\paragraph{Configuración de IPFS}
+Se implementó un nodo IPFS local (Kubo v0.34.1) con API HTTP habilitado para almacenamiento de evidencias. La configuración incluye pinning automático y control de acceso restringido al backend.
+
+\subsubsection{Instalación y despliegue}
+
+\paragraph{Prerrequisitos del sistema}
+El prototipo requiere Ubuntu 22.04 LTS o superior con las siguientes dependencias:
+\begin{itemize}
+    \item \textbf{Node.js:} v20.18.0+ con npm v10.0.0+
+    \item \textbf{Docker:} v24.0+ con Docker Compose v2.20+
+    \item \textbf{IPFS Kubo:} v0.34.1+ para almacenamiento descentralizado
+    \item \textbf{Git:} Para clonado de repositorios
+\end{itemize}
+
+\paragraph{Proceso de instalación}
+La instalación se realiza mediante los siguientes pasos:
+
+\begin{enumerate}
+    \item \textbf{Clonar repositorios:}
+    \begin{verbatim}
+    git clone https://github.com/CristianGT089/backend-multas
+    git clone https://github.com/k-delta/fotomultas-front
+    \end{verbatim}
+    
+    \item \textbf{Configurar backend:}
+    \begin{verbatim}
+    cd backend-multas
+    npm install
+    cp env.example .env
+    # Editar .env con configuración local
+    \end{verbatim}
+    
+    \item \textbf{Iniciar servicios:}
+    \begin{verbatim}
+    # Terminal 1: IPFS
+    ipfs daemon &
+    
+    # Terminal 2: Hardhat
+    npm run dev:contracts
+    
+    # Terminal 3: Backend
+    npm run dev
+    \end{verbatim}
+    
+    \item \textbf{Configurar frontend:}
+    \begin{verbatim}
+    cd ../fotomultas-front
+    npm install
+    npm run dev
+    \end{verbatim}
+\end{enumerate}
+
+\paragraph{Verificación del despliegue}
+El sistema estará disponible en:
+\begin{itemize}
+    \item \textbf{Frontend:} http://localhost:5173
+    \item \textbf{Backend API:} http://localhost:3000
+    \item \textbf{Documentación Swagger:} http://localhost:3000/api-docs
+    \item \textbf{IPFS Gateway:} http://localhost:5001
+\end{itemize}
+
 \subsection{Implementación de la capa privada: Hyperledger Fabric}
 
 \subsubsection{Configuración de la red}

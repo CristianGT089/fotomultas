@@ -10,25 +10,25 @@ Los resultados de las pruebas funcionales y de integridad confirman que el siste
 
 \subsection{Conclusiones por objetivo específico}
 
-\subsubsection{Objetivo 1: blockchain para inmutabilidad}
+\subsubsection{Blockchain para inmutabilidad}
 
 \textbf{Objetivo:} Implementar tecnología blockchain para garantizar la inmutabilidad de los registros de fotocomparendos.
 
 \textbf{Conclusión:} La implementación dual de Hyperledger Fabric y Ethereum proporciona inmutabilidad garantizada criptográficamente en ambas capas. Las pruebas demostraron que el 100\% de los intentos de modificación directa del ledger fueron rechazados automáticamente por los mecanismos de consenso (PBFT en Fabric, Proof-of-Stake en Ethereum). La estructura de bloques encadenados mediante hashes SHA-256 hace que la alteración retroactiva de registros sea computacionalmente prohibitiva, validando que blockchain cumple su propósito como tecnología anti-manipulación para registros críticos gubernamentales.
 
-\subsubsection{Objetivo 2: almacenamiento descentralizado con IPFS}
+\subsubsection{Almacenamiento descentralizado con IPFS}
 
 \textbf{Objetivo:} Integrar IPFS para almacenamiento verificable de evidencias fotográficas.
 
 \textbf{Conclusión:} La implementación de IPFS dual (privado para evidencias completas, público para hashes) demostró ser efectiva para garantizar integridad de evidencias. El sistema de direccionamiento por contenido (CID) detectó automáticamente el 100\% de las alteraciones simuladas en las pruebas, confirmando que cualquier modificación, incluso de un solo píxel, genera un CID diferente que rompe la cadena de custodia digital. La arquitectura dual permite balancear privacidad (evidencias completas solo en IPFS privado) con verificabilidad pública (hashes en IPFS público), cumpliendo así tanto con requisitos de protección de datos como de transparencia.
 
-\subsubsection{Objetivo 3: API REST para integración}
+\subsubsection{API REST para integración}
 
 \textbf{Objetivo:} Desarrollar una API REST que permita la integración de blockchain con aplicaciones web.
 
 \textbf{Conclusión:} El backend implementado con Express.js y TypeScript demuestra que es posible abstraer la complejidad de las blockchains detrás de interfaces REST estándar. Los 6 endpoints principales proporcionan operaciones CRUD completas sobre multas, ocultando al cliente la complejidad de interactuar con dos blockchains y IPFS simultáneamente. Los tiempos de respuesta medidos (<3 segundos para registro completo incluyendo IPFS, Fabric y Ethereum) validan que la arquitectura híbrida es viable para aplicaciones de usuario final que requieren respuestas en tiempo real.
 
-\subsubsection{Objetivo 4: interfaz de usuario intuitiva}
+\subsubsection{Interfaz de usuario intuitiva}
 
 \textbf{Objetivo:} Implementar una interfaz web moderna para agentes y ciudadanos.
 
@@ -123,7 +123,7 @@ La arquitectura es replicable en otras ciudades colombianas:
 \subsection{Trabajo futuro}
 Se propone el siguiente roadmap para evolución del proyecto:
 
-\subsubsection{Fase 1: Completar Arquitectura Híbrida (3-6 meses)}
+\subsubsection*{Completar Arquitectura Híbrida (3-6 meses)}
 
 \begin{itemize}
     \item Implementar red completa de Hyperledger Fabric con 3 organizaciones (SDM, Policía, Auditoría)
@@ -133,7 +133,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Implementar ServiceFactory para eliminación del patrón Singleton
 \end{itemize}
 
-\subsubsection{Fase 2: Despliegue en Servidor Universitario (1-2 meses)}
+\subsubsection*{Despliegue en Servidor Universitario (1-2 meses)}
 
 \begin{itemize}
     \item Migrar Smart Contract de Hardhat local a Sepolia Testnet (o mainnet con Layer 2)
@@ -143,7 +143,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Implementar monitoreo con Prometheus y Grafana
 \end{itemize}
 
-\subsubsection{Fase 3: Piloto Controlado con SDM (6 meses)}
+\subsubsection*{Piloto Controlado con SDM (6 meses)}
 
 \begin{itemize}
     \item Firma de convenio con Secretaría Distrital de Movilidad
@@ -154,7 +154,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Medición de reducción efectiva en tasa de impugnación y PQRSD
 \end{itemize}
 
-\subsubsection{Fase 4: Funcionalidades Avanzadas (6-12 meses)}
+\subsubsection*{Funcionalidades Avanzadas (6-12 meses)}
 
 \begin{itemize}
     \item \textbf{Módulo de Pagos:} Integración con PSE, Nequi, Daviplata para pago de multas desde la plataforma
@@ -164,7 +164,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item \textbf{API pública:} Endpoints públicos para desarrolladores externos (apps de consulta de multas, integraciones con aseguradoras)
 \end{itemize}
 
-\subsubsection{Fase 5: Escalamiento Nacional (12+ meses)}
+\subsubsection*{Escalamiento Nacional (12+ meses)}
 
 \begin{itemize}
     \item Extensión a otras ciudades principales (Medellín, Cali, Barranquilla)
