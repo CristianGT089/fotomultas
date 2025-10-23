@@ -1,6 +1,6 @@
 \section{Metodología}
 
-La realización de este proyecto se estructuró bajo un enfoque metodológico dual, diseñado para abordar tanto los requerimientos de una investigación aplicada como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación se describen: (1) el enfoque metodológico de investigación, (2) la selección y justificación de la pila tecnológica, y (3) el modelo de desarrollo de software utilizado para construir el prototipo.
+La realización de este proyecto se estructuró bajo un enfoque metodológico dual, diseñado para abordar tanto los requerimientos de una investigación aplicada como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación se describen: el enfoque metodológico de investigación, la selección y justificación de la pila tecnológica, y el modelo de desarrollo de software utilizado para construir el prototipo.
 
 \subsection{Enfoque metodológico de investigación}
 
@@ -25,25 +25,25 @@ La arquitectura del prototipo es híbrida:
 
 \subsubsection{Capa privada: Hyperledger Fabric}
 
-Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo (Tabla~\ref{tab:dlt_smart}) frente a otras DLT prominentes.
+Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Comparativo SMART de plataformas DLT para la gestión de fotocomparendos}
+\caption{Comparativo plataformas DLT para la gestión de fotocomparendos}
 \begin{tabular}{p{2.4cm}p{2.2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
 \toprule
 \textbf{Criterio} & \textbf{Hyperledger Fabric} & \textbf{Ethereum} & \textbf{Corda} & \textbf{Solana} & \textbf{Polygon} \\
 \midrule
 Tipo de red & Permisionada & Pública & Permisionada & Pública & Pública \\
 Consenso & Raft / BFT & PoS & Notario & PoH + PoS & PoS \\
-TPS & 2 000 – 20 000 & $\sim$30 & $\sim$1 000 & 65 000+ & 7 000+ \\
+TPS & 2.000–20.000 & $\sim$30 & $\sim$1.000 & 65.000+ & 7.000+ \\
 Privacidad & Alta$^{(1)}$ & Nula & Alta (P2P) & Nula & Nula \\
 Smart contracts & Go, Java, Node.js & Solidity & Kotlin/Java & Rust/C & Solidity \\
 Control de acceso & PKI / Roles & Abierto & Identidad & Abierto & Abierto \\
 Moneda nativa & No & ETH & No & SOL & MATIC \\
 Costo / tx & Sin gas & Gas variable & Sin gas & Muy bajo & Muy bajo \\
-Madurez Gob. & Alta$^{(2)}$ & Media & Alta (banca) & Baja (DeFi) & Media \\
+Madurez Gob. & Alta & Media & Alta (banca) & Baja (DeFi) & Media \\
 \bottomrule
 \end{tabular}
 \vspace{2pt}

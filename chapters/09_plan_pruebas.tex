@@ -98,7 +98,18 @@ Las pruebas unitarias se centraron en validar el correcto funcionamiento de los 
 
 \subsubsection{Pruebas de Integración}
 
-Las pruebas de integración se diseñaron para verificar la correcta colaboración entre múltiples componentes y simular flujos de usuario completos. Estos tests fueron cruciales para asegurar que las diferentes partes del sistema funcionaran armoniosamente. Se cubrieron \textbf{8 flujos de usuario críticos}:
+Las pruebas de integración son un tipo de pruebas de software que se centran en verificar la interacción correcta entre diferentes módulos o componentes de un sistema cuando trabajan en conjunto. A diferencia de las pruebas unitarias que evalúan componentes de forma aislada, las pruebas de integración validan el funcionamiento del sistema como un todo, asegurando que la comunicación, el intercambio de datos y las dependencias entre componentes funcionen según lo esperado.
+
+Estas pruebas son fundamentales porque:
+\begin{itemize}
+    \item Detectan problemas de interfaz entre componentes que individualmente funcionan bien
+    \item Verifican el correcto manejo de datos entre diferentes capas del sistema
+    \item Validan flujos completos de trabajo que involucran múltiples módulos
+    \item Identifican problemas de timing y sincronización entre componentes
+    \item Aseguran que las integraciones con servicios externos funcionen correctamente
+\end{itemize}
+
+En el contexto de nuestro sistema, las pruebas de integración se diseñaron para verificar la correcta colaboración entre múltiples componentes y simular flujos de usuario completos. Estos tests fueron cruciales para asegurar que las diferentes partes del sistema funcionaran armoniosamente. Se cubrieron \textbf{8 flujos de usuario críticos}:
 
 \begin{enumerate}
     \item \textbf{Flujo de Autenticación:} Se simuló el proceso completo de inicio de sesión y cierre de sesión, validando que un usuario pudiera ingresar sus credenciales, ser redirigido al panel correspondiente y cerrar su sesión de forma segura.
