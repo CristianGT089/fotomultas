@@ -9,9 +9,30 @@ El propósito de este proyecto no es modificar el sistema actual, sino diseñar 
 La pertinencia de este proyecto se enmarca en tres dimensiones:
 \begin{itemize}
 \item \textbf{Social y ciudadana:} Ofrece un modelo alternativo que responde a la necesidad de transparencia, permitiendo la verificación independiente y empoderando al ciudadano con herramientas de auditoría directa.
-\item \textbf{Tecnológica:} Demuestra cómo la integración de Blockchain (para registros inmutables) e IPFS (para evidencias con contenido direccionable) puede abordar los desafíos de seguridad y trazabilidad documentados en sistemas centralizados.
+\item \textbf{Tecnológica:} Demuestra cómo la integración de blockchain (para registros inmutables) e IPFS (para evidencias con contenido direccionable) puede abordar los desafíos de seguridad y trazabilidad documentados en sistemas centralizados.
 \item \textbf{Legal e institucional:} El prototipo se alinea con los principios de eficiencia y transparencia exigidos por los organismos de control, sirviendo como un caso de estudio sobre cómo la tecnología puede fortalecer la rendición de cuentas.
 \end{itemize}
+
+\subsection{Problemas identificados en el sistema actual (FÉNIX)}
+La necesidad de un modelo alternativo se sustenta en las deficiencias identificadas en el sistema FÉNIX, el cual, a pesar de su implementación tecnológica, presenta limitaciones críticas documentadas por los organismos de control en tres dimensiones: cumplimiento normativo, protección de datos y capacidad técnica.
+
+\subsubsection{Incumplimientos normativos en contratación}
+El proceso de contratación del sistema FÉNIX presenta desviaciones respecto a la normativa de contratación pública colombiana. La Tabla~\ref{tab:violaciones_contratacion} sintetiza las principales violaciones identificadas por la Contraloría de Bogotá, evidenciando falencias en la planeación, supervisión y gestión contractual del proyecto.
+
+\input{tables/violaciones_contratacion}
+
+\subsubsection{Brechas en protección de datos personales}
+La gestión de información sensible de los ciudadanos presenta deficiencias en el cumplimiento de la Ley 1581 de 2012 (Protección de Datos Personales). La Tabla~\ref{tab:brechas_datos_personales} detalla las brechas identificadas en materia de privacidad y tratamiento de datos.
+
+\input{tables/brechas_datos_personales}
+
+\subsubsection{Déficits en habilitación y capacidad técnica}
+La capacidad operativa y técnica del sistema muestra limitaciones documentadas en auditorías de cumplimiento. La Tabla~\ref{tab:deficits_habilitacion} presenta los principales déficits en términos de infraestructura, recursos y capacidad institucional.
+
+\input{tables/deficits_habilitacion}
+
+\subsubsection{Síntesis de la problemática}
+Estos hallazgos, documentados por la Contraloría de Bogotá y otras entidades de control, evidencian que las limitaciones del sistema FÉNIX no son solo operativas sino estructurales, requiriendo un replanteamiento arquitectónico que incorpore garantías criptográficas y descentralización como fundamentos de diseño. El presunto detrimento patrimonial de más de \$8.000 millones de pesos y la tasa de impugnación del 34.1\% reflejan la magnitud del problema y justifican la exploración de arquitecturas basadas en tecnologías de registro distribuido.
 
 \subsection{Originalidad e innovación}
 La innovación de esta monografía radica en la concepción del prototipo como un laboratorio para un nuevo modelo de confianza. Mientras los sistemas tradicionales se centran en controles administrativos, esta propuesta explora un modelo distribuido y resistente a la manipulación por diseño. La DApp funciona como una prueba de concepto que integra inmutabilidad, gobernanza automatizada y almacenamiento descentralizado para demostrar una solución a una clase de problemas que las bases de datos centralizadas, por su naturaleza, no pueden resolver de manera nativa.

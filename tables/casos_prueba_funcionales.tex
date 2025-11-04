@@ -6,10 +6,10 @@
         \toprule
         \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Precondiciones} & \textbf{Acciones} & \textbf{Resultado Esperado} \\
         \midrule
-        FP-001 & Registro de fotocomparendo & Usuario autenticado, imagen disponible & 1. Cargar imagen a IPFS\newline 2. Registrar metadatos en Blockchain & CID generado, transacción exitosa \\
-        FP-002 & Consulta de comparendo & Comparendo registrado previamente & 1. Ingresar ID de comparendo\newline 2. Consultar en Blockchain & Datos completos mostrados \\
-        FP-003 & Verificación de evidencia & CID válido en Blockchain & 1. Extraer CID de transacción\newline 2. Recuperar imagen de IPFS & Imagen original recuperada \\
-        FP-004 & Actualización de estado & Comparendo en estado "Pendiente" & 1. Cambiar estado a "Pagado"\newline 2. Registrar cambio en Blockchain & Estado actualizado inmutablemente \\
+        FP-001 & Registro de fotocomparendo & Usuario autenticado, imagen disponible & 1. Cargar imagen a IPFS\newline 2. Registrar metadatos en blockchain & CID generado, transacción exitosa \\
+        FP-002 & Consulta de comparendo & Comparendo registrado previamente & 1. Ingresar ID de comparendo\newline 2. Consultar en blockchain & Datos completos mostrados \\
+        FP-003 & Verificación de evidencia & CID válido en blockchain & 1. Extraer CID de transacción\newline 2. Recuperar imagen de IPFS & Imagen original recuperada \\
+        FP-004 & Actualización de estado & Comparendo en estado "Pendiente" & 1. Cambiar estado a "Pagado"\newline 2. Registrar cambio en blockchain & Estado actualizado inmutablemente \\
         FP-005 & Validación de integridad & Comparendo con evidencia asociada & 1. Calcular hash de imagen actual\newline 2. Comparar con CID registrado & Integridad verificada \\
         \bottomrule
     \end{tabular}

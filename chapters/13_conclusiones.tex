@@ -55,7 +55,7 @@ Las contribuciones técnicas implementadas incluyen:
 \begin{enumerate}
     \item \textbf{Prototipo funcional open-source:} Código completo del Smart Contract (Solidity), chaincode (Go), backend (TypeScript) y frontend (React) disponible para replicación.
     
-    \item \textbf{Patrón IPFS dual:} Implementación de separación entre IPFS privado (evidencias completas) e IPFS público (hashes verificables), resolviendo el problema de almacenamiento off-chain con privacidad selectiva.
+    \item \textbf{Patrón IPFS dual:} Implementación de separación entre IPFS privado (evidencias completas) e IPFS público (hashes verificables), resolviendo el problema de almacenamiento descentralizado con privacidad selectiva.
     
     \item \textbf{Smart Contract optimizado:} Contrato FineManagement.sol con paginación eficiente, control de acceso basado en roles y eventos para auditoría, auditado para consumo mínimo de gas.
     
@@ -123,14 +123,14 @@ La arquitectura es replicable en otras ciudades colombianas:
 \subsection{Trabajo futuro}
 Se propone el siguiente roadmap para evolución del proyecto:
 
-\subsubsection*{Completar Arquitectura Híbrida (3-6 meses)}
+\subsubsection*{Escalar Arquitectura Híbrida a Producción (3-6 meses)}
 
 \begin{itemize}
-    \item Implementar red completa de Hyperledger Fabric con 3 organizaciones (SDM, Policía, Auditoría)
-    \item Desarrollar chaincode completo en Go con Private Data Collections
-    \item Finalizar servicio de sincronización con manejo robusto de errores y reintentos
-    \item Separar IPFS en nodos privado y público con políticas de acceso diferenciadas
-    \item Implementar ServiceFactory para eliminación del patrón Singleton
+    \item Escalar red de Hyperledger Fabric de 1 organización (entorno local) a 3 organizaciones (SDM, Policía, Auditoría) en producción
+    \item Extender chaincode en Go existente con Private Data Collections para datos sensibles adicionales
+    \item Fortalecer servicio de sincronización con manejo robusto de errores, reintentos automáticos y estrategias de fallback
+    \item Desplegar nodos IPFS privado y público en infraestructura distribuida con políticas de acceso diferenciadas
+    \item Refactorizar ServiceFactory para eliminación del patrón Singleton y mejorar testabilidad
 \end{itemize}
 
 \subsubsection*{Despliegue en Servidor Universitario (1-2 meses)}
@@ -138,7 +138,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
 \begin{itemize}
     \item Migrar Smart Contract de Hardhat local a Sepolia Testnet (o mainnet con Layer 2)
     \item Configurar nodos IPFS en servidor de la Universidad Distrital
-    \item Desplegar red Hyperledger Fabric en infraestructura universitaria con Docker Swarm
+    \item Migrar red Hyperledger Fabric a infraestructura universitaria con Docker Swarm para alta disponibilidad
     \item Configurar CI/CD con GitHub Actions para despliegue automatizado
     \item Implementar monitoreo con Prometheus y Grafana
 \end{itemize}

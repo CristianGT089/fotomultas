@@ -4,7 +4,7 @@ La realización de este proyecto se estructuró bajo un enfoque metodológico du
 
 \subsection{Enfoque metodológico de investigación}
 
-Este trabajo se enmarca en una investigación aplicada, orientada a resolver un problema práctico y concreto: las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Además, adopta un enfoque descriptivo, ya que se detallan las características, arquitectura y funcionamiento de un sistema descentralizado basado en Blockchain e IPFS, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
+Este trabajo se enmarca en una investigación aplicada, orientada a resolver un problema práctico y concreto: las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Además, adopta un enfoque descriptivo, ya que se detallan las características, arquitectura y funcionamiento de un sistema descentralizado basado en blockchain e IPFS, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
 
 \subsection{Selección y justificación de la pila tecnológica}
 
@@ -17,7 +17,68 @@ Una fase crítica fue la selección de las tecnologías de registro distribuido 
     \item Modelo de gobernanza institucional.
 \end{itemize}
 
-La arquitectura del prototipo es híbrida:
+\subsubsection{¿Por qué blockchain y no otra tecnología de registro distribuido?}
+
+Antes de seleccionar qué implementación específica de blockchain utilizar, es fundamental justificar por qué esta tecnología es la más apropiada frente a otras alternativas de registro distribuido. Para el caso de uso de fotocomparendos, donde la \textbf{integridad irrefutable} y la \textbf{verificación ciudadana independiente} son requisitos no negociables, blockchain emerge como la tecnología más apropiada.
+
+La Tabla~\ref{tab:blockchain_vs_dlt} compara blockchain con otras tecnologías emergentes de registro distribuido.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Comparación de blockchain con otras tecnologías de registro distribuido}
+\label{tab:blockchain_vs_dlt}
+\begin{tabular}{p{2.5cm}p{2.7cm}p{2.7cm}p{2.7cm}p{2.7cm}}
+\toprule
+\textbf{Criterio} & \textbf{Blockchain} & \textbf{Hashgraph} & \textbf{BD Distribuida} & \textbf{BD Centralizada} \\
+\midrule
+Inmutabilidad & Alta (criptográfica) & Media (consenso virtual) & Baja (config.) & Ninguna (admin.) \\
+\midrule
+Resistencia manipulación & Alta (prohibitiva) & Media & Baja (permisos) & Ninguna (admin) \\
+\midrule
+Auditabilidad & Alta (completa) & Media (parcial) & Baja (logs modificables) & Baja (logs centralizados) \\
+\midrule
+Descentralización & Alta (real) & Alta (real) & Baja (réplicas) & Ninguna \\
+\midrule
+Verificación indep. & Alta (sin confianza) & Media (requiere nodos) & Ninguna (acceso BD) & Ninguna (API controlada) \\
+\midrule
+Estándares & Alta (maduros) & Baja (emergente) & Media (SQL/NoSQL) & Alta (SQL) \\
+\midrule
+Rendimiento (TPS) & Media (15-20.000) & Alta (>10.000) & Alta (>100.000) & Alta (>100.000) \\
+\midrule
+Costo operativo & Alto & Moderado & Moderado & Bajo \\
+\midrule
+Precedente legal & Alto (eIDAS UE) & Bajo (sin precedente) & Medio (aceptado) & Alto (estándar) \\
+\midrule
+\textbf{Apto evidencia legal} & \textbf{SÍ} & Parcial & NO & NO \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Justificación de la elección de blockchain}
+
+La selección de blockchain se fundamenta en los siguientes argumentos técnicos y legales:
+
+\begin{enumerate}
+    \item \textbf{Inmutabilidad criptográfica verificable:} A diferencia de bases de datos donde los logs pueden ser alterados por administradores con privilegios elevados, blockchain garantiza que modificar un registro requeriría alterar toda la cadena desde ese punto, lo cual es computacionalmente prohibitivo \parencite{nakamoto2008bitcoin}. Esta propiedad es crítica para evidencia que puede ser objeto de litigio.
+
+    \item \textbf{Verificación sin confianza (trustless):} Un ciudadano puede verificar la autenticidad de un fotocomparendo sin necesidad de confiar en la institución emisora, simplemente validando la cadena de hashes. Esto no es posible con bases de datos tradicionales donde la verificación depende de APIs controladas por la misma entidad \parencite{antonopoulos2023mastering}. Esta característica aborda directamente la crisis de confianza reflejada en la tasa de impugnación del 34.1\%.
+
+    \item \textbf{Precedente legal reconocido:} Existen marcos regulatorios emergentes que reconocen la validez legal de registros blockchain. El Reglamento eIDAS de la Unión Europea \parencite{europa_eidas} establece un marco para la identificación electrónica y servicios de confianza que incluye tecnologías de registro distribuido. Tecnologías más recientes como Hashgraph \parencite{baird2016swirlds} aún no han establecido precedentes legales comparables.
+
+    \item \textbf{Auditabilidad completa e inmutable:} Cada transacción queda registrada con timestamp inmutable, creando una cadena de custodia digital irrefutable para procesos sancionatorios \parencite{swan2015blockchain}. Esta trazabilidad es esencial para cumplir con los requisitos de debido proceso administrativo.
+
+    \item \textbf{Madurez del ecosistema:} Blockchain cuenta con implementaciones probadas en producción (Hyperledger Fabric \parencite{cachin2018architecture}, Ethereum \parencite{wood2014ethereum}), herramientas de desarrollo consolidadas y comunidades activas. Si bien tecnologías como Hashgraph ofrecen mayor rendimiento teórico \parencite{hedera_whitepaper}, o IOTA Tangle \parencite{popov2018tangle} promete eliminación de fees, ninguna ha demostrado la robustez operativa de blockchain en entornos gubernamentales críticos.
+\end{enumerate}
+
+Estudios comparativos recientes \parencite{ruan2019blockchainvsdb, karlsson2019permissioned} confirman que, si bien bases de datos distribuidas como Cassandra tienen menor costo operativo y mayor rendimiento bruto, ninguna proporciona el nivel de \textbf{confianza descentralizada} y \textbf{resistencia a manipulación} que requiere un sistema de sanciones gubernamentales donde la percepción de imparcialidad es crítica.
+
+Con esta fundamentación establecida, la siguiente decisión crítica es determinar qué implementación específica de blockchain utilizar y cómo estructurar la arquitectura del sistema.
+
+\paragraph{Arquitectura híbrida: balance entre privacidad y transparencia}
+
+Dado que ninguna blockchain cumple simultáneamente con todos los requisitos (privacidad de datos sensibles + transparencia pública + rendimiento + costos controlados), se optó por una \textbf{arquitectura híbrida}:
+
 \begin{itemize}
     \item \textbf{Capa privada (permisionada):} gestión interna y datos sensibles.
     \item \textbf{Capa pública (blockchain):} verificación ciudadana sin intermediarios.
@@ -25,12 +86,13 @@ La arquitectura del prototipo es híbrida:
 
 \subsubsection{Capa privada: Hyperledger Fabric}
 
-Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo.
+Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo de plataformas blockchain.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Comparativo plataformas DLT para la gestión de fotocomparendos}
+\caption{Comparativo de plataformas blockchain para selección de arquitectura híbrida}
+\label{tab:comparacion_blockchains}
 \begin{tabular}{p{2.4cm}p{2.2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
 \toprule
 \textbf{Criterio} & \textbf{Hyperledger Fabric} & \textbf{Ethereum} & \textbf{Corda} & \textbf{Solana} & \textbf{Polygon} \\
@@ -90,11 +152,11 @@ Para la construcción del sistema, se seleccionó el \textbf{Modelo de Desarroll
 La adopción de este modelo iterativo responde a tres factores cruciales:
 
 \begin{enumerate}
-    \item \textbf{Naturaleza Innovadora y Riesgo Tecnológico:} El proyecto combina tecnologías emergentes como Blockchain (Hyperledger Fabric y Ethereum) e IPFS en un dominio gubernamental donde no existían precedentes locales de una integración similar. La alta incertidumbre sobre el rendimiento, la seguridad de los contratos inteligentes y la viabilidad de la sincronización entre redes heterogéneas requería una validación temprana para mitigar riesgos técnicos fundamentales.
+    \item \textbf{Naturaleza Innovadora y Riesgo Tecnológico:} El proyecto combina tecnologías emergentes como blockchain (Hyperledger Fabric y Ethereum) e IPFS en un dominio gubernamental donde no existían precedentes locales de una integración similar. La alta incertidumbre sobre el rendimiento, la seguridad de los contratos inteligentes y la viabilidad de la sincronización entre redes heterogéneas requería una validación temprana para mitigar riesgos técnicos fundamentales.
     
     \item \textbf{Requisitos Evolutivos:} Los requisitos funcionales y no funcionales de un sistema de esta naturaleza están sujetos a cambios, tanto por la evolución de la tecnología como por posibles ajustes en el marco normativo de las sanciones de tránsito. El enfoque por prototipos ofrece la flexibilidad necesaria para adaptar la solución de forma ágil a medida que se profundiza el entendimiento del problema.
     
-    \item \textbf{Validación Temprana de Conceptos:} Era imperativo demostrar la hipótesis central del proyecto —que la combinación de Blockchain e IPFS puede garantizar la inmutabilidad y verificabilidad de la evidencia digital— antes de invertir recursos en el desarrollo de una plataforma completa. El prototipo sirvió como una prueba de concepto funcional para validar esta premisa.
+    \item \textbf{Validación Temprana de Conceptos:} Era imperativo demostrar la hipótesis central del proyecto —que la combinación de blockchain e IPFS puede garantizar la inmutabilidad y verificabilidad de la evidencia digital— antes de invertir recursos en el desarrollo de una plataforma completa. El prototipo sirvió como una prueba de concepto funcional para validar esta premisa.
 \end{enumerate}
 
 \subsubsection{Fases del proceso de desarrollo}

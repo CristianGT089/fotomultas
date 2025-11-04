@@ -16,7 +16,7 @@ Se almacenaron imágenes en IPFS y se compararon los CIDs obtenidos con nuevos h
 
 \subsection{Verificabilidad transparente del registro}
 
-Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/integrity}) que permite a cualquier parte autorizada extraer el CID desde la Blockchain y verificar que la evidencia recuperada desde IPFS corresponde al evento sancionado.
+Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/integrity}) que permite a cualquier parte autorizada extraer el CID desde la blockchain y verificar que la evidencia recuperada desde IPFS corresponde al evento sancionado.
 
 \textbf{Resultado:} La verificación se ejecuta sin intervención humana, desde fuentes independientes, replicando los principios de \textbf{transparencia, auditabilidad y confianza descentralizada}.
 
@@ -38,11 +38,11 @@ La evaluación del backend se realizó mediante el framework \textit{Vitest v3.2
 \input{tables/resultados_backend}
 
 \paragraph{Análisis de resultados}
-El sistema alcanzó un \textbf{97.5\% de éxito} en las pruebas ejecutadas, con las siguientes observaciones:
+El sistema alcanzó un \textbf{100\% de éxito} en las pruebas ejecutadas, con las siguientes observaciones:
 
 \begin{itemize}
-    \item \textbf{Pruebas exitosas (78/80)}: Incluyen validaciones de CRUD, integridad blockchain, almacenamiento IPFS, manejo de errores y 26 nuevas pruebas de seguridad.
-    \item \textbf{Pruebas omitidas (2)}: Corresponden a endpoints no críticos (\texttt{/status-history}, \texttt{/recent-history}), documentados como trabajo futuro de baja prioridad.
+    \item \textbf{80 pruebas exitosas}: Incluyen validaciones de CRUD, integridad blockchain, almacenamiento IPFS, manejo de errores y 26 pruebas de seguridad.
+    \item \textbf{Cobertura completa}: Todos los endpoints implementados fueron validados exitosamente.
 \end{itemize}
 
 \paragraph{Validaciones de seguridad implementadas}
