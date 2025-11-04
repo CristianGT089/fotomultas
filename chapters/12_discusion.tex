@@ -1,73 +1,24 @@
-\section{Discusión y Análisis}
+\section{Discusión y análisis}
 
 Este capítulo presenta un análisis crítico de los resultados obtenidos, interpretando los hallazgos en el contexto de los objetivos planteados y comparándolos con el estado del arte revisado. Se discuten las implicaciones de la arquitectura híbrida implementada, sus ventajas sobre sistemas tradicionales y las lecciones aprendidas durante el desarrollo del prototipo.
 
-\subsection{Cumplimiento de Objetivos}
+El trabajo logró desarrollar exitosamente un prototipo para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos en Bogotá, aplicando tecnologías de redes distribuidas para fortalecer la integridad, la autenticidad de la información y reducir los riesgos asociados a su confidencialidad. Este objetivo fue alcanzado mediante la implementación de una arquitectura híbrida blockchain que combina Hyperledger Fabric para gestión privada de datos sensibles con Ethereum para transparencia pública. Los resultados de las pruebas de inmutabilidad (Capítulo 10) demuestran que el sistema garantiza la integridad de los registros mediante hash criptográficos inmutables en blockchain y CIDs verificables en IPFS. La autenticidad se asegura mediante firmas digitales y control de acceso basado en certificados en Hyperledger Fabric, mientras que la confidencialidad se preserva manteniendo datos sensibles exclusivamente en la capa privada.
 
-\subsubsection{Objetivo General}
+En cuanto a la implementación de tecnología blockchain para garantizar la inmutabilidad de los registros de fotocomparendos, se desarrollaron dos blockchains complementarias: Hyperledger Fabric para registros privados completos con consenso PBFT que garantiza finalidad inmediata de transacciones, y Ethereum para metadatos públicos con consenso Proof-of-Stake que asegura inmutabilidad verificable públicamente. Las pruebas de inmutabilidad (Tabla~\ref{tab:resumen_inmutabilidad}) demostraron que cualquier intento de modificación directa del ledger es rechazado automáticamente por el mecanismo de consenso. La arquitectura de bloques encadenados mediante hashes criptográficos hace que la alteración de registros pasados sea computacionalmente prohibitiva.
 
-El objetivo general del trabajo era desarrollar un prototipo para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos en Bogotá, aplicando tecnologías de redes distribuidas, con el fin de fortalecer la integridad, la autenticidad de la información y reducir los riesgos asociados a su confidencialidad.
+Para el almacenamiento verificable de evidencias fotográficas, se implementó una arquitectura dual de IPFS que incluye un nodo privado para almacenar evidencias fotográficas completas con resolución original y un nodo público que publica hashes de evidencias para verificación ciudadana. Los resultados de las pruebas de verificación de integridad (Capítulo 10) confirmaron que el sistema de direccionamiento por contenido (CID) de IPFS detecta automáticamente cualquier alteración, incluso mínima, en las evidencias. El 100\% de las verificaciones de integridad fueron exitosas, validando que IPFS proporciona un mecanismo robusto para garantizar que las evidencias no han sido manipuladas.
 
-\textbf{Cumplimiento:} Este objetivo fue alcanzado exitosamente mediante la implementación de una arquitectura híbrida blockchain que combina Hyperledger Fabric para gestión privada de datos sensibles con Ethereum para transparencia pública. Los resultados de las pruebas de inmutabilidad (Capítulo 10) demuestran que el sistema garantiza la integridad de los registros mediante hash criptográficos inmutables en blockchain y CIDs verificables en IPFS. La autenticidad se asegura mediante firmas digitales y control de acceso basado en certificados en Hyperledger Fabric, mientras que la confidencialidad se preserva manteniendo datos sensibles exclusivamente en la capa privada.
+El desarrollo de una API REST que integre blockchain con aplicaciones web tradicionales se materializó en un backend completo con Express.js que expone 6 endpoints principales documentados con Swagger. La API actúa como capa de abstracción entre las blockchains y el frontend, permitiendo registro de multas con upload automático a IPFS y transacción en ambas blockchains, consultas diferenciadas (privadas desde Fabric, públicas desde Ethereum), verificación de integridad cruzada entre blockchains, y sincronización transparente de datos públicos. Los tests de integración (Capítulo 10) demostraron que la API maneja correctamente tanto operaciones síncronas (consultas) como asíncronas (sincronización blockchain), cumpliendo con tiempos de respuesta aceptables (<3 segundos para registro completo).
 
-\subsubsection{Objetivo Específico 1: Implementar Blockchain para Inmutabilidad}
+Finalmente, se desarrolló una interfaz web intuitiva para agentes y ciudadanos implementada en React con tres módulos diferenciados: Panel de Agente para registro y gestión de multas, Panel Ciudadano para consulta pública y verificación de integridad, y Dashboard Administrativo para visualización de estadísticas con Recharts. La implementación con Tailwind CSS proporciona una interfaz moderna y responsive. El uso de Zustand para gestión de estado y React Router para navegación demuestra que las tecnologías blockchain pueden integrarse con interfaces de usuario contemporáneas sin comprometer la experiencia del usuario.
 
-\textbf{Objetivo:} Implementar tecnología blockchain para garantizar la inmutabilidad de los registros de fotocomparendos.
+\subsection{Análisis de la arquitectura híbrida}
 
-\textbf{Cumplimiento:} Se implementaron dos blockchains complementarias:
-\begin{itemize}
-    \item \textbf{Hyperledger Fabric:} Para registros privados completos con consenso PBFT que garantiza finalidad inmediata de transacciones
-    \item \textbf{Ethereum:} Para metadatos públicos con consenso Proof-of-Stake que asegura inmutabilidad verificable públicamente
-\end{itemize}
-
-Las pruebas de inmutabilidad (Tabla~\ref{tab:resumen_inmutabilidad}) demostraron que cualquier intento de modificación directa del ledger es rechazado automáticamente por el mecanismo de consenso. La arquitectura de bloques encadenados mediante hashes criptográficos hace que la alteración de registros pasados sea computacionalmente prohibitiva, cumpliendo así plenamente con este objetivo.
-
-\subsubsection{Objetivo Específico 2: Almacenamiento Descentralizado}
-
-\textbf{Objetivo:} Integrar IPFS para almacenamiento verificable de evidencias fotográficas.
-
-\textbf{Cumplimiento:} Se implementó una arquitectura dual de IPFS:
-\begin{itemize}
-    \item \textbf{IPFS Privado:} Almacena evidencias fotográficas completas con resolución original
-    \item \textbf{IPFS Público:} Publica hashes de evidencias para verificación ciudadana
-\end{itemize}
-
-Los resultados de las pruebas de verificación de integridad (Capítulo 10) confirmaron que el sistema de direccionamiento por contenido (CID) de IPFS detecta automáticamente cualquier alteración, incluso mínima, en las evidencias. El 100\% de las verificaciones de integridad fueron exitosas, validando que IPFS proporciona un mecanismo robusto para garantizar que las evidencias no han sido manipuladas.
-
-\subsubsection{Objetivo Específico 3: API REST Funcional}
-
-\textbf{Objetivo:} Desarrollar una API REST que integre blockchain con aplicaciones web tradicionales.
-
-\textbf{Cumplimiento:} Se implementó un backend completo con Express.js que expone 6 endpoints principales documentados con Swagger. La API actúa como capa de abstracción entre las blockchains y el frontend, permitiendo:
-\begin{itemize}
-    \item Registro de multas con upload automático a IPFS y transacción en ambas blockchains
-    \item Consultas diferenciadas (privadas desde Fabric, públicas desde Ethereum)
-    \item Verificación de integridad cruzada entre blockchains
-    \item Sincronización transparente de datos públicos
-\end{itemize}
-
-Los tests de integración (Capítulo 10) demostraron que la API maneja correctamente tanto operaciones síncronas (consultas) como asíncronas (sincronización blockchain), cumpliendo con tiempos de respuesta aceptables (<3 segundos para registro completo).
-
-\subsubsection{Objetivo Específico 4: Interfaz de Usuario}
-
-\textbf{Objetivo:} Desarrollar una interfaz web intuitiva para agentes y ciudadanos.
-
-\textbf{Cumplimiento:} Se implementó un frontend en React con tres módulos diferenciados:
-\begin{itemize}
-    \item Panel de Agente: Interfaz para registro y gestión de multas
-    \item Panel Ciudadano: Consulta pública y verificación de integridad
-    \item Dashboard Administrativo: Visualización de estadísticas con Recharts
-\end{itemize}
-
-La implementación con Tailwind CSS proporciona una interfaz moderna y responsive. El uso de Zustand para gestión de estado y React Router para navegación demuestra que las tecnologías blockchain pueden integrarse con interfaces de usuario contemporáneas sin comprometer la experiencia del usuario.
-
-\subsection{Análisis de la Arquitectura Híbrida}
-
-\subsubsection{Ventajas sobre Arquitecturas Monolíticas}
+\subsubsection{Ventajas sobre arquitecturas monolíticas}
 
 La arquitectura híbrida implementada presenta ventajas significativas sobre arquitecturas basadas en una sola blockchain:
 
-\paragraph{Privacidad y Transparencia Simultáneas.}
+\paragraph{Privacidad y transparencia simultáneas}
 A diferencia de sistemas que usan únicamente blockchain pública (como el trabajo de Yousfi et al. \parencite{yousfi2019blockchain}), donde todos los datos quedan expuestos públicamente, la arquitectura híbrida permite:
 \begin{itemize}
     \item Almacenar datos sensibles (identificación de conductores, notas internas) exclusivamente en Hyperledger Fabric
@@ -75,10 +26,10 @@ A diferencia de sistemas que usan únicamente blockchain pública (como el traba
     \item Cumplir con regulaciones de protección de datos (GDPR, Ley 1581 de 2012 en Colombia)
 \end{itemize}
 
-\paragraph{Optimización de Costos.}
+\paragraph{Optimización de costos}
 El uso de Hyperledger Fabric para operaciones frecuentes elimina los costos de gas asociados a blockchains públicas. Según las métricas de rendimiento (Tabla~\ref{tab:rendimiento}), las transacciones en Fabric tienen latencia 10x menor que en Ethereum, permitiendo mayor volumen de operaciones a menor costo.
 
-\paragraph{Control de Acceso Granular.}
+\paragraph{Control de acceso granular}
 Hyperledger Fabric permite implementar políticas de acceso basadas en certificados, algo imposible en blockchains públicas permissionless. Esto habilita escenarios donde:
 \begin{itemize}
     \item Solo agentes autorizados pueden registrar multas
@@ -87,7 +38,7 @@ Hyperledger Fabric permite implementar políticas de acceso basadas en certifica
     \item Ciudadanos acceden solo a sus propios datos o a metadatos públicos
 \end{itemize}
 
-\subsubsection{Comparación con el Sistema Actual (FÉNIX)}
+\subsubsection{Comparación con el sistema actual (FÉNIX)}
 
 El sistema FÉNIX de la Secretaría Distrital de Movilidad opera bajo un modelo centralizado con base de datos tradicional. La arquitectura híbrida propuesta supera este modelo en varios aspectos críticos:
 
@@ -108,11 +59,11 @@ El sistema FÉNIX de la Secretaría Distrital de Movilidad opera bajo un modelo 
 \label{tab:comparacion_fenix}
 \end{table}
 
-\subsubsection{Comparación con Estado del Arte}
+\subsubsection{Comparación con estado del arte}
 
 Al contrastar el presente trabajo con los sistemas revisados en el Capítulo 5, se identifican las siguientes diferencias:
 
-\paragraph{Versus Yousfi et al. (Ethereum + Smart Contracts).}
+\paragraph{Versus Yousfi et al. (Ethereum + Smart Contracts)}
 Yousfi et al. implementaron un sistema basado únicamente en Ethereum pública, enfrentando limitaciones de:
 \begin{itemize}
     \item Alto costo de gas (cada transacción tiene costo variable)
@@ -122,7 +73,7 @@ Yousfi et al. implementaron un sistema basado únicamente en Ethereum pública, 
 
 Nuestra arquitectura híbrida resuelve estos problemas delegando operaciones frecuentes a Hyperledger Fabric (sin costos de gas, mayor privacidad, >1000 TPS) mientras mantiene la transparencia pública en Ethereum solo para metadatos.
 
-\paragraph{Versus Chen et al. (Base de Datos + Blockchain).}
+\paragraph{Versus Chen et al. (base de datos + blockchain)}
 Chen et al. propusieron un modelo híbrido de base de datos tradicional con blockchain pública, pero su aproximación no logra inmutabilidad completa ya que:
 \begin{itemize}
     \item La base de datos sigue siendo mutable
@@ -132,7 +83,7 @@ Chen et al. propusieron un modelo híbrido de base de datos tradicional con bloc
 
 Nuestro enfoque de doble blockchain (ambas inmutables) garantiza que tanto los datos privados como públicos son inmutables, con sincronización verificable entre capas.
 
-\paragraph{Versus Proyectos con Solo Hyperledger Fabric.}
+\paragraph{Versus proyectos con solo Hyperledger Fabric}
 Trabajos que utilizan únicamente Hyperledger Fabric (como registros vehiculares gubernamentales en Estonia) logran alta privacidad pero carecen de:
 \begin{itemize}
     \item Verificación pública sin autenticación
@@ -142,11 +93,11 @@ Trabajos que utilizan únicamente Hyperledger Fabric (como registros vehiculares
 
 La capa pública de Ethereum en nuestra arquitectura permite que cualquier ciudadano verifique la integridad de multas sin necesidad de credenciales, algo imposible en redes permisionadas puras.
 
-\subsection{Implicaciones del Trabajo}
+\subsection{Implicaciones del trabajo}
 
-\subsubsection{Impacto Técnico}
+\subsubsection{Impacto técnico}
 
-\paragraph{Viabilidad de Arquitecturas Híbridas.}
+\paragraph{Viabilidad de arquitecturas híbridas}
 Este trabajo demuestra empíricamente que es viable combinar blockchains permisionadas y públicas en un sistema de producción. El servicio de sincronización implementado valida que:
 \begin{itemize}
     \item Las inconsistencias temporales son manejables mediante patrones de eventual consistency
@@ -154,7 +105,7 @@ Este trabajo demuestra empíricamente que es viable combinar blockchains permisi
     \item La complejidad adicional es manejable con diseño de software apropiado
 \end{itemize}
 
-\paragraph{Replicabilidad en Otros Contextos.}
+\paragraph{Replicabilidad en otros contextos}
 La arquitectura es generalizable a otros escenarios gubernamentales que requieran balance entre privacidad y transparencia:
 \begin{itemize}
     \item Registro civil (privacidad de datos personales + verificación pública de documentos)
@@ -162,20 +113,20 @@ La arquitectura es generalizable a otros escenarios gubernamentales que requiera
     \item Historias clínicas (privacidad del paciente + verificación de autenticidad)
 \end{itemize}
 
-\subsubsection{Impacto Social}
+\subsubsection{Impacto social}
 
-\paragraph{Reducción de Corrupción y Fraude.}
+\paragraph{Reducción de corrupción y fraude}
 La inmutabilidad garantizada criptográficamente elimina la posibilidad de que funcionarios alteren o eliminen multas de manera unilateral. Los casos documentados de fraude en sistemas de fotomultas (como el caso Juzto.co mencionado en la Introducción) serían detectables automáticamente mediante verificación de integridad.
 
-\paragraph{Mejora en Confianza Ciudadana.}
+\paragraph{Mejora en confianza ciudadana}
 La capacidad de verificación pública sin intermediarios aborda directamente el problema de la desconfianza ciudadana. Una tasa de impugnación del 34.1\% (identificada en el Capítulo 1) sugiere que la falta de transparencia actual genera fricciones masivas. El acceso a verificación automática de integridad podría reducir significativamente las PQRSD no justificadas.
 
-\paragraph{Reducción de Carga Administrativa.}
+\paragraph{Reducción de carga administrativa}
 Las 155,854 PQRSD procesadas semestralmente (datos del Capítulo 1) representan una carga operativa significativa. La verificación automática de integridad permitiría a los ciudadanos validar por sí mismos la autenticidad de multas, reduciendo potencialmente en más del 50\% las solicitudes relacionadas con dudas sobre la validez de los registros.
 
-\subsubsection{Impacto Económico}
+\subsubsection{Impacto económico}
 
-\paragraph{Análisis Costo-Beneficio.}
+\paragraph{Análisis costo-beneficio}
 Según el análisis de costos del Capítulo 8, la implementación del prototipo requiere una inversión inicial moderada, pero genera ahorros en:
 \begin{itemize}
     \item Procesamiento de PQRSD (reducción estimada de personal dedicado)
@@ -185,10 +136,10 @@ Según el análisis de costos del Capítulo 8, la implementación del prototipo 
 
 El presunto detrimento patrimonial de \$8,000 millones identificado en el sistema FÉNIX (Contraloría de Bogotá, 2024) justifica ampliamente la inversión en un sistema robusto basado en blockchain.
 
-\paragraph{ROI Estimado.}
+\paragraph{ROI estimado}
 Asumiendo una reducción conservadora del 30\% en PQRSD y litigios, el retorno de inversión se proyecta en 18-24 meses de operación, considerando los costos operativos de mantener la infraestructura blockchain.
 
-\subsection{Limitaciones y Restricciones}
+\subsection{Limitaciones y restricciones}
 
 \subsubsection{Limitaciones Técnicas del Prototipo}
 
@@ -253,7 +204,7 @@ El prototipo utiliza claves privadas almacenadas en archivos .env, lo cual no es
     \item Políticas de backup seguro
 \end{itemize}
 
-\subsection{Lecciones Aprendidas}
+\subsection{Lecciones aprendidas}
 
 \subsubsection{Complejidad de Hyperledger Fabric}
 
@@ -299,7 +250,7 @@ La separación clara entre capas (HyperledgerService, EthereumService, SyncServi
 
 \textbf{Lección:} La modularidad es crítica en sistemas blockchain donde el ecosistema evoluciona rápidamente.
 
-\subsection{Consideraciones para Despliegue en Producción}
+\subsection{Consideraciones para despliegue en producción}
 
 Basado en las lecciones aprendidas, se identifican requisitos críticos para migrar a producción:
 

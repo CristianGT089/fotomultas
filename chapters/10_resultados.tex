@@ -1,20 +1,20 @@
-\section{Resultados de las Pruebas de Inmutabilidad y Verificabilidad del Prototipo}
+\section{Resultados de las pruebas de inmutabilidad y verificabilidad del prototipo}
 
 Con el fin de validar los principios fundamentales sobre los que se sustenta el presente prototipo —particularmente la \textbf{inmutabilidad}, \textbf{integridad de evidencia} y \textbf{verificabilidad independiente}— se diseñó y ejecutó un plan de pruebas en entorno simulado controlado, alineado con los objetivos del proyecto y los estándares técnicos de la literatura especializada. Las pruebas se enfocaron en evaluar el comportamiento del sistema frente a intentos de modificación, errores de integridad y recuperación de evidencia a través de mecanismos descentralizados.
 
-\subsection{Pruebas de Inmutabilidad en Blockchain}
+\subsection{Pruebas de inmutabilidad en blockchain}
 
 Se registraron comparendos en la red \textit{Ethereum local (Hardhat)}, incluyendo el hash IPFS (CID) de la evidencia fotográfica y los metadatos del evento. Luego, se intentó simular una alteración directa sobre el estado del ledger.
 
 \textbf{Resultado:} El sistema rechazó cualquier intento de modificación, manteniendo el hash original y evidenciando que la estructura de bloques y el mecanismo de consenso impiden alteraciones sin detección. Esto confirma que el sistema ofrece \textbf{inmutabilidad verificable} en los registros sancionatorios.
 
-\subsection{Verificación de Integridad con IPFS}
+\subsection{Verificación de integridad con IPFS}
 
 Se almacenaron imágenes en IPFS y se compararon los CIDs obtenidos con nuevos hashes locales generados al momento de la consulta.
 
 \textbf{Resultado:} Se comprobó que el CID siempre coincide con el contenido original. Cualquier cambio, incluso mínimo, genera un CID diferente, por lo que el sistema detecta automáticamente cualquier intento de manipulación. Esto demuestra que la evidencia permanece \textbf{íntegra y detectable ante alteraciones}.
 
-\subsection{Verificabilidad Transparente del Registro}
+\subsection{Verificabilidad transparente del registro}
 
 Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/integrity}) que permite a cualquier parte autorizada extraer el CID desde la Blockchain y verificar que la evidencia recuperada desde IPFS corresponde al evento sancionado.
 
@@ -25,19 +25,19 @@ Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/int
 
 Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. Tal como se aprecia en la Tabla~\ref{tab:resultados_funcionales}, todas las pruebas funcionales finalizaron de forma exitosa; de manera análoga, la Tabla~\ref{tab:resumen_inmutabilidad} corrobora que los mecanismos de integridad impiden alteraciones, y la Tabla~\ref{tab:rendimiento} demuestra que los tiempos de operación se mantienen dentro de márgenes aceptables para un uso en producción.
 
-\subsection{Cumplimiento de Objetivos Específicos}
+\subsection{Cumplimiento de objetivos específicos}
 
 Con base en los resultados experimentales obtenidos, se presenta en la Tabla~\ref{tab:cumplimiento_objetivos} la relación directa entre cada objetivo específico planteado, las técnicas de validación empleadas y los resultados concretos alcanzados.
 
 \input{tables/cumplimiento_objetivos}
 
-\subsection{Resultados Detallados de Pruebas Backend}
+\subsection{Resultados detallados de pruebas backend}
 
 La evaluación del backend se realizó mediante el framework \textit{Vitest v3.2.4}, ejecutando 80 pruebas distribuidas en 6 módulos principales. Los resultados, presentados en la Tabla~\ref{tab:resultados_backend}, demuestran una alta confiabilidad del sistema.
 
 \input{tables/resultados_backend}
 
-\paragraph{Análisis de Resultados}
+\paragraph{Análisis de resultados}
 El sistema alcanzó un \textbf{97.5\% de éxito} en las pruebas ejecutadas, con las siguientes observaciones:
 
 \begin{itemize}
@@ -45,7 +45,7 @@ El sistema alcanzó un \textbf{97.5\% de éxito} en las pruebas ejecutadas, con 
     \item \textbf{Pruebas omitidas (2)}: Corresponden a endpoints no críticos (\texttt{/status-history}, \texttt{/recent-history}), documentados como trabajo futuro de baja prioridad.
 \end{itemize}
 
-\paragraph{Validaciones de Seguridad Implementadas}
+\paragraph{Validaciones de seguridad implementadas}
 Como parte integral del sistema, se implementaron 26 pruebas de seguridad que validan la protección contra amenazas comunes en aplicaciones web. La Tabla~\ref{tab:validaciones_seguridad} detalla las validaciones implementadas y sus resultados.
 
 \input{tables/validaciones_seguridad}
@@ -59,7 +59,7 @@ Las validaciones de seguridad alcanzaron un \textbf{100\% de éxito}, demostrand
     \item \textbf{Archivos Maliciosos}: Rechazo de ejecutables, HTML y scripts, permitiendo únicamente formatos de imagen válidos (JPG, PNG, WEBP) con límite de 10MB.
 \end{itemize}
 
-\paragraph{Evidencias de Funcionalidad}
+\paragraph{Evidencias de funcionalidad}
 Las transacciones blockchain generadas durante las pruebas incluyen:
 
 \begin{itemize}

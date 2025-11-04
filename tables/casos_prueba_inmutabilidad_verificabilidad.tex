@@ -1,19 +1,21 @@
-\begin{center}
-\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \hline
-    \textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-    \hline
-    Registro de comparendo con CID válido & Verificar registro inicial & Registro exitoso e inmutable & Registro correcto \\
-    \hline
-    Intento de modificación de metadatos post-registro & Comprobar resistencia a cambios internos & Transacción rechazada o inconsistente detectada & Inconsistencia detectada \\
-    \hline
-    Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones en imagen & CID diferente, evidencia no válida & CID distinto generado \\
-    \hline
-    Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
-    \hline
-\end{tabular}
-
-\vspace{1em}
-\noindent\textbf{Cuadro 3}\\[2em]
-\textit{Casos de prueba de inmutabilidad y verificabilidad del sistema}
-\end{center} 
+\begin{table}[htbp]
+    \centering
+    \caption{Casos de prueba de inmutabilidad y verificabilidad del sistema}
+    \begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+        \textbf{Caso de Prueba} & \textbf{Objetivo} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
+        \hline
+        Registro de comparendo con CID válido & Verificar registro inicial & Registro exitoso e inmutable & Registro correcto \\
+        \hline
+        Intento de modificación de metadatos post-registro & Comprobar resistencia a cambios internos & Transacción rechazada o inconsistente detectada & Inconsistencia detectada \\
+        \hline
+        Carga de imagen modificada (pixel cambiado) & Validar detección de alteraciones en imagen & CID diferente, evidencia no válida & CID distinto generado \\
+        \hline
+        Consulta ciudadana por endpoint \texttt{/integrity} & Evaluar mecanismo de verificación independiente & Imagen original y metadatos coinciden & Evidencia verificada \\
+        \hline
+    \end{tabular}
+    \vspace{1em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+\end{table}

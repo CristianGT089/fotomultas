@@ -1,8 +1,8 @@
-\section{Implementación del Prototipo}
+\section{Implementación del prototipo}
 
 La implementación del prototipo se llevó a cabo siguiendo la arquitectura híbrida blockchain diseñada en el capítulo anterior, integrando Hyperledger Fabric para la gestión privada de datos sensibles, Ethereum para la transparencia pública y IPFS dual para el almacenamiento distribuido de evidencias.
 
-\subsection{Entorno de Desarrollo y Herramientas}
+\subsection{Entorno de desarrollo y herramientas}
 
 El desarrollo del prototipo se realizó en un entorno Unix (Linux) utilizando las siguientes herramientas:
 
@@ -15,9 +15,9 @@ El desarrollo del prototipo se realizó en un entorno Unix (Linux) utilizando la
     \item \textbf{IDE:} Visual Studio Code con extensiones para Solidity, Go y TypeScript
 \end{itemize}
 
-\subsection{Stack Tecnológico Implementado}
+\subsection{Stack tecnológico implementado}
 
-\subsubsection{Tecnologías Backend}
+\subsubsection{Tecnologías backend}
 
 El backend del sistema se implementó utilizando tecnologías modernas de JavaScript/TypeScript:
 
@@ -30,9 +30,9 @@ El backend del sistema se implementó utilizando tecnologías modernas de JavaSc
     \item \textbf{Cliente HTTP:} Axios v1.9.0 - Comunicación con APIs externas
 \end{itemize}
 
-\subsubsection{Tecnologías Blockchain}
+\subsubsection{Tecnologías blockchain}
 
-\paragraph{Capa Pública - Ethereum.}
+\paragraph{Capa pública - Ethereum}
 Para la blockchain pública se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
 
 \begin{itemize}
@@ -43,7 +43,7 @@ Para la blockchain pública se utilizó el ecosistema de Ethereum con las siguie
     \item \textbf{Generación de Tipos:} TypeChain v8.3.2 - Generación automática de tipos TypeScript desde ABI
 \end{itemize}
 
-\paragraph{Capa Privada - Hyperledger Fabric.}
+\paragraph{Capa privada - Hyperledger Fabric}
 La red privada se implementó sobre Hyperledger Fabric con las siguientes tecnologías:
 
 \begin{itemize}
@@ -54,7 +54,7 @@ La red privada se implementó sobre Hyperledger Fabric con las siguientes tecnol
     \item \textbf{Gestión de Identidades:} Fabric CA - Certificate Authority para control de acceso
 \end{itemize}
 
-\subsubsection{Almacenamiento Descentralizado}
+\subsubsection{Almacenamiento descentralizado}
 
 La implementación de IPFS se realizó en dos capas diferenciadas:
 
@@ -66,7 +66,7 @@ La implementación de IPFS se realizó en dos capas diferenciadas:
     \item \textbf{Protocolo de Contenido:} Multiformats v13.3.3 - Manejo de CIDs
 \end{itemize}
 
-\subsubsection{Tecnologías Frontend}
+\subsubsection{Tecnologías frontend}
 
 El frontend se desarrolló con tecnologías modernas de React:
 
@@ -81,7 +81,7 @@ El frontend se desarrolló con tecnologías modernas de React:
     \item \textbf{Iconos:} Lucide React v0.344.0 - Iconos modulares
 \end{itemize}
 
-\subsubsection{Frameworks de Testing}
+\subsubsection{Frameworks de testing}
 
 Se implementaron pruebas automatizadas en múltiples capas:
 
@@ -93,13 +93,13 @@ Se implementaron pruebas automatizadas en múltiples capas:
     \item \textbf{Testing de UI:} React Testing Library v16.3.0 - Testing de componentes React
 \end{itemize}
 
-\subsection{Implementación de la Capa Pública: Ethereum}
+\subsection{Implementación de la capa pública: Ethereum}
 
-\subsubsection{Desarrollo del Smart Contract}
+\subsubsection{Desarrollo del smart contract}
 
 El Smart Contract FineManagement.sol implementa la lógica de negocio para la gestión pública de infracciones de tránsito. El contrato se desarrolló en Solidity v0.8.28 y hereda de Ownable (OpenZeppelin) para control de acceso.
 
-\paragraph{Estructura de Datos.}
+\paragraph{Estructura de datos}
 El contrato define dos estructuras principales para modelar las multas y su historial de estados:
 
 \begin{verbatim}
@@ -134,7 +134,7 @@ struct FineStatusUpdate {
 }
 \end{verbatim}
 
-\paragraph{Mapeos para Consultas Eficientes.}
+\paragraph{Mapeos para consultas eficientes}
 Para optimizar las consultas se implementaron mapeos especializados:
 
 \begin{verbatim}
@@ -145,7 +145,7 @@ mapping(string => uint256[]) public finesByOwner;
 mapping(address => bool) public operators;
 \end{verbatim}
 
-\paragraph{Funciones Principales.}
+\paragraph{Funciones principales}
 Las funciones críticas del contrato garantizan la inmutabilidad y trazabilidad:
 
 \begin{itemize}
@@ -162,10 +162,10 @@ Las funciones críticas del contrato garantizan la inmutabilidad y trazabilidad:
     \item \texttt{getFineStatusHistory()}: Retorna el historial paginado de cambios de estado de una multa, permitiendo auditoría completa de su ciclo de vida.
 \end{itemize}
 
-\paragraph{Control de Acceso.}
+\paragraph{Control de acceso}
 El contrato implementa un sistema de roles mediante el modificador \texttt{onlyOperator}, que restringe operaciones críticas (registro y actualización de multas) a direcciones autorizadas. El propietario del contrato puede agregar o remover operadores mediante las funciones \texttt{addOperator()} y \texttt{removeOperator()}.
 
-\paragraph{Eventos para Auditoría.}
+\paragraph{Eventos para auditoría}
 Se definieron eventos para facilitar la auditoría externa:
 
 \begin{verbatim}
@@ -189,9 +189,9 @@ event FineStatusUpdated(
 
 Estos eventos permiten que aplicaciones externas puedan suscribirse a cambios en tiempo real y mantener bases de datos sincronizadas sin necesidad de polling.
 
-\subsubsection{Despliegue y Configuración}
+\subsubsection{Despliegue y configuración}
 
-\paragraph{Configuración de Hardhat.}
+\paragraph{Configuración de Hardhat}
 El framework Hardhat se configuró para soportar despliegue en múltiples redes:
 
 \begin{verbatim}
@@ -219,7 +219,7 @@ module.exports = {
 
 El optimizador de Solidity se habilitó con 200 runs, priorizando la eficiencia de ejecución sobre el tamaño del bytecode desplegado.
 
-\paragraph{Script de Despliegue.}
+\paragraph{Script de despliegue}
 Se implementó un script automatizado para el despliegue del contrato:
 
 \begin{verbatim}
@@ -236,12 +236,100 @@ async function main() {
 }
 \end{verbatim}
 
-\paragraph{Red de Despliegue.}
+\paragraph{Red de despliegue}
 El prototipo se desplegó inicialmente en la red local de Hardhat para desarrollo y pruebas. Para demostración pública, se configuró el despliegue en Sepolia Testnet, una red de pruebas de Ethereum que permite validación externa sin costos reales.
 
-\subsection{Implementación de la Capa Privada: Hyperledger Fabric}
+\subsubsection{Configuración de infraestructura}
 
-\subsubsection{Configuración de la Red}
+\paragraph{Configuración de Hardhat}
+El framework Hardhat se configuró para soportar desarrollo local y despliegue en testnet:
+
+\begin{verbatim}
+module.exports = {
+  solidity: {
+    version: "0.8.28",
+    settings: {
+      optimizer: { enabled: true, runs: 200 }
+    }
+  },
+  networks: {
+    localhost: { url: "http://127.0.0.1:8545" },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 11155111
+    }
+  }
+};
+\end{verbatim}
+
+\paragraph{Configuración de Hyperledger Fabric}
+La red privada se orquestó mediante Docker Compose con tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría) y un nodo orderer con consenso Raft. La configuración incluye Certificate Authorities por organización y canales privados para separación de datos sensibles.
+
+\paragraph{Configuración de IPFS}
+Se implementó un nodo IPFS local (Kubo v0.34.1) con API HTTP habilitado para almacenamiento de evidencias. La configuración incluye pinning automático y control de acceso restringido al backend.
+
+\subsubsection{Instalación y despliegue}
+
+\paragraph{Prerrequisitos del sistema}
+El prototipo requiere Ubuntu 22.04 LTS o superior con las siguientes dependencias:
+\begin{itemize}
+    \item \textbf{Node.js:} v20.18.0+ con npm v10.0.0+
+    \item \textbf{Docker:} v24.0+ con Docker Compose v2.20+
+    \item \textbf{IPFS Kubo:} v0.34.1+ para almacenamiento descentralizado
+    \item \textbf{Git:} Para clonado de repositorios
+\end{itemize}
+
+\paragraph{Proceso de instalación}
+La instalación se realiza mediante los siguientes pasos:
+
+\begin{enumerate}
+    \item \textbf{Clonar repositorios:}
+    \begin{verbatim}
+    git clone https://github.com/CristianGT089/backend-multas
+    git clone https://github.com/k-delta/fotomultas-front
+    \end{verbatim}
+    
+    \item \textbf{Configurar backend:}
+    \begin{verbatim}
+    cd backend-multas
+    npm install
+    cp env.example .env
+    # Editar .env con configuración local
+    \end{verbatim}
+    
+    \item \textbf{Iniciar servicios:}
+    \begin{verbatim}
+    # Terminal 1: IPFS
+    ipfs daemon &
+    
+    # Terminal 2: Hardhat
+    npm run dev:contracts
+    
+    # Terminal 3: Backend
+    npm run dev
+    \end{verbatim}
+    
+    \item \textbf{Configurar frontend:}
+    \begin{verbatim}
+    cd ../fotomultas-front
+    npm install
+    npm run dev
+    \end{verbatim}
+\end{enumerate}
+
+\paragraph{Verificación del despliegue}
+El sistema estará disponible en:
+\begin{itemize}
+    \item \textbf{Frontend:} http://localhost:5173
+    \item \textbf{Backend API:} http://localhost:3000
+    \item \textbf{Documentación Swagger:} http://localhost:3000/api-docs
+    \item \textbf{IPFS Gateway:} http://localhost:5001
+\end{itemize}
+
+\subsection{Implementación de la capa privada: Hyperledger Fabric}
+
+\subsubsection{Configuración de la red}
 
 La red de Hyperledger Fabric se configuró con la siguiente topología:
 
@@ -255,7 +343,7 @@ La red de Hyperledger Fabric se configuró con la siguiente topología:
 
 La configuración se definió mediante archivos YAML estándar de Fabric: \texttt{configtx.yaml} para la configuración del canal, \texttt{crypto-config.yaml} para la generación de certificados y \texttt{docker-compose.yaml} para la orquestación de contenedores.
 
-\subsubsection{Desarrollo del Chaincode}
+\subsubsection{Desarrollo del chaincode}
 
 El chaincode se implementó en Go, siguiendo la estructura de \texttt{contractapi.Contract} de Hyperledger Fabric. Las funciones principales incluyen:
 
@@ -271,19 +359,19 @@ El chaincode se implementó en Go, siguiendo la estructura de \texttt{contractap
     \item \texttt{AuditTrail()}: Proporciona un historial de auditoría completo de todas las operaciones realizadas sobre una multa específica.
 \end{itemize}
 
-\paragraph{Gestión de Datos Privados.}
+\paragraph{Gestión de datos privados}
 Se utilizó la funcionalidad de Private Data Collections de Fabric para separar información altamente sensible (como datos de identificación del conductor) que solo debe ser accesible por la organización que la registró.
 
-\paragraph{Control de Acceso Basado en Atributos.}
+\paragraph{Control de acceso basado en atributos}
 El chaincode implementa validaciones basadas en los atributos del certificado del invocador, verificando roles (agente, administrador, auditor) antes de permitir operaciones sensibles.
 
-\subsection{Servicio de Sincronización entre Blockchains}
+\subsection{Servicio de sincronización entre blockchains}
 
-\subsubsection{Arquitectura del Servicio}
+\subsubsection{Arquitectura del servicio}
 
 El servicio de sincronización se implementó como un proceso independiente en Node.js que escucha eventos de la blockchain privada (Hyperledger Fabric) y sincroniza metadatos públicos a la blockchain pública (Ethereum).
 
-\paragraph{Componentes Principales:}
+\paragraph{Componentes principales}
 \begin{itemize}
     \item \textbf{Event Listener:} Módulo que se suscribe a eventos del chaincode de Fabric
     \item \textbf{Metadata Extractor:} Componente que filtra datos sensibles y extrae solo metadatos públicos
@@ -292,7 +380,7 @@ El servicio de sincronización se implementó como un proceso independiente en N
     \item \textbf{Consistency Validator:} Verifica que los datos se sincronizaron correctamente
 \end{itemize}
 
-\subsubsection{Flujo de Sincronización}
+\subsubsection{Flujo de sincronización}
 
 El proceso de sincronización sigue estos pasos:
 
@@ -317,13 +405,13 @@ El proceso de sincronización sigue estos pasos:
     \item Se registra la sincronización en un log de auditoría
 \end{enumerate}
 
-\subsubsection{Manejo de Errores y Reintentos}
+\subsubsection{Manejo de errores y reintentos}
 
 El servicio implementa un mecanismo de reintentos con backoff exponencial para manejar fallas temporales de red o gas insuficiente en Ethereum. Los eventos fallidos se encolan para reintento posterior, garantizando eventual consistencia.
 
-\subsection{Implementación de IPFS Dual}
+\subsection{Implementación de IPFS dual}
 
-\subsubsection{IPFS Privado}
+\subsubsection{IPFS privado}
 
 Se configuró un nodo IPFS local para el almacenamiento de evidencias completas:
 
@@ -342,7 +430,7 @@ El servicio IPFSPrivateService implementa las siguientes funciones:
     \item \texttt{isConnected()}: Verifica la conectividad con el daemon de IPFS
 \end{itemize}
 
-\subsubsection{IPFS Público}
+\subsubsection{IPFS público}
 
 Para la capa pública se utilizó un gateway público de IPFS que permite:
 
@@ -354,16 +442,16 @@ Para la capa pública se utilizó un gateway público de IPFS que permite:
 
 El IPFSPublicService gestiona la publicación de hashes en el nodo público, manteniendo la separación entre evidencias completas (privadas) y hashes verificables (públicos).
 
-\subsection{Desarrollo del Backend: API REST}
+\subsection{Desarrollo del backend: API REST}
 
-\subsubsection{Arquitectura de Servicios}
+\subsubsection{Arquitectura de servicios}
 
 El backend implementa el patrón Controller-Service-Repository adaptado para arquitectura híbrida:
 
-\paragraph{Capa de Controladores:}
+\paragraph{Capa de controladores}
 \texttt{FineController} maneja las peticiones HTTP y delega la lógica de negocio a los servicios.
 
-\paragraph{Capa de Servicios:}
+\paragraph{Capa de servicios}
 \begin{itemize}
     \item \texttt{FineService}: Orquestador principal que coordina operaciones entre blockchains
     \item \texttt{HyperledgerService}: Interacción con la red privada de Fabric
@@ -373,10 +461,10 @@ El backend implementa el patrón Controller-Service-Repository adaptado para arq
     \item \texttt{AptitudeService}: Integración con API externa RUNT/SIMIT (simulada)
 \end{itemize}
 
-\paragraph{Capa de Repositorios:}
+\paragraph{Capa de repositorios}
 Los repositorios abstraen el acceso a las fuentes de datos (blockchains e IPFS).
 
-\subsubsection{Endpoints Principales}
+\subsubsection{Endpoints principales}
 
 \begin{table}[h]
 \centering
@@ -393,7 +481,7 @@ GET & /api/fines/by-plate/:plateNumber & Consulta pública desde Ethereum \\ \hl
 \caption{Endpoints principales de la API REST}
 \end{table}
 
-\subsubsection{Middleware de Seguridad}
+\subsubsection{Middleware de seguridad}
 
 Se implementaron middlewares para:
 \begin{itemize}
@@ -414,13 +502,13 @@ La API se documentó utilizando Swagger/OpenAPI 3.0, generando documentación in
     \item Códigos de error posibles
 \end{itemize}
 
-\subsection{Desarrollo del Frontend}
+\subsection{Desarrollo del frontend}
 
-\subsubsection{Arquitectura de Componentes}
+\subsubsection{Arquitectura de componentes}
 
 El frontend se estructuró en tres módulos principales:
 
-\paragraph{Panel de Agente de Tránsito.}
+\paragraph{Panel de agente de tránsito}
 Interfaz para registro y gestión de multas con las siguientes funcionalidades:
 \begin{itemize}
     \item Formulario de registro de multa con validación en tiempo real
@@ -430,15 +518,16 @@ Interfaz para registro y gestión de multas con las siguientes funcionalidades:
     \item Visualización de historial de cambios
 \end{itemize}
 
-% Espacio reservado para captura de pantalla del Panel de Agente
-\begin{figure}[htbp]
-    \centering
-    % \includegraphics[width=0.8\textwidth]{Images/UI_Panel_Agente.png}
-    \caption{Panel de Agente de Tránsito - Registro de Multa}
-    \label{fig:ui_panel_agente}
-\end{figure}
+% Figura del Panel de Agente: (eliminada del PDF)
+% Se comenta la figura para que no aparezca en la lista de figuras ni en el documento final.
+% \begin{figure}[htbp]
+%     \centering
+%     % \includegraphics[width=0.8\textwidth]{Images/UI_Panel_Agente.png}
+%     \caption{Panel de Agente de Tránsito - Registro de Multa}
+%     \label{fig:ui_panel_agente}
+% \end{figure}
 
-\paragraph{Panel Ciudadano.}
+\paragraph{Panel ciudadano}
 Interfaz pública para consulta y verificación de multas:
 \begin{itemize}
     \item Búsqueda de multas por número de placa
@@ -448,15 +537,16 @@ Interfaz pública para consulta y verificación de multas:
     \item Presentación de apelaciones (integrado con Fabric)
 \end{itemize}
 
-% Espacio reservado para captura de pantalla del Panel Ciudadano
-\begin{figure}[htbp]
-    \centering
-    % \includegraphics[width=0.8\textwidth]{Images/UI_Panel_Ciudadano.png}
-    \caption{Panel Ciudadano - Consulta y Verificación de Multas}
-    \label{fig:ui_panel_ciudadano}
-\end{figure}
+% Figura del Panel Ciudadano: (eliminada del PDF)
+% Se comenta la figura para que no aparezca en la lista de figuras ni en el documento final.
+% \begin{figure}[htbp]
+%     \centering
+%     % \includegraphics[width=0.8\textwidth]{Images/UI_Panel_Ciudadano.png}
+%     \caption{Panel Ciudadano - Consulta y Verificación de Multas}
+%     \label{fig:ui_panel_ciudadano}
+% \end{figure}
 
-\paragraph{Dashboard Administrativo.}
+\paragraph{Dashboard administrativo}
 Panel con estadísticas y visualizaciones:
 \begin{itemize}
     \item Gráficos de multas por tipo de infracción (Recharts)
@@ -465,15 +555,16 @@ Panel con estadísticas y visualizaciones:
     \item Métricas de rendimiento del sistema
 \end{itemize}
 
-% Espacio reservado para captura de pantalla del Dashboard
-\begin{figure}[htbp]
-    \centering
-    % \includegraphics[width=0.8\textwidth]{Images/UI_Dashboard.png}
-    \caption{Dashboard Administrativo - Estadísticas y Métricas}
-    \label{fig:ui_dashboard}
-\end{figure}
+% Figura del Dashboard Administrativo: (eliminada del PDF)
+% Se comenta la figura para que no aparezca en la lista de figuras ni en el documento final.
+% \begin{figure}[htbp]
+%     \centering
+%     % \includegraphics[width=0.8\textwidth]{Images/UI_Dashboard.png}
+%     \caption{Dashboard Administrativo - Estadísticas y Métricas}
+%     \label{fig:ui_dashboard}
+% \end{figure}
 
-\subsubsection{Gestión de Estado}
+\subsubsection{Gestión de estado}
 
 Se implementó Zustand para gestión de estado global, con stores separados para:
 \begin{itemize}
@@ -483,7 +574,7 @@ Se implementó Zustand para gestión de estado global, con stores separados para
     \item Configuración de la aplicación
 \end{itemize}
 
-\subsubsection{Interacción con Backend}
+\subsubsection{Interacción con backend}
 
 El frontend se comunica con el backend mediante:
 \begin{itemize}
@@ -493,13 +584,13 @@ El frontend se comunica con el backend mediante:
     \item Polling para actualización de estados de transacciones blockchain
 \end{itemize}
 
-\subsection{Integración con Sistemas Externos}
+\subsection{Integración con sistemas externos}
 
-\subsubsection{Simulación de APIs Gubernamentales}
+\subsubsection{Simulación de APIs gubernamentales}
 
 Dado que las APIs reales del RUNT y SIMIT requieren contratos comerciales y aprobaciones institucionales, se implementaron servicios mock que simulan las respuestas esperadas:
 
-\paragraph{API Aptitude (RUNT/SIMIT Simulado).}
+\paragraph{API Aptitude (RUNT/SIMIT simulado)}
 El servicio \texttt{AptitudeService} genera datos sintéticos coherentes para:
 \begin{itemize}
     \item Información de propietarios de vehículos
@@ -510,7 +601,7 @@ El servicio \texttt{AptitudeService} genera datos sintéticos coherentes para:
 
 La simulación incluye validaciones realistas como verificación de formato de placa, generación de números de cédula coherentes y tipos de vehículos válidos según normativa colombiana.
 
-\subsubsection{Consideraciones para Integración Real}
+\subsubsection{Consideraciones para integración real}
 
 Para migrar a producción con APIs reales, se requiere:
 \begin{itemize}
@@ -523,7 +614,7 @@ Para migrar a producción con APIs reales, se requiere:
 
 El diseño modular del servicio permite reemplazar fácilmente los mocks por implementaciones reales sin afectar el resto del sistema.
 
-\subsection{Desafíos Técnicos y Soluciones Implementadas}
+\subsection{Desafíos técnicos y soluciones implementadas}
 
 \subsubsection{Compatibilidad de Módulos ESM}
 
@@ -549,7 +640,7 @@ El diseño modular del servicio permite reemplazar fácilmente los mocks por imp
 
 \textbf{Solución:} Se implementó límite de tamaño de 5MB por evidencia en el backend. Se agregó compresión de imágenes en el frontend antes del upload. Para videos, se extrae un frame representativo en lugar de subir el archivo completo.
 
-\subsection{Testing y Validación}
+\subsection{Testing y validación}
 
 \subsubsection{Tests de Smart Contracts}
 
