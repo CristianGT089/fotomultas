@@ -4,7 +4,7 @@ Este capítulo presenta las conclusiones del trabajo, estructuradas según los o
 
 \subsection{Conclusiones generales}
 
-La arquitectura híbrida blockchain implementada en este trabajo demuestra que es técnicamente viable combinar Hyperledger Fabric para privacidad y Ethereum para transparencia pública en un sistema gubernamental de gestión de fotocomparendos. El prototipo desarrollado valida que las tecnologías de registro distribuido pueden garantizar simultáneamente la inmutabilidad de registros, la protección de datos sensibles y la verificación pública ciudadana, abordando así las limitaciones críticas identificadas en el sistema actual de Bogotá.
+La arquitectura híbrida blockchain implementada en este trabajo demuestra que es técnicamente viable combinar Hyperledger Fabric para privacidad y Ethereum para transparencia pública en un sistema gubernamental de gestión de fotocomparendos. El prototipo desarrollado valida que las tecnologías de registro distribuido pueden garantizar simultáneamente la inmutabilidad de registros, la protección de datos sensibles y la verificación pública ciudadana, abordando así las limitaciones identificadas en el sistema actual de Bogotá.
 
 Los resultados de las pruebas funcionales y de integridad confirman que el sistema cumple con los principios fundamentales propuestos: inmutabilidad verificable mediante hash criptográficos en blockchain, integridad de evidencias garantizada por el direccionamiento por contenido de IPFS y trazabilidad completa del ciclo de vida de las multas. La arquitectura dual permite que datos sensibles permanezcan privados en Hyperledger Fabric mientras que metadatos públicos en Ethereum habilitan la verificación ciudadana sin intermediarios.
 
@@ -59,7 +59,7 @@ Las contribuciones técnicas implementadas incluyen:
     
     \item \textbf{Smart Contract optimizado:} Contrato FineManagement.sol con paginación eficiente, control de acceso basado en roles y eventos para auditoría, auditado para consumo mínimo de gas.
     
-    \item \textbf{Documentación técnica completa:} Swagger API, README con instrucciones de despliegue, diagramas UML actualizados y tests automatizados con cobertura >90\%.
+    \item \textbf{Documentación técnica completa:} Swagger API, README con instrucciones de despliegue, diagramas UML y tests automatizados con cobertura >90\%.
 \end{enumerate}
 
 \subsubsection{Contribución social}
@@ -83,7 +83,7 @@ Basado en las lecciones aprendidas, se recomienda:
 \begin{enumerate}
     \item \textbf{Piloto controlado previo:} Implementar un piloto de 3-6 meses con volumen limitado (5,000-10,000 multas) antes del despliegue masivo, permitiendo ajustes operativos sin impacto mayor.
     
-    \item \textbf{Auditoría de seguridad formal:} Contratar auditoría externa especializada (ej. Trail of Bits, ConsenSys Diligence) para Smart Contracts y chaincode antes de procesar datos reales.
+    \item \textbf{Auditoría de seguridad formal:} Contratar auditoría externa especializada para Smart Contracts y chaincode antes de procesar datos reales.
     
     \item \textbf{Integración gradual con SIMIT/RUNT:} Iniciar con consultas de lectura, posteriormente habilitar sincronización bidireccional una vez validada la estabilidad del sistema.
     
@@ -106,34 +106,20 @@ Para facilitar la adopción por la Secretaría Distrital de Movilidad:
     \item \textbf{SLA y acuerdos de servicio:} Definir niveles de servicio (uptime >99.5\%, latencia <5s) y procedimientos de escalamiento ante incidentes.
 \end{enumerate}
 
-\subsubsection{Para replicación en otros municipios}
-
-La arquitectura es replicable en otras ciudades colombianas:
-
-\begin{enumerate}
-    \item \textbf{Adaptación normativa local:} Revisar códigos de policía municipales y ajustar tipos de infracciones en Smart Contract según normativa local.
-    
-    \item \textbf{Federación de redes Fabric:} Explorar modelo de red Fabric multi-ciudad donde cada municipio es una organización, permitiendo interoperabilidad nacional.
-    
-    \item \textbf{Compartición de infraestructura:} Evaluar modelo de consorcio donde múltiples municipios pequeños compartan nodos de Ethereum e IPFS para reducir costos.
-    
-    \item \textbf{Estandarización de contratos:} Proponer estándar nacional de Smart Contract para fotomultas, facilitando portabilidad de multas entre jurisdicciones.
-\end{enumerate}
-
 \subsection{Trabajo futuro}
 Se propone el siguiente roadmap para evolución del proyecto:
 
-\subsubsection*{Escalar Arquitectura Híbrida a Producción (3-6 meses)}
+\subsubsection*{Completar Arquitectura Híbrida}
 
 \begin{itemize}
-    \item Escalar red de Hyperledger Fabric de 1 organización (entorno local) a 3 organizaciones (SDM, Policía, Auditoría) en producción
+    \item Escalar red de Hyperledger Fabric de 1 organización (entorno local) a 3 organizaciones en producción
     \item Extender chaincode en Go existente con Private Data Collections para datos sensibles adicionales
     \item Fortalecer servicio de sincronización con manejo robusto de errores, reintentos automáticos y estrategias de fallback
     \item Desplegar nodos IPFS privado y público en infraestructura distribuida con políticas de acceso diferenciadas
     \item Refactorizar ServiceFactory para eliminación del patrón Singleton y mejorar testabilidad
 \end{itemize}
 
-\subsubsection*{Despliegue en Servidor Universitario (1-2 meses)}
+\subsubsection*{Despliegue en Servidor Universitario}
 
 \begin{itemize}
     \item Migrar Smart Contract de Hardhat local a Sepolia Testnet (o mainnet con Layer 2)
@@ -143,7 +129,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Implementar monitoreo con Prometheus y Grafana
 \end{itemize}
 
-\subsubsection*{Piloto Controlado con SDM (6 meses)}
+\subsubsection*{Piloto Controlado con SDM}
 
 \begin{itemize}
     \item Firma de convenio con Secretaría Distrital de Movilidad
@@ -154,7 +140,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item Medición de reducción efectiva en tasa de impugnación y PQRSD
 \end{itemize}
 
-\subsubsection*{Funcionalidades Avanzadas (6-12 meses)}
+\subsubsection*{Funcionalidades Avanzadas}
 
 \begin{itemize}
     \item \textbf{Módulo de Pagos:} Integración con PSE, Nequi, Daviplata para pago de multas desde la plataforma
@@ -164,7 +150,7 @@ Se propone el siguiente roadmap para evolución del proyecto:
     \item \textbf{API pública:} Endpoints públicos para desarrolladores externos (apps de consulta de multas, integraciones con aseguradoras)
 \end{itemize}
 
-\subsubsection*{Escalamiento Nacional (12+ meses)}
+\subsubsection*{Escalamiento Nacional}
 
 \begin{itemize}
     \item Extensión a otras ciudades principales (Medellín, Cali, Barranquilla)
