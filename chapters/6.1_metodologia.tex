@@ -101,20 +101,25 @@ La adopción de este modelo iterativo responde a tres factores cruciales:
 
 El ciclo de vida del desarrollo siguió las fases iterativas del modelo de prototipos, adaptadas a los objetivos específicos del proyecto, como se describe en la Tabla~\ref{tab:fases_prototipos}.
 
-\begin{table}[h]
-\centering
-\caption{Fases del Modelo de Prototipos Aplicado al Proyecto}
-\label{tab:fases_prototipos}
-\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\begin{longtable}{|p{3cm}|p{5cm}|p{6cm}|}
+\label{tab:fases_prototipos} \\
 \hline
 \textbf{Fase} & \textbf{Descripción} & \textbf{Aplicación en el Proyecto} \\ \hline
+\endfirsthead
+
+\endhead
+
+\endfoot
+
+\hline
+\endlastfoot
+
 \textbf{1. Requisitos Iniciales} & Recopilación de los requisitos funcionales básicos y esenciales del sistema. & Se definieron las funcionalidades mínimas viables: registro inmutable de multas, almacenamiento de evidencia en IPFS, consulta pública y un mecanismo para la verificación de integridad. \\ \hline
 \textbf{2. Construcción del Prototipo} & Desarrollo rápido de una versión funcional reducida que implementa los requisitos iniciales. & Se implementó un prototipo funcional que incluía un Smart Contract en una red local de Ethereum, una API REST para la comunicación y un frontend básico para la interacción del usuario. \\ \hline
 \textbf{3. Evaluación del Prototipo} & Validación del prototipo mediante pruebas internas para evaluar su funcionalidad y alineación con los objetivos. & Se ejecutó un plan de pruebas exhaustivo (detallado en el Capítulo 9) para validar la inmutabilidad de los registros, la integridad de la evidencia y la usabilidad de la interfaz con datos simulados. \\ \hline
 \textbf{4. Refinamiento e Iteración} & Ajuste y mejora del prototipo basándose en los hallazgos de la evaluación. & Con base en los resultados, se optimizó el consumo de gas del Smart Contract, se mejoraron las validaciones de la API y se refinó la arquitectura para incorporar la capa privada con Hyperledger Fabric. \\ \hline
 \textbf{5. Documentación Final} & Una vez validado el concepto, se documenta la arquitectura final y se proponen los siguientes pasos. & Se consolidó el diseño de la arquitectura híbrida final y se elaboró un \textit{roadmap} detallado para una eventual implementación en un entorno de producción. \\ \hline
-\end{tabular}
-\end{table}
+\end{longtable}
 
 \subsubsection{Ventajas y limitaciones del enfoque}
 
