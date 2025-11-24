@@ -1,9 +1,9 @@
 \section{\large Introducción}
 En Colombia, la gestión de fotocomparendos ha sido objeto de controversia debido a fallas en la transparencia y posibles manipulaciones en el proceso de registro y validación de infracciones. La falta de un sistema confiable ha generado desconfianza entre los ciudadanos, lo que evidencia la necesidad de una solución que garantice la integridad, inmutabilidad y verificabilidad de la información.
 
-La tecnología blockchain ha demostrado ser una alternativa eficaz para el almacenamiento seguro y descentralizado de datos, asegurando que una vez registrados, estos no puedan ser alterados sin dejar rastro. A través de contratos inteligentes, es posible automatizar la validación y el procesamiento de fotocomparendos, reduciendo la intervención humana y minimizando el riesgo de corrupción o errores administrativos.
+Las tecnologías de registro distribuido (DLT), y en particular blockchain, han demostrado ser alternativas eficaces para el almacenamiento seguro y descentralizado de datos, asegurando que una vez registrados, estos no puedan ser alterados sin dejar rastro (ver Capítulo 3 para fundamentos teóricos detallados). A través de contratos inteligentes, es posible automatizar la validación y el procesamiento de fotocomparendos, reduciendo la intervención humana y minimizando el riesgo de corrupción o errores administrativos.
 
-Este trabajo propone el diseño e implementación de un prototipo basado en blockchain para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso. Se utilizarán contratos inteligentes para registrar cada infracción, permitiendo que cualquier actor autorizado pueda verificar su autenticidad sin necesidad de intermediarios. Mediante pruebas y simulaciones, se evaluará la viabilidad del sistema, demostrando cómo esta tecnología puede fortalecer la confianza en los procesos de control de tránsito y mejorar la eficiencia en la gestión de sanciones.
+Este trabajo propone el diseño e implementación de un prototipo basado en una arquitectura híbrida blockchain para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso. Se utilizarán contratos inteligentes para registrar cada infracción, permitiendo que cualquier actor autorizado pueda verificar su autenticidad sin necesidad de intermediarios. Mediante pruebas y simulaciones, se evaluará la viabilidad del sistema, demostrando cómo esta tecnología puede fortalecer la confianza en los procesos de control de tránsito y mejorar la eficiencia en la gestión de sanciones.
 
 \subsection{Formulación del problema}
 La gestión de comparendos en Bogotá es un proceso de gran escala. Según datos del Observatorio de Movilidad, entre enero de 2018 y agosto de 2024 se emitieron más de 1.9 millones de comparendos a través de cámaras salvavidas, evidenciando la importancia sistémica de este proceso para la regulación del tránsito en la ciudad, como se presenta en la Figura~\ref{fig:estadisticas_comparendos} se observa los diferentes métodos utilizados para crear los comparendos. Esta operación se apoya en el sistema FÉNIX, una aplicación con infraestructura en la nube, cuya arquitectura de datos y control de acceso opera bajo un paradigma centralizado.
@@ -57,72 +57,15 @@ Desarrollar un prototipo para apoyar el registro y trazabilidad de estados en el
     \item Evaluar la viabilidad del prototipo desarrollado, mediante la ejecución de un plan de pruebas funcionales y evaluación de métricas de desempeño en un entorno de pruebas, para validar las condiciones de inmutabilidad, trazabilidad y seguridad.
 \end{itemize}
 
-\subsection{Impacto o alcance esperado}
-\paragraph{Alcance}
-\textbf{Enfoque y delimitación geográfica:} Este trabajo se circunscribe al proceso de trazabilidad de estados de multas de tránsito automatizadas (fotomultas) emitidas por la Secretaría Distrital de Movilidad de Bogotá. Se excluyen de manera explícita los siguientes aspectos:
+\subsection{Impacto esperado}
+
+El desarrollo de este prototipo tiene como propósito demostrar la viabilidad técnica de una arquitectura descentralizada para la gestión de fotocomparendos, con el potencial de:
+
 \begin{itemize}
-    \item Multas impuestas de forma presencial por agentes de tránsito.
-    \item Procesos sancionatorios de otras ciudades o entidades territoriales.
-    \item Funcionalidades de recaudo y pasarelas de pago (solo se registra el estado del pago, no se procesa el pago en sí).
+    \item \textbf{Fortalecer la confianza ciudadana:} Mediante la verificación independiente de infracciones y el acceso transparente a la información, sin intermediarios.
+    \item \textbf{Reducir la fricción operativa:} Disminuir los recursos destinados a la gestión de PQRSD y disputas administrativas, actualmente estimados en más de 155.000 casos semestrales.
+    \item \textbf{Prevenir fraudes:} Mitigar la vulnerabilidad de los ciudadanos ante esquemas de estafa derivados de la falta de canales oficiales confiables.
+    \item \textbf{Establecer un precedente técnico:} Servir como referencia para la implementación de soluciones similares en otros procesos gubernamentales que requieran alta integridad de datos.
 \end{itemize}
 
-\textbf{Componentes del prototipo:} El prototipo aborda los siguientes módulos funcionales:
-\begin{itemize}
-    \item \textbf{Registro inmutable de la infracción:} Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la blockchain (Hyperledger Fabric).
-    \item \textbf{Almacenamiento descentralizado de evidencias:} Carga de la imagen o video de la fotomulta en IPFS y obtención de su hash.
-    \item \textbf{Verificación pública:} Servicio de consulta que permite contrastar el hash guardado en la cadena con el archivo almacenado en IPFS.
-    \item \textbf{Gestión del ciclo de vida de la multa:} Estados: Generada → Notificada → En apelación → Pagada → Cerrada. Cada transición queda registrada mediante eventos de contrato inteligente.
-    \item \textbf{Interfaz mínima:} Panel Web para: (i) agentes que registran la infracción y (ii) ciudadanos que consultan la autenticidad y el estado de su fotomulta.
-\end{itemize}
-
-\textbf{Fuera del alcance:}
-\begin{itemize}
-    \item Integración completa con sistemas legados del RUNT o SIMIT; se simula mediante datos de prueba.
-    \item Implementación de un modelo económico (tarifas de gas, costos operativos reales).
-    \item Implementación de algoritmos de detección automática de infracciones (visión por computador). Se parte de que la cámara ya detectó la infracción y generó la evidencia.
-    \item Despliegue en un entorno de producción o capacidad más de 10 usuarios.
-\end{itemize}
-
-\textbf{Entregables:}
-\begin{itemize}
-    \item Contrato inteligente en Solidity (o «chaincode» en Go, según la red seleccionada) con pruebas unitarias.
-    \item Script de despliegue de red Hyperledger Fabric e instalación de IPFS local.
-    \item Aplicación Web de demostración (frontend ligero) conectada a los servicios anteriores.
-    \item Manual técnico que documenta la arquitectura y el flujo de datos.
-    \item Informe de resultados de las pruebas funcionales y de rendimiento básico.
-\end{itemize}
-
-\textbf{Criterios de éxito:}
-\begin{itemize}
-    \item Tiempo medio de publicación de una infracción $\leq$ 3 s en entorno de laboratorio.
-    \item Coincidencia 100\% entre el hash almacenado en la cadena y la evidencia recuperada desde IPFS.
-    \item Trazabilidad completa del historial de estados para al menos 50 multas de prueba.
-    \item Ausencia de fallos críticos en pruebas de carga con 10 transacciones concurrentes.
-\end{itemize}
-
-\paragraph{Limitaciones del Prototipo}
-Es fundamental reconocer que, como prototipo desarrollado en un contexto académico, el presente estudio presenta ciertas limitaciones que definen el alcance de sus conclusiones y delinean claras oportunidades para futuras investigaciones. Las principales limitaciones son:
-
-\textbf{Entorno de Validación:}
-\begin{itemize}
-    \item \textbf{Validación en Entorno de Laboratorio:} El prototipo fue diseñado, desplegado y evaluado en un entorno de simulación controlado. No se sometió a pruebas en una infraestructura productiva real con la carga de transacciones y el volumen de usuarios que gestiona actualmente la Secretaría de Movilidad.
-    \item \textbf{Uso de Datos Simulados:} Debido a estrictas normativas de privacidad y protección de datos personales que impiden el acceso a información real de ciudadanos y vehículos, todas las pruebas se realizaron con datos sintéticos.
-    \item \textbf{Suposiciones sobre la Calidad de la Evidencia:} El sistema asume que las evidencias fotográficas (imágenes de fotocomparendos) son capturadas con una calidad suficiente para su procesamiento.
-\end{itemize}
-
-\textbf{Integración y Comparación con Sistemas Existentes:}
-\begin{itemize}
-    \item \textbf{Integración Simulada con Sistemas Externos:} La interacción con plataformas gubernamentales clave como el RUNT y el SIMIT fue simulada a través de APIs de prueba (mocks).
-    \item \textbf{Ausencia de Benchmarking Directo con el Sistema Actual (Fénix):} La falta de acceso al código fuente y a la arquitectura interna del sistema Fénix impidió realizar una comparación cuantitativa y directa.
-\end{itemize}
-
-\textbf{Aspectos Técnicos y de Escalabilidad:}
-\begin{itemize}
-    \item \textbf{Proyección de Costos como Escenario de Referencia:} Los costos de infraestructura y desarrollo estimados corresponden a un escenario de referencia.
-    \item \textbf{Estrategia de Persistencia en IPFS:} Para que la evidencia digital permanezca disponible a largo plazo en IPFS, es necesario que al menos un nodo la mantenga "pineada".
-\end{itemize}
-
-\textbf{Seguridad y Robustez:}
-\begin{itemize}
-    \item \textbf{Ausencia de Pruebas de Seguridad Ofensivas:} El alcance del proyecto no incluyó la realización de auditorías de seguridad formales sobre los contratos inteligentes ni pruebas de penetración sobre la aplicación web.
-\end{itemize} 
+\textbf{Nota:} Para la especificación detallada del alcance del proyecto, los componentes del prototipo, criterios de éxito y limitaciones metodológicas, consultar el Capítulo 6: Alcance y Limitaciones. 

@@ -12,7 +12,9 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
             \item \textbf{Opiniones de los usuarios: } La recopilación de opiniones de los usuarios, incluidos el tipo de opinión, los comentarios y las valoraciones de los usuarios, ayuda a los administradores del sistema a comprender las experiencias y percepciones de los usuarios. Esta información es valiosa para identificar áreas de mejora como la usabilidad y funcionalidad del sistema. Involucrar a los usuarios de esta manera puede conducir a un diseño del sistema más centrado en el usuario, mejorando la satisfacción y la eficacia general. 
                 \item \textbf{Datos de cumplimiento: } El registro de los datos de cumplimiento, incluido el estado de cumplimiento y los detalles normativos, garantiza que el sistema se adhiere a las leyes y normativas de tráfico locales. Este seguimiento es vital para demostrar el cumplimiento de la normativa y evitar problemas legales. El mantenimiento de registros de cumplimiento detallados también facilita las auditorías reglamentarias en, proporcionando pruebas transparentes de que el sistema funciona dentro de las normas legales, lo que es esencial para generar confianza y credibilidad entre las partes interesadas.
 \end{enumerate}
-\subsection{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
+\subsection{Diagrama de casos de uso}
+
+Este diagrama presenta las funcionalidades principales del sistema desde la perspectiva de los actores involucrados: agentes de tránsito, ciudadanos y administradores.
 \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 6}\\[2em]
@@ -28,44 +30,6 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
     \end{flushleft}
     \refstepcounter{figure}\label{fig:casos_uso}
 \end{figure}
-
-\subsection{Diagrama de despliegue}
-\begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 7}\\[2em]
-        \textit{Diagrama de despliegue de la arquitectura del sistema}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 7. Diagrama de despliegue de la arquitectura del sistema}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:diagrama_despliegue}
-\end{figure}
-
-En la Figura \ref{fig:diagrama_despliegue} se presenta la arquitectura híbrida propuesta, que combina una red blockchain privada (Hyperledger Fabric) con una blockchain pública (Ethereum), implementando el concepto de transparencia selectiva. La arquitectura se compone de los siguientes elementos:
-
-\paragraph{Capa privada - Hyperledger Fabric}
-\begin{itemize}
-    \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan chaincode (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
-    \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo PBFT (Practical Byzantine Fault Tolerance), garantizando la validación eficiente de transacciones.
-    \item \textbf{Certificate Authority (CA):} Gestiona las identidades digitales y permisos de usuarios autorizados (administradores, agentes de tránsito).
-    \item \textbf{IPFS Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
-\end{itemize}
-
-\paragraph{Capa pública - Ethereum}
-\begin{itemize}
-    \item \textbf{Nodos Ethereum:} Ejecutan Smart Contracts que almacenan metadatos públicos de infracciones sin información personal sensible.
-    \item \textbf{IPFS Público:} Almacena hashes de evidencias para verificación ciudadana, sin exponer imágenes completas.
-\end{itemize}
-
-\paragraph{Servicio de sincronización}
-Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de Hyperledger Fabric y publicándolos en Ethereum junto con hashes de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de hashes criptográficos.
-
-La arquitectura se conecta mediante servicios web a APIs externas como Apitude para acceder a información del Registro Único Nacional de Tránsito (RUNT) y del Sistema Integrado de Información sobre Multas y Sanciones por Infracciones de Tránsito (SIMIT), obteniendo datos de conductores, vehículos y el estado de multas. Esta integración permite validar la información de infracciones contra registros oficiales sin comprometer la privacidad de los datos almacenados en la capa privada. 
 
 \subsection{Diagrama de clases}
 La arquitectura de clases del sistema implementa el patrón Controller-Service-Repository, adaptado para soportar la arquitectura híbrida blockchain. Se distinguen tres capas principales de lógica de negocio:
@@ -106,14 +70,41 @@ Coordina las operaciones entre todas las capas:
     \end{flushleft}
     \refstepcounter{figure}\label{fig:diagrama_clases}
 \end{figure}
-En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases completo del sistema, mostrando la separación entre servicios de Hyperledger Fabric (privado), Ethereum (público) y el servicio de sincronización que coordina la interoperabilidad entre ambas blockchains. El diagrama ilustra cómo el patrón Repository abstrae el acceso a cada blockchain mediante repositorios especializados (HyperledgerRepository y EthereumRepository), mientras que el patrón Service encapsula la lógica de negocio específica de cada capa
- \begin{figure}[htbp]
+En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases completo del sistema, mostrando la separación entre servicios de Hyperledger Fabric (privado), Ethereum (público) y el servicio de sincronización que coordina la interoperabilidad entre ambas blockchains. El diagrama ilustra cómo el patrón Repository abstrae el acceso a cada blockchain mediante repositorios especializados (HyperledgerRepository y EthereumRepository), mientras que el patrón Service encapsula la lógica de negocio específica de cada capa.
+
+\subsection{Diagramas de actividades}
+
+Los siguientes diagramas describen los flujos de proceso principales del sistema, mostrando la secuencia de operaciones y decisiones en la creación de multas y gestión de apelaciones.
+
+\subsubsection{Proceso de creación de multa}
+
+\begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 9}\\[2em]
+        \textit{Diagrama de actividades para el proceso de creación de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 9. Diagrama de actividades para el proceso de creación de multa}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
+\end{figure}
+
+En la Figura \ref{fig:diagrama_creacion_multa} se muestra el flujo completo para el registro de una nueva infracción, desde la captura de evidencia hasta la sincronización en ambas blockchains. El proceso inicia con la validación de datos del vehículo en el RUNT, continúa con el almacenamiento de evidencia en IPFS privado, registro en Hyperledger Fabric y finalmente la publicación de metadatos en Ethereum para consulta pública.
+
+\subsubsection{Proceso de apelación de multa}
+
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 10}\\[2em]
         \textit{Diagrama de actividades para el proceso de apelación de multa}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 9. Diagrama de actividades para el proceso de apelación de multa}
+    \addcontentsline{lof}{figure}{Figura 10. Diagrama de actividades para el proceso de apelación de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
     \vspace{2em}
@@ -125,32 +116,54 @@ En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases complet
 
 En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para la gestión de apelaciones de multas en la arquitectura híbrida. Este proceso se ejecuta en la capa privada de Hyperledger Fabric, garantizando la confidencialidad de las evidencias presentadas por el ciudadano. Una vez resuelta la apelación por el agente autorizado, el cambio de estado se sincroniza a la blockchain pública de Ethereum, permitiendo que el ciudadano verifique la resolución sin acceder a información sensible del proceso interno.
 
-\subsection{Diagrama de actividades}
- \begin{figure}[htbp]
+\subsection{Diagrama de despliegue}
+
+\begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 10}\\[2em]
-        \textit{Diagrama de actividades para el proceso de creación de multa}
+        \textbf{Figura 11}\\[2em]
+        \textit{Diagrama de despliegue de la arquitectura del sistema}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 10. Diagrama de actividades para el proceso de creación de multa}
+    \addcontentsline{lof}{figure}{Figura 11. Diagrama de despliegue de la arquitectura del sistema}
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
+    \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
     \vspace{2em}
     \begin{flushleft}
         \textit{Nota.} Elaboración propia.
     \end{flushleft}
-    \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
+    \refstepcounter{figure}\label{fig:diagrama_despliegue}
 \end{figure}
+
+En la Figura \ref{fig:diagrama_despliegue} se presenta la arquitectura híbrida propuesta, que combina una red blockchain privada (Hyperledger Fabric) con una blockchain pública (Ethereum), implementando el concepto de transparencia selectiva. La arquitectura se compone de los siguientes elementos:
+
+\paragraph{Capa privada - Hyperledger Fabric}
+\begin{itemize}
+    \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan chaincode (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
+    \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo PBFT (Practical Byzantine Fault Tolerance), garantizando la validación eficiente de transacciones.
+    \item \textbf{Certificate Authority (CA):} Gestiona las identidades digitales y permisos de usuarios autorizados (administradores, agentes de tránsito).
+    \item \textbf{IPFS Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
+\end{itemize}
+
+\paragraph{Capa pública - Ethereum}
+\begin{itemize}
+    \item \textbf{Nodos Ethereum:} Ejecutan Smart Contracts que almacenan metadatos públicos de infracciones sin información personal sensible.
+    \item \textbf{IPFS Público:} Almacena hashes de evidencias para verificación ciudadana, sin exponer imágenes completas.
+\end{itemize}
+
+\paragraph{Servicio de sincronización}
+Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de Hyperledger Fabric y publicándolos en Ethereum junto con hashes de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de hashes criptográficos.
+
+La arquitectura se conecta mediante servicios web a APIs externas como Apitude para acceder a información del Registro Único Nacional de Tránsito (RUNT) y del Sistema Integrado de Información sobre Multas y Sanciones por Infracciones de Tránsito (SIMIT), obteniendo datos de conductores, vehículos y el estado de multas. Esta integración permite validar la información de infracciones contra registros oficiales sin comprometer la privacidad de los datos almacenados en la capa privada.
 
 \subsection{Interfaz de usuario}
 \paragraph{Compartidas}
  \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 11}\\[2em]
+        \textbf{Figura 12}\\[2em]
         \textit{Pantalla de login del sistema}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 11. Pantalla de login del sistema}
+    \addcontentsline{lof}{figure}{Figura 12. Pantalla de login del sistema}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI1.png}
     \vspace{2em}
@@ -164,11 +177,11 @@ En la Figura~\ref{fig:login} se aprecia la pantalla de inicio de sesión, punto 
 
  \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 12}\\[2em]
+        \textbf{Figura 13}\\[2em]
         \textit{Pantalla de recuperación de contraseña}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 12. Pantalla de recuperación de contraseña}
+    \addcontentsline{lof}{figure}{Figura 13. Pantalla de recuperación de contraseña}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI2.png}
     \vspace{2em}
@@ -181,11 +194,11 @@ La Figura~\ref{fig:recuperar_password} muestra el formulario para recuperar la c
 \paragraph{Vista agente}
 \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 13}\\[2em]
+        \textbf{Figura 14}\\[2em]
         \textit{Dashboard del agente de tránsito}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 13. Dashboard del agente de tránsito}
+    \addcontentsline{lof}{figure}{Figura 14. Dashboard del agente de tránsito}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI3.png}
     \vspace{2em}
@@ -197,11 +210,11 @@ La Figura~\ref{fig:recuperar_password} muestra el formulario para recuperar la c
 En la Figura~\ref{fig:dashboard_agente} se presenta el tablero principal que resume las métricas de gestión de multas para el agente de tránsito.
  \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 14}\\[2em]
+        \textbf{Figura 15}\\[2em]
         \textit{Pantalla de consulta del estado de multa}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 14. Pantalla de consulta del estado de multa}
+    \addcontentsline{lof}{figure}{Figura 15. Pantalla de consulta del estado de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
     \vspace{2em}
@@ -213,11 +226,11 @@ En la Figura~\ref{fig:dashboard_agente} se presenta el tablero principal que res
 La Figura~\ref{fig:consulta_estado_multa} ilustra la consulta rápida del estado de una multa, facilitando el seguimiento por parte del agente.
  \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 15}\\[2em]
+        \textbf{Figura 16}\\[2em]
         \textit{Pantalla de consulta de detalle de multa}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 15. Pantalla de consulta de detalle de multa}
+    \addcontentsline{lof}{figure}{Figura 16. Pantalla de consulta de detalle de multa}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
     \vspace{2em}
@@ -230,11 +243,11 @@ En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de 
  \paragraph{Vista propietario de vehículo}
  \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 16}\\[2em]
+        \textbf{Figura 17}\\[2em]
         \textit{Pantalla de consulta de multas para propietarios de vehículos}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 16. Pantalla de consulta de multas para propietarios de vehículos}
+    \addcontentsline{lof}{figure}{Figura 17. Pantalla de consulta de multas para propietarios de vehículos}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI5.png}
     \vspace{2em}
@@ -245,11 +258,11 @@ En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de 
 \end{figure}
 \begin{figure}[htbp]
     \begin{flushleft}
-        \textbf{Figura 17}\\[2em]
+        \textbf{Figura 18}\\[2em]
         \textit{Pantalla de detalle de multa para propietarios de vehículos}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 17. Pantalla de detalle de multa para propietarios de vehículos}
+    \addcontentsline{lof}{figure}{Figura 18. Pantalla de detalle de multa para propietarios de vehículos}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/UI6.png}
     \vspace{2em}

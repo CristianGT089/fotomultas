@@ -79,61 +79,6 @@ Las lecciones aprendidas refuerzan la pertinencia de aplicar una arquitectura ba
 
 % --------- Fin de nueva subsección ---------
 
-\subsection{Funcionamiento de los fotocomparendos en Bogotá: mecanismos, regulación e impacto} 
-El sistema de fotocomparendos en Bogotá (FENIX) representa un modelo tecnológico y regulatorio diseñado para mejorar la seguridad vial mediante la detección automatizada de infracciones de tránsito \parencite{mintransporte2023}. Basado en cámaras de fotodetección ubicadas en zonas autorizadas por el Ministerio de Transporte, este sistema combina vigilancia electrónica, validación humana y marcos legales específicos para sancionar conductas de riesgo \parencite{supertransporte2021}. Desde su implementación, ha logrado reducir siniestros en puntos críticos, aunque enfrenta desafíos técnicos y jurídicos. A continuación, se detalla su operación, criterios de aplicación y marco legal que lo regula \parencite{mintransporte2023}.
-
-\paragraph{Marco legal y regulatorio} La implementación de fotocomparendos en Bogotá se sustenta en la Ley 1843 de 2017 \parencite{ley1843} y su reglamentación mediante resoluciones como la Resolución 20203040011245 \parencite{resolucion11245}. Estos instrumentos establecen cuatro criterios para instalar cámaras: 
-
-\begin{enumerate}
-    \item \textbf{Siniestralidad:}Ubicación en zonas con alto índice de accidentes. 
-    \item \textbf{Prevención:} Disuasión de conductas peligrosas. 
-    \item \textbf{Movilidad: } Optimización del flujo vehicular.
-        \item \textbf{Historial de infracciones:} Enfoque en corredores con recurrentes violaciones.
-\end{enumerate}
-
-Adicionalmente, las autoridades deben garantizar la visibilidad de los dispositivos, señalizando su presencia al menos 500 metros antes de su ubicación \parencite{ley1843}, y cumplir con planes de seguridad vial alineados con políticas distritales. La Secretaría Distrital de Movilidad (SDM) ha enfrentado cuestionamientos legales, como los señalados por la Personería en 2018 \parencite{sdm_camaras2023}.
-
-\paragraph{Proceso operativo de los fotocomparendos}
-\paragraph{Detección y captura de infracciones}
-Las cámaras de fotodetección en Bogotá se clasifican en dos tipos \parencite{supertransporte2021, mintransporte2023}: 
-
-\begin{itemize}
-    \item \textbf{Automáticas: }Monitorean velocidades, semáforos en rojo y restricciones como pico y placa.
-    \item \textbf{Semiautomáticas:}Vigilan bloqueos de calzadas, paradas prohibidas y recolección irregular de pasajeros.
-\end{itemize}
-
-Estos dispositivos, instalados en corredores de alta accidentalidad como la Avenida NQS o la Calle 100, capturan imágenes o videos que incluyen matrícula, fecha, hora y ubicación GPS14. Por ejemplo, en 2025, un conductor que exceda el límite de 50 km/h en la Avenida Boyacá será registrado por cámaras previamente señalizadas. 
-
-\paragraph{Validación y notificación}
-Una vez detectada una presunta infracción, las pruebas se envían a un centro de análisis de la SDM, donde agentes de tránsito verifican:
-
-\begin{itemize}
-    \item Legibilidad de la matrícula. 
-    \item Contexto de la violación (ejemplo: si un semáforo en rojo fue respetado).
-    \item Datos del vehículo en el RUNT (Registro Único Nacional de Tránsito).
-\end{itemize}
-
-Tras validar la infracción, se genera un comparendo electrónico notificado al propietario del vehículo mediante correo certificado o plataformas digitales. El plazo máximo para emitir la sanción es de 10 días hábiles desde la detección, seguido de 3 días para su notificación. Si el domicilio registrado está desactualizado, el infractor podría no recibir la notificación, lo que no exime el pago \parencite{ley1843}. 
-
-\paragraph{Tecnología y transparencia}
-El sistema combina: 
-\begin{itemize}
-    \item \textbf{Cámaras de última generación: }Equipadas con sensores de velocidad Lidar y visión nocturna. 
-    \item \textbf{Plataforma de análisis IA: }Algoritmos que descartan falsos positivos (ejemplo: ambulancias en emergencia). 
-        \item \textbf{Integración con RUNT:}Verificación instantánea de documentos como SOAT o tarjeta de operación.
-\end{itemize}
-
-Los datos se almacenan en servidores con cifrado AES-256, accesibles solo para funcionarios autorizados mediante autenticación biométrica.
-
-\paragraph{Problemas operativos}
-\begin{itemize}
-    \item \textbf{Notificaciones fallidas: }Errores en direcciones del RUNT causan sanciones no recibidas, acumulando intereses moratorios. 
-    \item \textbf{Latencia en validaciones:  }En horas pico, el volumen de infracciones puede retrasar procesamientos hasta 72 horas.
-\end{itemize}
-
-\paragraph{Cuestionamientos legales}
-En 2018, la Personería de Bogotá identificó que el 15\% de las cámaras operaban sin autorización ministerial durante un periodo de transición legal. La SDM rectificó esta situación en 2019, regularizando todos los dispositivos bajo la Resolución 20203040011245 de 2020 \parencite{secretaria_movilidad2023}. 
-
 \subsection{Aplicaciones específicas en gestión de tráfico e infracciones} 
 
 Al revisar las aplicaciones de blockchain en la gestión de tráfico, infracciones y fotocomparendos, como se observa en la Tabla~\ref{tab:estado_arte_comparativo}, se observa que, si bien hay discusiones teóricas \parencite{yousfi2022its}, propuestas conceptuales \parencite{chen2024blockchain} y hasta una joven PYME española, las implementaciones prácticas que integren el flujo completo descrito en el prototipo (captura -> IPFS -> Blockchain -> Verificación -> Pago Automatizado con Billetera Digital) son escasas y se encuentran en fase de propuesta o son parciales \parencite{omar2024srtm,choquevilca2024blockchain}.
@@ -192,7 +137,7 @@ La novedad principal radica en la integración holística de todo el flujo propu
 
 Aborda la brecha de aplicación específica, llevando los conceptos teóricos \parencite{swan2015blockchain, antonopoulos2023mastering} y las soluciones parciales existentes \parencite{choquevilca2024blockchain} a un dominio concreto (fotocomparendos en Bogotá) con un proceso completo. 
 
-\subsection{La relevancia del prototipo se justifica por su potencial para:} 
+\subsubsection{La relevancia del prototipo se justifica por su potencial para:} 
 \begin{itemize}
 \item Mejorar la transparencia y confianza en el proceso de fotocomparendos, evidencia verificable e inmutable \parencite{meroni2023editorial,thanasas2025enhancing}. 
 
@@ -285,3 +230,100 @@ En el cuadrante inferior derecho, los ``temas básicos'' como \textit{management
 Finalmente, en el cuadrante inferior izquierdo se encuentran los ``temas emergentes o en declive'', como \textit{blockchain} y \textit{optimization}, \textit{technology}, que muestran baja densidad y centralidad, indicando áreas de reciente aparición o menor desarrollo. Esta visualización permite identificar las tendencias, vacíos y oportunidades de investigación en el campo.
 
 % --- Fin de figuras Bibliometrix ---
+
+\subsection{Contexto del sistema actual de fotocomparendos en Bogotá y análisis del sistema vigente (FÉNIX)}
+
+Esta subsección contextualiza el problema abordado en este trabajo, describiendo el funcionamiento operativo y regulatorio del sistema de fotocomparendos en Bogotá, así como las limitaciones críticas identificadas en el sistema FÉNIX que justifican la necesidad de explorar arquitecturas alternativas basadas en tecnologías de registro distribuido.
+
+\subsubsection{Funcionamiento de los fotocomparendos en Bogotá: mecanismos, regulación e impacto}
+
+El sistema de fotocomparendos en Bogotá (FENIX) representa un modelo tecnológico y regulatorio diseñado para mejorar la seguridad vial mediante la detección automatizada de infracciones de tránsito \parencite{mintransporte2023}. Basado en cámaras de fotodetección ubicadas en zonas autorizadas por el Ministerio de Transporte, este sistema combina vigilancia electrónica, validación humana y marcos legales específicos para sancionar conductas de riesgo \parencite{supertransporte2021}. Desde su implementación, ha logrado reducir siniestros en puntos críticos, aunque enfrenta desafíos técnicos y jurídicos. A continuación, se detalla su operación, criterios de aplicación y marco legal que lo regula \parencite{mintransporte2023}.
+
+\paragraph{Marco legal y regulatorio}
+
+La implementación de fotocomparendos en Bogotá se sustenta en la Ley 1843 de 2017 \parencite{ley1843} y su reglamentación mediante resoluciones como la Resolución 20203040011245 \parencite{resolucion11245}. Estos instrumentos establecen cuatro criterios para instalar cámaras:
+
+\begin{enumerate}
+    \item \textbf{Siniestralidad:} Ubicación en zonas con alto índice de accidentes.
+    \item \textbf{Prevención:} Disuasión de conductas peligrosas.
+    \item \textbf{Movilidad:} Optimización del flujo vehicular.
+    \item \textbf{Historial de infracciones:} Enfoque en corredores con recurrentes violaciones.
+\end{enumerate}
+
+Adicionalmente, las autoridades deben garantizar la visibilidad de los dispositivos, señalizando su presencia al menos 500 metros antes de su ubicación \parencite{ley1843}, y cumplir con planes de seguridad vial alineados con políticas distritales. La Secretaría Distrital de Movilidad (SDM) ha enfrentado cuestionamientos legales, como los señalados por la Personería en 2018 \parencite{sdm_camaras2023}.
+
+\paragraph{Proceso operativo de los fotocomparendos}
+
+\myparagraph{Detección y captura de infracciones}
+
+Las cámaras de fotodetección en Bogotá se clasifican en dos tipos \parencite{supertransporte2021, mintransporte2023}:
+
+\begin{itemize}
+    \item \textbf{Automáticas:} Monitorean velocidades, semáforos en rojo y restricciones como pico y placa.
+    \item \textbf{Semiautomáticas:} Vigilan bloqueos de calzadas, paradas prohibidas y recolección irregular de pasajeros.
+\end{itemize}
+
+Estos dispositivos, instalados en corredores de alta accidentalidad como la Avenida NQS o la Calle 100, capturan imágenes o videos que incluyen matrícula, fecha, hora y ubicación GPS. Por ejemplo, en 2025, un conductor que exceda el límite de 50 km/h en la Avenida Boyacá será registrado por cámaras previamente señalizadas.
+
+\myparagraph{Validación y notificación}
+
+Una vez detectada una presunta infracción, las pruebas se envían a un centro de análisis de la SDM, donde agentes de tránsito verifican:
+
+\begin{itemize}
+    \item Legibilidad de la matrícula.
+    \item Contexto de la violación (ejemplo: si un semáforo en rojo fue respetado).
+    \item Datos del vehículo en el RUNT (Registro Único Nacional de Tránsito).
+\end{itemize}
+
+Tras validar la infracción, se genera un comparendo electrónico notificado al propietario del vehículo mediante correo certificado o plataformas digitales. El plazo máximo para emitir la sanción es de 10 días hábiles desde la detección, seguido de 3 días para su notificación. Si el domicilio registrado está desactualizado, el infractor podría no recibir la notificación, lo que no exime el pago \parencite{ley1843}.
+
+\myparagraph{Tecnología y transparencia}
+
+El sistema combina:
+
+\begin{itemize}
+    \item \textbf{Cámaras de última generación:} Equipadas con sensores de velocidad Lidar y visión nocturna.
+    \item \textbf{Plataforma de análisis IA:} Algoritmos que descartan falsos positivos (ejemplo: ambulancias en emergencia).
+    \item \textbf{Integración con RUNT:} Verificación instantánea de documentos como SOAT o tarjeta de operación.
+\end{itemize}
+
+Los datos se almacenan en servidores con cifrado AES-256, accesibles solo para funcionarios autorizados mediante autenticación biométrica.
+
+\myparagraph{Problemas operativos identificados}
+
+\begin{itemize}
+    \item \textbf{Notificaciones fallidas:} Errores en direcciones del RUNT causan sanciones no recibidas, acumulando intereses moratorios.
+    \item \textbf{Latencia en validaciones:} En horas pico, el volumen de infracciones puede retrasar procesamientos hasta 72 horas.
+\end{itemize}
+
+\myparagraph{Cuestionamientos legales}
+
+En 2018, la Personería de Bogotá identificó que el 15\% de las cámaras operaban sin autorización ministerial durante un periodo de transición legal. La SDM rectificó esta situación en 2019, regularizando todos los dispositivos bajo la Resolución 20203040011245 de 2020 \parencite{secretaria_movilidad2023}.
+
+\subsubsection{Análisis crítico del sistema FÉNIX: limitaciones estructurales identificadas}
+
+La necesidad de explorar arquitecturas alternativas se sustenta en las deficiencias críticas identificadas en el sistema FÉNIX, el cual, a pesar de su implementación tecnológica, presenta limitaciones documentadas por los organismos de control en tres dimensiones: cumplimiento normativo, protección de datos y capacidad técnica.
+
+\paragraph{Incumplimientos normativos en contratación}
+
+El proceso de contratación del sistema FÉNIX presenta desviaciones respecto a la normativa de contratación pública colombiana. La Tabla~\ref{tab:violaciones_contratacion} sintetiza las principales violaciones identificadas por la Contraloría de Bogotá, evidenciando falencias en la planeación, supervisión y gestión contractual del proyecto.
+
+\input{tables/violaciones_contratacion}
+
+\paragraph{Brechas en protección de datos personales}
+
+La gestión de información sensible de los ciudadanos presenta deficiencias en el cumplimiento de la Ley 1581 de 2012 (Protección de Datos Personales). La Tabla~\ref{tab:brechas_datos_personales} detalla las brechas identificadas en materia de privacidad y tratamiento de datos.
+
+\input{tables/brechas_datos_personales}
+
+\paragraph{Déficits en habilitación y capacidad técnica}
+
+La capacidad operativa y técnica del sistema muestra limitaciones documentadas en auditorías de cumplimiento. La Tabla~\ref{tab:deficits_habilitacion} presenta los principales déficits en términos de infraestructura, recursos y capacidad institucional.
+
+\input{tables/deficits_habilitacion}
+
+\paragraph{Síntesis de la problemática}
+
+Estos hallazgos, documentados por la Contraloría de Bogotá y otras entidades de control, evidencian que las limitaciones del sistema FÉNIX no son solo operativas sino estructurales, requiriendo un replanteamiento arquitectónico que incorpore garantías criptográficas y descentralización como fundamentos de diseño. El presunto detrimento patrimonial de más de \$8.000 millones de pesos y la tasa de impugnación del 34.1\% (más de 155.000 PQRSD semestrales) reflejan la magnitud del problema y justifican la exploración de arquitecturas basadas en tecnologías de registro distribuido.
+
+Esta problemática contextualiza la necesidad del prototipo propuesto en este trabajo, el cual busca demostrar cómo una arquitectura descentralizada puede mitigar estos riesgos mediante garantías técnicas intrínsecas de inmutabilidad, trazabilidad y verificabilidad.

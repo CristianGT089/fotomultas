@@ -33,7 +33,7 @@ El backend del sistema se implementó utilizando tecnologías modernas de JavaSc
 \subsubsection{Tecnologías blockchain}
 
 \paragraph{Capa pública - Ethereum}
-Para la blockchain pública se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
+Para la implementación de la capa pública (justificada en el Capítulo 5: Metodología), se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
 
 \begin{itemize}
     \item \textbf{Framework de Desarrollo:} Hardhat v2.24.0 - Entorno de desarrollo Ethereum
@@ -44,7 +44,7 @@ Para la blockchain pública se utilizó el ecosistema de Ethereum con las siguie
 \end{itemize}
 
 \paragraph{Capa privada - Hyperledger Fabric}
-La red privada se implementó sobre Hyperledger Fabric con las siguientes tecnologías:
+Para la implementación de la capa privada (justificada en el Capítulo 5: Metodología), se utilizó Hyperledger Fabric con las siguientes tecnologías:
 
 \begin{itemize}
     \item \textbf{Plataforma:} Hyperledger Fabric v2.5 - Blockchain permisionada empresarial
@@ -94,6 +94,8 @@ Se implementaron pruebas automatizadas en múltiples capas:
 \end{itemize}
 
 \subsection{Implementación de la capa pública: Ethereum}
+
+La arquitectura de la capa pública se describe en detalle en el Capítulo 7: Diseño del Prototipo. Esta sección se enfoca en los aspectos específicos de implementación técnica.
 
 \subsubsection{Desarrollo del smart contract}
 
@@ -328,6 +330,8 @@ El sistema estará disponible en:
 \end{itemize}
 
 \subsection{Implementación de la capa privada: Hyperledger Fabric}
+
+La arquitectura de la capa privada y su justificación técnica se detallan en el Capítulo 5: Metodología y el Capítulo 7: Diseño del Prototipo. Esta sección describe la configuración técnica específica implementada.
 
 \subsubsection{Configuración de la red}
 
@@ -640,41 +644,14 @@ El diseño modular del servicio permite reemplazar fácilmente los mocks por imp
 
 \textbf{Solución:} Se implementó límite de tamaño de 5MB por evidencia en el backend. Se agregó compresión de imágenes en el frontend antes del upload. Para videos, se extrae un frame representativo en lugar de subir el archivo completo.
 
-\subsection{Testing y validación}
+\subsection{Estrategia de validación}
 
-\subsubsection{Tests de Smart Contracts}
+La validación del prototipo se realizó siguiendo el plan de pruebas detallado en el Capítulo 9. La implementación incluyó la configuración de frameworks de testing en tres niveles:
 
-Se implementaron tests unitarios con Hardhat Test Framework cubriendo:
 \begin{itemize}
-    \item Registro exitoso de multas
-    \item Validaciones de entrada
-    \item Actualización de estados
-    \item Control de acceso (solo operadores autorizados)
-    \item Eventos emitidos correctamente
-    \item Paginación de consultas
+    \item \textbf{Smart Contracts:} Hardhat Test Framework con Chai para aserciones
+    \item \textbf{Backend:} Vitest v3.2.4 para pruebas de API REST e integración con blockchain
+    \item \textbf{Frontend:} Jest v30.0.3 y React Testing Library v16.3.0 para pruebas de componentes
 \end{itemize}
 
-Cobertura de código: 95\% de las líneas del Smart Contract.
-
-\subsubsection{Tests de Backend}
-
-Tests con Vitest cubriendo:
-\begin{itemize}
-    \item Endpoints de API REST
-    \item Integración con IPFS
-    \item Sincronización entre blockchains
-    \item Manejo de errores
-    \item Validaciones de datos
-\end{itemize}
-
-\subsubsection{Tests de Frontend}
-
-Tests con Jest y React Testing Library para:
-\begin{itemize}
-    \item Renderizado de componentes
-    \item Flujos de usuario
-    \item Validación de formularios
-    \item Interacción con el backend
-\end{itemize}
-
-La estrategia de testing multinivel garantiza la calidad y confiabilidad del prototipo antes de su despliegue.
+Los resultados detallados de todas las pruebas ejecutadas, incluyendo cobertura de código, casos de prueba específicos y métricas de rendimiento, se presentan en el Capítulo 10: Resultados de las Pruebas.

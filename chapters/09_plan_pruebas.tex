@@ -59,77 +59,29 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
 \noindent La Tabla~\ref{tab:casos_prueba_inmutabilidad} detalla los escenarios diseñados para poner a prueba la inmutabilidad del sistema ante intentos de modificación no autorizada, mientras que la Tabla~\ref{tab:resultados_inmutabilidad} resume los resultados obtenidos en dichas pruebas, evidenciando la correcta detección y rechazo de cambios indebidos.
 
 \subsection{Pruebas de rendimiento básico}
-Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
+Se medirá el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real. Los tiempos objetivo son:
 
-\input{tables/pruebas_rendimiento_basico.tex}
+\begin{itemize}
+    \item Registro de fotocomparendo: $\leq$ 3 segundos
+    \item Consulta de fotocomparendo: $\leq$ 1 segundo
+    \item Verificación de integridad (hash IPFS): $\leq$ 2 segundos
+    \item Actualización de estado: $\leq$ 2 segundos
+\end{itemize}
+
+Los resultados detallados de estas pruebas se presentan en el Capítulo 10: Resultados.
 
 \subsection{Casos de prueba de inmutabilidad y verificabilidad}
 
 \input{tables/casos_prueba_inmutabilidad_verificabilidad.tex}
 
-\subsection{Estrategia de pruebas del frontend}
+\subsection{Pruebas del frontend}
 
-\subsubsection{Introducción}
-
-Para garantizar la robustez, fiabilidad y correcta funcionalidad de la interfaz de usuario, se implementó una estrategia integral de pruebas que abarca tanto pruebas unitarias como de integración. Este enfoque, basado en las mejores prácticas de la industria para aplicaciones React con TypeScript, asegura la calidad del código, facilita el mantenimiento futuro y reduce la introducción de errores durante el desarrollo.
-
-\subsubsection{Herramientas y tecnologías}
-
-La evaluación del frontend se apoyó en un conjunto de herramientas estándar y ampliamente reconocidas en el ecosistema de JavaScript, seleccionadas para garantizar la eficiencia y la precisión de las pruebas:
+Para validar la funcionalidad de la interfaz de usuario, se implementó una suite de pruebas automatizadas utilizando Jest y React Testing Library. La estrategia contempló:
 
 \begin{itemize}
-    \item \textbf{Jest:} Se utilizó como el framework principal de pruebas, proporcionando un entorno de ejecución y funcionalidades de aserción.
-    \item \textbf{React Testing Library:} Para el testeo de componentes, se adoptó esta biblioteca por su enfoque en probar el comportamiento de la aplicación desde la perspectiva del usuario final, en lugar de los detalles de implementación.
-    \item \textbf{@testing-library/user-event:} Complemento para simular interacciones realistas del usuario, como clics y escritura en formularios.
-    \item \textbf{jsdom:} Proporcionó un entorno simulado del DOM del navegador para ejecutar las pruebas fuera de un navegador real, agilizando el proceso.
+    \item \textbf{Pruebas unitarias:} Verificación del renderizado y comportamiento de componentes individuales (botones, formularios, tablas de datos).
+    \item \textbf{Pruebas de integración:} Validación de flujos completos de usuario, incluyendo autenticación, gestión de multas y consulta pública.
+    \item \textbf{Casos de borde:} Manejo de entradas inesperadas, errores de red y responsividad.
 \end{itemize}
 
-\subsubsection{Pruebas Unitarias}
-
-Las pruebas unitarias se centraron en validar el correcto funcionamiento de los componentes de React de forma aislada. Se ejecutaron un total de \textbf{50 pruebas unitarias} distribuidas en las siguientes categorías:
-
-\begin{enumerate}
-    \item \textbf{Componentes de UI Genéricos:} Se verificó el renderizado, la interactividad (eventos \texttt{onClick}), y la correcta visualización de los diferentes estados de elementos básicos como botones y campos de búsqueda (ej. activo, deshabilitado, en carga).
-    
-    \item \textbf{Componentes de Lógica de Negocio:} Se probaron componentes más complejos, como el formulario de creación de multas y la tabla de registros. Las validaciones incluyeron la correcta visualización de datos, el funcionamiento de la lógica de filtrado y búsqueda, y la activación de las reglas de validación de formularios (ej. campos requeridos, formato de datos).
-    
-    \item \textbf{Componentes del Dashboard:} Para los elementos de visualización de datos, se aseguró que las tarjetas de métricas mostraran las cifras correctas y que los gráficos estadísticos se renderizaran adecuadamente a partir de los conjuntos de datos de entrada.
-\end{enumerate}
-
-\subsubsection{Pruebas de Integración}
-
-Las pruebas de integración son un tipo de pruebas de software que se centran en verificar la interacción correcta entre diferentes módulos o componentes de un sistema cuando trabajan en conjunto. A diferencia de las pruebas unitarias que evalúan componentes de forma aislada, las pruebas de integración validan el funcionamiento del sistema como un todo, asegurando que la comunicación, el intercambio de datos y las dependencias entre componentes funcionen según lo esperado.
-
-Estas pruebas son fundamentales porque:
-\begin{itemize}
-    \item Detectan problemas de interfaz entre componentes que individualmente funcionan bien
-    \item Verifican el correcto manejo de datos entre diferentes capas del sistema
-    \item Validan flujos completos de trabajo que involucran múltiples módulos
-    \item Identifican problemas de timing y sincronización entre componentes
-    \item Aseguran que las integraciones con servicios externos funcionen correctamente
-\end{itemize}
-
-En el contexto de nuestro sistema, las pruebas de integración se diseñaron para verificar la correcta colaboración entre múltiples componentes y simular flujos de usuario completos. Estos tests fueron cruciales para asegurar que las diferentes partes del sistema funcionaran armoniosamente. Se cubrieron \textbf{8 flujos de usuario críticos}:
-
-\begin{enumerate}
-    \item \textbf{Flujo de Autenticación:} Se simuló el proceso completo de inicio de sesión y cierre de sesión, validando que un usuario pudiera ingresar sus credenciales, ser redirigido al panel correspondiente y cerrar su sesión de forma segura.
-    
-    \item \textbf{Flujo de Gestión de Multas:} Se probó el ciclo completo de registro de una multa, desde la navegación al formulario y el llenado de datos, hasta la verificación de que el nuevo registro aparecía correctamente en la lista general. También se validó la navegación de la lista al detalle de una multa y la actualización de su estado.
-    
-    \item \textbf{Flujo de Consulta Pública:} Se validó la experiencia del ciudadano al buscar una multa, incluyendo la interacción con el CAPTCHA y la correcta visualización de los resultados.
-\end{enumerate}
-
-\subsubsection{Casos de Borde y Robustez}
-
-Además de los flujos principales, las pruebas cubrieron explícitamente casos de borde para asegurar la robustez del sistema, tales como:
-
-\begin{itemize}
-    \item Manejo de entradas inesperadas en formularios (caracteres especiales, límites de tamaño de archivo).
-    \item Comportamiento de la interfaz con conjuntos de datos vacíos o con errores.
-    \item Respuesta del sistema ante errores simulados de red.
-    \item Correcta visualización y funcionalidad en diferentes tamaños de pantalla (diseño responsivo).
-\end{itemize}
-
-\subsubsection{Cobertura y Resultados}
-
-Se ejecutó una suite de \textbf{58 pruebas automatizadas} (50 unitarias y 8 de integración), alcanzando una \textbf{cobertura de código promedio del 91\%} en los componentes y páginas del frontend, con un \textbf{100\% de cobertura en los flujos críticos} de la aplicación. Este enfoque riguroso no solo permite la detección temprana de errores y regresiones, sino que también sirve como una documentación viva del comportamiento esperado del sistema, facilitando el mantenimiento y asegurando la confianza en futuros despliegues del prototipo.
+Se ejecutaron aproximadamente 58 pruebas automatizadas, alcanzando una cobertura de código superior al 90\% en componentes críticos. Los resultados detallados se presentan en el Capítulo 10: Resultados.

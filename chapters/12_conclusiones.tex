@@ -1,0 +1,23 @@
+\section{Conclusiones y trabajo futuro}
+
+La arquitectura híbrida blockchain que combine Hyperledger Fabric (privacidad) y Ethereum (transparencia pública) es técnicamente viable para la gestión de fotocomparendos. El prototipo desarrollado valida que las tecnologías de registro distribuido pueden garantizar simultáneamente la inmutabilidad de registros, la protección de datos sensibles y la verificación pública ciudadana, abordando las limitaciones identificadas en el sistema actual de Bogotá.
+
+Las pruebas realizadas confirman que el sistema cumple con los principios propuestos: el 100\% de los intentos de modificación fueron rechazados por los mecanismos de consenso, el sistema de direccionamiento por contenido (CID) de IPFS detectó automáticamente todas las alteraciones simuladas, y los tiempos de respuesta medidos (<3 segundos) validan que la arquitectura es viable para aplicaciones en tiempo real.
+
+El backend implementado con interfaces REST estándar y el frontend desarrollado con React demuestran que las tecnologías blockchain pueden abstraerse detrás de APIs convencionales e integrarse con interfaces modernas sin comprometer la experiencia del usuario, facilitando la adopción por parte de instituciones gubernamentales.
+
+
+\subsection{Trabajo futuro}
+
+Para la evolución del proyecto se proponen las siguientes líneas de trabajo:
+
+\begin{enumerate}
+    \item \textbf{Escalamiento a producción:} Escalar la red Fabric a múltiples organizaciones (SDM, Policía, Auditoría), implementar Private Data Collections, y desplegar nodos IPFS en infraestructura distribuida con políticas de replicación.
+
+    \item \textbf{Piloto controlado:} Realizar un piloto con la Secretaría Distrital de Movilidad utilizando datos reales (5,000-10,000 multas), integración con SIMIT/RUNT y evaluación de rendimiento bajo carga operativa.
+
+    \item \textbf{Funcionalidades avanzadas:} Implementar módulo de pagos integrado (PSE, billeteras digitales), sistema de apelaciones en línea, notificaciones automáticas y dashboard analítico para toma de decisiones.
+
+    \item \textbf{Replicabilidad:} Adaptar la arquitectura para otras ciudades colombianas mediante federación de redes Fabric, explorar soluciones Layer 2 para reducción de costos de gas, y proponer estandarización nacional de Smart Contracts.
+\end{enumerate}
+
