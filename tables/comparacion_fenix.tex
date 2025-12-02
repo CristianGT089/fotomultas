@@ -1,0 +1,45 @@
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{p{4cm} p{5cm} p{5cm}}
+\caption[]{\\ Comparación Sistema FÉNIX vs Arquitectura Híbrida} \\
+\label{tab:comparacion_fenix} \\
+\toprule
+\textbf{Aspecto} & \textbf{Sistema FÉNIX (Actual)} & \textbf{Arquitectura Híbrida} \\
+\midrule
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries }} \\
+\toprule
+\textbf{Aspecto} & \textbf{Sistema FÉNIX (Actual)} & \textbf{Arquitectura Híbrida} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{{}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\textbf{Integridad de Datos} & Depende de controles administrativos y permisos de base de datos & Garantizada criptográficamente mediante hash inmutables en blockchain \\
+
+\textbf{Tiempos de respuesta operativos} & No se dispone de métricas públicas consolidadas; reportes ciudadanos documentan demoras y caídas esporádicas en consultas y generación de certificados & En entorno de laboratorio, registro completo de fotocomparendo $\leq$ 3 s, consulta $\leq$ 1 s y verificación de integridad $\leq$ 2 s (Tabla~\ref{tab:rendimiento}) \\
+
+\textbf{Auditabilidad} & Logs de base de datos modificables & Historial inmutable en blockchain con trazabilidad completa \\
+
+\textbf{Transparencia} & Opaca para ciudadanos; requiere solicitudes PQRSD & Verificación pública en tiempo real sin intermediarios \\
+
+\textbf{Puntos de Fallo} & Base de datos central (SPOF) & Distribuido entre múltiples nodos; sin SPOF \\
+
+\textbf{Costos de Disputa} & 155,854 PQRSD semestrales & Reducción estimada >50\% por verificación automática \\
+
+\textbf{Confianza} & Basada en la institución & Basada en criptografía verificable \\
+\end{longtable}
+
+\vspace{1em}
+\begin{flushleft}
+\textit{Nota.} Elaboración propia.
+\end{flushleft}
+\FloatBarrier
+
