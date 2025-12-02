@@ -1,19 +1,34 @@
-\begin{table}[htbp]
-    \centering
-    \caption{Resumen de casos de prueba de inmutabilidad ejecutados}
-    \begin{tabular}{|p{2cm}|p{6cm}|p{3cm}|}
-        \hline
-        \textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
-        \hline
-        IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Ejecutada \\
-        \hline
-        IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Ejecutada \\
-        \hline
-        IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Ejecutada \\
-        \hline
-    \end{tabular}
-    \vspace{1em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-\end{table}
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{2cm}p{6cm}p{3cm}}
+
+\multicolumn{3}{l}{\textbf{Tabla 10}} \\
+\multicolumn{3}{l}{Resumen de casos de prueba de inmutabilidad ejecutados} \\
+
+\toprule
+\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{3}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+IM-001 & Intento de modificar metadatos directamente en el ledger, fuera de la aplicación & Ejecutada \\
+\midrule
+IM-002 & Alteración de imagen ya registrada en IPFS y verificación del CID resultante & Ejecutada \\
+\midrule
+IM-003 & Verificación de trazabilidad e integridad del historial de transacciones en Fabric & Ejecutada \\
+\bottomrule
+\end{longtable}

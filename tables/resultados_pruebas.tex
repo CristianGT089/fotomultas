@@ -2,67 +2,117 @@
 
 \subsection{Casos de prueba funcionales}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Resultados de pruebas funcionales del sistema}
-    \label{tab:resultados_funcionales}
-    \begin{tabular}{p{2cm} p{4cm} p{3cm} p{3cm}}
-        \toprule
-        \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
-        \midrule
-        FP-001 & Registro de fotocomparendo & Registro exitoso con CID & Exitoso \\
-        FP-002 & Consulta de comparendo & Datos recuperados correctamente & Exitoso \\
-        FP-003 & Verificación de evidencia & Imagen recuperada desde IPFS & Exitoso \\
-        FP-004 & Actualización de estado & Estado actualizado en blockchain & Exitoso \\
-        FP-005 & Validación de integridad & Integridad verificada & Exitoso \\
-        \bottomrule
-    \end{tabular}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-\end{table}
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{2cm} p{4cm} p{3cm} p{3cm}}
+
+\multicolumn{4}{l}{\textbf{Tabla 15}} \\
+\multicolumn{4}{l}{Resultados de pruebas funcionales del sistema} \\
+
+\toprule
+\textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} & \textbf{Estado} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{4}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+FP-001 & Registro de fotocomparendo & Registro exitoso con CID & Exitoso \\
+\midrule
+FP-002 & Consulta de comparendo & Datos recuperados correctamente & Exitoso \\
+\midrule
+FP-003 & Verificación de evidencia & Imagen recuperada desde IPFS & Exitoso \\
+\midrule
+FP-004 & Actualización de estado & Estado actualizado en blockchain & Exitoso \\
+\midrule
+FP-005 & Validación de integridad & Integridad verificada & Exitoso \\
+\bottomrule
+\end{longtable}
 
 \subsection{Casos de prueba de inmutabilidad}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Resumen de casos de prueba de inmutabilidad ejecutados}
-    \label{tab:resumen_inmutabilidad}
-    \begin{tabular}{p{2cm} p{6cm} p{3cm}}
-        \toprule
-        \textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
-        \midrule
-        IM-001 & Intento de modificar metadatos directamente en el ledger & Ejecutada \\
-        IM-002 & Alteración de imagen ya registrada en IPFS & Ejecutada \\
-        IM-003 & Verificación de trazabilidad e integridad del historial & Ejecutada \\
-        \bottomrule
-    \end{tabular}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-\end{table}
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{2cm} p{6cm} p{3cm}}
+
+\multicolumn{3}{l}{\textbf{Tabla 16}} \\
+\multicolumn{3}{l}{Resumen de casos de prueba de inmutabilidad ejecutados} \\
+
+\toprule
+\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{ID} & \textbf{Descripción} & \textbf{Estado} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{3}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+IM-001 & Intento de modificar metadatos directamente en el ledger & Ejecutada \\
+\midrule
+IM-002 & Alteración de imagen ya registrada en IPFS & Ejecutada \\
+\midrule
+IM-003 & Verificación de trazabilidad e integridad del historial & Ejecutada \\
+\bottomrule
+\end{longtable}
 
 \subsection{Pruebas de Rendimiento Básico}
 
 Se midió el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real:
 
-\begin{table}[htbp]
-    \centering
-    \caption{Tiempos promedio de operaciones en el entorno de prueba}
-    \label{tab:rendimiento}
-    \begin{tabular}{p{4cm} p{3cm}}
-        \toprule
-        \textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
-        \midrule
-        Registro completo (Blockchain + IPFS) & 1.60 \\
-        Consulta de evidencia desde IPFS & 0.80 \\
-        Validación de integridad & 0.90 \\
-        \bottomrule
-    \end{tabular}
-    \vspace{1em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-\end{table} 
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{4cm} p{3cm}}
+
+\multicolumn{2}{l}{\textbf{Tabla 17}} \\
+\multicolumn{2}{l}{Tiempos promedio de operaciones en el entorno de prueba} \\
+
+\toprule
+\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{2}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+Registro completo (Blockchain + IPFS) & 1.60 \\
+\midrule
+Consulta de evidencia desde IPFS & 0.80 \\
+\midrule
+Validación de integridad & 0.90 \\
+\bottomrule
+\end{longtable} 

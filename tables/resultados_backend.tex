@@ -1,41 +1,55 @@
-\begin{table}[htbp]
-\centering
-\caption{Resultados de pruebas del backend por módulo}
-\label{tab:resultados_backend}
-\begin{adjustbox}{max width=\textwidth}
-\begin{tabular}{@{}lcccp{5cm}@{}}
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{lcccp{5cm}}
+
+\multicolumn{5}{l}{\textbf{Tabla 13}} \\
+\multicolumn{5}{l}{Resultados de pruebas del backend por módulo} \\
+
 \toprule
 \textbf{Módulo} & \textbf{Pruebas} & \textbf{Exitosas} & \textbf{Tasa Éxito} & \textbf{Cobertura} \\
 \midrule
+\endfirsthead
+
+\toprule
+\textbf{Módulo} & \textbf{Pruebas} & \textbf{Exitosas} & \textbf{Tasa Éxito} & \textbf{Cobertura} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{5}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
 
 Utilidades (Error Handler) & 7 & 7 & 100\% &
 Manejo global de errores, \texttt{AppError}, validaciones de dominio \\
-\addlinespace
+\midrule
 
 Servicios IPFS & 8 & 8 & 100\% &
 Subida de archivos, recuperación, validación de CIDs \\
-\addlinespace
+\midrule
 
 Integración IPFS & 13 & 13 & 100\% &
 Inmutabilidad (IM-002), content-addressed storage, integridad de datos, múltiples formatos \\
-\addlinespace
+\midrule
 
 Seguridad: Validación de Entrada & 16 & 16 & 100\% &
 Prevención de XSS, SQL injection, path traversal, validación de longitud y tipos numéricos \\
-\addlinespace
+\midrule
 
 Seguridad: Subida de Archivos & 10 & 10 & 100\% &
 Límites de tamaño (10MB), validación de tipos (JPG, PNG, WEBP), rechazo de ejecutables \\
-\addlinespace
+\midrule
 
 API REST & 26 & 26 & 100\% &
 CRUD completo (API-001), validaciones de entrada (API-002), integración blockchain/IPFS (API-003), verificación de integridad (IM-003) \\
-\addlinespace
-
 \midrule
+
 \textbf{TOTAL} & \textbf{80} & \textbf{80} & \textbf{100\%} &
 \textbf{Tiempo total: 28.98s} \\
 \bottomrule
-\end{tabular}
-\end{adjustbox}
-\end{table}
+\end{longtable}

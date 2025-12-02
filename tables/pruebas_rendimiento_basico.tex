@@ -1,19 +1,34 @@
-\begin{table}[htbp]
-    \centering
-    \caption{Tiempos promedio de operaciones en el entorno de prueba}
-    \begin{tabular}{|p{4cm}|p{3cm}|}
-        \hline
-        \textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
-        \hline
-        Registro completo (Blockchain + IPFS) & 1.60 \\
-        \hline
-        Consulta de evidencia desde IPFS & 0.80 \\
-        \hline
-        Validación de integridad & 0.90 \\
-        \hline
-    \end{tabular}
-    \vspace{1em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-\end{table}
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{4cm}p{3cm}}
+
+\multicolumn{2}{l}{\textbf{Tabla 9}} \\
+\multicolumn{2}{l}{Tiempos promedio de operaciones en el entorno de prueba} \\
+
+\toprule
+\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Operación} & \textbf{Tiempo Promedio (s)} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{2}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+Registro completo (Blockchain + IPFS) & 1.60 \\
+\midrule
+Consulta de evidencia desde IPFS & 0.80 \\
+\midrule
+Validación de integridad & 0.90 \\
+\bottomrule
+\end{longtable}
