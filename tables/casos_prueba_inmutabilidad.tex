@@ -1,72 +1,41 @@
 % Tabla de casos de prueba de inmutabilidad
-\small
-\renewcommand{\arraystretch}{1.2}
-\setlength{\LTpre}{10pt}
-\setlength{\LTpost}{10pt}
-\begin{longtable}{p{2cm} p{6cm} p{4cm}}
-
-\toprule
-\textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
-\midrule
-\endfirsthead
-
-\toprule
-\textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
-\midrule
-\endhead
-
-\midrule
-\multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
-\endfoot
-
-\bottomrule
-\multicolumn{3}{l}{\textbf{Nota.} Elaboración propia.} \\
-\endlastfoot
-
-IM-001 & Intento de modificación directa en ledger & Verificar resistencia a cambios no autorizados \\
-\midrule
-IM-002 & Alteración de imagen en IPFS & Validar detección de modificaciones en evidencia \\
-\midrule
-IM-003 & Verificación de trazabilidad & Comprobar integridad del historial transaccional \\
-\midrule
-IM-004 & Validación de consenso & Evaluar mecanismos de protección distribuida \\
-\bottomrule
-\end{longtable}
+\begin{table}[htbp]
+    \centering
+    \caption{Casos de prueba de inmutabilidad para validar resistencia a modificaciones}
+    \label{tab:casos_prueba_inmutabilidad}
+    \begin{tabular}{p{2cm} p{6cm} p{4cm}}
+        \toprule
+        \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Objetivo} \\
+        \midrule
+        IM-001 & Intento de modificación directa en ledger & Verificar resistencia a cambios no autorizados \\
+        IM-002 & Alteración de imagen en IPFS & Validar detección de modificaciones en evidencia \\
+        IM-003 & Verificación de trazabilidad & Comprobar integridad del historial transaccional \\
+        IM-004 & Validación de consenso & Evaluar mecanismos de protección distribuida \\
+        \bottomrule
+    \end{tabular}
+    \vspace{1em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+\end{table}
 
 % Tabla de resultados de pruebas de inmutabilidad
-\small
-\renewcommand{\arraystretch}{1.2}
-\setlength{\LTpre}{10pt}
-\setlength{\LTpost}{10pt}
-\begin{longtable}{p{3cm} p{4cm} p{3cm} p{3cm}}
-
-\multicolumn{4}{l}{\textbf{Tabla 18}} \\
-\multicolumn{4}{l}{Resultados de pruebas de inmutabilidad del sistema} \\
-
-\toprule
-\textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-\midrule
-\endfirsthead
-
-\toprule
-\textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
-\midrule
-\endhead
-
-\midrule
-\multicolumn{4}{r}{\textit{Continúa en la siguiente página}} \\
-\endfoot
-
-\bottomrule
-\multicolumn{4}{l}{\textbf{Nota.} Elaboración propia.} \\
-\endlastfoot
-
-IM-001 & Modificación directa en ledger & Transacción rechazada & Rechazada correctamente \\
-\midrule
-IM-002 & Cambio de imagen en IPFS & CID diferente generado & CID distinto detectado \\
-\midrule
-IM-003 & Verificación de trazabilidad & Historial inmutable & Historial preservado \\
-\midrule
-IM-004 & Validación de consenso & Consenso mantenido & Consenso validado \\
-\bottomrule
-\end{longtable} 
+\begin{table}[htbp]
+    \centering
+    \caption{Resultados de pruebas de inmutabilidad del sistema}
+    \label{tab:resultados_inmutabilidad}
+    \begin{tabular}{p{3cm} p{4cm} p{3cm} p{3cm}}
+        \toprule
+        \textbf{Caso de Prueba} & \textbf{Descripción} & \textbf{Resultado Esperado} & \textbf{Resultado Real} \\
+        \midrule
+        IM-001 & Modificación directa en ledger & Transacción rechazada & Rechazada correctamente \\
+        IM-002 & Cambio de imagen en IPFS & CID diferente generado & CID distinto detectado \\
+        IM-003 & Verificación de trazabilidad & Historial inmutable & Historial preservado \\
+        IM-004 & Validación de consenso & Consenso mantenido & Consenso validado \\
+        \bottomrule
+    \end{tabular}
+    \vspace{1em}
+    \begin{flushleft}
+        \textit{Nota.} Elaboración propia.
+    \end{flushleft}
+\end{table} 
