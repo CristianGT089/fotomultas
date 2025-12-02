@@ -1,39 +1,35 @@
-\begin{longtable}{p{2.5cm} p{2.2cm} p{2.2cm} p{2.5cm} p{3.2cm}}
-    \caption{Análisis Comparativo del Estado del Arte en Gestión de Infracciones con blockchain} \\
+\small
+\renewcommand{\arraystretch}{1.3}
+\setlength{\LTpre}{10pt}  % Espacio antes de longtable
+\setlength{\LTpost}{10pt}  % Espacio después de longtable
+\begin{longtable}{p{2.2cm} p{2.0cm} p{2.0cm} p{2.4cm} p{3.0cm}}
+    \caption{Análisis Comparativo del Estado del Arte en Gestión de Infracciones con blockchain}
+    \label{tab:estado_arte_comparativo} \\
         \toprule
-        \textbf{Trabajo} & \textbf{Ámbito} & \textbf{Tecnologías} & \shortstack{Limitaciones\\Identificadas} & \shortstack{Aporte Relevante\\para el Prototipo} \\
+        \textbf{Trabajo} & \textbf{Ámbito} & \textbf{Tecnologías} & \textbf{Limitaciones Identificadas} & \textbf{Aporte Relevante para el Prototipo} \\
         \midrule
         \endfirsthead
 
+        \multicolumn{5}{c}{\textit{(Continuación de la tabla anterior)}} \\
         \toprule
-        \textbf{Trabajo} & \textbf{Ámbito} & \textbf{Tecnologías} & \shortstack{Limitaciones\\Identificadas} & \shortstack{Aporte Relevante\\para el Prototipo} \\
+        \textbf{Trabajo} & \textbf{Ámbito} & \textbf{Tecnologías} & \textbf{Limitaciones Identificadas} & \textbf{Aporte Relevante para el Prototipo} \\
         \midrule
         \endhead
+
+        \multicolumn{5}{r}{\textit{Continúa en la página siguiente...}} \\
         \endfoot
-        
+
         \bottomrule
+        \multicolumn{5}{l}{\textit{Nota.} Elaboración propia.} \\
         \endlastfoot
         Yousfi et al. (2022) & Gestión de tráfico urbano & Blockchain pública, Smart Contracts & Alto costo de transacciones (gas), privacidad limitada para datos personales & Modelo conceptual de integración blockchain-tráfico, solución a la transparencia y trazabilidad \\
-        \midrule
         Chen et al. (2024) & Sistema de multas electrónicas & Base de datos centralizada + Blockchain & Falta de inmutabilidad completa, dependencia del servidor central & Propuesta de registrar hash de actas en blockchain para mayor integridad y transparencia \\
-        \midrule
         Joseph (2023) & Registros vehiculares gubernamentales & Hyperledger Fabric, IPFS & Complejidad para escalar, gestión de identidades & Arquitectura permisionada para manejo seguro de datos sensibles \\
-        \midrule
         Dutta et al. (2023) & Seguros automotrices & Ethereum, Smart Contracts & Latencia en transacciones, costos operativos & Automatización de procesos mediante contratos inteligentes \\
-        \midrule
         Omar et al. (2024) & Gestión de infracciones de tránsito & Blockchain híbrida, base de datos & Integración parcial, falta de flujo completo & Aproximación hacia una gestión descentralizada con uso mixto de tecnologías \\
-        \midrule
         Choquevilca Quispe \& Morales Valencia (2024) & Fotocomparendos en Latinoamérica & Análisis conceptual & Falta de implementaciones prácticas en la región & Identificación de brechas y oportunidades para implementación blockchain \\
-        \midrule
         Proyectos e-gov (Suecia, Estonia) & Registros gubernamentales & Blockchain permisionada, KSI & Limitado a registros específicos, no multas & Validación técnica y mejora en eficiencia para registros oficiales \\
-        \midrule
         Anand \& Singh (2024) & Gestión de documentos oficiales & IPFS + Blockchain & Persistencia en IPFS, costos de almacenamiento & Almacenamiento distribuido para evidencias con verificación en blockchain \\
-        \midrule
         JUIT Research Group (2024) & Sistema de pagos gubernamentales & Stablecoins, Smart Contracts & Adopción de criptomonedas, entorno regulatorio restringido & Automatización de pagos en ecosistemas blockchain \\
-    \end{longtable}
-    \vspace{1em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-    \label{tab:estado_arte_comparativo}
+\end{longtable}
 

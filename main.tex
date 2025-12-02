@@ -44,8 +44,22 @@
 \usepackage{longtable}    % Tablas que se extienden por múltiples páginas
 % \captionsetup[figure]{labelformat=default,labelsep=period,name=Figura,position=above,labelfont=bf,textfont=it}
 \captionsetup[table]{labelformat=default,labelsep=period,name=Tabla}
-% \usepackage{epstopdf}    
-\usepackage{float}       
+% \usepackage{epstopdf}
+\usepackage{float}
+\usepackage{placeins}     % Para usar \FloatBarrier y evitar que tablas se corten
+\usepackage{afterpage}    % Para controlar colocación de flotantes
+
+% Parámetros optimizados para evitar que tablas se corten al final de página
+\renewcommand{\floatpagefraction}{0.5}       % Página necesita solo 50% de flotantes para dedicarse a ellos
+\renewcommand{\topfraction}{0.95}            % Permite hasta 95% arriba
+\renewcommand{\bottomfraction}{0.95}         % Permite hasta 95% abajo
+\renewcommand{\textfraction}{0.05}           % Solo requiere 5% de texto
+\setcounter{topnumber}{4}                    % Hasta 4 flotantes arriba
+\setcounter{bottomnumber}{4}                 % Hasta 4 flotantes abajo
+\setcounter{totalnumber}{8}                  % Hasta 8 flotantes por página
+\setlength{\floatsep}{12pt plus 4pt minus 4pt}
+\setlength{\textfloatsep}{20pt plus 8pt minus 4pt}
+\setlength{\intextsep}{14pt plus 4pt minus 4pt}       
 
 % --- COMANDOS PERSONALIZADOS
  \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\} % Esto 
