@@ -1,23 +1,39 @@
-\begin{table}[!htbp]
-\centering
-\small
-\caption{Comparación entre un modelo centralizado y un modelo descentralizado}
-\label{tab:comparacion_modelos}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{p{2.2cm} p{3.2cm} p{3.2cm} p{3.7cm}}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{p{2.2cm} p{3.2cm} p{3.2cm} p{3.7cm}}
+\caption{Comparación entre un modelo centralizado y un modelo descentralizado} \\
+\label{tab:comparacion_modelos} \\
 \toprule
 \textbf{Característica} & \textbf{Modelo Centralizado} & \textbf{Modelo Descentralizado} & \textbf{Relevancia Contextual} \\
 \midrule
-Modelo de Confianza & Basado en la confianza en los administradores del sistema y en la robustez de los controles internos definidos. & Basado en un consenso criptográfico distribuido, donde la confianza reside en el protocolo y no en un intermediario. & La correcta asignación de roles es fundamental. La auditoría observó ``ausencia de un profesional responsable de Seguridad de la Información'' (págs. 20--25), subrayando la criticidad de los factores de gobernanza. \\
-Integridad de Datos & La integridad se asegura mediante controles de acceso y logs de auditoría internos gestionados por la entidad. & La integridad es una propiedad intrínseca de la estructura de datos; los registros son inmutables por diseño. & La efectividad de los controles internos es fundamental. La auditoría documentó ``Falta de control sobre la integridad y calidad de los datos migrados'' (págs. 38--40) como punto de atención. \\
-Gestión de Seguridad & Dependiente de políticas y procedimientos de seguridad definidos y ejecutados por la institución. & La seguridad es una propiedad inherente a la capa de protocolo, auditada de forma continua y global por la comunidad. & La formalización de procedimientos es clave. La auditoría identificó ``falta de gestión formal de riesgos y controles'' y ``ausencia de un plan de seguridad para la infraestructura en la nube'' (págs. 25--30). \\
-Auditabilidad y Trazabilidad & La auditoría se realiza a través de logs internos, con acceso gestionado por la entidad y sujeto a sus políticas de retención y seguridad. & La traza de auditoría es transparente, inalterable por diseño y públicamente verificable por cualquier actor autorizado. & La consistencia de los registros internos es un factor de éxito. La auditoría observó ``retrasos y baja velocidad de desarrollo'' (págs. 15--20), subrayando la importancia de una gobernanza rigurosa. \\
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries }} \\
+\toprule
+\textbf{Característica} & \textbf{Modelo Centralizado} & \textbf{Modelo Descentralizado} & \textbf{Relevancia Contextual} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{{}} \\
+\endfoot
+
 \bottomrule
-\end{tabular}
+\endlastfoot
+
+Modelo de Confianza & Basado en la confianza en los administradores del sistema y en la robustez de los controles internos definidos. & Basado en un consenso criptográfico distribuido, donde la confianza reside en el protocolo y no en un intermediario. & La correcta asignación de roles es fundamental. La auditoría observó ``ausencia de un profesional responsable de Seguridad de la Información'' (págs. 20--25), subrayando la criticidad de los factores de gobernanza. \\
+
+Integridad de Datos & La integridad se asegura mediante controles de acceso y logs de auditoría internos gestionados por la entidad. & La integridad es una propiedad intrínseca de la estructura de datos; los registros son inmutables por diseño. & La efectividad de los controles internos es fundamental. La auditoría documentó ``Falta de control sobre la integridad y calidad de los datos migrados'' (págs. 38--40) como punto de atención. \\
+
+Gestión de Seguridad & Dependiente de políticas y procedimientos de seguridad definidos y ejecutados por la institución. & La seguridad es una propiedad inherente a la capa de protocolo, auditada de forma continua y global por la comunidad. & La formalización de procedimientos es clave. La auditoría identificó ``falta de gestión formal de riesgos y controles'' y ``ausencia de un plan de seguridad para la infraestructura en la nube'' (págs. 25--30). \\
+
+Auditabilidad y Trazabilidad & La auditoría se realiza a través de logs internos, con acceso gestionado por la entidad y sujeto a sus políticas de retención y seguridad. & La traza de auditoría es transparente, inalterable por diseño y públicamente verificable por cualquier actor autorizado. & La consistencia de los registros internos es un factor de éxito. La auditoría observó ``retrasos y baja velocidad de desarrollo'' (págs. 15--20), subrayando la importancia de una gobernanza rigurosa. \\
+\end{longtable}
+
 \vspace{1em}
 \begin{flushleft}
 \textit{Nota.} Elaboración propia, con hallazgos basados en la Auditoría de Cumplimiento No. 90 de la Contraloría de Bogotá D.C. (octubre de 2023) y la Auditoría de Cumplimiento 170100-0054-24.
 \end{flushleft}
-\end{table}
 \FloatBarrier
 
