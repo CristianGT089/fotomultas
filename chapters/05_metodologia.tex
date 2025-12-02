@@ -1,14 +1,14 @@
 \section{Metodología}
 
-La realización de este proyecto se estructuró bajo un enfoque metodológico dual, diseñado para abordar tanto los requerimientos de una investigación aplicada como las particularidades del desarrollo de una solución tecnológica innovadora. A continuación se describen: el enfoque metodológico de investigación, la selección y justificación de la pila tecnológica, y el modelo de desarrollo de software utilizado para construir el prototipo.
+Este proyecto combina investigación aplicada con desarrollo tecnológico innovador. A continuación se describen el enfoque metodológico, la selección tecnológica y el modelo de desarrollo utilizado.
 
 \subsection{Enfoque metodológico de investigación}
 
-Este trabajo se enmarca en una investigación aplicada, orientada a resolver un problema práctico y concreto: las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Además, adopta un enfoque descriptivo, ya que se detallan las características, arquitectura y funcionamiento de un sistema descentralizado basado en blockchain e IPFS, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
+Este trabajo se enmarca en una investigación aplicada que aborda las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Adopta un enfoque descriptivo al detallar las características de un sistema descentralizado basado en blockchain e IPFS, constituyendo un caso de estudio sobre su aplicación en el sector público.
 
 \subsection{Selección de la pila tecnológica}
 
-Una fase crítica fue la selección de las tecnologías de registro distribuido (DLT) que servirían como pilar del sistema. La decisión impacta directamente en:
+La selección de tecnologías de registro distribuido (DLT) fue crítica, impactando directamente en:
 
 \begin{itemize}
     \item Privacidad de datos personales (Ley 1581 de 2012).
@@ -17,43 +17,13 @@ Una fase crítica fue la selección de las tecnologías de registro distribuido 
     \item Modelo de gobernanza institucional.
 \end{itemize}
 
-\subsubsection{¿Justificacion del uso de blockchain?}
+\subsubsection{Justificación del uso de blockchain}
 
-Antes de seleccionar qué implementación específica de blockchain utilizar, es fundamental justificar por qué esta tecnología es la más apropiada frente a otras alternativas de registro distribuido. Para el caso de uso de fotocomparendos, donde la \textbf{integridad irrefutable} y la \textbf{verificación ciudadana independiente} son requisitos no negociables, blockchain emerge como la tecnología más apropiada.
+Para el caso de fotocomparendos, donde la \textbf{integridad irrefutable} y la \textbf{verificación ciudadana independiente} son requisitos no negociables, blockchain resulta la tecnología más apropiada frente a otras alternativas de registro distribuido.
 
-La Tabla~\ref{tab:blockchain_vs_dlt} compara blockchain con otras tecnologías emergentes de registro distribuido.
+La Tabla~\ref{tab:blockchain_vs_dlt} compara blockchain con otras tecnologías emergentes.
 
-\begin{table}[H]
-\centering
-\small
-\caption{Comparación de blockchain con otras tecnologías de registro distribuido}
-\label{tab:blockchain_vs_dlt}
-\begin{tabular}{p{2.5cm}p{2.7cm}p{2.7cm}p{2.7cm}p{2.7cm}}
-\toprule
-\textbf{Criterio} & \textbf{Blockchain} & \textbf{Hashgraph} & \textbf{BD Distribuida} & \textbf{BD Centralizada} \\
-\midrule
-Inmutabilidad & Alta (criptográfica) & Media (consenso virtual) & Baja (config.) & Ninguna (admin.) \\
-\midrule
-Resistencia manipulación & Alta (prohibitiva) & Media & Baja (permisos) & Ninguna (admin) \\
-\midrule
-Auditabilidad & Alta (completa) & Media (parcial) & Baja (logs modificables) & Baja (logs centralizados) \\
-\midrule
-Descentralización & Alta (real) & Alta (real) & Baja (réplicas) & Ninguna \\
-\midrule
-Verificación indep. & Alta (sin confianza) & Media (requiere nodos) & Ninguna (acceso BD) & Ninguna (API controlada) \\
-\midrule
-Estándares & Alta (maduros) & Baja (emergente) & Media (SQL/NoSQL) & Alta (SQL) \\
-\midrule
-Rendimiento (TPS) & Media (15-20.000) & Alta (>10.000) & Alta (>100.000) & Alta (>100.000) \\
-\midrule
-Costo operativo & Alto & Moderado & Moderado & Bajo \\
-\midrule
-Precedente legal & Alto (eIDAS UE) & Bajo (sin precedente) & Medio (aceptado) & Alto (estándar) \\
-\midrule
-\textbf{Apto evidencia legal} & \textbf{SÍ} & Parcial & NO & NO \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{tables/blockchain_vs_dlt}
 
 \paragraph{Justificación de la elección de blockchain}
 
@@ -163,25 +133,14 @@ La adopción de este modelo iterativo responde a tres factores cruciales:
 
 El ciclo de vida del desarrollo siguió las fases iterativas del modelo de prototipos, adaptadas a los objetivos específicos del proyecto, como se describe en la Tabla~\ref{tab:fases_prototipos}.
 
-\begin{longtable}{|p{3cm}|p{5cm}|p{6cm}|}
-\label{tab:fases_prototipos} \\
-\hline
-\textbf{Fase} & \textbf{Descripción} & \textbf{Aplicación en el Proyecto} \\ \hline
-\endfirsthead
+\begin{table}[H]
+\centering
+\small
+\caption{Fases del proceso de desarrollo por prototipos}
+\label{tab:fases_prototipos}
+\end{table}
 
-\endhead
-
-\endfoot
-
-\hline
-\endlastfoot
-
-\textbf{1. Requisitos Iniciales} & Recopilación de los requisitos funcionales básicos y esenciales del sistema. & Se definieron las funcionalidades mínimas viables: registro inmutable de multas, almacenamiento de evidencia en IPFS, consulta pública y un mecanismo para la verificación de integridad. \\ \hline
-\textbf{2. Construcción del Prototipo} & Desarrollo rápido de una versión funcional reducida que implementa los requisitos iniciales. & Se implementó un prototipo funcional que incluía un Smart Contract en una red local de Ethereum, una API REST para la comunicación y un frontend básico para la interacción del usuario. \\ \hline
-\textbf{3. Evaluación del Prototipo} & Validación del prototipo mediante pruebas internas para evaluar su funcionalidad y alineación con los objetivos. & Se ejecutó un plan de pruebas exhaustivo (detallado en la sección Plan de pruebas) para validar la inmutabilidad de los registros, la integridad de la evidencia y la usabilidad de la interfaz con datos simulados. \\ \hline
-\textbf{4. Refinamiento e Iteración} & Ajuste y mejora del prototipo basándose en los hallazgos de la evaluación. & Con base en los resultados, se optimizó el consumo de gas del Smart Contract, se mejoraron las validaciones de la API y se refinó la arquitectura para incorporar la capa privada con Hyperledger Fabric. \\ \hline
-\textbf{5. Documentación Final} & Una vez validado el concepto, se documenta la arquitectura final y se proponen los siguientes pasos. & Se consolidó el diseño de la arquitectura híbrida final y se elaboró un \textit{roadmap} detallado para una eventual implementación en un entorno de producción. \\ \hline
-\end{longtable}
+\input{tables/fases_prototipos.tex}
 
 \subsubsection{Ventajas y limitaciones del enfoque}
 
