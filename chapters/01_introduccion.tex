@@ -1,7 +1,7 @@
 \section{\large Introducción}
 En Colombia, la gestión de fotocomparendos ha sido objeto de controversia debido a fallas en la transparencia y posibles manipulaciones en el proceso de registro y validación de infracciones. La falta de un sistema confiable ha generado desconfianza entre los ciudadanos, lo que evidencia la necesidad de una solución que garantice la integridad, inmutabilidad y verificabilidad de la información.
 
-Las tecnologías de registro distribuido (DLT), y en particular blockchain, han demostrado ser alternativas eficaces para el almacenamiento seguro y descentralizado de datos, asegurando que una vez registrados, estos no puedan ser alterados sin dejar rastro (ver Capítulo 3 para fundamentos teóricos detallados). A través de contratos inteligentes, es posible automatizar la validación y el procesamiento de fotocomparendos, reduciendo la intervención humana y minimizando el riesgo de corrupción o errores administrativos.
+Las tecnologías de registro distribuido (DLT), y en particular blockchain, han demostrado ser alternativas eficaces para el almacenamiento seguro y descentralizado de datos, asegurando que una vez registrados, estos no puedan ser alterados sin dejar rastro. A través de contratos inteligentes, es posible automatizar la validación y el procesamiento de fotocomparendos, reduciendo la intervención humana y minimizando el riesgo de corrupción o errores administrativos.
 
 Este trabajo propone el diseño e implementación de un prototipo basado en una arquitectura híbrida blockchain para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso. Se utilizarán contratos inteligentes para registrar cada infracción, permitiendo que cualquier actor autorizado pueda verificar su autenticidad sin necesidad de intermediarios. Mediante pruebas y simulaciones, se evaluará la viabilidad del sistema, demostrando cómo esta tecnología puede fortalecer la confianza en los procesos de control de tránsito y mejorar la eficiencia en la gestión de sanciones.
 
@@ -19,7 +19,7 @@ La gestión de comparendos en Bogotá es un proceso de gran escala. Según datos
     \includegraphics[width=0.8\textwidth]{Images/numComparendos.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia basado en datos del Observatorio de Movilidad.
+        \textit{Fuente.} Elaboración propia basado en datos del Observatorio de Movilidad.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:estadisticas_comparendos}
 \end{figure}
@@ -44,7 +44,7 @@ En síntesis, el problema se formula como un Riesgo de Integridad de Datos inher
 
 Ante este panorama, surge la necesidad de explorar arquitecturas que permitan sustituir la confianza administrativa por garantías criptográficas. La pregunta central que guía este trabajo es:
 
-\textbf{¿Cómo mitigar el Riesgo de Integridad de Datos en el proceso de fotocomparendos en Bogotá?} 
+\textbf{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?} 
 
 \subsection{Objetivos}
 \paragraph{Objetivo General}
@@ -68,4 +68,4 @@ El desarrollo de este prototipo tiene como propósito demostrar la viabilidad t�
     \item \textbf{Establecer un precedente técnico:} Servir como referencia para la implementación de soluciones similares en otros procesos gubernamentales que requieran alta integridad de datos.
 \end{itemize}
 
-\textbf{Nota:} Para la especificación detallada del alcance del proyecto, los componentes del prototipo, criterios de éxito y limitaciones metodológicas, consultar el Capítulo 6: Alcance y Limitaciones. 
+\textbf{Nota:} Para la especificación detallada del alcance del proyecto, los componentes del prototipo, criterios de éxito y limitaciones metodológicas, consultar la sección Alcance. 

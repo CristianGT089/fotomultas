@@ -1,6 +1,6 @@
 \section{Implementación del prototipo}
 
-La implementación del prototipo se llevó a cabo siguiendo la arquitectura híbrida blockchain diseñada en el capítulo anterior, integrando Hyperledger Fabric para la gestión privada de datos sensibles, Ethereum para la transparencia pública y IPFS dual para el almacenamiento distribuido de evidencias.
+La implementación del prototipo se llevó a cabo siguiendo la arquitectura híbrida blockchain diseñada en la sección Diseño del prototipo, integrando Hyperledger Fabric para la gestión privada de datos sensibles, Ethereum para la transparencia pública y IPFS dual para el almacenamiento distribuido de evidencias.
 
 \subsection{Entorno de desarrollo y herramientas}
 
@@ -11,7 +11,6 @@ El desarrollo del prototipo se realizó en un entorno Unix (Linux) utilizando la
     \item \textbf{Control de Versiones:} Git 2.34+ para gestión de código fuente
     \item \textbf{Entorno de Ejecución:} Node.js v20.18.0 con npm v10.0.0
     \item \textbf{Gestión de Dependencias:} npm para paquetes JavaScript/TypeScript
-    \item \textbf{Contenedores:} Docker 24.0+ y Docker Compose 2.20+ para orquestación de servicios
     \item \textbf{IDE:} Visual Studio Code con extensiones para Solidity, Go y TypeScript
 \end{itemize}
 
@@ -33,7 +32,7 @@ El backend del sistema se implementó utilizando tecnologías modernas de JavaSc
 \subsubsection{Tecnologías blockchain}
 
 \paragraph{Capa pública - Ethereum}
-Para la implementación de la capa pública (justificada en el Capítulo 5: Metodología), se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
+Para la implementación de la capa pública (justificada en la sección Metodología), se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
 
 \begin{itemize}
     \item \textbf{Framework de Desarrollo:} Hardhat v2.24.0 - Entorno de desarrollo Ethereum
@@ -44,7 +43,7 @@ Para la implementación de la capa pública (justificada en el Capítulo 5: Meto
 \end{itemize}
 
 \paragraph{Capa privada - Hyperledger Fabric}
-Para la implementación de la capa privada (justificada en el Capítulo 5: Metodología), se utilizó Hyperledger Fabric con las siguientes tecnologías:
+Para la implementación de la capa privada (justificada en la sección Metodología), se utilizó Hyperledger Fabric con las siguientes tecnologías:
 
 \begin{itemize}
     \item \textbf{Plataforma:} Hyperledger Fabric v2.5 - Blockchain permisionada empresarial
@@ -54,7 +53,7 @@ Para la implementación de la capa privada (justificada en el Capítulo 5: Metod
     \item \textbf{Gestión de Identidades:} Fabric CA - Certificate Authority para control de acceso
 \end{itemize}
 
-\subsubsection{Almacenamiento descentralizado}
+\subsubsection{Almacenamiento de evidencias}
 
 La implementación de IPFS se realizó en dos capas diferenciadas:
 
@@ -93,9 +92,9 @@ Se implementaron pruebas automatizadas en múltiples capas:
     \item \textbf{Testing de UI:} React Testing Library v16.3.0 - Testing de componentes React
 \end{itemize}
 
-\subsection{Implementación de la capa pública: Ethereum}
+\subsection{Capa pública Ethereum}
 
-La arquitectura de la capa pública se describe en detalle en el Capítulo 7: Diseño del Prototipo. Esta sección se enfoca en los aspectos específicos de implementación técnica.
+La arquitectura de la capa pública se describe en detalle en la sección Diseño del prototipo. Esta sección se enfoca en los aspectos específicos de implementación técnica.
 
 \subsubsection{Desarrollo del smart contract}
 
@@ -243,28 +242,6 @@ El prototipo se desplegó inicialmente en la red local de Hardhat para desarroll
 
 \subsubsection{Configuración de infraestructura}
 
-\paragraph{Configuración de Hardhat}
-El framework Hardhat se configuró para soportar desarrollo local y despliegue en testnet:
-
-\begin{verbatim}
-module.exports = {
-  solidity: {
-    version: "0.8.28",
-    settings: {
-      optimizer: { enabled: true, runs: 200 }
-    }
-  },
-  networks: {
-    localhost: { url: "http://127.0.0.1:8545" },
-    sepolia: {
-      url: process.env.SEPOLIA_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY],
-      chainId: 11155111
-    }
-  }
-};
-\end{verbatim}
-
 \paragraph{Configuración de Hyperledger Fabric}
 La red privada se orquestó mediante Docker Compose con tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría) y un nodo orderer con consenso Raft. La configuración incluye Certificate Authorities por organización y canales privados para separación de datos sensibles.
 
@@ -329,9 +306,9 @@ El sistema estará disponible en:
     \item \textbf{IPFS Gateway:} http://localhost:5001
 \end{itemize}
 
-\subsection{Implementación de la capa privada: Hyperledger Fabric}
+\subsection{Capa privada Hyperledger Fabric}
 
-La arquitectura de la capa privada y su justificación técnica se detallan en el Capítulo 5: Metodología y el Capítulo 7: Diseño del Prototipo. Esta sección describe la configuración técnica específica implementada.
+La arquitectura de la capa privada y su justificación técnica se detallan en la sección Metodología y la sección Diseño del prototipo. Esta sección describe la configuración técnica específica implementada.
 
 \subsubsection{Configuración de la red}
 
@@ -369,7 +346,7 @@ Se utilizó la funcionalidad de Private Data Collections de Fabric para separar 
 \paragraph{Control de acceso basado en atributos}
 El chaincode implementa validaciones basadas en los atributos del certificado del invocador, verificando roles (agente, administrador, auditor) antes de permitir operaciones sensibles.
 
-\subsection{Servicio de sincronización entre blockchains}
+\subsection{Sincronización entre blockchains}
 
 \subsubsection{Arquitectura del servicio}
 
@@ -446,7 +423,7 @@ Para la capa pública se utilizó un gateway público de IPFS que permite:
 
 El IPFSPublicService gestiona la publicación de hashes en el nodo público, manteniendo la separación entre evidencias completas (privadas) y hashes verificables (públicos).
 
-\subsection{Desarrollo del backend: API REST}
+\subsection{Desarrollo del backend}
 
 \subsubsection{Arquitectura de servicios}
 
@@ -506,7 +483,7 @@ La API se documentó utilizando Swagger/OpenAPI 3.0, generando documentación in
     \item Códigos de error posibles
 \end{itemize}
 
-\subsection{Desarrollo del frontend}
+\subsection{Interfaz de usuario}
 
 \subsubsection{Arquitectura de componentes}
 
@@ -618,7 +595,7 @@ Para migrar a producción con APIs reales, se requiere:
 
 El diseño modular del servicio permite reemplazar fácilmente los mocks por implementaciones reales sin afectar el resto del sistema.
 
-\subsection{Desafíos técnicos y soluciones implementadas}
+\subsection{Desafíos técnicos}
 
 \subsubsection{Compatibilidad de Módulos ESM}
 
@@ -646,7 +623,7 @@ El diseño modular del servicio permite reemplazar fácilmente los mocks por imp
 
 \subsection{Estrategia de validación}
 
-La validación del prototipo se realizó siguiendo el plan de pruebas detallado en el Capítulo 9. La implementación incluyó la configuración de frameworks de testing en tres niveles:
+La validación del prototipo se realizó siguiendo el plan de pruebas detallado en la sección Plan de pruebas. La implementación incluyó la configuración de frameworks de testing en tres niveles:
 
 \begin{itemize}
     \item \textbf{Smart Contracts:} Hardhat Test Framework con Chai para aserciones
@@ -654,4 +631,4 @@ La validación del prototipo se realizó siguiendo el plan de pruebas detallado 
     \item \textbf{Frontend:} Jest v30.0.3 y React Testing Library v16.3.0 para pruebas de componentes
 \end{itemize}
 
-Los resultados detallados de todas las pruebas ejecutadas, incluyendo cobertura de código, casos de prueba específicos y métricas de rendimiento, se presentan en el Capítulo 10: Resultados de las Pruebas.
+Los resultados detallados de todas las pruebas ejecutadas, incluyendo cobertura de código, casos de prueba específicos y métricas de rendimiento, se presentan en la sección Resultados de las pruebas de inmutabilidad y verificabilidad del prototipo.

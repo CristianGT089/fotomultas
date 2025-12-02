@@ -1,6 +1,11 @@
 \section{Plan de pruebas}
 
-\subsection{Introducción y propósito}
+\subsection{Concepto de prueba}
+En el contexto de este proyecto, una prueba de software se entiende como un \textit{proceso sistemático de evaluación} mediante el cual se ejecutan componentes o funcionalidades del prototipo bajo condiciones controladas, con el propósito de observar su comportamiento y compararlo frente a resultados esperados previamente definidos. Una prueba no se reduce a “probar si funciona”, sino que busca evidenciar si el sistema cumple o no con requisitos funcionales y no funcionales específicos (integridad, trazabilidad, tiempos de respuesta, manejo de errores), a partir de criterios de aceptación claros y repetibles.
+
+Desde la ingeniería de software, una prueba está compuesta por un conjunto de casos de prueba que describen: (i) las precondiciones del escenario, (ii) los datos o acciones que se aplican al sistema y (iii) los resultados esperados y observados. En este plan, las pruebas se orientan a validar la hipótesis central del trabajo: que un prototipo basado en tecnologías de registro distribuido puede garantizar inmutabilidad, verificabilidad y desempeño aceptable en la gestión de fotocomparendos.
+
+\subsection{Propósito del plan}
 El propósito de este plan es guiar la evaluación de la efectividad y viabilidad del prototipo desarrollado para la gestión de fotocomparendos utilizando Hyperledger Fabric e IPFS. Se busca validar que el prototipo cumple con los requisitos clave de inmutabilidad, transparencia, seguridad, y medir su rendimiento básico, comparándolo con las limitaciones identificadas en el sistema tradicional de Bogotá.
 
 \subsection{Alcance de las pruebas}
@@ -27,13 +32,13 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
 \begin{itemize}
     \item Servidor(es) para nodos Hyperledger Fabric (pueden ser VMs o contenedores Docker). 
     \item Servidor(es) para nodo(s) IPFS (pueden ser VMs o contenedores Docker). 
-    \item Máquina para ejecutar la aplicación backend (Node.js/Express según). 
+    \item Máquina para ejecutar la aplicación backend (Node.js/Express según requisitos del sistema). 
     \item Máquinas cliente para acceder a la interfaz web (simulando Agente de Movilidad y Ciudadano).
 \end{itemize}
 \paragraph{Software}
 \begin{itemize}
-    \item Hyperledger Fabric (versión específica). 
-    \item IPFS (Kubo/Helia, versión específica).
+    \item Hyperledger Fabric v2.5 (versión específica utilizada en el prototipo).
+    \item IPFS Kubo v0.34.1 (versión específica utilizada en el prototipo).
     \item Base de datos (si la aplicación backend la usa adicionalmente). 
     \item Aplicación backend (Node.js, Express, etc.).
         \item Aplicación frontend (navegador web). 
@@ -46,7 +51,7 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
     \item Datos de usuarios simulados (Agentes de Movilidad, Administradores, Ciudadanos).
 \end{itemize}
 
-\subsection{Tipos de pruebas y casos de prueba detallados}
+\subsection{Tipos de pruebas y casos}
 
 \input{tables/casos_prueba_funcionales}
 
@@ -58,7 +63,7 @@ El propósito de este plan es guiar la evaluación de la efectividad y viabilida
 
 \noindent La Tabla~\ref{tab:casos_prueba_inmutabilidad} detalla los escenarios diseñados para poner a prueba la inmutabilidad del sistema ante intentos de modificación no autorizada, mientras que la Tabla~\ref{tab:resultados_inmutabilidad} resume los resultados obtenidos en dichas pruebas, evidenciando la correcta detección y rechazo de cambios indebidos.
 
-\subsection{Pruebas de rendimiento básico}
+\subsection{Pruebas de rendimiento}
 Se medirá el tiempo requerido para ejecutar operaciones clave en condiciones simuladas de uso real. Los tiempos objetivo son:
 
 \begin{itemize}
@@ -68,13 +73,13 @@ Se medirá el tiempo requerido para ejecutar operaciones clave en condiciones si
     \item Actualización de estado: $\leq$ 2 segundos
 \end{itemize}
 
-Los resultados detallados de estas pruebas se presentan en el Capítulo 10: Resultados.
+Los resultados detallados de estas pruebas se presentan en la sección Resultados de las pruebas de inmutabilidad y verificabilidad del prototipo.
 
-\subsection{Casos de prueba de inmutabilidad y verificabilidad}
+\subsection{Casos de prueba funcionales}
 
 \input{tables/casos_prueba_inmutabilidad_verificabilidad.tex}
 
-\subsection{Pruebas del frontend}
+\subsection{Pruebas de interfaz de usuario}
 
 Para validar la funcionalidad de la interfaz de usuario, se implementó una suite de pruebas automatizadas utilizando Jest y React Testing Library. La estrategia contempló:
 
@@ -84,4 +89,4 @@ Para validar la funcionalidad de la interfaz de usuario, se implementó una suit
     \item \textbf{Casos de borde:} Manejo de entradas inesperadas, errores de red y responsividad.
 \end{itemize}
 
-Se ejecutaron aproximadamente 58 pruebas automatizadas, alcanzando una cobertura de código superior al 90\% en componentes críticos. Los resultados detallados se presentan en el Capítulo 10: Resultados.
+Se ejecutaron aproximadamente 58 pruebas automatizadas, alcanzando una cobertura de código superior al 90\% en componentes críticos. Los resultados detallados se presentan en la sección Resultados de las pruebas de inmutabilidad y verificabilidad del prototipo.

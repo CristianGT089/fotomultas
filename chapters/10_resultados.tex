@@ -14,7 +14,7 @@ Se almacenaron imágenes en IPFS y se compararon los CIDs obtenidos con nuevos h
 
 \textbf{Resultado:} Se comprobó que el CID siempre coincide con el contenido original. Cualquier cambio, incluso mínimo, genera un CID diferente, por lo que el sistema detecta automáticamente cualquier intento de manipulación. Esto demuestra que la evidencia permanece \textbf{íntegra y detectable ante alteraciones}.
 
-\subsection{Verificabilidad transparente del registro}
+\subsection{Verificabilidad del registro}
 
 Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/integrity}) que permite a cualquier parte autorizada extraer el CID desde la blockchain y verificar que la evidencia recuperada desde IPFS corresponde al evento sancionado.
 
@@ -25,13 +25,13 @@ Se implementó un mecanismo de consulta pública (\texttt{/api/fines/:fineId/int
 
 Los resultados obtenidos en el entorno de prueba respaldan la eficacia del modelo propuesto. Tal como se aprecia en la Tabla~\ref{tab:resultados_funcionales}, todas las pruebas funcionales finalizaron de forma exitosa; de manera análoga, la Tabla~\ref{tab:resumen_inmutabilidad} corrobora que los mecanismos de integridad impiden alteraciones, y la Tabla~\ref{tab:rendimiento} demuestra que los tiempos de operación se mantienen dentro de márgenes aceptables para un uso en producción.
 
-\subsection{Cumplimiento de objetivos específicos}
+\subsection{Cumplimiento de objetivos}
 
 Con base en los resultados experimentales obtenidos, se presenta en la Tabla~\ref{tab:cumplimiento_objetivos} la relación directa entre cada objetivo específico planteado, las técnicas de validación empleadas y los resultados concretos alcanzados.
 
 \input{tables/cumplimiento_objetivos}
 
-\subsection{Resultados detallados de pruebas backend}
+\subsection{Pruebas del backend}
 
 La evaluación del backend se realizó mediante el framework \textit{Vitest v3.2.4}, ejecutando 80 pruebas distribuidas en 6 módulos principales. Los resultados, presentados en la Tabla~\ref{tab:resultados_backend}, demuestran una alta confiabilidad del sistema.
 

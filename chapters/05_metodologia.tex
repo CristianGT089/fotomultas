@@ -6,7 +6,7 @@ La realización de este proyecto se estructuró bajo un enfoque metodológico du
 
 Este trabajo se enmarca en una investigación aplicada, orientada a resolver un problema práctico y concreto: las deficiencias de integridad, transparencia y confianza en el sistema actual de gestión de fotocomparendos en Bogotá. Además, adopta un enfoque descriptivo, ya que se detallan las características, arquitectura y funcionamiento de un sistema descentralizado basado en blockchain e IPFS, estableciendo un caso de estudio sobre la aplicación de estas tecnologías en el sector público.
 
-\subsection{Selección y justificación de la pila tecnológica}
+\subsection{Selección de la pila tecnológica}
 
 Una fase crítica fue la selección de las tecnologías de registro distribuido (DLT) que servirían como pilar del sistema. La decisión impacta directamente en:
 
@@ -17,7 +17,7 @@ Una fase crítica fue la selección de las tecnologías de registro distribuido 
     \item Modelo de gobernanza institucional.
 \end{itemize}
 
-\subsubsection{¿Por qué blockchain y no otra tecnología de registro distribuido?}
+\subsubsection{¿Justificacion del uso de blockchain?}
 
 Antes de seleccionar qué implementación específica de blockchain utilizar, es fundamental justificar por qué esta tecnología es la más apropiada frente a otras alternativas de registro distribuido. Para el caso de uso de fotocomparendos, donde la \textbf{integridad irrefutable} y la \textbf{verificación ciudadana independiente} son requisitos no negociables, blockchain emerge como la tecnología más apropiada.
 
@@ -143,7 +143,7 @@ Para la verificación ciudadana se eligió Ethereum (testnet Sepolia) por:
     \item \textbf{Costo controlado:} solo se publican hashes y metadatos no sensibles, minimizando gastos de gas.
 \end{itemize}
 
-\subsection{Metodología de desarrollo de software: modelo por prototipos}
+\subsection{Metodología de desarrollo}
 
 Para la construcción del sistema, se seleccionó el \textbf{Modelo de Desarrollo por Prototipos} (\textit{Prototyping Model}). Esta elección metodológica fue estratégica y se fundamenta en las características inherentes al proyecto.
 
@@ -178,7 +178,7 @@ El ciclo de vida del desarrollo siguió las fases iterativas del modelo de proto
 
 \textbf{1. Requisitos Iniciales} & Recopilación de los requisitos funcionales básicos y esenciales del sistema. & Se definieron las funcionalidades mínimas viables: registro inmutable de multas, almacenamiento de evidencia en IPFS, consulta pública y un mecanismo para la verificación de integridad. \\ \hline
 \textbf{2. Construcción del Prototipo} & Desarrollo rápido de una versión funcional reducida que implementa los requisitos iniciales. & Se implementó un prototipo funcional que incluía un Smart Contract en una red local de Ethereum, una API REST para la comunicación y un frontend básico para la interacción del usuario. \\ \hline
-\textbf{3. Evaluación del Prototipo} & Validación del prototipo mediante pruebas internas para evaluar su funcionalidad y alineación con los objetivos. & Se ejecutó un plan de pruebas exhaustivo (detallado en el Capítulo 9) para validar la inmutabilidad de los registros, la integridad de la evidencia y la usabilidad de la interfaz con datos simulados. \\ \hline
+\textbf{3. Evaluación del Prototipo} & Validación del prototipo mediante pruebas internas para evaluar su funcionalidad y alineación con los objetivos. & Se ejecutó un plan de pruebas exhaustivo (detallado en la sección Plan de pruebas) para validar la inmutabilidad de los registros, la integridad de la evidencia y la usabilidad de la interfaz con datos simulados. \\ \hline
 \textbf{4. Refinamiento e Iteración} & Ajuste y mejora del prototipo basándose en los hallazgos de la evaluación. & Con base en los resultados, se optimizó el consumo de gas del Smart Contract, se mejoraron las validaciones de la API y se refinó la arquitectura para incorporar la capa privada con Hyperledger Fabric. \\ \hline
 \textbf{5. Documentación Final} & Una vez validado el concepto, se documenta la arquitectura final y se proponen los siguientes pasos. & Se consolidó el diseño de la arquitectura híbrida final y se elaboró un \textit{roadmap} detallado para una eventual implementación en un entorno de producción. \\ \hline
 \end{longtable}
@@ -198,7 +198,7 @@ No obstante, es importante reconocer las limitaciones inherentes a este enfoque 
 \end{itemize}
 
 En conclusión, la metodología por prototipos fue fundamental para navegar la complejidad e incertidumbre del proyecto. Permitió demostrar de manera empírica que una arquitectura descentralizada es una solución técnica viable y socialmente pertinente para fortalecer la confianza en la gestión de fotocomparendos en Bogotá. 
-\subsection{Introducción a los artefactos técnicos del diseño}
+\subsection{Artefactos técnicos del diseño}
 Con el fin de estructurar de manera clara el desarrollo de la solución propuesta, en esta sección se presentan los principales artefactos utilizados durante la etapa de diseño. Estos elementos permiten representar gráficamente tanto la lógica de funcionamiento como la arquitectura del sistema, sirviendo como guía para la implementación y posterior validación del prototipo.
 
 El conjunto de diagramas que se incluye responde a la necesidad de modelar distintos aspectos del sistema. Por un lado, se usan diagramas de casos de uso para identificar las funcionalidades clave desde la perspectiva del usuario. Por otro, los diagramas de clases permiten definir la estructura del software, mientras que los diagramas de despliegue muestran cómo se distribuyen los componentes en el entorno tecnológico. Además, se incluyen diagramas de flujo que describen el comportamiento del sistema ante eventos específicos, facilitando la comprensión de su dinámica interna.

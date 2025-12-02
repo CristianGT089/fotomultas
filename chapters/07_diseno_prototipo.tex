@@ -5,28 +5,72 @@ Se hace mención de que, aunque la documentación para elaborar el software est�
 \begin{enumerate}
     \item \textbf{Datos sobre infracciones de tráfico:} La captura de datos detallados sobre infracciones de tráfico, como la hora de la infracción, las coordenadas GPS, el tipo de infracción, los datos de identificación del vehículo e imágenes o vídeos, garantiza que cada incidente se documenta exhaustivamente. Este registro exhaustivo proporciona transparencia y responsabilidad, ya que los datos son inmutables y a prueba de manipulaciones una vez almacenados en la cadena de bloques. La inclusión de pruebas mediáticas refuerza aún más la credibilidad y verificabilidad de cada infracción, haciendo que los registros sean sólidos a efectos legales y administrativos. 
     \item \textbf{Información sobre el conductor:} Asociar las infracciones de tráfico a conductores concretos utilizando su dirección Ethereum (clave pública), los datos KYC si es necesario, y los números de identificación del conductor permite un seguimiento y una rendición de cuentas precisos. Esta vinculación permite al sistema personalizar el seguimiento y la verificación de las sanciones, garantizando que las sanciones se atribuyan correctamente a las personas adecuadas. El uso de datos KYC garantiza que las identidades de los conductores puedan verificarse de forma fiable, lo que resulta esencial para mantener la integridad y fiabilidad del sistema.
-    \item \textbf{Datos de la sanción: }  Registrando los datos de la sanción, incluyendo el tipo de sanción, el importe de la sanción y el estado del pago de la sanción facilita la ejecución automatizada de las sanciones a través de contratos inteligentes. Esta automatización reduce la carga administrativa de y garantiza que las sanciones se apliquen de forma coherente y transparente. El registro inmutable de las sanciones y su estado de pago en la blockchain garantiza que el proceso sea justo y responsable, proporcionando una pista de auditoría clara para todas las transacciones financieras relacionadas con las infracciones de tráfico.
+    \item \textbf{Datos de la sanción: }  Registrando los datos de la sanción, incluyendo el tipo de sanción, el importe de la sanción y el estado del pago de la sanción facilita la ejecución automatizada de las sanciones a través de contratos inteligentes. Esta automatización reduce la carga administrativa de personal y garantiza que las sanciones se apliquen de forma coherente y transparente. El registro inmutable de las sanciones y su estado de pago en la blockchain garantiza que el proceso sea justo y responsable, proporcionando una pista de auditoría clara para todas las transacciones financieras relacionadas con las infracciones de tráfico.
         \item \textbf{Eventos de contratos inteligentes:} El registro de eventos de contratos inteligentes, como el registro de nuevas infracciones de tráfico o la ejecución de sanciones, con datos relevantes y marcas de tiempo, garantiza que todas las acciones significativas se documenten de forma transparente. Este registro de eventos mejora la trazabilidad y la rendición de cuentas, proporcionando un registro cronológico de las actividades importantes del sistema. Esta transparencia es crucial para las auditorías y revisiones, ya que ayuda a generar confianza en las operaciones del sistema. 
         \item \textbf{Datos de las transacciones de la cadena de bloques: } El seguimiento de los datos de las transacciones de la cadena de bloques, incluido el hash de la transacción, las direcciones del remitente/receptor y las tarifas del gas, proporciona un registro detallado de todas las interacciones dentro del sistema. Estos datos permiten supervisar y auditar las transacciones, garantizando la transparencia y la trazabilidad. Además, hacer un seguimiento de las tarifas de gas ayuda a gestionar y optimizar los costes asociados a la ejecución de transacciones en la blockchain, que es importante para mantener la rentabilidad del sistema. 
         \item \textbf{Dispositivos de datos IoT:} La integración de datos de dispositivos IoT, como sensores o cámaras, junto con marcas de tiempo e identificación del dispositivo, puede mejorar las pruebas recopiladas para infracciones de tráfico. Estos datos en tiempo real proporcionan contexto adicional y pruebas corroborativas, haciendo que los registros de infracciones sean más sólidos y fiables. El uso de dispositivos IoT también puede automatizar la detección y el registro de infracciones, aumentando la eficiencia y la precisión del sistema.
             \item \textbf{Opiniones de los usuarios: } La recopilación de opiniones de los usuarios, incluidos el tipo de opinión, los comentarios y las valoraciones de los usuarios, ayuda a los administradores del sistema a comprender las experiencias y percepciones de los usuarios. Esta información es valiosa para identificar áreas de mejora como la usabilidad y funcionalidad del sistema. Involucrar a los usuarios de esta manera puede conducir a un diseño del sistema más centrado en el usuario, mejorando la satisfacción y la eficacia general. 
                 \item \textbf{Datos de cumplimiento: } El registro de los datos de cumplimiento, incluido el estado de cumplimiento y los detalles normativos, garantiza que el sistema se adhiere a las leyes y normativas de tráfico locales. Este seguimiento es vital para demostrar el cumplimiento de la normativa y evitar problemas legales. El mantenimiento de registros de cumplimiento detallados también facilita las auditorías reglamentarias en, proporcionando pruebas transparentes de que el sistema funciona dentro de las normas legales, lo que es esencial para generar confianza y credibilidad entre las partes interesadas.
 \end{enumerate}
+\subsection{Diagramas de actividades}
+
+Los siguientes diagramas describen los flujos de proceso principales del sistema, mostrando la secuencia de operaciones y decisiones en la creación de multas y gestión de apelaciones.
+
+\subsubsection{Proceso de creación de multa}
+
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 9}\\[2em]
+        \textit{Diagrama de actividades para el proceso de creación de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 9. Diagrama de actividades para el proceso de creación de multa}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Fuente.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
+\end{figure}
+
+En la Figura \ref{fig:diagrama_creacion_multa} se muestra el flujo completo para el registro de una nueva infracción, desde la captura de evidencia hasta la sincronización en ambas blockchains. El proceso inicia con la validación de datos del vehículo en el RUNT, continúa con el almacenamiento de evidencia en IPFS privado, registro en Hyperledger Fabric y finalmente la publicación de metadatos en Ethereum para consulta pública.
+
+\subsubsection{Proceso de apelación de multa}
+
+\begin{figure}[htbp]
+    \begin{flushleft}
+        \textbf{Figura 10}\\[2em]
+        \textit{Diagrama de actividades para el proceso de apelación de multa}
+    \end{flushleft}
+    \vspace{1em}
+    \addcontentsline{lof}{figure}{Figura 10. Diagrama de actividades para el proceso de apelación de multa}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
+    \vspace{2em}
+    \begin{flushleft}
+        \textit{Fuente.} Elaboración propia.
+    \end{flushleft}
+    \refstepcounter{figure}\label{fig:diagrama_apelacion}
+\end{figure}
+
+En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para la gestión de apelaciones de multas en la arquitectura híbrida. Este proceso se ejecuta en la capa privada de Hyperledger Fabric, garantizando la confidencialidad de las evidencias presentadas por el ciudadano. Una vez resuelta la apelación por el agente autorizado, el cambio de estado se sincroniza a la blockchain pública de Ethereum, permitiendo que el ciudadano verifique la resolución sin acceder a información sensible del proceso interno.
+
 \subsection{Diagrama de casos de uso}
 
 Este diagrama presenta las funcionalidades principales del sistema desde la perspectiva de los actores involucrados: agentes de tránsito, ciudadanos y administradores.
 \begin{figure}[htbp]
     \begin{flushleft}
         \textbf{Figura 6}\\[2em]
-        \textit{Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
+        \textit{Diagrama de casos de uso del prototipo de gestión de infracciones de tránsito}
     \end{flushleft}
     \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 6. Diagrama de casos de uso del sistema de gestión de infracciones de tránsito}
+    \addcontentsline{lof}{figure}{Figura 6. Diagrama de casos de uso del prototipo de gestión de infracciones de tránsito}
     \centering
     \includegraphics[width=0.8\textwidth]{Images/CasosUso.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:casos_uso}
 \end{figure}
@@ -66,56 +110,11 @@ Coordina las operaciones entre todas las capas:
     \includegraphics[width=0.8\textwidth]{Images/uml.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:diagrama_clases}
 \end{figure}
 En la Figura \ref{fig:diagrama_clases} se presenta el diagrama de clases completo del sistema, mostrando la separación entre servicios de Hyperledger Fabric (privado), Ethereum (público) y el servicio de sincronización que coordina la interoperabilidad entre ambas blockchains. El diagrama ilustra cómo el patrón Repository abstrae el acceso a cada blockchain mediante repositorios especializados (HyperledgerRepository y EthereumRepository), mientras que el patrón Service encapsula la lógica de negocio específica de cada capa.
-
-\subsection{Diagramas de actividades}
-
-Los siguientes diagramas describen los flujos de proceso principales del sistema, mostrando la secuencia de operaciones y decisiones en la creación de multas y gestión de apelaciones.
-
-\subsubsection{Proceso de creación de multa}
-
-\begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 9}\\[2em]
-        \textit{Diagrama de actividades para el proceso de creación de multa}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 9. Diagrama de actividades para el proceso de creación de multa}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/ActMulta.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:diagrama_creacion_multa}
-\end{figure}
-
-En la Figura \ref{fig:diagrama_creacion_multa} se muestra el flujo completo para el registro de una nueva infracción, desde la captura de evidencia hasta la sincronización en ambas blockchains. El proceso inicia con la validación de datos del vehículo en el RUNT, continúa con el almacenamiento de evidencia en IPFS privado, registro en Hyperledger Fabric y finalmente la publicación de metadatos en Ethereum para consulta pública.
-
-\subsubsection{Proceso de apelación de multa}
-
-\begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 10}\\[2em]
-        \textit{Diagrama de actividades para el proceso de apelación de multa}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 10. Diagrama de actividades para el proceso de apelación de multa}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/ActApelacion.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:diagrama_apelacion}
-\end{figure}
-
-En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para la gestión de apelaciones de multas en la arquitectura híbrida. Este proceso se ejecuta en la capa privada de Hyperledger Fabric, garantizando la confidencialidad de las evidencias presentadas por el ciudadano. Una vez resuelta la apelación por el agente autorizado, el cambio de estado se sincroniza a la blockchain pública de Ethereum, permitiendo que el ciudadano verifique la resolución sin acceder a información sensible del proceso interno.
-
 \subsection{Diagrama de despliegue}
 
 \begin{figure}[htbp]
@@ -129,7 +128,7 @@ En la Figura \ref{fig:diagrama_apelacion} se presenta el flujo de proceso para l
     \includegraphics[width=0.8\textwidth]{Images/Despliegue.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:diagrama_despliegue}
 \end{figure}
@@ -168,7 +167,7 @@ La arquitectura se conecta mediante servicios web a APIs externas como Apitude p
     \includegraphics[width=0.8\textwidth]{Images/UI1.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:login}
 \end{figure}
@@ -186,7 +185,7 @@ En la Figura~\ref{fig:login} se aprecia la pantalla de inicio de sesión, punto 
     \includegraphics[width=0.8\textwidth]{Images/UI2.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:recuperar_password}
 \end{figure}
@@ -203,7 +202,7 @@ La Figura~\ref{fig:recuperar_password} muestra el formulario para recuperar la c
     \includegraphics[width=0.8\textwidth]{Images/UI3.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:dashboard_agente}
 \end{figure}
@@ -219,7 +218,7 @@ En la Figura~\ref{fig:dashboard_agente} se presenta el tablero principal que res
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:consulta_estado_multa}
 \end{figure}
@@ -235,7 +234,7 @@ La Figura~\ref{fig:consulta_estado_multa} ilustra la consulta rápida del estado
     \includegraphics[width=0.8\textwidth]{Images/UI4.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:consulta_detalle_multa}
 \end{figure}
@@ -252,7 +251,7 @@ En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de 
     \includegraphics[width=0.8\textwidth]{Images/UI5.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:consulta_multas_propietario}
 \end{figure}
@@ -267,7 +266,7 @@ En la Figura~\ref{fig:consulta_detalle_multa} se muestra el detalle completo de 
     \includegraphics[width=0.8\textwidth]{Images/UI6.png}
     \vspace{2em}
     \begin{flushleft}
-        \textit{Nota.} Elaboración propia.
+        \textit{Fuente.} Elaboración propia.
     \end{flushleft}
     \refstepcounter{figure}\label{fig:detalle_multa_propietario}
 \end{figure}

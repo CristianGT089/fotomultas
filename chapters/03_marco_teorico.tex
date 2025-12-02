@@ -1,11 +1,11 @@
 \section{\large Marco teórico}
 El marco conceptual y técnologico que sustenta la propuesta del prototipo, presentan las teorías y modelos clave que justifican la selección de blockchain e IPFS como componentes centrales, evidencian los principios inherentes de integridad, transparencia, resiliencia y auditabilidad en la gestión de evidencia digital crítica como los fotocomparendos.
-\subsection{El paradigma de la confianza descentralizada}
+\subsection{Confianza descentralizada}
 Los sistemas de información tradicionales suelen depender de intermediarios centralizados o autoridades certificadoras para validar transacciones y garantizar la fiabilidad de los registros. La teoría de los modelos de confianza descentralizada, en cambio, analiza cómo establecer y mantener la confianza en entornos distribuidos donde tales autoridades centrales están ausentes \parencite{swan2015blockchain}.
 
 La relevancia de este modelo es fundamental para justificar el uso de la tecnología blockchain en la gestión de fotocomparendos, ya que su propósito es precisamente reemplazar la necesidad de depositar confianza exclusiva en una única entidad para la custodia, validación e integridad de los registros. Blockchain habilita un cambio de paradigma: en lugar de confiar en un actor central, la confianza se distribuye y se deposita en la robustez del protocolo criptográfico subyacente \parencite{nakamoto2008bitcoin}, en la transparencia de las reglas del sistema y en el consenso mayoritario de los participantes de la red \parencite{antonopoulos2023mastering}. Este enfoque reduce drásticamente los puntos únicos de fallo y los vectores de corrupción asociados a la dependencia de intermediarios centralizados, quienes podrían ser comprometidos, cometer errores o actuar de manera malintencionada.
 
-\subsection{Fundamentos de los sistemas distribuidos y redes descentralizadas}
+\subsection{sistemas distribuidos y redes descentralizadas}
 El paradigma de la confianza descentralizada se sustenta en la teoría de los sistemas distribuidos, donde múltiples entidades autónomas, denominadas nodos, colaboran a través de una red para alcanzar un objetivo común, compartiendo tanto la carga computacional como el almacenamiento de datos \parencite{vanSteen2017}. Estos sistemas se fundamentan en principios como la distribución de recursos, la comunicación inter-nodo y mecanismos de coordinación que prescinden de intermediarios centrales \parencite{coulouris2011}.
 
 La relevancia de esta teoría para el presente proyecto es primordial, ya que tanto blockchain como el InterPlanetary File System (IPFS) son implementaciones nativas de sistemas distribuidos. Su adopción conjunta promueve inherentemente:
@@ -17,7 +17,10 @@ La relevancia de esta teoría para el presente proyecto es primordial, ya que ta
 
 Una característica esencial de estos sistemas es su arquitectura de red \textbf{Peer-to-Peer (P2P)}, donde los participantes se conectan y comparten recursos directamente entre sí, sin necesidad de un servidor central. En una red P2P, cada nodo puede actuar simultáneamente como cliente y servidor, lo que posibilita que el registro distribuido (ledger) se mantenga sincronizado y que los archivos puedan ser recuperados desde múltiples fuentes, garantizando la integridad de la información sin depender de una autoridad central.
 
-\subsection{Tecnologías para la gestión descentralizada de evidencia}
+\paragraph{Redes distribuidas vs. redes descentralizadas}
+En la literatura especializada se distingue entre \textit{sistemas distribuidos} y \textit{sistemas descentralizados}, aunque en muchos trabajos los términos se usen de forma intercambiable. Un sistema distribuido, en sentido amplio, es aquel en el que múltiples nodos cooperan para ofrecer un servicio único, compartiendo estado y comunicación a través de la red \parencite{vanSteen2017,coulouris2011}. La descentralización, por su parte, hace referencia al grado en que el control y la toma de decisiones se reparten entre los participantes, reduciendo o eliminando la existencia de un único punto de autoridad o de fallo \parencite{swan2015blockchain,antonopoulos2023mastering}. En este trabajo se utiliza el término \textbf{“tecnologías de redes distribuidas”} en el título porque enfatiza la dimensión arquitectónica (distribución de nodos, datos y procesos) que comparten tanto Hyperledger Fabric como Ethereum e IPFS, mientras que el análisis conceptual reconoce que la solución propuesta implementa \textbf{mecanismos de descentralización de la confianza} —particularmente en la verificación ciudadana y la inmutabilidad de los registros— sobre dicha infraestructura distribuida. Esta elección terminológica se alinea con la definición amplia de \textit{Distributed Ledger Technologies (DLT)} como categoría paraguas para blockchains públicas y permisionadas \parencite{narayanan2016bitcoin,ruan2019blockchainvsdb}, y permite dialogar con la literatura que utiliza indistintamente los términos “red distribuida” y “red descentralizada” mantenido un uso riguroso en el cuerpo del documento.
+
+\subsection{Almacenamiento de evidencias digitales}
 Para materializar un sistema de gestión de fotocomparendos descentralizado, se requiere la sinergia de dos tipos de tecnologías: una para el registro inmutable de transacciones y otra para el almacenamiento verificable de la evidencia.
 
 \subsubsection{Blockchain: un registro distribuido, inmutable y transparente}
@@ -39,7 +42,7 @@ Los ledgers de blockchain no están optimizados para almacenar grandes volúmene
 
 En este modelo, la identidad única de un archivo, su Content Identifier (CID), es un \textbf{hash criptográfico} derivado directamente de su contenido. Esto establece un vínculo intrínseco e inmutable: si el contenido del archivo cambia, incluso mínimamente, su CID también cambiará. IPFS es un protocolo y red P2P que utiliza este principio: divide los archivos en bloques, calcula sus hashes y permite su recuperación a través de su CID, utilizando mecanismos como DHT para localizar los nodos que los poseen \parencite{maymounkov2002kademlia, benet2014ipfs}.
 
-\subsection{Arquitectura de la solución: integración blockchain-IPFS}
+\subsection{Arquitectura híbrida blockchain-IPFS}
 La integración de ambas tecnologías en una arquitectura híbrida sigue el siguiente flujo de trabajo:
 \begin{enumerate}
     \item La imagen probatoria del comparendo se carga a un nodo IPFS, obteniendo su CID único.
@@ -48,7 +51,7 @@ La integración de ambas tecnologías en una arquitectura híbrida sigue el sigu
 \end{enumerate}
 Este enfoque crea un enlace criptográfico inalterable entre el registro oficial (en blockchain) y la evidencia visual original (en IPFS). Cualquier intento de manipulación de la imagen almacenada en IPFS resultaría en un CID diferente, rompiendo explícitamente la cadena de custodia digital y haciendo que la alteración sea detectable de forma inmediata y algorítmica. La combinación de blockchain e IPFS no solo sigue los principios de descentralización \parencite{vanSteen2017}, sino que refuerza activamente los objetivos de inmutabilidad verificable y transparencia del sistema.
 
-\subsection{Fundamentos criptográficos aplicados}
+\subsection{Criptografía aplicada}
 La criptografía proporciona los pilares matemáticos que garantizan la seguridad, integridad y autenticidad en todo el ecosistema del prototipo \parencite{katz2020introduction}.
 \begin{itemize}
     \item \textbf{Funciones Hash Criptográficas:} Son algoritmos que transforman datos en una huella digital de tamaño fijo. Sus propiedades (unidireccionalidad, resistencia a colisiones, efecto avalancha) son vitales \parencite{schneier2007applied, menezes1996handbook}. En este proyecto, se utilizan para: generar el CID en IPFS, asegurar la integridad de la cadena de bloques y crear identificadores únicos para las transacciones \parencite{benet2014ipfs, nakamoto2008bitcoin}.
