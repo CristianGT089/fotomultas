@@ -447,20 +447,9 @@ Los repositorios abstraen el acceso a las fuentes de datos (blockchains e IPFS).
 
 \subsubsection{Endpoints principales}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|p{6cm}|}
-\hline
-\textbf{Método} & \textbf{Endpoint} & \textbf{Descripción} \\ \hline
-POST & /api/fines & Registra nueva multa (IPFS + ambas blockchains) \\ \hline
-GET & /api/fines/:fineId & Consulta detalles completos (desde Fabric) \\ \hline
-PUT & /api/fines/:fineId/status & Actualiza estado de multa \\ \hline
-GET & /api/fines/:fineId/evidence & Obtiene evidencia desde IPFS privado \\ \hline
-GET & /api/fines/:fineId/integrity & Verifica integridad cruzada entre blockchains \\ \hline
-GET & /api/fines/by-plate/:plateNumber & Consulta pública desde Ethereum \\ \hline
-\end{tabular}
-\caption{Endpoints principales de la API REST}
-\end{table}
+La Tabla~\ref{tab:endpoints_api} describe los endpoints principales implementados en la API REST para la gestión de fotocomparendos.
+
+\input{tables/endpoints_api.tex}
 
 \subsubsection{Middleware de seguridad}
 

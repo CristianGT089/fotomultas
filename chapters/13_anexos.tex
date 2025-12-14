@@ -160,51 +160,6 @@ Para acceder al código fuente del proyecto:
 
 \subsection{Anexo C: glosario de términos}
 
-\begin{longtable}{|p{3.5cm}|p{10.5cm}|}
-\caption{Glosario de Términos Técnicos} \\
-\hline
-\textbf{Término} & \textbf{Definición} \\ \hline
-\endfirsthead
+La Tabla~\ref{tab:glosario_terminos} presenta las definiciones de los principales términos técnicos utilizados en este documento.
 
-\multicolumn{2}{c}%
-{{\bfseries \tablename\ \thetable{} -- continuación}} \\
-\hline
-\textbf{Término} & \textbf{Definición} \\ \hline
-\endhead
-
-\multicolumn{2}{r}{{}} \\
-\endfoot
-
-\hline
-\endlastfoot
-ABI (Application Binary Interface) & Interfaz que define cómo llamar funciones de un Smart Contract desde aplicaciones externas. Contiene nombres de funciones, parámetros y tipos de retorno. \\ \hline
-Blockchain & Tecnología de registro distribuido que almacena datos en bloques encadenados mediante hashes criptográficos, garantizando inmutabilidad. \\ \hline
-CA (Certificate Authority) & Entidad que emite y gestiona certificados digitales en una red Hyperledger Fabric, controlando identidades y permisos. \\ \hline
-Chaincode & Smart Contract en el contexto de Hyperledger Fabric, generalmente escrito en Go, que define la lógica de negocio. \\ \hline
-CID (Content Identifier) & Hash único que identifica un archivo en IPFS. Se genera mediante criptografía del contenido del archivo. \\ \hline
-Consenso & Mecanismo mediante el cual los nodos de una blockchain acuerdan la validez de las transacciones. Ejemplos: PBFT, PoS, PoW. \\ \hline
-DLT (Distributed Ledger Technology) & Tecnología de libro mayor distribuido que mantiene registros sincronizados entre múltiples nodos sin autoridad central. \\ \hline
-Ethers.js & Biblioteca JavaScript para interactuar con la blockchain de Ethereum, permitiendo leer datos y enviar transacciones. \\ \hline
-Gas & Unidad de medida del costo computacional en Ethereum. Cada operación consume gas que se paga en Ether. \\ \hline
-Hardhat & Framework de desarrollo para Ethereum que facilita compilación, testing y despliegue de Smart Contracts. \\ \hline
-Hash Criptográfico & Función matemática que convierte datos de cualquier tamaño en una cadena de longitud fija. Ejemplos: SHA-256, Keccak-256. \\ \hline
-Hyperledger Fabric & Plataforma de blockchain permisionada empresarial, parte del proyecto Hyperledger de Linux Foundation. \\ \hline
-Inmutabilidad & Propiedad de blockchain que garantiza que datos una vez escritos no pueden ser alterados sin dejar evidencia. \\ \hline
-IPFS (InterPlanetary File System) & Sistema de archivos peer-to-peer distribuido que usa direccionamiento por contenido mediante CIDs. \\ \hline
-Ledger & Libro mayor que registra todas las transacciones en una blockchain. Es distribuido y sincronizado entre nodos. \\ \hline
-Nodo (Node) & Computadora que participa en una red blockchain, manteniendo una copia del ledger y validando transacciones. \\ \hline
-OpenZeppelin & Librería de Smart Contracts auditados y seguros para Ethereum, proporciona implementaciones estándar de tokens, control de acceso, etc. \\ \hline
-Orderer & Nodo en Hyperledger Fabric que ordena transacciones y las agrupa en bloques para distribuir a los peers. \\ \hline
-PBFT (Practical Byzantine Fault Tolerance) & Algoritmo de consenso tolerante a fallas bizantinas usado en Hyperledger Fabric, eficiente para redes permisionadas. \\ \hline
-Peer & Nodo en Hyperledger Fabric que mantiene una copia del ledger y ejecuta chaincode. \\ \hline
-Pinning & En IPFS, mantener un archivo almacenado permanentemente en un nodo para garantizar su disponibilidad. \\ \hline
-PoS (Proof of Stake) & Mecanismo de consenso donde validadores son seleccionados según la cantidad de criptomoneda que poseen. \\ \hline
-PoW (Proof of Work) & Mecanismo de consenso que requiere resolver acertijos criptográficos complejos para validar bloques. \\ \hline
-Private Data Collections & Funcionalidad de Hyperledger Fabric para almacenar datos privados que solo ciertos nodos pueden acceder. \\ \hline
-Smart Contract & Programa autoejecutante almacenado en blockchain que ejecuta lógica de negocio cuando se cumplen condiciones. \\ \hline
-Solidity & Lenguaje de programación orientado a objetos para escribir Smart Contracts en Ethereum. \\ \hline
-Testnet & Red de prueba de blockchain que imita el funcionamiento de la red principal pero sin valor real. Ejemplo: Sepolia. \\ \hline
-Transaction Hash & Identificador único de una transacción en blockchain, generado mediante hash criptográfico de su contenido. \\ \hline
-TypeScript & Superset de JavaScript con tipado estático, usado para desarrollo backend del proyecto. \\ \hline
-Wallet & Software que almacena claves privadas y permite firmar transacciones en blockchain. \\ \hline
-\end{longtable}
+\input{tables/glosario_terminos.tex}

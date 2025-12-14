@@ -52,23 +52,9 @@ Hyperledger Fabric permite implementar políticas de acceso basadas en certifica
 
 El sistema FÉNIX de la Secretaría Distrital de Movilidad opera bajo un modelo centralizado con base de datos tradicional. La arquitectura híbrida propuesta supera este modelo en varios aspectos críticos:
 
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
-\hline
-\textbf{Aspecto} & \textbf{Sistema FÉNIX (Actual)} & \textbf{Arquitectura Híbrida} \\ \hline
-\textbf{Integridad de Datos} & Depende de controles administrativos y permisos de base de datos & Garantizada criptográficamente mediante hash inmutables en blockchain \\ \hline
-\textbf{Tiempos de respuesta operativos} & No se dispone de métricas públicas consolidadas; reportes ciudadanos documentan demoras y caídas esporádicas en consultas y generación de certificados & En entorno de laboratorio, registro completo de fotocomparendo $\leq$ 3 s, consulta $\leq$ 1 s y verificación de integridad $\leq$ 2 s (Tabla~\ref{tab:rendimiento}) \\ \hline
-\textbf{Auditabilidad} & Logs de base de datos modificables & Historial inmutable en blockchain con trazabilidad completa \\ \hline
-\textbf{Transparencia} & Opaca para ciudadanos; requiere solicitudes PQRSD & Verificación pública en tiempo real sin intermediarios \\ \hline
-\textbf{Puntos de Fallo} & Base de datos central (SPOF) & Distribuido entre múltiples nodos; sin SPOF \\ \hline
-\textbf{Costos de Disputa} & 155,854 PQRSD semestrales & Reducción estimada >50\% por verificación automática \\ \hline
-\textbf{Confianza} & Basada en la institución & Basada en criptografía verificable \\ \hline
-\end{tabular}
-\caption{Comparación Sistema FÉNIX vs Arquitectura Híbrida}
-\label{tab:comparacion_fenix}
-\end{table}
+La Tabla~\ref{tab:comparacion_fenix} presenta una comparación detallada entre el sistema FÉNIX actual y la arquitectura híbrida propuesta.
+
+\input{tables/comparacion_fenix.tex}
 
 \noindent Es importante resaltar que, para el sistema FÉNIX, no se cuenta con acceso a métricas técnicas detalladas de rendimiento ni a su arquitectura interna; por tanto, las comparaciones cuantitativas se basan en la tasa de PQRSD, hallazgos de auditoría y percepciones documentadas en informes oficiales. En contraste, los valores reportados para el prototipo provienen de medidas directas en entorno de laboratorio y deben interpretarse como un escenario de referencia para estimar el potencial de mejora, más que como un reemplazo inmediato del sistema actual.
 

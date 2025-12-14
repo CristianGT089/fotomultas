@@ -1,0 +1,117 @@
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{4cm}p{9.5cm}}
+
+\caption{Glosario de Términos Técnicos}
+\label{tab:glosario_terminos} \\
+\toprule
+\textbf{Término} & \textbf{Definición} \\
+\midrule
+\endfirsthead
+
+\caption[]{(Continuación)} \\
+\toprule
+\textbf{Término} & \textbf{Definición} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{2}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
+ABI (Application Binary Interface) & Interfaz que define cómo llamar funciones de un Smart Contract desde aplicaciones externas. Contiene nombres de funciones, parámetros y tipos de retorno. \\
+\midrule
+
+Blockchain & Tecnología de registro distribuido que almacena datos en bloques encadenados mediante hashes criptográficos, garantizando inmutabilidad. \\
+\midrule
+
+CA (Certificate Authority) & Entidad que emite y gestiona certificados digitales en una red Hyperledger Fabric, controlando identidades y permisos. \\
+\midrule
+
+Chaincode & Smart Contract en el contexto de Hyperledger Fabric, generalmente escrito en Go, que define la lógica de negocio. \\
+\midrule
+
+CID (Content Identifier) & Hash único que identifica un archivo en IPFS. Se genera mediante criptografía del contenido del archivo. \\
+\midrule
+
+Consenso & Mecanismo mediante el cual los nodos de una blockchain acuerdan la validez de las transacciones. Ejemplos: PBFT, PoS, PoW. \\
+\midrule
+
+DLT (Distributed Ledger Technology) & Tecnología de libro mayor distribuido que mantiene registros sincronizados entre múltiples nodos sin autoridad central. \\
+\midrule
+
+Ethers.js & Biblioteca JavaScript para interactuar con la blockchain de Ethereum, permitiendo leer datos y enviar transacciones. \\
+\midrule
+
+Gas & Unidad de medida del costo computacional en Ethereum. Cada operación consume gas que se paga en Ether. \\
+\midrule
+
+Hardhat & Framework de desarrollo para Ethereum que facilita compilación, testing y despliegue de Smart Contracts. \\
+\midrule
+
+Hash Criptográfico & Función matemática que convierte datos de cualquier tamaño en una cadena de longitud fija. Ejemplos: SHA-256, Keccak-256. \\
+\midrule
+
+Hyperledger Fabric & Plataforma de blockchain permisionada empresarial, parte del proyecto Hyperledger de Linux Foundation. \\
+\midrule
+
+Inmutabilidad & Propiedad de blockchain que garantiza que datos una vez escritos no pueden ser alterados sin dejar evidencia. \\
+\midrule
+
+IPFS (InterPlanetary File System) & Sistema de archivos peer-to-peer distribuido que usa direccionamiento por contenido mediante CIDs. \\
+\midrule
+
+Ledger & Libro mayor que registra todas las transacciones en una blockchain. Es distribuido y sincronizado entre nodos. \\
+\midrule
+
+Nodo (Node) & Computadora que participa en una red blockchain, manteniendo una copia del ledger y validando transacciones. \\
+\midrule
+
+OpenZeppelin & Librería de Smart Contracts auditados y seguros para Ethereum, proporciona implementaciones estándar de tokens, control de acceso, etc. \\
+\midrule
+
+Orderer & Nodo en Hyperledger Fabric que ordena transacciones y las agrupa en bloques para distribuir a los peers. \\
+\midrule
+
+PBFT (Practical Byzantine Fault Tolerance) & Algoritmo de consenso tolerante a fallas bizantinas usado en Hyperledger Fabric, eficiente para redes permisionadas. \\
+\midrule
+
+Peer & Nodo en Hyperledger Fabric que mantiene una copia del ledger y ejecuta chaincode. \\
+\midrule
+
+Pinning & En IPFS, mantener un archivo almacenado permanentemente en un nodo para garantizar su disponibilidad. \\
+\midrule
+
+PoS (Proof of Stake) & Mecanismo de consenso donde validadores son seleccionados según la cantidad de criptomoneda que poseen. \\
+\midrule
+
+PoW (Proof of Work) & Mecanismo de consenso que requiere resolver acertijos criptográficos complejos para validar bloques. \\
+\midrule
+
+Private Data Collections & Funcionalidad de Hyperledger Fabric para almacenar datos privados que solo ciertos nodos pueden acceder. \\
+\midrule
+
+Smart Contract & Programa autoejecutante almacenado en blockchain que ejecuta lógica de negocio cuando se cumplen condiciones. \\
+\midrule
+
+Solidity & Lenguaje de programación orientado a objetos para escribir Smart Contracts en Ethereum. \\
+\midrule
+
+Testnet & Red de prueba de blockchain que imita el funcionamiento de la red principal pero sin valor real. Ejemplo: Sepolia. \\
+\midrule
+
+Transaction Hash & Identificador único de una transacción en blockchain, generado mediante hash criptográfico de su contenido. \\
+\midrule
+
+TypeScript & Superset de JavaScript con tipado estático, usado para desarrollo backend del proyecto. \\
+\midrule
+
+Wallet & Software que almacena claves privadas y permite firmar transacciones en blockchain. \\
+\bottomrule
+\end{longtable}
