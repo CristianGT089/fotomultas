@@ -131,6 +131,20 @@ ln -sf ../tables tables
 lualatex main_presentacion.tex
 ```
 
+**Problema:** Los slides se cortan (contenido sobrepasa la página)
+
+**Solución:** Se han aplicado las siguientes correcciones:
+- Opción `[shrink=X]` en todos los frames que tienen mucho contenido
+- El parámetro indica el porcentaje de reducción (5-15% según el contenido)
+- Reducción de espaciado vertical (`\vspace`)
+- Uso de fuentes más pequeñas (`\footnotesize`, `\small`, `\scriptsize`) donde es necesario
+- Reducción del tamaño de imágenes en slides con mucho contenido
+
+Si aún ves slides cortados, puedes:
+1. Aumentar el valor de `shrink` (ej: cambiar `[shrink=5]` a `[shrink=10]`)
+2. Dividir el contenido en dos slides usando `[allowframebreaks]`
+3. Reducir manualmente el contenido del slide
+
 ## Personalización
 
 ### Cambiar Colores
