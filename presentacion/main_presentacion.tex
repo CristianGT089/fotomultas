@@ -1,0 +1,114 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% ==================== TEMA Y CONFIGURACIÓN ====================
+\usetheme{metropolis}
+\metroset{block=fill}
+
+% ==================== PACKAGES ====================
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% ==================== CONFIGURACIÓN DE COLORES ====================
+% Colores institucionales Universidad Distrital
+\definecolor{udblue}{RGB}{0,51,102}
+\definecolor{udlightblue}{RGB}{51,102,153}
+\definecolor{udgray}{RGB}{89,89,89}
+
+\setbeamercolor{palette primary}{bg=udblue,fg=white}
+\setbeamercolor{palette secondary}{bg=udlightblue,fg=white}
+\setbeamercolor{frametitle}{bg=udblue,fg=white}
+\setbeamercolor{title}{bg=udblue,fg=white}
+\setbeamercolor{block title}{bg=udblue,fg=white}
+\setbeamercolor{alerted text}{fg=udlightblue}
+
+% ==================== CONFIGURACIÓN DE HYPERREF ====================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=udblue,
+    urlcolor=udlightblue,
+    citecolor=udblue
+}
+
+% ==================== INFORMACIÓN DE LA PRESENTACIÓN ====================
+\title{Prototipo para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos aplicando tecnologías de redes distribuidas}
+
+\author{%
+    Laura Catalina Preciado Ballén \\
+    Cristian Stiven Guzmán Tovar
+}
+
+\institute{%
+    Universidad Distrital Francisco José de Caldas \\
+    Facultad de Ingeniería \\
+    Programa de Ingeniería de Sistemas \\[1em]
+    \textbf{Director:} Julio Barón Velandia
+}
+
+\date{Julio 2025}
+
+% ==================== CONFIGURACIONES ADICIONALES ====================
+% Mostrar número de slide en el footer
+\setbeamertemplate{frame numbering}[fraction]
+
+% Ajustar espaciado de items
+\setlength{\leftmargini}{1em}
+\setlength{\leftmarginii}{1.5em}
+
+% ==================== COMANDOS PERSONALIZADOS ====================
+% Comando para crear secciones con página de transición
+\newcommand{\sectionframe}[1]{
+    \section{#1}
+    \begin{frame}[plain,noframenumbering]
+        \centering
+        \vfill
+        {\Huge \textbf{#1}}
+        \vfill
+    \end{frame}
+}
+
+% Comando para destacar texto
+\newcommand{\highlight}[1]{\textcolor{udlightblue}{\textbf{#1}}}
+
+% ==================== INICIO DEL DOCUMENTO ====================
+\begin{document}
+
+% ==================== PORTADA ====================
+\begin{frame}[plain,noframenumbering]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/Escudo_UD.png}
+    \titlepage
+\end{frame}
+
+% ==================== TABLA DE CONTENIDOS ====================
+\begin{frame}{Agenda}
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ==================== CONTENIDO ====================
+% Sección 1: Introducción y Contexto
+\input{slides/01_introduccion}
+
+% Sección 2: Justificación y Objetivos
+\input{slides/02_justificacion}
+
+% Sección 3: Metodología y Diseño
+\input{slides/03_metodologia}
+
+% Sección 4: Resultados y Validación
+\input{slides/04_resultados}
+
+% Sección 5: Conclusiones y Cierre
+\input{slides/05_conclusiones}
+
+% ==================== FIN DEL DOCUMENTO ====================
+\end{document}

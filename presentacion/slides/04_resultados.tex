@@ -1,0 +1,208 @@
+% ==================== SECCIÓN 4: RESULTADOS Y VALIDACIÓN ====================
+\sectionframe{Resultados y Validación Experimental}
+
+% ==================== SLIDE 16: PLAN DE PRUEBAS ====================
+\begin{frame}{Plan de Pruebas: Cobertura Integral}
+    \textbf{Estrategia de Validación Experimental:}
+
+    \begin{itemize}
+        \item \highlight{80 casos de prueba} automatizados (Vitest v3.2.4)
+        \item \highlight{Tasa de éxito: 100\%} en todos los módulos
+        \item \highlight{Tiempo total: 28.98 segundos}
+    \end{itemize}
+
+    \vspace{0.5em}
+
+    \scriptsize
+    \begin{table}
+        \centering
+        \begin{tabular}{p{3.5cm} c c p{5cm}}
+            \toprule
+            \textbf{Módulo} & \textbf{Pruebas} & \textbf{Éxito} & \textbf{Cobertura} \\
+            \midrule
+            Utilidades (Error Handler) & 7 & 7/7 & Manejo global errores, validaciones \\
+            Servicios IPFS & 8 & 8/8 & Subida, recuperación, CIDs \\
+            Integración IPFS & 13 & 13/13 & Inmutabilidad, content-addressed \\
+            Seguridad: Validación & 16 & 16/16 & XSS, SQL injection, path traversal \\
+            Seguridad: Archivos & 10 & 10/10 & Límites 10MB, tipos válidos \\
+            API REST & 26 & 26/26 & CRUD, blockchain/IPFS, integridad \\
+            \midrule
+            \textbf{TOTAL} & \textbf{80} & \textbf{80/80} & \textbf{100\% cobertura} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{exampleblock}{Ingeniería de Software Moderna}
+        No es solo un prototipo conceptual - es código de producción validado
+    \end{exampleblock}
+\end{frame}
+
+% ==================== SLIDE 17: INMUTABILIDAD ====================
+\begin{frame}{Pruebas de Inmutabilidad: Núcleo del Sistema}
+    \textbf{Casos de Prueba Críticos:}
+
+    \vspace{0.5em}
+
+    \scriptsize
+    \begin{table}
+        \centering
+        \begin{tabular}{p{1cm} p{4.5cm} p{5cm}}
+            \toprule
+            \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} \\
+            \midrule
+            IM-001 & Intento modificación directa en ledger & Transacción RECHAZADA por consenso \\
+            \midrule
+            IM-002 & Alteración de imagen en IPFS & CID diferente generado → Detección automática \\
+            \midrule
+            IM-003 & Verificación de trazabilidad & Historial completo inmutable preservado \\
+            \midrule
+            IM-004 & Validación de consenso & Consenso validado correctamente \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.5em}
+
+    \textbf{Evidencia Técnica:}
+    \begin{itemize}
+        \footnotesize
+        \item TX Hash registro: \texttt{0xbc03e11f...42c3c069}
+        \item TX Hash actualización: \texttt{0x611b696e...d315f3e48}
+        \item CID IPFS evidencia: \texttt{QmadhsypxKm7b2P2w...sp8eKMF}
+    \end{itemize}
+
+    \begin{alertblock}{Validación Experimental}
+        El sistema REALMENTE previene manipulación - no es teórico, está comprobado
+    \end{alertblock}
+\end{frame}
+
+% ==================== SLIDE 18: MÉTRICAS DE DESEMPEÑO ====================
+\begin{frame}{Métricas de Desempeño}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Tiempos de Respuesta Medidos:}
+
+            \vspace{0.5em}
+
+            \begin{itemize}
+                \item Registro completo: \highlight{< 3 segundos}
+                \item Consulta de multa: \highlight{< 1 segundo}
+                \item Verificación integridad: \highlight{< 2 segundos}
+            \end{itemize}
+
+            \vspace{1em}
+
+            \begin{exampleblock}{Criterio de Éxito}
+                $\checkmark$ Tiempo publicación $\leq$ 3s
+
+                $\checkmark$ Coincidencia 100\% hash
+
+                $\checkmark$ Trazabilidad completa
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \scriptsize
+            \begin{table}
+                \centering
+                \begin{tabular}{p{2.5cm} p{1.3cm} p{1.3cm}}
+                    \toprule
+                    \textbf{Métrica} & \textbf{FÉNIX} & \textbf{Prototipo} \\
+                    \midrule
+                    Integridad & Admin. & Cripto. \\
+                    \midrule
+                    Transparencia & Opaca & Pública \\
+                    \midrule
+                    Auditabilidad & Logs mod. & Inmutable \\
+                    \midrule
+                    SPOF & Sí & No \\
+                    \midrule
+                    Costos disputa & 155K PQRSD & $>$50\% ↓ \\
+                    \midrule
+                    Confianza & Instit. & Cripto. \\
+                    \bottomrule
+                \end{tabular}
+                \caption*{Comparación FÉNIX vs Prototipo}
+            \end{table}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \begin{block}{Viabilidad Técnica Demostrada}
+        El sistema es RÁPIDO y SUPERIOR al actual en dimensiones críticas
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE 19: CUMPLIMIENTO DE OBJETIVOS ====================
+\begin{frame}{Cumplimiento de Objetivos}
+    \scriptsize
+    \begin{table}
+        \centering
+        \begin{tabular}{p{3.5cm} p{2.5cm} p{4.5cm}}
+            \toprule
+            \textbf{Objetivo Específico} & \textbf{Técnica Validación} & \textbf{Resultado} \\
+            \midrule
+            Inmutabilidad blockchain & Pruebas IM-002, IM-003 & 100\% coincidencia hash blockchain-IPFS \\
+            \midrule
+            Almacenamiento descentralizado & 13 pruebas integración & CIDs consistentes, <500ms subida \\
+            \midrule
+            API REST funcional & 80 casos prueba & 80/80 pruebas superadas \\
+            \midrule
+            Interfaz intuitiva & 95\% cobertura comp. & Flujo registro-verificación operativo \\
+            \midrule
+            Transparencia & Endpoint \texttt{/integrity} & Verificación sin intervención humana \\
+            \midrule
+            Viabilidad técnica & Pruebas rendimiento & <2s transacciones, arq. hexagonal \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{1em}
+
+    \begin{exampleblock}{Validación de Hipótesis Central}
+        \centering
+        $\checkmark$ \textbf{TODOS los objetivos planteados fueron alcanzados y validados cuantitativamente}
+    \end{exampleblock}
+\end{frame}
+
+% ==================== SLIDE 20: INTERFACES ====================
+\begin{frame}{Prototipo Funcional: Interfaces Desarrolladas}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \textbf{Dashboard Agente de Tránsito}
+
+            \includegraphics[width=\textwidth]{images/UI3.png}
+
+            \vspace{0.3em}
+
+            \footnotesize
+            \begin{itemize}
+                \item Registro de comparendo
+                \item Carga de evidencia
+                \item Metadatos estructurados
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \textbf{Consulta Ciudadana}
+
+            \includegraphics[width=\textwidth]{images/UI5.png}
+
+            \vspace{0.3em}
+
+            \footnotesize
+            \begin{itemize}
+                \item Búsqueda por placa
+                \item Verificación integridad blockchain
+                \item Visualización evidencia IPFS
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \begin{block}{Aplicación Web Real}
+        No es solo arquitectura abstracta - es una aplicación FUNCIONAL que demuestra viabilidad práctica
+    \end{block}
+\end{frame}

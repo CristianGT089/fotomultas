@@ -1,0 +1,128 @@
+% ==================== SECCIÓN 2: JUSTIFICACIÓN Y OBJETIVOS ====================
+\sectionframe{Justificación y Objetivos}
+
+% ==================== SLIDE 6: OBJETIVOS ====================
+\begin{frame}{Objetivos del Proyecto}
+    \begin{exampleblock}{Objetivo General}
+        Desarrollar un \textbf{prototipo con arquitectura híbrida blockchain} para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos, aplicando tecnologías de redes distribuidas para fortalecer la integridad, autenticidad y confidencialidad de la información.
+    \end{exampleblock}
+
+    \vspace{1em}
+
+    \textbf{Objetivos Específicos:}
+
+    \begin{enumerate}
+        \item \textbf{Analizar} el proceso actual y marco normativo para identificar requisitos funcionales, no funcionales y vulnerabilidades
+        \vspace{0.5em}
+
+        \item \textbf{Desarrollar} prototipo con arquitectura híbrida (blockchain + IPFS dual) con interfaz demostrable
+        \vspace{0.5em}
+
+        \item \textbf{Evaluar} viabilidad mediante plan de pruebas funcionales, de inmutabilidad y métricas de desempeño
+    \end{enumerate}
+
+    \begin{block}{Enfoque Metodológico}
+        Análisis → Diseño → Validación
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE 7: ESTADO DEL ARTE ====================
+\begin{frame}{Estado del Arte: Posicionamiento Científico}
+    \scriptsize
+    \begin{table}
+        \centering
+        \begin{tabular}{p{2cm} p{2.2cm} p{3.5cm} p{3.3cm}}
+            \toprule
+            \textbf{Trabajo} & \textbf{Tecnologías} & \textbf{Limitaciones} & \textbf{Aporte} \\
+            \midrule
+            Yousfi et al. (2022) & Blockchain pública & Alto costo gas, privacidad limitada & Modelo blockchain-tráfico \\
+            \midrule
+            Chen et al. (2024) & BD + Blockchain & Dependencia servidor central & Hash de actas en blockchain \\
+            \midrule
+            Joseph (2023) & Hyperledger + IPFS & Complejidad escalamiento & Arquitectura permisionada \\
+            \midrule
+            Omar et al. (2024) & Blockchain híbrida & Integración parcial & Gestión descentralizada \\
+            \midrule
+            Anand \& Singh (2024) & IPFS + Blockchain & Persistencia IPFS & Almacenamiento distribuido \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.5em}
+
+    \begin{alertblock}{Brecha Identificada}
+        \textbf{Ningún trabajo previo integra:}
+        \begin{itemize}
+            \item Blockchain híbrida (privada + pública)
+            \item IPFS dual (privado + público)
+            \item Flujo completo de fotocomparendos
+            \item Validación experimental con 80 pruebas automatizadas
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+% ==================== SLIDE 8: EVIDENCIA BIBLIOMÉTRICA ====================
+\begin{frame}{Relevancia Científica del Tema}
+    \textbf{Análisis Bibliométrico:}
+    \begin{itemize}
+        \item \highlight{121 referencias bibliográficas} revisadas
+        \item Tendencia creciente: blockchain + gobierno electrónico
+        \item Áreas emergentes: e-governance, transparency, smart contracts
+    \end{itemize}
+
+    \vspace{0.5em}
+
+    \begin{columns}[T]
+        \begin{column}{0.33\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/MapaBibliometrix.png}
+            \tiny Producción científica mundial
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/GraficoLineas.png}
+            \tiny Evolución temporal
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/MapaTematico.jpeg}
+            \tiny Mapa temático
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \begin{block}{Alineación Internacional}
+        El proyecto se fundamenta en investigación rigurosa y está alineado con tendencias científicas globales en GovTech.
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE 9: JUSTIFICACIÓN TECNOLÓGICA ====================
+\begin{frame}{¿Por Qué Blockchain?}
+    \textbf{Requisitos No Negociables del Dominio:}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item \highlight{Inmutabilidad criptográfica} verificable
+                \item \highlight{Verificación sin confianza} (trustless)
+                \item \highlight{Precedente legal} reconocido (eIDAS)
+                \item \highlight{Auditabilidad completa} con timestamps
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Por qué NO bases de datos tradicionales:}
+            \begin{itemize}
+                \item Admins con privilegios pueden alterar logs
+                \item Verificación depende de APIs de la misma entidad
+                \item NO hay resistencia computacional a manipulación
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+
+    \begin{exampleblock}{Conclusión Tecnológica}
+        Blockchain no es una moda tecnológica - es la \textbf{única solución técnica} que cumple requisitos legales y de confianza del dominio de fotocomparendos.
+    \end{exampleblock}
+\end{frame}

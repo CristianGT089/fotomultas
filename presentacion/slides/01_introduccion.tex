@@ -1,0 +1,101 @@
+% ==================== SECCIÓN 1: INTRODUCCIÓN Y CONTEXTO ====================
+\sectionframe{Contexto y Problemática}
+
+% ==================== SLIDE 3: MAGNITUD DEL PROBLEMA ====================
+\begin{frame}{Escala Operativa del Sistema de Fotocomparendos en Bogotá}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Datos del Sistema FÉNIX:}
+            \vspace{0.5em}
+            \begin{itemize}
+                \item \highlight{1.9 millones} de comparendos emitidos (2018-2024)
+                \item \highlight{457,000} comparendos semestrales en promedio
+                \item Sistema centralizado en infraestructura de nube
+                \item Gestión basada en base de datos relacional tradicional
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=\textwidth]{images/numComparendos.png}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+    \begin{alertblock}{Impacto}
+        El sistema gestiona un volumen significativo de registros críticos que afectan directamente a ciudadanos y requiere garantías de integridad y transparencia.
+    \end{alertblock}
+\end{frame}
+
+% ==================== SLIDE 4: CRISIS DE CONFIANZA ====================
+\begin{frame}{Crisis de Confianza: Indicadores Críticos}
+    \textbf{Manifestaciones Cuantificables de la Problemática:}
+    \vspace{0.5em}
+
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+                \item \textbf{Tasa de impugnación:} \highlight{34.1\%}
+                    \begin{itemize}
+                        \item 1 de cada 3 comparendos genera disputa formal
+                    \end{itemize}
+                \item \textbf{Carga operativa:} \highlight{155,854 PQRSD} semestrales
+                \item \textbf{Detrimento patrimonial:} \highlight{\$8,000 millones} (hallazgos auditoría)
+                \item \textbf{Vulnerabilidad ciudadana:} Casos de fraude como Juzto.co
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \footnotesize
+            \begin{table}
+                \centering
+                \begin{tabular}{lcc}
+                    \toprule
+                    \textbf{Aspecto} & \textbf{BD} & \textbf{Blockchain} \\
+                    \midrule
+                    Confianza & Central & Distribuida \\
+                    Inmutabilidad & NO & SÍ \\
+                    Trazabilidad & Limitada & Completa \\
+                    Corrupción & Alto riesgo & Bajo riesgo \\
+                    \bottomrule
+                \end{tabular}
+                \caption*{Comparación BD tradicional vs Blockchain}
+            \end{table}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+    \begin{block}{Transición Necesaria}
+        De problema teórico a crisis medible que requiere intervención técnica urgente
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE 5: FORMULACIÓN DEL PROBLEMA ====================
+\begin{frame}{Formulación del Problema}
+    \begin{exampleblock}{Pregunta de Investigación}
+        \centering
+        \textit{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos en el proceso de fotocomparendos mediante tecnologías de redes distribuidas?}
+    \end{exampleblock}
+
+    \vspace{1em}
+
+    \textbf{Limitaciones del Modelo Actual (Sistema FÉNIX):}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Confianza basada en administradores centrales
+                \item Inmutabilidad NO garantizada criptográficamente
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Trazabilidad dependiente de controles internos
+                \item Auditoría opaca para ciudadanos
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+
+    \begin{alertblock}{Hipótesis Central}
+        Las tecnologías de redes distribuidas (blockchain + IPFS) pueden proporcionar garantías criptográficas de integridad y transparencia verificable sin intermediarios.
+    \end{alertblock}
+\end{frame}
