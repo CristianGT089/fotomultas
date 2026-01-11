@@ -63,23 +63,53 @@
     \end{alertblock}
 \end{frame}
 
-% ==================== SLIDE 12: DIAGRAMA DE DESPLIEGUE ====================
-\begin{frame}[shrink=15]{Arquitectura Híbrida del Sistema}
-    \begin{center}
-        \includegraphics[height=0.6\textheight]{images/Despliegue.png}
-    \end{center}
+% ==================== SLIDE 12: CASOS DE USO ====================
+\begin{frame}[shrink=5]{Actores y Funcionalidades Principales}
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+            \includegraphics[width=\textwidth]{images/CasosUso.png}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \textbf{Actores Identificados:}
 
-    \vspace{0.3em}
+            \vspace{0.5em}
 
-    \footnotesize
-    \textbf{Capas del Sistema:}
-    \begin{itemize}
-        \item \textbf{Capa 1:} Frontend React (ciudadano + agente)
-        \item \textbf{Capa 2:} API REST Node.js/Express
-        \item \textbf{Capa 3:} Hyperledger Fabric (red privada permisionada)
-        \item \textbf{Capa 4:} Ethereum + IPFS público (verificación transparente)
-        \item \textbf{Capa 5:} IPFS privado (evidencias completas)
-    \end{itemize}
+            \begin{enumerate}
+                \item \textbf{Agente de Tránsito}
+                \begin{itemize}
+                    \footnotesize
+                    \item Registrar comparendo
+                    \item Actualizar estado
+                \end{itemize}
+
+                \vspace{0.5em}
+
+                \item \textbf{Ciudadano}
+                \begin{itemize}
+                    \footnotesize
+                    \item Consultar multa
+                    \item Verificar autenticidad
+                    \item Apelar
+                \end{itemize}
+
+                \vspace{0.5em}
+
+                \item \textbf{Administrador}
+                \begin{itemize}
+                    \footnotesize
+                    \item Gestionar sistema
+                    \item Auditar operaciones
+                \end{itemize}
+            \end{enumerate}
+
+            \vspace{0.5em}
+
+            \begin{block}{\footnotesize Cobertura Integral}
+                \footnotesize
+                Sistema cubre el ciclo de vida completo del fotocomparendo
+            \end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 % ==================== SLIDE 13: DIAGRAMA DE CLASES ====================
@@ -129,56 +159,7 @@
     \end{columns}
 \end{frame}
 
-% ==================== SLIDE 14: CASOS DE USO ====================
-\begin{frame}[shrink=5]{Actores y Funcionalidades Principales}
-    \begin{columns}[T]
-        \begin{column}{0.55\textwidth}
-            \includegraphics[width=\textwidth]{images/CasosUso.png}
-        \end{column}
-        \begin{column}{0.45\textwidth}
-            \textbf{Actores Identificados:}
-
-            \vspace{0.5em}
-
-            \begin{enumerate}
-                \item \textbf{Agente de Tránsito}
-                \begin{itemize}
-                    \footnotesize
-                    \item Registrar comparendo
-                    \item Actualizar estado
-                \end{itemize}
-
-                \vspace{0.5em}
-
-                \item \textbf{Ciudadano}
-                \begin{itemize}
-                    \footnotesize
-                    \item Consultar multa
-                    \item Verificar autenticidad
-                    \item Apelar
-                \end{itemize}
-
-                \vspace{0.5em}
-
-                \item \textbf{Administrador}
-                \begin{itemize}
-                    \footnotesize
-                    \item Gestionar sistema
-                    \item Auditar operaciones
-                \end{itemize}
-            \end{enumerate}
-
-            \vspace{0.5em}
-
-            \begin{block}{\footnotesize Cobertura Integral}
-                \footnotesize
-                Sistema cubre el ciclo de vida completo del fotocomparendo
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-% ==================== SLIDE 15: FLUJOS DE PROCESO ====================
+% ==================== SLIDE 14: FLUJOS DE PROCESO ====================
 \begin{frame}[shrink=15]{Diagramas de Actividad: Procesos Críticos}
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -223,4 +204,23 @@
     \begin{exampleblock}{Automatización y Transparencia}
         Contratos inteligentes ejecutan lógica de negocio de forma predecible y auditable
     \end{exampleblock}
+\end{frame}
+
+% ==================== SLIDE 15: DIAGRAMA DE DESPLIEGUE ====================
+\begin{frame}[shrink=15]{Arquitectura Híbrida del Sistema}
+    \begin{center}
+        \includegraphics[height=0.6\textheight]{images/Despliegue.png}
+    \end{center}
+
+    \vspace{0.3em}
+
+    \footnotesize
+    \textbf{Capas del Sistema:}
+    \begin{itemize}
+        \item \textbf{Capa 1:} Frontend React (ciudadano + agente)
+        \item \textbf{Capa 2:} API REST Node.js/Express
+        \item \textbf{Capa 3:} Hyperledger Fabric (red privada permisionada)
+        \item \textbf{Capa 4:} Ethereum + IPFS público (verificación transparente)
+        \item \textbf{Capa 5:} IPFS privado (evidencias completas)
+    \end{itemize}
 \end{frame}
