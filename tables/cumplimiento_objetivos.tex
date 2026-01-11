@@ -2,7 +2,9 @@
 \renewcommand{\arraystretch}{1.2}
 \setlength{\LTpre}{10pt}
 \setlength{\LTpost}{10pt}
-\begin{longtable}{p{4.5cm}p{4cm}p{6cm}}
+\begin{longtable}{>{\raggedright\arraybackslash}p{4.5cm}>
+    {\raggedright\arraybackslash}p{4cm}>
+    {\raggedright\arraybackslash}p{6cm}}
 
 \caption{Relación entre objetivos específicos, técnicas de validación y resultados}
 \label{tab:cumplimiento_objetivos} \\
@@ -54,7 +56,4 @@ Verificación independiente exitosa sin intervención humana. Detección automá
 Pruebas de rendimiento y arquitectura hexagonal &
 Tiempo promedio de transacción menor a 2 segundos. Arquitectura validada con 6 módulos independientes \\
 
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-\end{table}
+\end{longtable}
