@@ -104,14 +104,22 @@ El Smart Contract FineManagement.sol implementa la lógica de negocio para la ge
 El contrato define dos estructuras principales para modelar las multas y su historial de estados:
 
 \begin{verbatim}
-enum FineState { 
-    PENDING, 
-    PAID, 
-    APPEALED, 
-    RESOLVED_APPEAL, 
-    CANCELLED 
+enum FineState {
+    PENDING,
+    PAID,
+    APPEALED,
+    RESOLVED_APPEAL,
+    CANCELLED
 }
+\end{verbatim}
 
+Este enum define los cinco estados que el \textit{smart contract} del prototipo implementa como prueba de concepto. Es importante destacar que el código utiliza nomenclatura en inglés siguiendo las mejores prácticas de la industria del desarrollo de \textit{software} \textit{blockchain}, donde Solidity y Ethereum tienen convenciones establecidas en este idioma.
+
+La Tabla~\ref{tab:mapeo_estados} presenta el mapeo sistemático entre estos estados implementados en el \textit{smart contract} (inglés) y los estados conceptuales del proceso de fotocomparendos descritos en la Introducción (sección 1.2). Como se observa en la tabla, el prototipo implementa un subconjunto funcional de los ocho estados conceptuales completos, siendo suficiente para validar los principios de inmutabilidad y trazabilidad. Los estados NOTIFICADA y CERRADA no fueron implementados en esta versión pero pueden agregarse en una implementación de producción sin modificaciones arquitectónicas sustanciales.
+
+\input{tables/mapeo_estados}
+
+\begin{verbatim}
 struct Fine {
     uint256 id;
     string plateNumber;

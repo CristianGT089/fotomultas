@@ -18,9 +18,8 @@ El prototipo aborda los siguientes módulos funcionales:
         Carga de la imagen o video de la fotomulta en IPFS y obtención de su \emph{hash}.
   \item \textbf{Verificación pública}  
         Servicio de consulta que permite contrastar el hash guardado en la cadena con el archivo almacenado en IPFS.
-  \item \textbf{Gestión del ciclo de vida de la multa}  
-        Estados: \textsf{Generada} $\rightarrow$ \textsf{Notificada} $\rightarrow$ \textsf{En apelación} $\rightarrow$ \textsf{Pagada} $\rightarrow$ \textsf{Cerrada}.  
-        Cada transición queda registrada mediante eventos de contrato inteligente.
+  \item \textbf{Gestión del ciclo de vida de la multa}
+        El prototipo implementa la gestión de transiciones entre estados del proceso de fotocomparendos. El modelo conceptual completo, descrito en la sección 1.2 de la Introducción, contempla ocho estados: GENERADA $\rightarrow$ NOTIFICADA $\rightarrow$ PENDIENTE\_RESPUESTA $\rightarrow$ EN\_APELACION $\rightarrow$ RESUELTA\_APELACION $\rightarrow$ PAGADA/CANCELADA $\rightarrow$ CERRADA. Como prueba de concepto, el \textit{smart contract} implementa cinco de estos estados (ver Tabla~\ref{tab:mapeo_estados} en sección 8 para mapeo detallado). Cada transición queda registrada mediante eventos de \textit{smart contract} con \textit{timestamp} inmutable.
   \item \textbf{Interfaz mínima}  
         Panel Web para: (i) agentes que registran la infracción y (ii) ciudadanos que consultan la autenticidad y el estado de su fotomulta.
 \end{enumerate}

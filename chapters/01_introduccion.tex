@@ -1,23 +1,34 @@
 \section{\large Introducción}
-En Colombia, la gestión de fotocomparendos ha sido objeto de controversia debido a fallas en la transparencia y posibles manipulaciones en el proceso de registro y validación de infracciones. La falta de un sistema confiable ha generado desconfianza entre los ciudadanos, lo que evidencia la necesidad de una solución que garantice la integridad, inmutabilidad y verificabilidad de la información.
 
-Las tecnologías de registro distribuido (DLT), y en particular blockchain, han demostrado ser alternativas eficaces para el almacenamiento seguro y descentralizado de datos, asegurando que una vez registrados, estos no puedan ser alterados sin dejar rastro. A través de contratos inteligentes, es posible automatizar la validación y el procesamiento de fotocomparendos, reduciendo la intervención humana y minimizando el riesgo de corrupción o errores administrativos.
+La tecnología \textit{blockchain}, introducida por Nakamoto en 2008 con Bitcoin \parencite{nakamoto2008bitcoin}, ha evolucionado desde su aplicación original en criptomonedas hacia casos de uso empresariales y gubernamentales. Esta tecnología de registro distribuido (DLT) se caracteriza por proporcionar inmutabilidad mediante encadenamiento criptográfico de bloques, consenso descentralizado entre múltiples nodos, y transparencia verificable sin requerir intermediarios de confianza \parencite{swan2015blockchain}. A diferencia de las bases de datos tradicionales donde un administrador central controla y puede modificar registros, \textit{blockchain} distribuye el poder de validación entre múltiples participantes, haciendo computacionalmente prohibitiva la alteración retroactiva de información \parencite{tapscott2016blockchain}.
 
-Este trabajo propone el diseño e implementación de un prototipo basado en una arquitectura híbrida blockchain para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso. Se utilizarán contratos inteligentes para registrar cada infracción, permitiendo que cualquier actor autorizado pueda verificar su autenticidad sin necesidad de intermediarios. Mediante pruebas y simulaciones, se evaluará la viabilidad del sistema, demostrando cómo esta tecnología puede fortalecer la confianza en los procesos de control de tránsito y mejorar la eficiencia en la gestión de sanciones.
+En la última década, gobiernos alrededor del mundo han explorado \textit{blockchain} como infraestructura para servicios públicos digitales. Estonia implementó \textit{Keyless Signature Infrastructure} (KSI) basada en \textit{blockchain} para proteger registros de salud, tributarios y judiciales, procesando más de 1 billón de verificaciones anuales \parencite{sullivan2021estonia}. Suecia realizó pilotos de registro de tierras en \textit{blockchain} que redujeron tiempos de transacción de meses a días mientras eliminaban fraudes documentales \parencite{karamitsos2018design}. Dubai lanzó la Estrategia \textit{Blockchain} 2020 con el objetivo de migrar todos los documentos gubernamentales a esta tecnología, proyectando ahorros de 25 millones de horas laborales anuales y 1,500 millones de dólares en costos de procesamiento \parencite{dubai2016blockchain}.
+
+En América Latina, Chile ha utilizado \textit{blockchain} para certificar datos de la red eléctrica nacional, garantizando transparencia en tarifas energéticas \parencite{galvez2018blockchain}. Brasil explora registros médicos en \textit{blockchain} para interoperabilidad entre instituciones de salud \parencite{azaria2016medrec}. En Colombia, el marco regulatorio ha avanzado con iniciativas del Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC) para promover la transformación digital del Estado, incluyendo lineamientos para adopción de tecnologías emergentes en el sector público \parencite{mintic2020estrategia}.
+
+Paralelamente, el almacenamiento descentralizado mediante \textit{InterPlanetary File System} (IPFS) ha emergido como complemento natural de \textit{blockchain} para gestión de documentos gubernamentales. IPFS utiliza direccionamiento por contenido (\textit{Content Identifier}, CID) en lugar de direccionamiento por ubicación, garantizando que cualquier alteración de un archivo genere un identificador completamente diferente \parencite{benet2014ipfs}. Esta propiedad lo hace ideal para evidencia digital que requiere verificación de integridad, como lo demuestran implementaciones en sistemas judiciales de Noruega y archivos históricos de Portugal \parencite{truong2019gdpr}.
+
+A pesar de este potencial, la gestión de infracciones de tránsito ha recibido atención limitada en la literatura de \textit{blockchain} gubernamental. Trabajos como el de \textcite{yousfi2019blockchain} proponen sistemas de multas en \textit{blockchain} pública (Ethereum), pero enfrentan limitaciones de privacidad al exponer datos personales sensibles. \textcite{chen2021blockchain} sugieren arquitecturas híbridas combinando bases de datos con \textit{blockchain}, pero su modelo mantiene mutabilidad en la capa de datos primaria, debilitando garantías de integridad. Ninguna de estas propuestas aborda el desafío específico de balancear transparencia pública con protección de datos personales en cumplimiento de regulaciones como GDPR o la Ley 1581 de 2012 colombiana.
+
+El contexto colombiano presenta un caso de estudio particularmente relevante. La gestión de fotocomparendos en Bogotá ha sido objeto de controversia debido a fallas en la transparencia y posibles manipulaciones en el proceso de registro y validación de infracciones documentadas por la Contraloría de Bogotá \parencite{contraloria2024detrimento}. La falta de un sistema confiable ha generado desconfianza entre los ciudadanos, manifestada en una tasa de impugnación del 34.1\% que refleja déficit de confianza en la integridad de los datos \parencite{sdm2024estadisticas}. Casos de fraude como Juzto.co, donde miles de ciudadanos fueron estafados con promesas de impugnaciones garantizadas \parencite{semana2023juzto}, evidencian la vulnerabilidad del sistema actual y la necesidad urgente de una solución que garantice integridad, inmutabilidad y verificabilidad de la información.
+
+Las tecnologías de registro distribuido, y en particular \textit{blockchain}, ofrecen alternativas arquitectónicas para abordar estas deficiencias. A través de \textit{smart contracts} (contratos inteligentes), es posible automatizar la validación y el procesamiento de fotocomparendos con reglas transparentes y auditables, reduciendo la intervención humana discrecional y minimizando el riesgo de corrupción o errores administrativos \parencite{buterin2014ethereum}. La combinación de \textit{blockchain} permisionado para datos sensibles con \textit{blockchain} público para metadatos verificables, junto con almacenamiento IPFS para evidencia fotográfica, constituye una arquitectura híbrida que puede satisfacer simultáneamente requisitos de privacidad, transparencia y verificabilidad.
+
+Este trabajo propone el diseño e implementación de un prototipo basado en una arquitectura híbrida \textit{blockchain} para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso mediante garantías criptográficas en lugar de confianza administrativa. El prototipo integra Hyperledger Fabric (red permisionada para datos privados), Ethereum (red pública para metadatos verificables) e IPFS (almacenamiento descentralizado de evidencia), validando mediante pruebas empíricas que esta arquitectura puede proporcionar inmutabilidad del 100\%, trazabilidad completa de transiciones de estado, y tiempos de respuesta compatibles con operación en tiempo real (≤3 segundos). La investigación demuestra cómo las tecnologías de redes distribuidas pueden fortalecer la confianza en los procesos de control de tránsito, reducir la carga operativa de PQRSD, y mitigar el detrimento patrimonial asociado a la gestión actual de comparendos en la capital colombiana.
 
 \subsection{Formulación del problema}
 La gestión de comparendos en Bogotá es un proceso de gran escala. Según datos del Observatorio de Movilidad, entre enero de 2018 y agosto de 2024 se emitieron más de 1.9 millones de comparendos a través de cámaras salvavidas, evidenciando la importancia sistémica de este proceso para la regulación del tránsito en la ciudad, como se presenta en la Figura~\ref{fig:estadisticas_comparendos} se observa los diferentes métodos utilizados para crear los comparendos. Esta operación se apoya en el sistema FÉNIX, una aplicación con infraestructura en la nube, cuya arquitectura de datos y control de acceso opera bajo un paradigma centralizado.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \begin{flushleft}
-        \textbf{Figura 1}\\[2em]
+        \textbf{Figura 1}\\[0.5em]
         \textit{Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
     \end{flushleft}
-    \vspace{1em}
+    \vspace{0.3em}
     \addcontentsline{lof}{figure}{Figura 1. Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/numComparendos.png}
-    \vspace{2em}
+    \includegraphics[width=0.75\textwidth]{Images/numComparendos.png}
+    \vspace{0.5em}
     \begin{flushleft}
         \textit{Nota.} Estadísticas de comparendos emitidos en Bogotá entre 2018 y 2024, mostrando los diferentes métodos de creación.
     \end{flushleft}
@@ -36,7 +47,11 @@ De estos datos se deduce una Tasa de Impugnación general del 34.1\%, un indicad
 
 La desconfianza generada por estas opacidades y dificultades procesales crea un vacío que es explotado por terceros, afectando directamente al ciudadano. Reportajes de prensa documentan cómo la ausencia de canales oficiales percibidos como confiables ha fomentado la aparición de redes de fraude, como el caso de Juzto.co, donde miles de ciudadanos fueron estafados con promesas de impugnaciones garantizadas, resultando en trámites inconclusos y mayores deudas \parencite{Semana_Juzto_2023}.
 
-La identificación de estas limitaciones permite estructurar el problema en torno a variables que reflejan tanto el modelo de confianza actual como sus impactos técnicos, operativos y financieros. La Tabla~\ref{tab:comparacion_bd_blockchain} sintetiza estas variables y los indicadores asociados, mostrando cómo el paradigma centralizado de gestión condiciona la integridad de los datos, la eficiencia administrativa, la confianza ciudadana y la sostenibilidad del sistema.
+La identificación de estas limitaciones permite estructurar el problema en torno a variables que reflejan tanto el modelo de confianza actual como sus impactos técnicos, operativos y financieros. La Tabla~\ref{tab:variables_problema} sintetiza las variables del problema de investigación y los indicadores asociados, mostrando cómo el paradigma centralizado de gestión condiciona la integridad de los datos, la eficiencia administrativa, la confianza ciudadana y la sostenibilidad del sistema.
+
+\input{tables/variables_problema}
+
+Para comprender las implicaciones técnicas de estas variables, la Tabla~\ref{tab:comparacion_bd_blockchain} contrasta las características fundamentales entre el modelo de base de datos convencional actualmente utilizado y una arquitectura basada en blockchain, evidenciando las diferencias en los mecanismos de confianza, inmutabilidad y trazabilidad que motivan la propuesta de este trabajo.
 
 \input{tables/comparacion_bd_blockchain}
 
@@ -44,17 +59,41 @@ En síntesis, el problema se formula como un Riesgo de Integridad de Datos inher
 
 Ante este panorama, surge la necesidad de explorar arquitecturas que permitan sustituir la confianza administrativa por garantías criptográficas. La pregunta central que guía este trabajo es:
 
-\textbf{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?} 
+\textbf{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?}
+
+\subsection{Estados del proceso de fotocomparendos}
+
+Para comprender el alcance del problema de integridad de datos, es fundamental identificar los estados por los que transita un comparendo desde su emisión hasta su resolución final. El proceso de fotocomparendos en Bogotá contempla los siguientes estados principales:
+
+\begin{enumerate}
+    \item \textbf{GENERADA:} Estado inicial del comparendo, creado por un agente de tránsito o sistema automático de fotodetección al registrar una infracción. En este estado se capturan los metadatos esenciales: placa del vehículo, tipo de infracción, fecha, hora, ubicación y evidencia fotográfica.
+
+    \item \textbf{NOTIFICADA:} El comparendo ha sido oficialmente notificado al ciudadano propietario o conductor del vehículo, según lo establecido en el Código Nacional de Tránsito. La notificación puede realizarse de forma electrónica, por correo certificado o personalmente. Este estado habilita los términos legales para respuesta ciudadana.
+
+    \item \textbf{PENDIENTE\_RESPUESTA:} El ciudadano ha sido notificado y se encuentra dentro del plazo legal para tomar una acción: pagar voluntariamente con descuento, solicitar acuerdos de pago, o presentar una apelación mediante PQRSD. Este es un estado crítico donde la integridad de la evidencia es fundamental para la toma de decisiones.
+
+    \item \textbf{EN\_APELACION:} El ciudadano ha presentado formalmente una Petición, Queja, Reclamo, Sugerencia o Denuncia (PQRSD) cuestionando la validez del comparendo. Durante este estado, la autoridad de tránsito debe revisar la evidencia, verificar el cumplimiento del debido proceso, y emitir una resolución motivada. La trazabilidad completa del comparendo es esencial en esta etapa.
+
+    \item \textbf{RESUELTA\_APELACION:} La autoridad competente ha tomado una decisión sobre la apelación presentada, que puede ser: (a) confirmar el comparendo, (b) revocarlo total o parcialmente, o (c) declararlo nulo por defectos procedimentales. La decisión debe estar debidamente fundamentada y ser notificada al ciudadano.
+
+    \item \textbf{PAGADA:} El comparendo ha sido pagado, ya sea voluntariamente por el ciudadano, mediante acuerdo de pago, o tras agotar el proceso de apelación con resultado confirmatorio. El pago liquida la obligación económica pero el registro del comparendo permanece en el sistema con fines estadísticos y de antecedentes.
+
+    \item \textbf{CANCELADA:} El comparendo ha sido cancelado administrativamente por razones como: anulación judicial, revocación por defectos procedimentales, o corrección de errores en la emisión (ej. placa incorrecta). Este estado requiere la mayor trazabilidad posible para prevenir cancelaciones irregulares.
+
+    \item \textbf{CERRADA:} Estado final y definitivo del comparendo. Todas las acciones administrativas, judiciales o de pago han concluido. El registro se mantiene de forma permanente en el sistema con fines de auditoría, estadística y consulta histórica.
+\end{enumerate}
+
+Cada transición entre estados representa un punto crítico donde la alteración, pérdida o manipulación de datos puede comprometer la validez del acto administrativo y generar las consecuencias descritas anteriormente: impugnaciones, detrimento patrimonial y vulnerabilidad ciudadana. El prototipo propuesto busca garantizar la inmutabilidad y trazabilidad completa en todas estas transiciones mediante el uso de tecnologías de registro distribuido.
 
 \subsection{Objetivos}
 \paragraph{Objetivo General}
-Desarrollar un prototipo para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos en Bogotá, aplicando tecnologías de redes distribuidas, con el fin de fortalecer la integridad, la autenticidad de la información, y reducir los riesgos asociados a su confidencialidad.
+Diseñar y desarrollar un prototipo basado en una metodología de software que garantice el registro inmutable y la trazabilidad completa de estados en el proceso de fotocomparendos en Bogotá mediante tecnologías de redes distribuidas, con el fin de reducir los riesgos asociados a la integridad, confidencialidad y auditabilidad de la información.
 
 \paragraph{Objetivos específicos}
 \begin{itemize}
     \item Analizar el proceso actual de registro de fotocomparendos en Bogotá, a partir del marco jurídico y regulatorio que lo rige y de los informes de auditoría emitidos por la secretaria distrital de movilidad sobre la gestión de comparendos, para identificar requisitos funcionales, no funcionales y vulnerabilidades que el prototipo debe proporcionar.
-    \item Desarrollar un prototipo con arquitectura híbrida fundamentada en la técnica de descomposición por confianza, integrando tecnologías de almacenamiento distribuido y contenido cifrado, asegurando que cada transacción incorpore los metadatos del comparendo y disponiendo de una interfaz básica para demostrar que es posible un aplicativo transparente y confiable.
-    \item Evaluar la viabilidad del prototipo desarrollado, mediante la ejecución de un plan de pruebas funcionales y evaluación de métricas de desempeño en un entorno de pruebas, para validar las condiciones de inmutabilidad, trazabilidad y seguridad.
+    \item Desarrollar un prototipo con arquitectura híbrida basado en \textit{blockchain} permisionado (Hyperledger Fabric) y \textit{blockchain} público (Ethereum), integrando almacenamiento distribuido mediante IPFS, asegurando que cada transacción incorpore los metadatos del comparendo y disponiendo de una interfaz de programación de aplicaciones (API REST) que permita operaciones de registro, consulta y verificación de estados.
+    \item Evaluar la viabilidad técnica y funcional del prototipo a través de un plan de pruebas que incluya: (1) pruebas de inmutabilidad ante intentos de modificación de registros, (2) verificación de trazabilidad mediante validación de \textit{hashes} criptográficos en cada transición de estado, (3) análisis de rendimiento para validar tiempos de respuesta ≤3 segundos, y (4) evaluación de integridad de documentos mediante \textit{Content Identifiers} (CID) de IPFS.
 \end{itemize}
 
 \subsection{Impacto esperado}

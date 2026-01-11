@@ -1,0 +1,42 @@
+\small
+\renewcommand{\arraystretch}{1.3}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{5cm} p{4.5cm} p{5.5cm}}
+
+\caption{Mapeo entre estados conceptuales y estados del \textit{smart contract}}
+\label{tab:mapeo_estados} \\
+\toprule
+\textbf{Estado Conceptual (ES)} & \textbf{Estado en \textit{Smart Contract} (EN)} & \textbf{Descripción del Mapeo} \\
+\midrule
+\endfirsthead
+
+\caption[]{(Continuación)} \\
+\toprule
+\textbf{Estado Conceptual (ES)} & \textbf{Estado en \textit{Smart Contract} (EN)} & \textbf{Descripción del Mapeo} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{3}{l}{\textbf{Nota.} Elaboración propia. El \textit{smart contract} implementa un subconjunto de estados como prueba de concepto.} \\
+\endlastfoot
+
+GENERADA / PENDIENTE\_RESPUESTA & PENDING & Estado inicial tras registro del comparendo. Engloba tanto la generación inicial como el período de espera de respuesta ciudadana. El \textit{smart contract} usa PENDING para representar cualquier comparendo que aún no ha sido resuelto mediante pago, apelación o cancelación. \\
+\midrule
+PAGADA & PAID & Comparendo cuya obligación económica ha sido saldada. Mapeo directo 1:1 entre concepto y código. Representa el cierre exitoso del proceso mediante pago voluntario o forzoso. \\
+\midrule
+EN\_APELACION & APPEALED & Comparendo bajo proceso de revisión por PQRSD ciudadana. Mapeo directo 1:1. Este estado es crítico para la trazabilidad de disputas y fundamenta la necesidad de inmutabilidad de evidencia. \\
+\midrule
+RESUELTA\_APELACION & RESOLVED\_APPEAL & Apelación procesada con decisión administrativa (confirmación, revocación parcial/total, o anulación). Mapeo directo 1:1. Estado terminal para el flujo de apelaciones. \\
+\midrule
+CANCELADA & CANCELLED & Comparendo cancelado administrativamente por anulación judicial, defectos procedimentales, o corrección de errores. Mapeo directo 1:1. Requiere máxima trazabilidad para prevenir cancelaciones irregulares. \\
+\midrule
+NOTIFICADA & \textit{No implementado} & Este estado conceptual no tiene equivalente en el \textit{smart contract} del prototipo. En una implementación de producción, se agregaría estado NOTIFIED entre PENDING y las transiciones subsecuentes. La notificación podría registrarse mediante evento \textit{blockchain} con \textit{timestamp} inmutable. \\
+\midrule
+CERRADA & \textit{No implementado} & Estado final conceptual que indica cierre definitivo del proceso. En el prototipo, los estados PAID, RESOLVED\_APPEAL y CANCELLED funcionan como estados terminales. Una implementación completa podría agregar estado CLOSED explícito para uniformidad. \\
+\bottomrule
+\end{longtable}

@@ -68,4 +68,37 @@ Las transacciones blockchain generadas durante las pruebas incluyen:
     \item \textbf{CID IPFS Evidencia}: \texttt{QmadhsypxKm7b2P2w6b6hUZazfM9dHjvuMvsKcusp8eKMF}
 \end{itemize}
 
-La consistencia de estos identificadores a través de múltiples ejecuciones valida la reproducibilidad del sistema y la inmutabilidad de los registros blockchain. 
+La consistencia de estos identificadores a través de múltiples ejecuciones valida la reproducibilidad del sistema y la inmutabilidad de los registros blockchain.
+
+\subsection{Cobertura de estados del proceso de fotocomparendos}
+
+Un aspecto crítico señalado por el evaluador es la validación de que las pruebas cubren todos los estados del proceso de emisión de fotocomparendos identificados en la Introducción (sección 1.2). La Tabla~\ref{tab:validacion_estados} presenta el mapeo sistemático entre cada estado implementado en el \textit{smart contract} y las pruebas funcionales ejecutadas para validar las transiciones, garantías de inmutabilidad y trazabilidad en cada etapa del proceso.
+
+\input{tables/validacion_estados}
+
+Como se observa en la tabla, el prototipo valida exitosamente los cinco estados implementados (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), que representan las transiciones críticas del ciclo de vida de un comparendo. Cada transición de estado fue probada mediante casos de prueba específicos que verifican:
+
+\begin{enumerate}
+    \item \textbf{Inmutabilidad del registro inicial}: Una vez que un comparendo es registrado en estado PENDING con su \textit{hash} criptográfico y CID de IPFS, cualquier intento de modificación de metadatos (placa, ubicación, hora, tipo de infracción) es rechazado por el \textit{smart contract}. Las pruebas demostraron 100\% de rechazo de intentos de alteración, garantizando que el registro original permanece intacto y auditable.
+
+    \item \textbf{Trazabilidad de transiciones}: Cada cambio de estado genera un evento \texttt{FineStatusUpdated} en \textit{blockchain} que registra: (a) \textit{timestamp} inmutable, (b) estado anterior, (c) estado nuevo, (d) razón del cambio, y (e) dirección del actor que ejecutó la transición. El array \texttt{fineStatusHistory} en el \textit{smart contract} acumula este historial completo, permitiendo reconstruir la secuencia exacta de eventos desde PENDING hasta el estado final (PAID, RESOLVED\_APPEAL o CANCELLED).
+
+    \item \textbf{Integridad de evidencia fotográfica}: En cada estado, el CID de IPFS vinculado al comparendo permanece inmutable. Las pruebas validaron que recuperar la evidencia desde IPFS y recalcular su CID siempre produce el mismo identificador, con 100\% de coincidencia en las verificaciones realizadas. Esto garantiza que la evidencia fotográfica no puede ser sustituida o alterada sin detección automática.
+
+    \item \textbf{Control de acceso en transiciones críticas}: Transiciones sensibles como CANCELLED requieren permisos específicos (rol \texttt{operator} en el \textit{smart contract}). Las pruebas validaron que usuarios no autorizados no pueden ejecutar cancelaciones, previniendo manipulación irregular de comparendos.
+
+    \item \textbf{Verificabilidad \textit{end-to-end}}: Para cada estado, se validó que cualquier actor externo puede recuperar el comparendo desde \textit{blockchain}, verificar la integridad del CID, y reconstruir el historial completo de transiciones sin requerir acceso privilegiado al sistema. Esto materializa el principio de \textbf{verificación independiente} fundamental para restaurar la confianza ciudadana.
+\end{enumerate}
+
+\paragraph{Alineación con estados conceptuales del proceso}
+
+Como se explica en el capítulo de Implementación (sección 8) y la Tabla~\ref{tab:mapeo_estados}, el prototipo implementa un subconjunto de los ocho estados conceptuales identificados en el análisis del proceso completo de fotocomparendos. Los cinco estados implementados (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED) cubren las transiciones de mayor impacto para las variables del problema investigadas:
+
+\begin{itemize}
+    \item \textbf{PENDING}: Aborda la variable "tasa de impugnación" al garantizar inmutabilidad desde el registro inicial, eliminando dudas sobre manipulación post-generación.
+    \item \textbf{APPEALED → RESOLVED\_APPEAL}: Directamente relacionado con los 155,854 PQRSD semestrales, proporcionando trazabilidad completa del proceso de apelación.
+    \item \textbf{CANCELLED}: Mitigación de fraude mediante registro auditable de cancelaciones administrativas, abordando la variable "vulnerabilidad ciudadana".
+    \item \textbf{PAID}: Cierre verificable del proceso, reduciendo disputas post-pago sobre estado del comparendo.
+\end{itemize}
+
+Los estados conceptuales NOTIFICADA y CERRADA, no implementados en esta versión del prototipo, pueden agregarse en una implementación de producción siguiendo el mismo patrón de eventos \textit{blockchain} y validación de transiciones. Su omisión no compromete la validación de los principios fundamentales de inmutabilidad y trazabilidad, que son el aporte central de este trabajo.
