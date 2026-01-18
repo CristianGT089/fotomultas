@@ -87,13 +87,13 @@ Cada transición entre estados representa un punto crítico donde la alteración
 
 \subsection{Objetivos}
 \paragraph{Objetivo General}
-Diseñar y desarrollar un prototipo basado en una metodología de software que garantice el registro inmutable y la trazabilidad completa de estados en el proceso de fotocomparendos en Bogotá mediante tecnologías de redes distribuidas, con el fin de reducir los riesgos asociados a la integridad, confidencialidad y auditabilidad de la información.
+Diseñar un prototipo basado en una metodología de software que garantice el registro inmutable y la trazabilidad completa de estados en el proceso de fotocomparendos en Bogotá mediante tecnologías de redes distribuidas, con el fin de reducir los riesgos asociados a la integridad, confidencialidad y auditabilidad de la información.
 
 \paragraph{Objetivos específicos}
 \begin{itemize}
-    \item Analizar el proceso actual de registro de fotocomparendos en Bogotá, a partir del marco jurídico y regulatorio que lo rige y de los informes de auditoría emitidos por la secretaria distrital de movilidad sobre la gestión de comparendos, para identificar requisitos funcionales, no funcionales y vulnerabilidades que el prototipo debe proporcionar.
+    \item Analizar el proceso actual de registro de fotocomparendos en Bogotá, a partir del marco jurídico y regulatorio que lo rige y de los informes de auditoría emitidos por la secretaria distrital de movilidad sobre la gestión de comparendos, para identificar vulnerabilidades, requisitos funcionales y no funcionales.
     \item Desarrollar un prototipo con arquitectura híbrida basado en \textit{blockchain} permisionado (Hyperledger Fabric) y \textit{blockchain} público (Ethereum), integrando almacenamiento distribuido mediante IPFS, asegurando que cada transacción incorpore los metadatos del comparendo y disponiendo de una interfaz de programación de aplicaciones (API REST) que permita operaciones de registro, consulta y verificación de estados.
-    \item Evaluar la viabilidad técnica y funcional del prototipo a través de un plan de pruebas que incluya: (1) pruebas de inmutabilidad ante intentos de modificación de registros, (2) verificación de trazabilidad mediante validación de \textit{hashes} criptográficos en cada transición de estado, (3) análisis de rendimiento para validar tiempos de respuesta ≤3 segundos, y (4) evaluación de integridad de documentos mediante \textit{Content Identifiers} (CID) de IPFS.
+    \item Evaluar la viabilidad técnica y funcional del prototipo a través de un plan de pruebas que incluya: pruebas de inmutabilidad ante intentos de modificación de registros, verificación de trazabilidad mediante validación de \textit{hashes} criptográficos en cada transición de estado, análisis de rendimiento para validar tiempos de respuesta ≤3 segundos, y evaluación de integridad de documentos mediante \textit{Content Identifiers} (CID) de IPFS.
 \end{itemize}
 
 \subsection{Impacto esperado}
