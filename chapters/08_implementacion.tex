@@ -1,6 +1,6 @@
 \section{Implementación del prototipo}
 
-La implementación del prototipo se llevó a cabo siguiendo la arquitectura híbrida blockchain diseñada en la sección Diseño del prototipo, integrando Hyperledger Fabric para la gestión privada de datos sensibles, Ethereum para la transparencia pública y IPFS dual para el almacenamiento distribuido de evidencias.
+La implementación del prototipo se llevó a cabo siguiendo la arquitectura híbrida \textit{blockchain} diseñada en la sección Diseño del prototipo, integrando \textit{Hyperledger Fabric} para la gestión privada de datos sensibles, \textit{Ethereum} para la transparencia pública e \textit{IPFS} dual para el almacenamiento distribuido de evidencias.
 
 \subsection{Entorno de desarrollo y herramientas}
 
@@ -9,9 +9,9 @@ El desarrollo del prototipo se realizó en un entorno Unix (Linux) utilizando la
 \begin{itemize}
     \item \textbf{Sistema Operativo:} Ubuntu 22.04 LTS
     \item \textbf{Control de Versiones:} Git 2.34+ para gestión de código fuente
-    \item \textbf{Entorno de Ejecución:} Node.js v20.18.0 con npm v10.0.0
-    \item \textbf{Gestión de Dependencias:} npm para paquetes JavaScript/TypeScript
-    \item \textbf{IDE:} Visual Studio Code con extensiones para Solidity, Go y TypeScript
+    \item \textbf{Entorno de Ejecución:} \textit{Node.js} v20.18.0 con npm v10.0.0
+    \item \textbf{Gestión de Dependencias:} npm para paquetes \textit{JavaScript}/\textit{TypeScript}
+    \item \textbf{IDE:} \textit{Visual Studio Code} con extensiones para \textit{Solidity}, \textit{Go} y \textit{TypeScript}
 \end{itemize}
 
 \subsection{Stack tecnológico implementado}
@@ -21,8 +21,8 @@ El desarrollo del prototipo se realizó en un entorno Unix (Linux) utilizando la
 El backend del sistema se implementó utilizando tecnologías modernas de JavaScript/TypeScript:
 
 \begin{itemize}
-    \item \textbf{Framework Web:} Express.js v4.18.2 - Framework minimalista para Node.js
-    \item \textbf{Lenguaje:} TypeScript v5.8.3 - Superset tipado de JavaScript
+    \item \textbf{Framework Web:} \textit{Express.js} v4.18.2 - Framework minimalista para \textit{Node.js}
+    \item \textbf{Lenguaje:} \textit{TypeScript} v5.8.3 - Superset tipado de \textit{JavaScript}
     \item \textbf{Validación:} Express-validator v7.2.1 y Joi v17.13.3 - Validación de datos de entrada
     \item \textbf{Documentación API:} Swagger-jsdoc v6.2.8 y Swagger-ui-express v5.0.1
     \item \textbf{Manejo de Archivos:} Multer v1.4.5-lts.2 - Procesamiento de uploads multipart
@@ -35,22 +35,22 @@ El backend del sistema se implementó utilizando tecnologías modernas de JavaSc
 Para la implementación de la capa pública (justificada en la sección Metodología), se utilizó el ecosistema de Ethereum con las siguientes tecnologías:
 
 \begin{itemize}
-    \item \textbf{Framework de Desarrollo:} Hardhat v2.24.0 - Entorno de desarrollo Ethereum
-    \item \textbf{Biblioteca de Interacción:} Ethers.js v6.14.0 - Cliente para interactuar con Ethereum
-    \item \textbf{Lenguaje de Contratos:} Solidity v0.8.28 - Lenguaje para Smart Contracts
-    \item \textbf{Contratos Base:} OpenZeppelin Contracts v5.3.0 - Librería de contratos seguros y auditados
-    \item \textbf{Generación de Tipos:} TypeChain v8.3.2 - Generación automática de tipos TypeScript desde ABI
+    \item \textbf{Framework de Desarrollo:} \textit{Hardhat} v2.24.0 - Entorno de desarrollo \textit{Ethereum}
+    \item \textbf{Biblioteca de Interacción:} \textit{Ethers.js} v6.14.0 - Cliente para interactuar con \textit{Ethereum}
+    \item \textbf{Lenguaje de Contratos:} \textit{Solidity} v0.8.28 - Lenguaje para \textit{Smart Contracts}
+    \item \textbf{Contratos Base:} \textit{OpenZeppelin Contracts} v5.3.0 - Librería de contratos seguros y auditados
+    \item \textbf{Generación de Tipos:} \textit{TypeChain} v8.3.2 - Generación automática de tipos \textit{TypeScript} desde \textit{ABI}
 \end{itemize}
 
 \paragraph{Capa privada - Hyperledger Fabric}
-Para la implementación de la capa privada (justificada en la sección Metodología), se utilizó Hyperledger Fabric con las siguientes tecnologías:
+Para la implementación de la capa privada (justificada en la sección Metodología), se utilizó \textit{Hyperledger Fabric} con las siguientes tecnologías:
 
 \begin{itemize}
-    \item \textbf{Plataforma:} Hyperledger Fabric v2.5 - Blockchain permisionada empresarial
-    \item \textbf{Lenguaje Chaincode:} Go v1.21+ - Lenguaje para desarrollo de chaincode
-    \item \textbf{SDK:} Fabric SDK para Node.js - Interacción desde el backend
-    \item \textbf{Consenso:} Raft - Algoritmo de consenso para tolerancia a fallas
-    \item \textbf{Gestión de Identidades:} Fabric CA - Certificate Authority para control de acceso
+    \item \textbf{Plataforma:} \textit{Hyperledger Fabric} v2.5 - Blockchain permisionada empresarial
+    \item \textbf{Lenguaje Chaincode:} \textit{Go} v1.21+ - Lenguaje para desarrollo de \textit{chaincode}
+    \item \textbf{SDK:} \textit{Fabric SDK} para \textit{Node.js} - Interacción desde el backend
+    \item \textbf{Consenso:} \textit{Raft} - Algoritmo de consenso para tolerancia a fallas
+    \item \textbf{Gestión de Identidades:} \textit{Fabric CA} - \textit{Certificate Authority} para control de acceso
 \end{itemize}
 
 \subsubsection{Almacenamiento de evidencias}
@@ -58,11 +58,11 @@ Para la implementación de la capa privada (justificada en la sección Metodolog
 La implementación de IPFS se realizó en dos capas diferenciadas:
 
 \begin{itemize}
-    \item \textbf{Implementación:} Kubo v0.34.1 - Implementación de referencia de IPFS
-    \item \textbf{Cliente JavaScript:} ipfs-http-client v60.0.1 - API HTTP para IPFS
-    \item \textbf{IPFS Privado:} Nodo local para almacenamiento de evidencias completas
-    \item \textbf{IPFS Público:} Gateway público para hashes de verificación ciudadana
-    \item \textbf{Protocolo de Contenido:} Multiformats v13.3.3 - Manejo de CIDs
+    \item \textbf{Implementación:} \textit{Kubo} v0.34.1 - Implementación de referencia de \textit{IPFS}
+    \item \textbf{Cliente \textit{JavaScript}:} \textit{ipfs-http-client} v60.0.1 - \textit{API HTTP} para \textit{IPFS}
+    \item \textbf{\textit{IPFS} Privado:} Nodo local para almacenamiento de evidencias completas
+    \item \textbf{\textit{IPFS} Público:} Gateway público para \textit{hashes} de verificación ciudadana
+    \item \textbf{Protocolo de Contenido:} \textit{Multiformats} v13.3.3 - Manejo de \textit{CIDs}
 \end{itemize}
 
 \subsubsection{Tecnologías frontend}
@@ -70,14 +70,14 @@ La implementación de IPFS se realizó en dos capas diferenciadas:
 El frontend se desarrolló con tecnologías modernas de React:
 
 \begin{itemize}
-    \item \textbf{Framework:} React v18.3.1 - Biblioteca para interfaces de usuario
-    \item \textbf{Bundler:} Vite v5.4.2 - Herramienta de build ultrarrápida
-    \item \textbf{Lenguaje:} TypeScript v5.5.3 - Tipado estático
-    \item \textbf{Estilos:} Tailwind CSS v3.4.1 - Framework de utilidades CSS
-    \item \textbf{Enrutamiento:} React Router DOM v6.22.3 - Navegación entre vistas
-    \item \textbf{Estado Global:} Zustand v4.5.2 - Gestión de estado ligera
-    \item \textbf{Gráficos:} Recharts v2.12.3 - Librería de visualización de datos
-    \item \textbf{Iconos:} Lucide React v0.344.0 - Iconos modulares
+    \item \textbf{Framework:} \textit{React} v18.3.1 - Biblioteca para interfaces de usuario
+    \item \textbf{Bundler:} \textit{Vite} v5.4.2 - Herramienta de build ultrarrápida
+    \item \textbf{Lenguaje:} \textit{TypeScript} v5.5.3 - Tipado estático
+    \item \textbf{Estilos:} \textit{Tailwind CSS} v3.4.1 - Framework de utilidades \textit{CSS}
+    \item \textbf{Enrutamiento:} \textit{React Router DOM} v6.22.3 - Navegación entre vistas
+    \item \textbf{Estado Global:} \textit{Zustand} v4.5.2 - Gestión de estado ligera
+    \item \textbf{Gráficos:} \textit{Recharts} v2.12.3 - Librería de visualización de datos
+    \item \textbf{Iconos:} \textit{Lucide React} v0.344.0 - Iconos modulares
 \end{itemize}
 
 \subsubsection{Frameworks de testing}
@@ -85,11 +85,11 @@ El frontend se desarrolló con tecnologías modernas de React:
 Se implementaron pruebas automatizadas en múltiples capas:
 
 \begin{itemize}
-    \item \textbf{Backend:} Vitest v3.2.3 - Framework de testing para Vite
-    \item \textbf{Frontend:} Jest v30.0.3 - Framework de testing para React
-    \item \textbf{Smart Contracts:} Hardhat Testing - Framework integrado de Hardhat
-    \item \textbf{Aserciones:} Chai v4.5.0 - Librería de aserciones
-    \item \textbf{Testing de UI:} React Testing Library v16.3.0 - Testing de componentes React
+    \item \textbf{Backend:} \textit{Vitest} v3.2.3 - Framework de testing para \textit{Vite}
+    \item \textbf{Frontend:} \textit{Jest} v30.0.3 - Framework de testing para \textit{React}
+    \item \textbf{\textit{Smart Contracts}:} \textit{Hardhat Testing} - Framework integrado de \textit{Hardhat}
+    \item \textbf{Aserciones:} \textit{Chai} v4.5.0 - Librería de aserciones
+    \item \textbf{Testing de \textit{UI}:} \textit{React Testing Library} v16.3.0 - Testing de componentes \textit{React}
 \end{itemize}
 
 \subsection{Capa pública Ethereum}
@@ -98,7 +98,7 @@ La arquitectura de la capa pública se describe en detalle en la sección Diseñ
 
 \subsubsection{Desarrollo del smart contract}
 
-El Smart Contract FineManagement.sol implementa la lógica de negocio para la gestión pública de infracciones de tránsito. El contrato se desarrolló en Solidity v0.8.28 y hereda de Ownable (OpenZeppelin) para control de acceso.
+El \textit{Smart Contract} FineManagement.sol implementa la lógica de negocio para la gestión pública de infracciones de tránsito. El contrato se desarrolló en \textit{Solidity} v0.8.28 y hereda de \textit{Ownable} (\textit{OpenZeppelin}) para control de acceso.
 
 \paragraph{Estructura de datos}
 El contrato define dos estructuras principales para modelar las multas y su historial de estados:
@@ -113,7 +113,7 @@ enum FineState {
 }
 \end{verbatim}
 
-Este enum define los cinco estados que el \textit{smart contract} del prototipo implementa como prueba de concepto. Es importante destacar que el código utiliza nomenclatura en inglés siguiendo las mejores prácticas de la industria del desarrollo de \textit{software} \textit{blockchain}, donde Solidity y Ethereum tienen convenciones establecidas en este idioma.
+Este enum define los cinco estados que el \textit{smart contract} del prototipo implementa como prueba de concepto. Es importante destacar que el código utiliza nomenclatura en inglés siguiendo las mejores prácticas de la industria del desarrollo de \textit{software} \textit{blockchain}, donde \textit{Solidity} y \textit{Ethereum} tienen convenciones establecidas en este idioma.
 
 La Tabla~\ref{tab:mapeo_estados} presenta el mapeo sistemático entre estos estados implementados en el \textit{smart contract} (inglés) y los estados conceptuales del proceso de fotocomparendos descritos en la Introducción (sección 1.2). Como se observa en la tabla, el prototipo implementa un subconjunto funcional de los ocho estados conceptuales completos, siendo suficiente para validar los principios de inmutabilidad y trazabilidad. Los estados NOTIFICADA y CERRADA no fueron implementados en esta versión pero pueden agregarse en una implementación de producción sin modificaciones arquitectónicas sustanciales.
 
@@ -123,7 +123,7 @@ La Tabla~\ref{tab:mapeo_estados} presenta el mapeo sistemático entre estos esta
 struct Fine {
     uint256 id;
     string plateNumber;
-    string evidenceCID;        // CID de IPFS público
+    string evidenceCID;        // \textit{CID} de \textit{IPFS} público
     string location;
     uint256 timestamp;
     string infractionType;
@@ -131,7 +131,7 @@ struct Fine {
     string ownerIdentifier;
     FineState currentState;
     address registeredBy;
-    string externalSystemId;   // ID del SIMIT
+    string externalSystemId;   // ID del \textit{SIMIT}
 }
 
 struct FineStatusUpdate {
@@ -201,7 +201,7 @@ Estos eventos permiten que aplicaciones externas puedan suscribirse a cambios en
 \subsubsection{Despliegue y configuración}
 
 \paragraph{Configuración de Hardhat}
-El framework Hardhat se configuró para soportar despliegue en múltiples redes:
+El framework \textit{Hardhat} se configuró para soportar despliegue en múltiples redes:
 
 \begin{verbatim}
 module.exports = {
@@ -226,7 +226,7 @@ module.exports = {
 };
 \end{verbatim}
 
-El optimizador de Solidity se habilitó con 200 runs, priorizando la eficiencia de ejecución sobre el tamaño del bytecode desplegado.
+El optimizador de \textit{Solidity} se habilitó con 200 runs, priorizando la eficiencia de ejecución sobre el tamaño del bytecode desplegado.
 
 \paragraph{Script de despliegue}
 Se implementó un script automatizado para el despliegue del contrato:
@@ -246,24 +246,24 @@ async function main() {
 \end{verbatim}
 
 \paragraph{Red de despliegue}
-El prototipo se desplegó inicialmente en la red local de Hardhat para desarrollo y pruebas. Para demostración pública, se configuró el despliegue en Sepolia Testnet, una red de pruebas de Ethereum que permite validación externa sin costos reales.
+El prototipo se desplegó inicialmente en la red local de \textit{Hardhat} para desarrollo y pruebas. Para demostración pública, se configuró el despliegue en \textit{Sepolia Testnet}, una red de pruebas de \textit{Ethereum} que permite validación externa sin costos reales.
 
 \subsubsection{Configuración de infraestructura}
 
 \paragraph{Configuración de Hyperledger Fabric}
-La red privada se orquestó mediante Docker Compose con tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría) y un nodo orderer con consenso Raft. La configuración incluye Certificate Authorities por organización y canales privados para separación de datos sensibles.
+La red privada se orquestó mediante \textit{Docker Compose} con tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría) y un nodo \textit{orderer} con consenso \textit{Raft}. La configuración incluye \textit{Certificate Authorities} por organización y canales privados para separación de datos sensibles.
 
 \paragraph{Configuración de IPFS}
-Se implementó un nodo IPFS local (Kubo v0.34.1) con API HTTP habilitado para almacenamiento de evidencias. La configuración incluye pinning automático y control de acceso restringido al backend.
+Se implementó un nodo \textit{IPFS} local (\textit{Kubo} v0.34.1) con \textit{API HTTP} habilitado para almacenamiento de evidencias. La configuración incluye \textit{pinning} automático y control de acceso restringido al backend.
 
 \subsubsection{Instalación y despliegue}
 
 \paragraph{Prerrequisitos del sistema}
 El prototipo requiere Ubuntu 22.04 LTS o superior con las siguientes dependencias:
 \begin{itemize}
-    \item \textbf{Node.js:} v20.18.0+ con npm v10.0.0+
-    \item \textbf{Docker:} v24.0+ con Docker Compose v2.20+
-    \item \textbf{IPFS Kubo:} v0.34.1+ para almacenamiento descentralizado
+    \item \textbf{\textit{Node.js}:} v20.18.0+ con npm v10.0.0+
+    \item \textbf{\textit{Docker}:} v24.0+ con \textit{Docker Compose} v2.20+
+    \item \textbf{\textit{IPFS Kubo}:} v0.34.1+ para almacenamiento descentralizado
     \item \textbf{Git:} Para clonado de repositorios
 \end{itemize}
 
@@ -320,21 +320,21 @@ La arquitectura de la capa privada y su justificación técnica se detallan en l
 
 \subsubsection{Configuración de la red}
 
-La red de Hyperledger Fabric se configuró con la siguiente topología:
+La red de \textit{Hyperledger Fabric} se configuró con la siguiente topología:
 
 \begin{itemize}
     \item \textbf{Organizaciones:} Tres organizaciones (Secretaría de Movilidad, Policía de Tránsito, Auditoría)
-    \item \textbf{Peers:} Dos nodos peer por organización para redundancia
-    \item \textbf{Orderer:} Un nodo orderer con consenso Raft
+    \item \textbf{Peers:} Dos nodos \textit{peer} por organización para redundancia
+    \item \textbf{\textit{Orderer}:} Un nodo \textit{orderer} con consenso \textit{Raft}
     \item \textbf{Canal:} Un canal llamado \texttt{fotomultas-channel} compartido por las tres organizaciones
-    \item \textbf{Certificate Authority:} Una CA por organización para gestión de identidades
+    \item \textbf{\textit{Certificate Authority}:} Una \textit{CA} por organización para gestión de identidades
 \end{itemize}
 
-La configuración se definió mediante archivos YAML estándar de Fabric: \texttt{configtx.yaml} para la configuración del canal, \texttt{crypto-config.yaml} para la generación de certificados y \texttt{docker-compose.yaml} para la orquestación de contenedores.
+La configuración se definió mediante archivos \textit{YAML} estándar de \textit{Fabric}: \texttt{configtx.yaml} para la configuración del canal, \texttt{crypto-config.yaml} para la generación de certificados y \texttt{docker-compose.yaml} para la orquestación de contenedores.
 
 \subsubsection{Desarrollo del chaincode}
 
-El chaincode se implementó en Go, siguiendo la estructura de \texttt{contractapi.Contract} de Hyperledger Fabric. Las funciones principales incluyen:
+El \textit{chaincode} se implementó en \textit{Go}, siguiendo la estructura de \texttt{contractapi.Contract} de \textit{Hyperledger Fabric}. Las funciones principales incluyen:
 
 \begin{itemize}
     \item \texttt{RegisterInternalFine()}: Registra una multa completa con datos sensibles en la blockchain privada. Almacena información del conductor, detalles de la evidencia completa y notas internas.
@@ -349,7 +349,7 @@ El chaincode se implementó en Go, siguiendo la estructura de \texttt{contractap
 \end{itemize}
 
 \paragraph{Gestión de datos privados}
-Se utilizó la funcionalidad de Private Data Collections de Fabric para separar información altamente sensible (como datos de identificación del conductor) que solo debe ser accesible por la organización que la registró.
+Se utilizó la funcionalidad de \textit{Private Data Collections} de \textit{Fabric} para separar información altamente sensible (como datos de identificación del conductor) que solo debe ser accesible por la organización que la registró.
 
 \paragraph{Control de acceso basado en atributos}
 El chaincode implementa validaciones basadas en los atributos del certificado del invocador, verificando roles (agente, administrador, auditor) antes de permitir operaciones sensibles.
@@ -358,15 +358,15 @@ El chaincode implementa validaciones basadas en los atributos del certificado de
 
 \subsubsection{Arquitectura del servicio}
 
-El servicio de sincronización se implementó como un proceso independiente en Node.js que escucha eventos de la blockchain privada (Hyperledger Fabric) y sincroniza metadatos públicos a la blockchain pública (Ethereum).
+El servicio de sincronización se implementó como un proceso independiente en \textit{Node.js} que escucha eventos de la blockchain privada (\textit{Hyperledger Fabric}) y sincroniza metadatos públicos a la blockchain pública (\textit{Ethereum}).
 
 \paragraph{Componentes principales}
 \begin{itemize}
-    \item \textbf{Event Listener:} Módulo que se suscribe a eventos del chaincode de Fabric
-    \item \textbf{Metadata Extractor:} Componente que filtra datos sensibles y extrae solo metadatos públicos
-    \item \textbf{Hash Generator:} Genera hash SHA-256 de integridad del registro completo
-    \item \textbf{Ethereum Publisher:} Publica los metadatos en el Smart Contract de Ethereum
-    \item \textbf{Consistency Validator:} Verifica que los datos se sincronizaron correctamente
+    \item \textbf{\textit{Event Listener}:} Módulo que se suscribe a eventos del \textit{chaincode} de \textit{Fabric}
+    \item \textbf{\textit{Metadata Extractor}:} Componente que filtra datos sensibles y extrae solo metadatos públicos
+    \item \textbf{\textit{Hash Generator}:} Genera \textit{hash} \textit{SHA-256} de integridad del registro completo
+    \item \textbf{\textit{Ethereum Publisher}:} Publica los metadatos en el \textit{Smart Contract} de \textit{Ethereum}
+    \item \textbf{\textit{Consistency Validator}:} Verifica que los datos se sincronizaron correctamente
 \end{itemize}
 
 \subsubsection{Flujo de sincronización}
@@ -374,23 +374,23 @@ El servicio de sincronización se implementó como un proceso independiente en N
 El proceso de sincronización sigue estos pasos:
 
 \begin{enumerate}
-    \item El chaincode de Fabric emite un evento \texttt{FineRegistered} o \texttt{FineUpdated}
-    \item El Event Listener captura el evento y extrae el ID de la multa
-    \item Se consulta el registro completo desde Fabric
-    \item El Metadata Extractor genera la estructura pública:
+    \item El \textit{chaincode} de \textit{Fabric} emite un evento \texttt{FineRegistered} o \texttt{FineUpdated}
+    \item El \textit{Event Listener} captura el evento y extrae el ID de la multa
+    \item Se consulta el registro completo desde \textit{Fabric}
+    \item El \textit{Metadata Extractor} genera la estructura pública:
     \begin{itemize}
         \item ID de multa
         \item Número de placa
-        \item Hash de evidencia (CID de IPFS público)
+        \item \textit{Hash} de evidencia (\textit{CID} de \textit{IPFS} público)
         \item Ubicación
         \item Tipo de infracción
         \item Costo
         \item Timestamp
         \item Estado actual
     \end{itemize}
-    \item Se genera un hash de integridad del registro completo privado
-    \item Se publica el registro público en Ethereum mediante \texttt{registerPublicFine()}
-    \item Se valida que el transaction hash de Ethereum sea exitoso
+    \item Se genera un \textit{hash} de integridad del registro completo privado
+    \item Se publica el registro público en \textit{Ethereum} mediante \texttt{registerPublicFine()}
+    \item Se valida que el \textit{transaction hash} de \textit{Ethereum} sea exitoso
     \item Se registra la sincronización en un log de auditoría
 \end{enumerate}
 
@@ -405,17 +405,17 @@ El servicio implementa un mecanismo de reintentos con backoff exponencial para m
 Se configuró un nodo IPFS local para el almacenamiento de evidencias completas:
 
 \begin{itemize}
-    \item \textbf{Configuración:} Nodo Kubo v0.34.1 con API HTTP habilitado solo para localhost
-    \item \textbf{Estrategia de Pinning:} Pinning automático de todas las evidencias subidas
-    \item \textbf{Control de Acceso:} API accesible solo desde el backend, sin exposición pública
+    \item \textbf{Configuración:} Nodo \textit{Kubo} v0.34.1 con \textit{API HTTP} habilitado solo para localhost
+    \item \textbf{Estrategia de \textit{Pinning}:} \textit{Pinning} automático de todas las evidencias subidas
+    \item \textbf{Control de Acceso:} \textit{API} accesible solo desde el backend, sin exposición pública
     \item \textbf{Persistencia:} Almacenamiento en disco local con respaldo periódico
 \end{itemize}
 
 El servicio IPFSPrivateService implementa las siguientes funciones:
 
 \begin{itemize}
-    \item \texttt{uploadToIPFS(fileBuffer, fileName)}: Sube una evidencia completa y retorna su CID
-    \item \texttt{getFromIPFS(cid)}: Recupera un archivo dado su CID
+    \item \texttt{uploadToIPFS(fileBuffer, fileName)}: Sube una evidencia completa y retorna su \textit{CID}
+    \item \texttt{getFromIPFS(cid)}: Recupera un archivo dado su \textit{CID}
     \item \texttt{isConnected()}: Verifica la conectividad con el daemon de IPFS
 \end{itemize}
 
@@ -424,9 +424,9 @@ El servicio IPFSPrivateService implementa las siguientes funciones:
 Para la capa pública se utilizó un gateway público de IPFS que permite:
 
 \begin{itemize}
-    \item Publicación de hashes de evidencias para verificación ciudadana
-    \item Acceso sin autenticación a través de HTTP
-    \item Verificación de integridad mediante comparación de CIDs
+    \item Publicación de \textit{hashes} de evidencias para verificación ciudadana
+    \item Acceso sin autenticación a través de \textit{HTTP}
+    \item Verificación de integridad mediante comparación de \textit{CIDs}
 \end{itemize}
 
 El IPFSPublicService gestiona la publicación de hashes en el nodo público, manteniendo la separación entre evidencias completas (privadas) y hashes verificables (públicos).
@@ -443,8 +443,8 @@ El backend implementa el patrón Controller-Service-Repository adaptado para arq
 \paragraph{Capa de servicios}
 \begin{itemize}
     \item \texttt{FineService}: Orquestador principal que coordina operaciones entre blockchains
-    \item \texttt{HyperledgerService}: Interacción con la red privada de Fabric
-    \item \texttt{EthereumService}: (Implementado como \texttt{BlockchainService}) Interacción con Ethereum
+    \item \texttt{HyperledgerService}: Interacción con la red privada de \textit{Fabric}
+    \item \texttt{EthereumService}: (Implementado como \texttt{BlockchainService}) Interacción con \textit{Ethereum}
     \item \texttt{IPFSPrivateService}: Gestión de evidencias en IPFS privado
     \item \texttt{IPFSPublicService}: Gestión de hashes en IPFS público
     \item \texttt{AptitudeService}: Integración con API externa RUNT/SIMIT (simulada)
@@ -463,16 +463,16 @@ La Tabla~\ref{tab:endpoints_api} describe los endpoints principales implementado
 
 Se implementaron middlewares para:
 \begin{itemize}
-    \item Autenticación mediante JSON Web Tokens (JWT)
-    \item Validación de datos con express-validator
+    \item Autenticación mediante \textit{JSON Web Tokens} (\textit{JWT})
+    \item Validación de datos con \textit{express-validator}
     \item Control de acceso basado en roles (administrador, agente, ciudadano)
-    \item Rate limiting para prevenir abuso de la API
-    \item CORS configurado para permitir solo orígenes autorizados
+    \item \textit{Rate limiting} para prevenir abuso de la \textit{API}
+    \item \textit{CORS} configurado para permitir solo orígenes autorizados
 \end{itemize}
 
 \subsubsection{Documentación con Swagger}
 
-La API se documentó utilizando Swagger/OpenAPI 3.0, generando documentación interactiva accesible en \texttt{/api-docs}. La documentación incluye:
+La \textit{API} se documentó utilizando \textit{Swagger}/\textit{OpenAPI} 3.0, generando documentación interactiva accesible en \texttt{/api-docs}. La documentación incluye:
 \begin{itemize}
     \item Descripción de cada endpoint
     \item Esquemas de Request y Response
