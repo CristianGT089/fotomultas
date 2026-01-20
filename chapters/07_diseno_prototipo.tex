@@ -135,20 +135,20 @@ La arquitectura se compone de los siguientes elementos:
 
 \paragraph{Capa privada - Hyperledger Fabric}
 \begin{itemize}
-    \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan chaincode (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
-    \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo PBFT (Practical Byzantine Fault Tolerance), garantizando la validación eficiente de transacciones.
-    \item \textbf{Certificate Authority (CA):} Gestiona las identidades digitales y permisos de usuarios autorizados (administradores, agentes de tránsito).
-    \item \textbf{IPFS Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
+    \item \textbf{Nodos Peer:} Mantienen el ledger privado y ejecutan \textit{chaincode} (lógica de negocio). Estos nodos almacenan la información completa de las infracciones, incluyendo datos sensibles y evidencias completas.
+    \item \textbf{Nodo Orderer:} Coordina el consenso entre peers utilizando el algoritmo \textit{PBFT} (\textit{Practical Byzantine Fault Tolerance}), garantizando la validación eficiente de transacciones.
+    \item \textbf{\textit{Certificate Authority} (\textit{CA}):} Gestiona las identidades digitales y permisos de usuarios autorizados (administradores, agentes de tránsito).
+    \item \textbf{\textit{IPFS} Privado:} Almacena las evidencias fotográficas completas con sus metadatos, accesible solo para usuarios autorizados.
 \end{itemize}
 
 \paragraph{Capa pública - Ethereum}
 \begin{itemize}
-    \item \textbf{Nodos Ethereum:} Ejecutan Smart Contracts que almacenan metadatos públicos de infracciones sin información personal sensible.
-    \item \textbf{IPFS Público:} Almacena hashes de evidencias para verificación ciudadana, sin exponer imágenes completas.
+    \item \textbf{Nodos \textit{Ethereum}:} Ejecutan \textit{Smart Contracts} que almacenan metadatos públicos de infracciones sin información personal sensible.
+    \item \textbf{\textit{IPFS} Público:} Almacena \textit{hashes} de evidencias para verificación ciudadana, sin exponer imágenes completas.
 \end{itemize}
 
 \paragraph{Servicio de sincronización}
-Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de Hyperledger Fabric y publicándolos en Ethereum junto con hashes de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de hashes criptográficos.
+Un servicio intermediario sincroniza los datos entre ambas blockchains, extrayendo metadatos no sensibles de \textit{Hyperledger Fabric} y publicándolos en \textit{Ethereum} junto con \textit{hashes} de integridad. Este servicio garantiza la consistencia entre ambas capas mediante verificación cruzada de \textit{hashes} criptográficos.
 
 La arquitectura se conecta mediante servicios web a APIs externas como Apitude para acceder a información del Registro Único Nacional de Tránsito (RUNT) y del Sistema Integrado de Información sobre Multas y Sanciones por Infracciones de Tránsito (SIMIT), obteniendo datos de conductores, vehículos y el estado de multas. Esta integración permite validar la información de infracciones contra registros oficiales sin comprometer la privacidad de los datos almacenados en la capa privada.
 

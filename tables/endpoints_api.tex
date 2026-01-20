@@ -4,7 +4,7 @@
 \setlength{\LTpost}{10pt}
 \begin{longtable}{p{2cm}p{5cm}p{6.5cm}}
 
-\caption{Endpoints principales de la API REST}
+\caption{Endpoints principales de la \textit{API REST}}
 \label{tab:endpoints_api} \\
 \toprule
 \textbf{Método} & \textbf{Endpoint} & \textbf{Descripción} \\
@@ -25,16 +25,16 @@
 \multicolumn{3}{l}{\textbf{Nota.} Elaboración propia.} \\
 \endlastfoot
 
-POST & /api/fines & Registra nueva multa (IPFS + ambas blockchains) \\
+POST & /api/fines & Registra nueva multa (\textit{IPFS} + ambas blockchains) \\
 \midrule
-GET & /api/fines/:fineId & Consulta detalles completos (desde Fabric) \\
+GET & /api/fines/:fineId & Consulta detalles completos (desde \textit{Fabric}) \\
 \midrule
 PUT & /api/fines/:fineId/status & Actualiza estado de multa \\
 \midrule
-GET & /api/fines/:fineId/evidence & Obtiene evidencia desde IPFS privado \\
+GET & /api/fines/:fineId/evidence & Obtiene evidencia desde \textit{IPFS} privado \\
 \midrule
 GET & /api/fines/:fineId/integrity & Verifica integridad cruzada entre blockchains \\
 \midrule
-GET & /api/fines/by-plate/:plateNumber & Consulta pública desde Ethereum \\
+GET & /api/fines/by-plate/:plateNumber & Consulta pública desde \textit{Ethereum} \\
 \bottomrule
 \end{longtable}

@@ -13,11 +13,11 @@ El prototipo aborda los siguientes módulos funcionales:
 
 \begin{enumerate}
   \item \textbf{Registro inmutable de la infracción}
-        Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la \emph{blockchain} (Ethereum local con Hardhat para desarrollo, con arquitectura preparada para Hyperledger Fabric en producción).
+        Captura de metadatos (placa, fecha, hora, ubicación y tipo de infracción) y publicación del identificador de la evidencia en la \emph{blockchain} (\textit{Ethereum} local con \textit{Hardhat} para desarrollo, con arquitectura preparada para \textit{Hyperledger Fabric} en producción).
   \item \textbf{Almacenamiento descentralizado de evidencias}  
-        Carga de la imagen o video de la fotomulta en IPFS y obtención de su \emph{hash}.
+        Carga de la imagen o video de la fotomulta en \textit{IPFS} y obtención de su \emph{hash}.
   \item \textbf{Verificación pública}  
-        Servicio de consulta que permite contrastar el hash guardado en la cadena con el archivo almacenado en IPFS.
+        Servicio de consulta que permite contrastar el \textit{hash} guardado en la cadena con el archivo almacenado en \textit{IPFS}.
   \item \textbf{Gestión del ciclo de vida de la multa}
         El prototipo implementa la gestión de transiciones entre estados del proceso de fotocomparendos. El modelo conceptual completo, descrito en la sección 1.2 de la Introducción, contempla ocho estados: GENERADA $\rightarrow$ NOTIFICADA $\rightarrow$ PENDIENTE\_RESPUESTA $\rightarrow$ EN\_APELACION $\rightarrow$ RESUELTA\_APELACION $\rightarrow$ PAGADA/CANCELADA $\rightarrow$ CERRADA. Como prueba de concepto, el \textit{smart contract} implementa cinco de estos estados (ver Tabla~\ref{tab:mapeo_estados} en sección 8 para mapeo detallado). Cada transición queda registrada mediante eventos de \textit{smart contract} con \textit{timestamp} inmutable.
   \item \textbf{Interfaz mínima}  
@@ -34,8 +34,8 @@ El prototipo aborda los siguientes módulos funcionales:
 
 \subsection{Entregables}
 \begin{itemize}
-  \item Contrato inteligente en Solidity con 80 pruebas automatizadas (97.5\% de éxito).
-  \item Script de despliegue de red Ethereum local (Hardhat) e instalación de IPFS local.
+  \item \textbf{Contrato inteligente en Solidity} con 80 pruebas automatizadas (97.5\% de éxito).
+  \item Script de despliegue de red \textit{Ethereum} local (\textit{Hardhat}) e instalación de \textit{IPFS} local.
   \item Aplicación Web de demostración (\emph{frontend} ligero) conectada a los servicios anteriores.
   \item Manual técnico que documenta la arquitectura y el flujo de datos.
   \item Informe de resultados de las pruebas funcionales y de rendimiento básico.
@@ -44,7 +44,7 @@ El prototipo aborda los siguientes módulos funcionales:
 \subsection{Criterios de éxito}
 \begin{enumerate}
   \item Tiempo medio de publicación de una infracción $\leq$ 3 s en entorno de laboratorio.
-  \item Coincidencia 100 \% entre el hash almacenado en la cadena y la evidencia recuperada desde IPFS.
+  \item Coincidencia 100 \% entre el \textit{hash} almacenado en la cadena y la evidencia recuperada desde \textit{IPFS}.
   \item Trazabilidad completa del historial de estados para al menos 50 multas de prueba.
   \item Ausencia de fallos críticos en pruebas de carga con 10 transacciones concurrentes.
 \end{enumerate}
