@@ -57,13 +57,7 @@ Para comprender las implicaciones técnicas de estas variables, la Tabla~\ref{ta
 
 En síntesis, el problema se formula como un Riesgo de Integridad de Datos inherente al paradigma de confianza centralizada del sistema de fotocomparendos. Este riesgo se encuentra documentado por debilidades fundacionales en la gobernanza del proyecto y se manifiesta en consecuencias medibles: (i) una Tasa de Impugnación del 34.1\%; (ii) una carga operativa superior a 155 mil PQRSD semestrales; (iii) un presunto detrimento patrimonial por más de \$8.000 millones; y (iv) la vulnerabilidad de la ciudadanía a esquemas fraudulentos derivados de la falta de transparencia institucional.
 
-Ante este panorama, surge la necesidad de explorar arquitecturas que permitan sustituir la confianza administrativa por garantías criptográficas. La pregunta central que guía este trabajo es:
-
-\textbf{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?}
-
-\subsection{Estados del proceso de fotocomparendos}
-
-Para comprender el alcance del problema de integridad de datos, es fundamental identificar los estados por los que transita un comparendo desde su emisión hasta su resolución final. El proceso de fotocomparendos en Bogotá contempla los siguientes estados principales:
+Para comprender el alcance del problema de integridad, es fundamental identificar los estados por los que transita un comparendo desde su emisión hasta su resolución final. El proceso de fotocomparendos en Bogotá contempla los siguientes estados principales:
 
 \begin{enumerate}
     \item \textbf{GENERADA:} Estado inicial del comparendo, creado por un agente de tránsito o sistema automático de fotodetección al registrar una infracción. En este estado se capturan los metadatos esenciales: placa del vehículo, tipo de infracción, fecha, hora, ubicación y evidencia fotográfica.
@@ -83,7 +77,11 @@ Para comprender el alcance del problema de integridad de datos, es fundamental i
     \item \textbf{CERRADA:} Estado final y definitivo del comparendo. Todas las acciones administrativas, judiciales o de pago han concluido. El registro se mantiene de forma permanente en el sistema con fines de auditoría, estadística y consulta histórica.
 \end{enumerate}
 
-Cada transición entre estados representa un punto crítico donde la alteración, pérdida o manipulación de datos puede comprometer la validez del acto administrativo y generar las consecuencias descritas anteriormente: impugnaciones, detrimento patrimonial y vulnerabilidad ciudadana. En el desarrollo del proyecto se identifican explícitamente como puntos de intervención técnica: (i) el registro inicial de metadatos y evidencia en los estados \textbf{GENERADA} y \textbf{NOTIFICADA}; (ii) la trazabilidad de cambios y decisiones durante \textbf{PENDIENTE\_RESPUESTA}, \textbf{EN\_APELACION} y \textbf{RESUELTA\_APELACION}, con especial énfasis en \textbf{CANCELADA}; y (iii) la verificación independiente y permanente del cierre del caso en \textbf{CERRADA}. El prototipo propuesto busca garantizar la inmutabilidad y trazabilidad completa en todas estas transiciones mediante el uso de tecnologías de registro distribuido.
+Cada transición entre estados representa un punto crítico donde la alteración, pérdida o manipulación de datos puede comprometer la validez del acto administrativo y generar las consecuencias descritas anteriormente: impugnaciones, detrimento patrimonial y vulnerabilidad ciudadana. En el desarrollo del proyecto se identifican explícitamente como puntos de intervención técnica: (i) el registro inicial de metadatos y evidencia en los estados \textbf{GENERADA} y \textbf{NOTIFICADA}; (ii) la trazabilidad de cambios y decisiones durante \textbf{PENDIENTE\_RESPUESTA}, \textbf{EN\_APELACION} y \textbf{RESUELTA\_APELACION}, con especial énfasis en \textbf{CANCELADA}; y (iii) la verificación independiente y permanente del cierre del caso en \textbf{CERRADA}.
+
+Ante este panorama, surge la necesidad de explorar arquitecturas que permitan sustituir la confianza administrativa por garantías criptográficas. La pregunta central que guía este trabajo es:
+
+\textbf{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?}
 
 \subsection{Objetivos}
 \paragraph{Objetivo General}
