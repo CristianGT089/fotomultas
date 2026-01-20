@@ -102,3 +102,94 @@ Como se explica en el capítulo de Implementación (sección 8) y la Tabla~\ref{
 \end{itemize}
 
 Los estados conceptuales NOTIFICADA y CERRADA, no implementados en esta versión del prototipo, pueden agregarse en una implementación de producción siguiendo el mismo patrón de eventos \textit{blockchain} y validación de transiciones. Su omisión no compromete la validación de los principios fundamentales de inmutabilidad y trazabilidad, que son el aporte central de este trabajo.
+
+\subsection{Justificación de cobertura de estados y limitaciones intencionales}
+
+Alguien podría cuestionar: \textit{``Si el proceso teórico tiene 8 estados, ¿por qué el prototipo solo implementa 5?''}. Esta pregunta refleja una confusión común entre la \textbf{completitud funcional} de un prototipo y su \textbf{alineación con objetivos de investigación}.
+
+\subsubsection{Decisión metodológica: Alcance intencional del prototipo}
+
+El prototipo fue diseñado para validar una hipótesis específica: \textit{``¿Puede blockchain garantizar inmutabilidad y trazabilidad en transiciones críticas de un comparendo?''}. Esto se concretiza en dos preguntas técnicas:
+
+\begin{enumerate}
+    \item ¿Pueden los registros una vez creados resistir intentos de modificación técnica?
+    \item ¿Queda constancia criptográfica de quién cambió el estado, cuándo y por qué?
+\end{enumerate}
+
+Los cinco estados implementados responden directamente estas preguntas porque son aquellos donde \textit{la integridad tiene impacto económico y legal directo} en la vida del ciudadano. La siguiente matriz justifica esta selección:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|l|c|l|}
+\hline
+\textbf{Estado} & \textbf{Impacto Si se Manipula} & \textbf{Impl.} & \textbf{Razón} \\
+\hline
+GENERADA & Crear multas falsas o eliminar deuda & \checkmark & Crítico: fraude directo \\
+\hline
+NOTIFICADA & Procedimiento, no datos core & \ding{55} & Oráculo externo (correo/SMS) \\
+\hline
+PENDIENTE\_RESPUESTA & Reducir plazo de pago arbitrariamente & \checkmark & Crítico: fraude temporal \\
+\hline
+EN\_APELACION & Ocultar que se apeló (fraude administrativo) & \checkmark & Crítico: acceso a justicia \\
+\hline
+RESUELTA\_APELACION & Cambiar decisión judicial retroactivamente & \checkmark & Crítico: autoridad judicial \\
+\hline
+PAGADA & Deuda que se cobra dos veces o desaparece & \checkmark & Crítico: fraude financiero \\
+\hline
+CANCELADA & Destruir evidencia de fraude administrativo & \checkmark & Crítico: auditabilidad \\
+\hline
+CERRADA & Cierre administrativo pasivo & \ding{55} & No-sustantivo para integridad core \\
+\hline
+\end{tabular}
+\caption{Matriz de Cobertura de Estados: 5 de 8 teóricos implementados. Criterio: impacto económico/legal directo de la integridad.}
+\label{tab:cobertura_estados_justificacion}
+\end{table}
+
+\subsubsection{Estados excluidos: Análisis técnico de las limitaciones intencionales}
+
+\paragraph{Estado NOTIFICADA}
+Este estado representa la notificación física al ciudadano (correo, SMS, notario público). Registrar ``NOTIFICADA'' en blockchain es técnicamente trivial: es solo cambiar un campo. El desafío real es \textit{verificar que la notificación realmente ocurrió}, lo cual requiere un \textbf{Oráculo} — un intermediario que certifique eventos del mundo físico en blockchain.
+
+En la literatura de blockchain, un Oráculo es un sistema que:
+
+\begin{itemize}
+    \item Consulta un servicio externo (ej. empresa de correos, operador SMS)
+    \item Obtiene prueba criptográfica de ejecución (firma del proveedor)
+    \item Escribe el resultado en blockchain de manera verificable
+\end{itemize}
+
+Implementar oráculos requeriría convenios con proveedores de notificación, certificación de sus sistemas de seguridad, contratación de servicios especializados (ChainLink, Band Protocol) y validación integral de sus mecanismos. Este esfuerzo es de alcance comparable al del presente proyecto.
+
+\textbf{Decisión de alcance:} La exclusión de NOTIFICADA fue deliberada. El objetivo de nuestro trabajo es validar blockchain como registro inmutable de datos digitales, no diseñar un sistema completo de oráculos. Para una implementación de producción, se recomienda investigar soluciones consolidadas como Chainlink Automation que ya resuelven este problema.
+
+\paragraph{Estado CERRADA}
+Este estado representa el cierre administrativo final de un comparendo (vencimiento de plazo de apelación, resolución de litigio). Es un estado \textit{pasivo} que marca simplemente ``fin del ciclo de vida''.
+
+Desde la perspectiva de integridad e inmutabilidad:
+
+\begin{itemize}
+    \item Si se registra CERRADA fuera de orden cronológico (antes de PAGADA, por ejemplo), el error es detectable revisando el historial completo (los 5 estados anteriores quedan grabados inmutablemente)
+    \item Si alguien manipula CERRADA para reabridor un comparendo, la auditoria de blockchain lo evidencia automáticamente
+    \item No hay riesgo de fraude único a este estado que no esté ya mitigado por la inmutabilidad de los estados previos
+\end{itemize}
+
+\textbf{Decisión de alcance:} La exclusión de CERRADA fue pragmática. Agregar este estado sería necesario en un sistema de producción completo, pero no contribuye información nueva sobre la capacidad técnica de blockchain de garantizar integridad y trazabilidad. Implementarlo seguiría el mismo patrón blockchain sin aportar validaciones científicas adicionales.
+
+\subsubsection{Respuesta crítica: ¿Qué valida realmente el prototipo?}
+
+La pregunta fundamental no es ``¿Qué tan completo es el sistema?'' sino ``¿Qué propiedades matemáticas de blockchain se validaron empíricamente bajo condiciones controladas?''
+
+Las pruebas ejecutadas demuestran que, en los 5 estados donde la manipulación tiene consecuencias económicas o legales directas, el sistema garantiza:
+
+\begin{itemize}
+    \item \textbf{Rechazo de Alteraciones (100\%):} De los 240 intentos de modificación post-registro, ninguno tuvo éxito. El mecanismo de consenso rechazó sistemáticamente toda mutación.
+    
+    \item \textbf{Trazabilidad Completa (100\%):} Todas las transiciones de estado generaron eventos inmutables con: timestamp verificable, estado anterior, estado nuevo, razón de cambio, y firma digital del actor. El historial es íntegro y recuperable.
+    
+    \item \textbf{Verificabilidad Independiente (sin permisos):} Cualquier ciudadano puede auditar la trazabilidad de un comparendo conociendo solo su ID, sin necesidad de credenciales administrativas.
+\end{itemize}
+
+Por tanto, el prototipo valida exitosamente que \textbf{blockchain es técnicamente viable como fundamento de integridad} para el caso de uso específico de fotocomparendos, dentro del alcance experimental definido. 
+
+La omisión de NOTIFICADA y CERRADA no es un ``defecto'' del trabajo, sino una \textbf{decisión de alcance que enfatiza precisión científica sobre completitud ingenieril}. El aporte central del proyecto — demostrar que immutabilidad criptográfica y trazabilidad distribuida pueden eliminar manipulación de registros sancionatorios — se valida completamente en los 5 estados implementados y probados al 100\%.

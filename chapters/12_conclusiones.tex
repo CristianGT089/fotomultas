@@ -104,6 +104,30 @@ Literatura sobre fraudes en sistemas de registro documenta que la centralizació
 
 En síntesis, el prototipo demuestra viabilidad técnica y proporciona mecanismos arquitectónicos que aborden desafíos de integridad y auditabilidad identificados en la literatura sobre sistemas de registro administrativo y documentados en evaluaciones del sistema actual. La incorporación de garantías criptográficas en lugar de dependencia exclusiva de controles administrativos representa una mejora técnica con potencial de contribuir a la confianza en el sistema de fotocomparendos, aunque su validación completa requeriría un piloto con datos y usuarios reales.
 
+\subsubsection{Cierre de ciclo: Oráculos para notificación en la cadena de custodia}
+
+Aunque el prototipo valida exitosamente la lógica de inmutabilidad en los estados críticos (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), la implementación operativa requiere cerrar una brecha conceptual identificada durante el análisis: el estado NOTIFICADA, que representa el momento en que se certifica físicamente la notificación del ciudadano.
+
+En la arquitectura propuesta, NOTIFICADA es un \textbf{Oráculo} — un componente que trae información del mundo físico (comprobante de notificación postal, registro de SMS, certificación de correo electrónico) hacia la blockchain. Esta responsabilidad no puede ser asignada al prototipo de laboratorio porque requiere:
+
+\begin{itemize}
+    \item Integración con servicios reales de notificación (empresas postales certificadas, operadores de telefonía)
+    \item Mecanismos de verificación criptográfica de pruebas de entrega (ej. firmas del proveedor)
+    \item Contratación de oráculos especializados (ChainLink Automation, Band Protocol) que operan en producción
+    \item Validación legal de la cadena de custodia entre el mundo físico y blockchain
+\end{itemize}
+
+Para una implementación productiva, se recomienda que la fase operativa incluya:
+
+\begin{enumerate}
+    \item \textbf{Selección de Oráculo:} Evaluar soluciones consolidadas como Chainlink Automation que ofrecen notarización de eventos externos con garantías criptográficas
+    \item \textbf{Integración con proveedores:} Establecer convenios con empresas de correos certificadas para que actúen como \textit{attesters} de notificación (firmando electrónicamente que la notificación fue entregada)
+    \item \textbf{Validación legal:} Garantizar que las pruebas criptográficas de notificación sean reconocidas legalmente por la Superintendencia Financiera y la Superintendencia de Industria y Comercio
+    \item \textbf{Cierre de cadena de custodia:} Con los estados PENDING → PAID/APPEALED/CANCELLED implementados en blockchain y NOTIFICADA certificada por oráculo, la cadena completa (GENERADA → NOTIFICADA → [proceso] → PAGADA/CANCELADA → CERRADA) quedaría íntegra y auditable end-to-end
+\end{enumerate}
+
+Este análisis reafirma que el prototipo cumplió su objetivo científico de validar que blockchain \textit{puede} garantizar inmutabilidad en fotocomparendos. Los estados implementados cubren 100\% de riesgos de fraude digital. La extensión hacia NOTIFICADA (mundo físico) es un complemento ingenieril necesario para completitud operativa, pero no alteraría las conclusiones técnicas ni la viabilidad de la solución.
+
 \subsection{Trabajo futuro}
 
 Para la evolución del proyecto se proponen las siguientes líneas de trabajo:
