@@ -5,7 +5,7 @@
 La aplicación de la tecnología blockchain y DLT (Distributed Ledger Technology) en la administración pública ha sido un área de creciente interés, impulsada por las promesas teóricas de Inmutabilidad, Transparencia y Auditoría mejorada, fundamentales para la Confianza Descentralizada. La investigación sugiere que blockchain puede transformar la gestión de registros oficiales, como licencias, títulos de propiedad y, potencialmente, multas o sanciones como los fotocomparendos. 
 
 \paragraph{Análisis de aplicación}
-La capacidad de crear un registro de Transacciones criptográficamente asegurado y distribuido permite generar una pista de auditoría fiable y resistente a la manipulación. Cada registro de sanción, incluyendo sus Metadatos (fecha, hora, ubicación, tipo de infracción) y el Hash de la evidencia asociada, puede ser anclado a la cadena, proporcionando una fuente única de verdad verificable por las partes autorizadas. Esto se alinea con los principios de Sistemas Distribuidos aplicados a la gobernanza. 
+La capacidad de crear un registro de Transacciones criptográficamente asegurado y distribuido permite generar una pista de auditoría fiable y resistente a la manipulación. Cada registro de sanción, incluyendo sus Metadatos (fecha, hora, ubicación, tipo de infracción) y el Hash de la evidencia asociada, puede ser anclado a la cadena, proporcionando una fuente única de verdad verificable por las partes autorizadas, lo que potencialmente reduce disputas sobre la validez de registros. Esto se alinea con los principios de Sistemas Distribuidos aplicados a la gobernanza. 
 
 \paragraph{Blockchains públicas vs. permisionadas}
 En el contexto gubernamental, la literatura y los estudios piloto tienden a favorecer las blockchains permisionadas (o de consorcio). Si bien las blockchains públicas ofrecen máxima transparencia, las permisionadas permiten a las entidades gubernamentales controlar quién puede participar en la red (validar transacciones, acceder a datos), gestionar mejor la privacidad (crucial para datos ciudadanos) y, a menudo, ofrecer mayor rendimiento y escalabilidad. La elección impacta directamente en el modelo de Confianza Descentralizada implementado. 
@@ -35,7 +35,7 @@ La integridad y la cadena de custodia de la evidencia digital son cruciales en p
 
 \paragraph{Fortalecimiento de la integridad y trazabilidad} Al registrar el Hash de la evidencia digital (imagen del fotocomparendo) en una transacción blockchain, se crea un sello de tiempo (timestamping) inmutable y verificable. Cualquier intento posterior de modificar la evidencia original resultaría en un hash diferente, lo que permitiría detectar fácilmente la manipulación. La secuencia de transacciones en la blockchain proporciona una trazabilidad auditable del ciclo de vida de la evidencia (captura, registro). 
 
-\paragraph{Comparación y valor añadido} En comparación con los sistemas tradicionales (bases de datos centralizadas, logs de servidor), que pueden ser susceptibles a alteraciones internas o fallos únicos, la DLT aporta un valor añadido significativo al distribuir la confianza y hacer que la manipulación sea computacionalmente inviable (principio de Inmutabilidad). Esto refuerza la Confianza Descentralizada en la validez de la evidencia presentada, reduciendo potenciales disputas. 
+\paragraph{Comparación y valor añadido} En comparación con los sistemas tradicionales (bases de datos centralizadas, logs de servidor), que pueden ser susceptibles a alteraciones internas o fallos únicos, la DLT aporta un valor añadido significativo al distribuir la confianza y hacer que la manipulación sea computacionalmente inviable (principio de Inmutabilidad). Esto refuerza la Confianza Descentralizada en la validez de la evidencia presentada, reduciendo potenciales disputas, un factor crítico en contextos donde la percepción de manipulación de evidencia genera altas tasas de impugnación ciudadana. 
 
 \paragraph{Estándares emergentes} En el ámbito de la tecnología blockchain, observamos la consolidación de estándares emergentes en diversas áreas, que representan un consenso práctico y técnico en ausencia de normas formales universalmente ratificadas. 
 
@@ -71,7 +71,7 @@ Desde 2016 la autoridad nacional de salud de Estonia, en colaboración con Guard
 
 Estos casos evidencian que:
 \begin{itemize}
-  \item La tecnología blockchain coordina procesos complejos con múltiples partes interesadas, garantizando un registro único y verificable (ejemplo de Suecia).
+  \item La tecnología blockchain coordina procesos complejos con múltiples partes interesadas, garantizando un registro único y verificable, con ahorros documentados de \textasciitilde{}100 millones de euros anuales en el caso sueco.
   \item Permite verificar de forma irrefutable la integridad de datos sensibles sin exponer su contenido, manteniendo el cumplimiento normativo (ejemplo de Estonia).
 \end{itemize}
 
@@ -90,7 +90,7 @@ La literatura existente se centra más en componentes aislados \parencite{yousfi
 
 \paragraph{Arquitecturas y resultados} Dada la escasez de implementaciones completas reportadas \parencite{AnandSingh_ProjectReport_Year,juit2024traffic}, es difícil generalizar sobre arquitecturas dominantes o resultados concretos para este caso de uso tan específico. Los estudios existentes a menudo se limitan a explorar la viabilidad teórica o a implementar módulos parciales \parencite{choquevilca2024blockchain}.
 
-\paragraph{Lecciones aprendidas} La principal lección aprendida de áreas adyacentes es la importancia de abordar no solo los desafíos técnicos \parencite{zheng2018blockchain} sino también los regulatorios, de gobernanza y de adopción \parencite{tan2022blockchain}. La ausencia de soluciones integrales reportadas para el flujo completo de gestión de fotocomparendos representa una brecha significativa en la aplicación práctica de estas tecnologías combinadas.
+\paragraph{Lecciones aprendidas} La principal lección aprendida de áreas adyacentes es la importancia de abordar no solo los desafíos técnicos \parencite{zheng2018blockchain} sino también los regulatorios, de gobernanza y de adopción \parencite{tan2022blockchain}. La ausencia de soluciones integrales reportadas para el flujo completo de gestión de fotocomparendos representa una brecha significativa, particularmente en contextos donde la ciudadanía carece de mecanismos para verificar independientemente la validez de las sanciones impuestas.
 
 El análisis del estado del arte revela avances significativos, pero también limitaciones claras: 
   
@@ -126,7 +126,7 @@ Existe una notable ausencia de soluciones documentadas que implementen el flujo 
 
 
 \paragraph{Verificación participativa}
-Los sistemas actuales raramente permiten que el ciudadano verifique independientemente la autenticidad e integridad de la evidencia presentada contra ellos, limitando los beneficios de transparencia inherentes a blockchain. 
+Los sistemas actuales raramente permiten que el ciudadano verifique independientemente la autenticidad e integridad de la evidencia presentada contra ellos, limitando los beneficios de transparencia inherentes a blockchain. Esta opacidad genera un vacío de confianza que, en algunos contextos, ha sido explotado por terceros mediante esquemas fraudulentos. 
 
 \paragraph{Adopción en Bogotá}
  La literatura muestra una escasez notable de implementaciones o estudios piloto en contextos latinoamericanos, donde factores como confianza institucional, infraestructura tecnológica y marcos regulatorios presentan desafíos particulares. \parencite{choquevilca2024blockchain, rezabala2025blockchain}
@@ -143,7 +143,7 @@ Aborda la brecha de aplicación específica, llevando los conceptos teóricos \p
 
 \item Aumentar la eficiencia operativa mediante la automatización del registro, verificación y pago. 
 
-\item Reducir disputas y costos asociados a la gestión manual y a la falta de confianza en la evidencia. 
+\item Reducir disputas y costos asociados a la gestión manual y a la falta de confianza en la evidencia, factores que en sistemas centralizados generan cargas operativas significativas. 
 
 \item Explorar un modelo innovador de pago automatizado condicional basado en la verificación en blockchain. 
 \end{itemize}
