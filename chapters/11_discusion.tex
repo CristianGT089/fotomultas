@@ -194,8 +194,13 @@ El siguiente cuadro resume las diferencias clave entre el entorno de pruebas y e
     \item \textbf{Integración institucional:} Las APIs simuladas no reflejan la complejidad real.
 \end{itemize}
 
+\subsubsection{Alineación con las variables del problema de investigación}
+Los cinco estados validados (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED) corresponden a las transiciones donde la manipulación de datos tiene impacto directo en las cuatro variables identificadas en la Formulación del problema: la tasa de impugnación del 34.1\% se mitiga al garantizar inmutabilidad desde PENDING; la carga de 155,854 PQRSD semestrales se aborda al proporcionar trazabilidad completa en APPEALED$\rightarrow$RESOLVED\_APPEAL; la vulnerabilidad ciudadana se reduce mediante auditoría de CANCELLED; y el potencial detrimento patrimonial disminuye al eliminar posibilidades de fraude en todas las transiciones críticas.
+
+La metodología de desarrollo por prototipos permite que esta base inicial evolucione según las necesidades operativas. El diseño extensible del \textit{smart contract} (mediante el tipo enumerado \texttt{FineState}) facilita agregar estados como NOTIFICADA o CERRADA en iteraciones futuras sin rediseñar la arquitectura.
+
 \subsubsection{Conclusión: Éxito como condición necesaria pero no suficiente}
-El resultado "Exitoso" es necesario, pero no suficiente para validar la solución en producción. El sistema debe además superar auditorías externas, pruebas de carga real, integración institucional y operación bajo estándares de servicio. El presente trabajo cubre la verificación técnica; la validación operativa queda como trabajo futuro.
+El resultado ``Exitoso'' es necesario, pero no suficiente para validar la solución en producción. El sistema debe además superar auditorías externas, pruebas de carga real, integración institucional y operación bajo estándares de servicio. El presente trabajo cubre la verificación técnica; la validación operativa queda como trabajo futuro.
 
 \subsection{Limitaciones y restricciones}
 

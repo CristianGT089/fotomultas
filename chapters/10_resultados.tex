@@ -103,9 +103,9 @@ Como se explica en el capítulo de Implementación (sección 8) y la Tabla~\ref{
 
 Los estados conceptuales NOTIFICADA y CERRADA, no implementados en esta versión del prototipo, pueden agregarse en una implementación de producción siguiendo el mismo patrón de eventos \textit{blockchain} y validación de transiciones. Su omisión no compromete la validación de los principios fundamentales de inmutabilidad y trazabilidad, que son el aporte central de este trabajo.
 
-\subsection{Justificación de cobertura de estados y limitaciones intencionales}
+\subsection{Cobertura de estados y extensibilidad del prototipo}
 
-El prototipo implementa cinco de los ocho estados teóricos, priorizando aquellos con impacto directo en la integridad y trazabilidad del proceso sancionatorio. La matriz siguiente resume el criterio de selección:
+El prototipo implementa cinco estados que constituyen una base funcional para validar los principios de inmutabilidad y trazabilidad. La arquitectura del \textit{smart contract} fue diseñada para ser extensible: el tipo enumerado \texttt{FineState} en Solidity permite agregar nuevos estados sin modificar la lógica existente, siguiendo el principio abierto/cerrado de diseño de software. La matriz siguiente resume los estados implementados en esta versión:
 
 \begin{table}[H]
 \centering
@@ -131,20 +131,31 @@ CANCELADA & Auditabilidad & \checkmark & Control administrativo \\
 CERRADA & Estado pasivo & \ding{55} & No afecta integridad \\
 \hline
 \end{tabular}
-\caption{Cobertura de estados: sólo se implementan los que afectan la integridad y trazabilidad.}
+\caption{Estados implementados en el prototipo y su relevancia para la validación de integridad.}
 \label{tab:cobertura_estados_justificacion}
 \end{table}
 
-\subsubsection{Estados excluidos}
-\paragraph{NOTIFICADA} Requiere verificación física mediante oráculos externos, fuera del alcance experimental.\newline
-\paragraph{CERRADA} Estado administrativo sin impacto en la integridad; su omisión no afecta la validez técnica.
+\subsubsection{Estados pendientes de implementación}
+Los estados NOTIFICADA y CERRADA no fueron incluidos en esta versión del prototipo:
+\begin{itemize}
+    \item \textbf{NOTIFICADA:} Requiere integración con oráculos externos (servicios de correo, SMS) para verificar eventos del mundo físico, lo cual constituye un desarrollo de complejidad comparable al presente proyecto.
+    \item \textbf{CERRADA:} Estado administrativo de cierre que puede agregarse siguiendo el mismo patrón de transiciones implementado.
+\end{itemize}
 
-\subsubsection{Validación técnica}
-Las pruebas demuestran que en los cinco estados implementados:
+\subsubsection{Extensibilidad y trabajo futuro}
+La metodología de desarrollo por prototipos adoptada en este trabajo permite la evolución incremental del sistema. Agregar nuevos estados al \textit{smart contract} requiere únicamente:
+\begin{enumerate}
+    \item Extender el \texttt{enum FineState} con el nuevo estado
+    \item Definir las transiciones válidas desde/hacia el nuevo estado
+    \item Agregar pruebas unitarias correspondientes
+\end{enumerate}
+
+Esta arquitectura extensible garantiza que futuras iteraciones puedan incorporar estados adicionales según las necesidades operativas, sin requerir rediseño de la solución base. Los cinco estados implementados proporcionan una base sólida que cubre las transiciones críticas del ciclo de vida de un comparendo y validan exitosamente los principios fundamentales de inmutabilidad y trazabilidad.
+
+\subsubsection{Validación técnica de los estados implementados}
+Las pruebas ejecutadas demuestran que en los cinco estados implementados:
 \begin{itemize}
     \item \textbf{Alteraciones rechazadas:} 100\% de intentos de modificación fueron bloqueados por el consenso.
     \item \textbf{Trazabilidad completa:} Todas las transiciones y actores quedan registrados y auditables.
     \item \textbf{Verificabilidad independiente:} Cualquier usuario puede auditar el historial sin credenciales especiales.
 \end{itemize}
-
-En síntesis, la selección de estados responde a criterios técnicos de impacto y viabilidad experimental. La omisión de NOTIFICADA y CERRADA es metodológica y no compromete la validez científica del prototipo.
