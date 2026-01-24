@@ -3,7 +3,6 @@
     man,   
     spanish,
     12pt,
-    donotrepeattitle,
     floatsintext,
     hidelinks % Opción para hyperref pasada a la clase
 ]{apa7}
@@ -50,6 +49,8 @@
 % xcolor con opción table se carga via PassOptionsToPackage arriba
 \usepackage{caption}
 \usepackage{longtable}    % Tablas que se extienden por múltiples páginas
+\usepackage{setspace}     % Para control de interlineado
+\usepackage{ragged2e}     % Para alineación que mantiene sangría
 % \captionsetup[figure]{labelformat=default,labelsep=period,name=Figura,position=above,labelfont=bf,textfont=it}
 \captionsetup[table]{labelformat=default,labelsep=period,name=Tabla}
 % \usepackage{epstopdf}
@@ -87,6 +88,10 @@
 \keywords{Fotocomparendos, Gestión de datos, Blockchain, Ingeniería web}
 
 \begin{document}
+
+% Configuración APA 7: Sangría y espaciado
+\setlength{\parindent}{1.27cm} % 0.5 pulgadas de sangría en primera línea
+\doublespacing % Doble espacio según APA 7
 % \maketitle
 \include{cover}
 
