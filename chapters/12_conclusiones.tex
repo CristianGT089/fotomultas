@@ -107,7 +107,7 @@ En síntesis, el prototipo demuestra viabilidad técnica y proporciona mecanismo
 \subsubsection{Cierre de ciclo: Oráculos para notificación en la cadena de custodia}
 
 
-Si bien el prototipo desarrollado valida de manera rigurosa la inmutabilidad en los estados críticos del proceso (PENDING, PAID, APPEALED, RESOLVED_APPEAL, CANCELLED), la transición al entorno operativo exige abordar una brecha conceptual relevante: la certificación del estado NOTIFICADA, correspondiente a la notificación física y fehaciente al ciudadano.
+Si bien el prototipo desarrollado valida de manera rigurosa la inmutabilidad en los estados críticos del proceso (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), la transición al entorno operativo exige abordar una brecha conceptual relevante: la certificación del estado NOTIFICADA, correspondiente a la notificación física y fehaciente al ciudadano.
 
 En el marco arquitectónico propuesto, el estado NOTIFICADA requiere la intervención de un \textbf{oráculo}, entendido como un mecanismo técnico que permite incorporar evidencia verificable proveniente del mundo físico (por ejemplo, comprobantes de notificación postal, registros de mensajería SMS, o certificaciones de correo electrónico) en la infraestructura blockchain. Esta función excede el alcance experimental del prototipo, dado que implica:
 
@@ -124,7 +124,7 @@ Para una implementación en ambiente productivo, se recomienda que la fase opera
     \item \textbf{Selección de oráculo:} Evaluar soluciones consolidadas en el mercado, como Chainlink Automation, que permiten la notarización de eventos externos con garantías criptográficas robustas.
     \item \textbf{Integración con proveedores certificados:} Formalizar convenios con empresas de mensajería y correos que actúen como \textit{attesters} de la notificación, mediante la emisión de comprobantes electrónicos firmados.
     \item \textbf{Validación legal:} Garantizar que las pruebas criptográficas generadas por el oráculo sean reconocidas por las autoridades regulatorias competentes, tales como la Superintendencia Financiera y la Superintendencia de Industria y Comercio.
-    \item \textbf{Cierre de la cadena de custodia:} Con la certificación del estado NOTIFICADA mediante oráculo, y la gestión inmutable de los estados PENDING, PAID, APPEALED, RESOLVED_APPEAL y CANCELLED en blockchain, se logra una trazabilidad integral y auditable de todo el ciclo de vida del fotocomparendo (GENERADA → NOTIFICADA → [proceso] → PAGADA/CANCELADA → CERRADA).
+    \item \textbf{Cierre de la cadena de custodia:} Con la certificación del estado NOTIFICADA mediante oráculo, y la gestión inmutable de los estados PENDING, PAID, APPEALED, RESOLVED\_APPEAL y CANCELLED en blockchain, se logra una trazabilidad integral y auditable de todo el ciclo de vida del fotocomparendo (GENERADA → NOTIFICADA → [proceso] → PAGADA/CANCELADA → CERRADA).
 \end{enumerate}
 
 En síntesis, el análisis realizado permite concluir que el prototipo cumple con el objetivo científico de demostrar la viabilidad técnica de blockchain para garantizar la inmutabilidad y trazabilidad en el proceso de fotocomparendos. La extensión hacia la certificación del estado NOTIFICADA mediante oráculos constituye un requisito ingenieril indispensable para la completitud operativa, sin que ello modifique las conclusiones técnicas ni la validez del enfoque propuesto.

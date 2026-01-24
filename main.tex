@@ -8,6 +8,9 @@
     hidelinks % Opción para hyperref pasada a la clase
 ]{apa7}
 
+% --- Pasar opciones a paquetes antes de que la clase los cargue ---
+\PassOptionsToPackage{table}{xcolor}
+
 % --- Codificación y Lenguaje ---
 \usepackage[utf8]{inputenc} 
 \usepackage{newunicodechar}
@@ -21,6 +24,9 @@
 \newunicodechar{ć}{c'}  % U+0107 LATIN SMALL LETTER C WITH ACUTE
 \newunicodechar{ı}{i}  % U+0131 LATIN SMALL LETTER DOTLESS I
 \newunicodechar{≤}{\ensuremath{\leq}}  % U+2264 LESS-THAN OR EQUAL TO
+\usepackage{amssymb}  % Para símbolos como checkmark
+\newunicodechar{✓}{\ensuremath{\checkmark}}  % U+2713 CHECK MARK
+\newunicodechar{→}{\ensuremath{\rightarrow}}  % U+2192 RIGHTWARDS ARROW
 
 % --- Bibliografía con biblatex-apa ---
 \usepackage[
@@ -40,7 +46,7 @@
 \usepackage{adjustbox}    
 \usepackage{multirow}     
 \usepackage{array}
-\usepackage{colortbl}     % Colores en tablas
+% xcolor con opción table se carga via PassOptionsToPackage arriba
 \usepackage{caption}
 \usepackage{longtable}    % Tablas que se extienden por múltiples páginas
 % \captionsetup[figure]{labelformat=default,labelsep=period,name=Figura,position=above,labelfont=bf,textfont=it}
