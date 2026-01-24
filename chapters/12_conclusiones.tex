@@ -1,145 +1,31 @@
-\section{Conclusiones y trabajo futuro}
+\section{Conclusiones}
 
-El presente trabajo logró diseñar y desarrollar exitosamente un prototipo basado en una metodología de software que garantiza el registro inmutable y la trazabilidad completa de estados en el proceso de fotocomparendos en Bogotá mediante tecnologías de redes distribuidas. La arquitectura híbrida \textit{blockchain} que combina Hyperledger Fabric (privacidad) y Ethereum (transparencia pública) demuestra ser técnicamente viable para la gestión de fotocomparendos, abordando las limitaciones críticas identificadas en el sistema FÉNIX actual: modificación no autorizada de registros, falta de trazabilidad completa, vulnerabilidad de evidencia fotográfica y desconfianza ciudadana reflejada en una tasa de impugnación del 34.1\%.
+El presente estudio logró diseñar y desarrollar un prototipo de software que evidenció la viabilidad técnica de garantizar el registro inmutable y la trazabilidad de estados en el proceso de fotocomparendos mediante tecnologías de redes distribuidas. La arquitectura híbrida implementada, integrando Hyperledger Fabric para datos sensibles, Ethereum para metadatos públicos e IPFS para evidencias digitales, demostró en un entorno experimental controlado que es posible sustituir la confianza administrativa por garantías criptográficas verificables. Los resultados obtenidos evidenciaron que, en el alcance experimental definido, el sistema rechazó el 100\% de los intentos de modificación no autorizada mediante los mecanismos de consenso distribuido, alcanzó una efectividad del 97.5\% en la detección de alteraciones en evidencias fotográficas mediante Content Identifiers, y registró tiempos promedio de respuesta de 2.7 s para el registro completo de infracciones, cumpliendo con los criterios de desempeño establecidos para aplicaciones en tiempo real.
 
-Las pruebas realizadas confirman que el sistema cumple con los principios propuestos: el 100\% de los intentos de modificación fueron rechazados por los mecanismos de consenso, el sistema de direccionamiento por contenido (CID) de IPFS detectó automáticamente todas las alteraciones simuladas, y los tiempos de respuesta medidos (<3 segundos) validan que la arquitectura es viable para aplicaciones en tiempo real con 457,000 comparendos semestrales.
+La validación funcional confirmó la gestión adecuada de cinco estados críticos del ciclo de vida del comparendo (\texttt{PENDING}, \texttt{PAID}, \texttt{APPEALED}, \texttt{RESOLVED\_APPEAL} y \texttt{CANCELLED}), generando para cada transición un registro con timestamp criptográfico, estado anterior y posterior, razón del cambio e identificación del actor ejecutor. Este comportamiento demostró la capacidad del prototipo para establecer trazabilidad completa en el entorno de prueba, ofreciendo una solución técnica a la auditoría fragmentada identificada en el sistema FÉNIX. Respecto a las debilidades críticas del sistema actual, los resultados sugieren que la implementación de esta arquitectura podría mitigar los riesgos asociados al presunto detrimento patrimonial documentado por la Contraloría de Bogotá, reducir la carga operativa derivada de las 155,854 PQRSD semestrales, y contribuir a disminuir la tasa de impugnación del 34.1\% mediante mecanismos de verificación independiente que empoderan al ciudadano para auditar la autenticidad de las infracciones sin intermediarios, siempre que se traslade a un entorno productivo con las adaptaciones necesarias.
 
-El backend implementado con interfaces REST estándar y el \textit{frontend} desarrollado con React demuestran que las tecnologías \textit{blockchain} pueden abstraerse detrás de APIs convencionales e integrarse con interfaces modernas sin comprometer la experiencia del usuario, facilitando la adopción por parte de instituciones gubernamentales.
+\subsection{Limitaciones del Estudio}
 
-\subsection{Viabilidad de implementación}
+Es necesario reconocer explícitamente que los resultados obtenidos están condicionados por el alcance metodológico del prototipo. La validación se realizó exclusivamente con datos sintéticos, lo cual limita la generalización de los hallazgos a escenarios con datos reales que podrían presentar inconsistencias, formatos heterogéneos o casos atípicos no contemplados en las pruebas. El volumen transaccional evaluado (50--100 comparendos de prueba) no equivale a la carga operativa real de 457,000 comparendos semestrales, por lo que el comportamiento del sistema bajo estrés masivo requiere validación empírica adicional. La ausencia de auditoría externa formal de los contratos inteligentes y la no evaluación de la aceptación tecnológica por parte de usuarios finales constituyen restricciones que deben abordarse antes de considerar una implementación productiva.
 
-La evaluación integral del prototipo permite afirmar que la implementación de esta arquitectura en el contexto real de Bogotá es viable desde las perspectivas técnica, económica y operacional:
+\subsection{Viabilidad de Implementación}
 
-\paragraph{Viabilidad técnica}
+Desde la perspectiva técnica, los resultados obtenidos en el entorno experimental indican que la arquitectura podría escalar para procesar el volumen operativo de Bogotá mediante la configuración de 3--5 nodos Hyperledger Fabric. Sin embargo, estrategias como el \textit{sharding} de canales por tipo de infracción o la migración a soluciones Layer 2 en Ethereum, aunque viables teóricamente, introducirían una complejidad arquitectónica significativa que debería gestionarse cuidadosamente en un despliegue productivo. La viabilidad económica se proyecta favorablemente, estimándose un retorno de inversión entre 18--24 meses, sustentada en la transformación de costos variables de litigio y gestión manual de PQRSD en costos fijos de infraestructura predecibles, considerando una reducción potencial del 30--50\% en solicitudes relacionadas con dudas sobre integridad de datos, aunque estos cálculos corresponden a estimaciones basadas en datos documentados y no en mediciones empíricas de costos operativos reales.
 
-Los resultados de las pruebas de rendimiento (Tabla~\ref{tab:rendimiento}) demuestran que el prototipo cumple con los criterios técnicos establecidos en los objetivos específicos. El tiempo promedio de registro completo de un comparendo (incluyendo \textit{upload} a IPFS, transacción en Hyperledger Fabric y publicación de metadatos en Ethereum) fue de 2.7 segundos, por debajo del umbral objetivo de ≤3 segundos. Extrapolando estos resultados al volumen operativo real de Bogotá (457,000 comparendos semestrales, equivalente a ~3,000 diarios), la arquitectura puede procesar esta carga con los recursos de infraestructura estimados: 3-5 nodos Hyperledger Fabric, 1 nodo Ethereum (o conexión a red pública), y 2-3 nodos IPFS con replicación.
+En términos operacionales, la estrategia de migración \textit{dual-write} (operación paralela con el sistema FÉNIX actual) y la migración por fases (piloto de 5,000--10,000 multas reales previo a la integración con SIMIT y RUNT) representan rutas técnicamente factibles, pero su éxito depende de factores institucionales y políticos que exceden el alcance de este estudio técnico.
 
-Las consideraciones de escalabilidad identificadas en la sección de Discusión (11.4.1) indican que, para garantizar el rendimiento en escenarios de pico (ej. campañas de fotodetección masiva), se requerirían optimizaciones como \textit{sharding} de canales en Fabric por tipo de infracción y uso de soluciones \textit{Layer 2} en Ethereum para reducir latencia. No obstante, estas son mejoras incrementales sobre una arquitectura base ya validada.
+\subsection{Gobernanza de la Red Blockchain}
 
-\paragraph{Viabilidad económica}
+El modelo de gobernanza propuesto, basado en un consorcio multi-\textit{stakeholder} con nodos validadores (Secretaría Distrital de Movilidad, Contraloría de Bogotá y Policía Nacional) operando bajo consenso PBFT que requiere mayoría de 2 de 3 para aprobar transacciones, presenta viabilidad teórica para distribuir el poder de validación y mitigar riesgos de manipulación unilateral. Este esquema se alinea con el marco legal colombiano, particularmente con la Ley 1712 de 2014 (transparencia de metadatos públicos en Ethereum) y la Ley 1581 de 2012 (protección de datos sensibles en Hyperledger Fabric), y encuentra precedentes conceptuales en infraestructuras como X-Road de Estonia. No obstante, la implementación efectiva de este modelo requiere acuerdos interadministrativos formales y voluntad política que deben negociarse fuera del ámbito técnico de este prototipo.
 
-El análisis costo-beneficio presentado en la sección de Discusión (11.3.2) establece que la inversión inicial estimada para implementación en producción se justifica ampliamente frente a los beneficios cuantificables. Considerando que el presunto detrimento patrimonial identificado por la Contraloría de Bogotá en el sistema FÉNIX asciende a más de \$8,000 millones de pesos, y que la carga operativa de procesar 155,854 PQRSD semestrales representa costos administrativos sustanciales, el retorno de inversión (ROI) proyectado se estima en 18-24 meses de operación.
+\subsection{Trabajo Futuro}
 
-Los costos operativos principales de la arquitectura \textit{blockchain} incluyen: (1) infraestructura de servidores para nodos Fabric e IPFS (cloud o \textit{on-premise}), (2) \textit{gas fees} en Ethereum para transacciones públicas (mitigables mediante uso de redes \textit{Layer 2} o Ethereum \textit{testnets} subsidiadas), y (3) personal técnico especializado para mantenimiento. Estos costos son comparables o inferiores a los costos de auditoría, litigio y procesamiento de PQRSD del sistema actual, con el beneficio adicional de reducción proyectada del 30-50\% en PQRSD relacionadas con dudas sobre integridad de evidencia.
+Derivado de las limitaciones identificadas, se proponen líneas de investigación que permitan trasladar el prototipo validado a un entorno de producción. En primer lugar, dado que el estudio utilizó datos sintéticos, es fundamental realizar una validación empírica mediante un piloto controlado con 5,000--10,000 multas reales para evaluar el desempeño bajo condiciones operativas auténticas, integrando datos reales de SIMIT y RUNT, complementado con estudios de aceptación tecnológica mediante modelos como TAM o UTAUT para medir la percepción de confianza y usabilidad en agentes de tránsito y ciudadanos.
 
-\paragraph{Viabilidad operacional}
+Simultáneamente, es necesario abordar la evaluación de escalabilidad técnica, considerando que el volumen de prueba no equivalió a la carga real de 457,000 comparendos semestrales. Se recomienda investigar el comportamiento del sistema bajo estrés masivo, implementando \textit{Private Data Collections} en Fabric para granularizar el acceso a datos sensibles y evaluando la migración a soluciones de Capa 2, como Polygon o Arbitrum, para reducir costos y latencias en la capa pública, aunque estas optimizaciones introducirían una complejidad arquitectónica significativa que debería gestionarse cuidadosamente.
 
-La integración del prototipo con sistemas existentes es factible mediante las interfaces REST documentadas con Swagger. El diseño modular permite una migración gradual desde el sistema FÉNIX actual: en una primera fase, ambos sistemas pueden operar en paralelo (\textit{dual-write}), con el \textit{blockchain} actuando como registro de auditoría inmutable mientras FÉNIX mantiene operaciones transaccionales. Una vez validada la estabilidad, el \textit{blockchain} puede convertirse en el sistema de registro primario (\textit{system of record}).
+Adicionalmente, para completar el ciclo de custodia digital--física que el prototipo no alcanzó a validar, se propone investigar la integración de oráculos certificadores que permitan registrar el estado \texttt{NOTIFICADA} en la cadena de bloques. Esta línea de trabajo requeriría establecer convenios con empresas de mensajería y operadores postales que actúen como \textit{attesters} criptográficos, generando pruebas de entrega física verificables \textit{on-chain} y cerrando así la brecha entre el evento de notificación en el mundo físico y su registro inmutable, garantizando la trazabilidad integral desde la generación hasta el cierre del proceso.
 
-Los requisitos de capacitación para personal de la SDM son moderados. Los agentes de tránsito interactuarían con la misma interfaz web que actualmente usan, con cambios mínimos en flujo de trabajo. El personal técnico requeriría formación en Hyperledger Fabric y administración de nodos IPFS, pero la abstracción mediante API REST minimiza la complejidad para desarrolladores de aplicaciones frontales.
+En cuanto a la extensión funcional, se propone evaluar la implementación de módulos de pagos integrados (PSE, billeteras digitales), sistemas de apelaciones en línea con flujos automatizados, notificaciones automáticas a ciudadanos y \textit{dashboards} analíticos para la toma de decisiones institucionales, funcionalidades que extenderían el prototipo más allá de la trazabilidad básica hacia una usabilidad operativa completa.
 
-La ruta de migración propuesta incluye: (1) fase piloto con 5,000-10,000 comparendos reales, (2) evaluación de rendimiento bajo carga real y ajustes de optimización, (3) migración gradual por tipo de infracción (comenzando con fotomultas de cámaras salvavidas), y (4) integración con sistemas nacionales como SIMIT y RUNT para interoperabilidad completa.
-
-\subsection{Gobernanza de la red blockchain}
-
-Un aspecto fundamental para la implementación exitosa de esta arquitectura es el modelo de gobernanza de la red \textit{blockchain}, que determina quién opera los nodos, cómo se toman decisiones sobre actualizaciones del sistema, y cómo se balancea la descentralización con la responsabilidad institucional.
-
-\paragraph{Modelo de gobernanza propuesto para consorcio}
-
-Se propone un modelo de consorcio multi-stakeholder donde la red Hyperledger Fabric sea operada por las siguientes entidades:
-
-\begin{itemize}
-    \item \textbf{Nodos Validadores:} Secretaría Distrital de Movilidad (SDM), Contraloría de Bogotá, y Policía Nacional - Dirección de Tránsito y Transporte. Estos tres nodos participan en el consenso PBFT (\textit{Practical Byzantine Fault Tolerance}) para validar transacciones. La configuración requiere mayoría (2 de 3) para aprobar bloques, garantizando que ninguna entidad única pueda manipular registros unilateralmente.
-
-    \item \textbf{Nodos Observadores:} Veeduría Distrital y organizaciones ciudadanas autorizadas (ej. organizaciones de derechos del consumidor). Estos nodos tienen acceso de solo lectura al \textit{ledger}, permitiendo auditoría independiente sin participar en consenso.
-
-    \item \textbf{Gestión de Identidades:} Fabric Certificate Authority (CA) administrada por la SDM, con políticas de multi-firma para cambios críticos (creación de nuevos usuarios administradores, revocación de certificados). Esto previene que un solo actor comprometa el sistema de identidades.
-
-    \item \textbf{Actualización de \textit{Chaincode}:} Cualquier modificación a los \textit{smart contracts} requiere aprobación de 2 de 3 nodos validadores (SDM + Contraloría + Policía), siguiendo el proceso estándar de Hyperledger Fabric \textit{Lifecycle}. Esto garantiza que cambios en lógica de negocio sean consensuados y auditados.
-\end{itemize}
-
-\paragraph{Aplicabilidad al contexto de fotocomparendos}
-
-Este modelo de gobernanza descentralizada aborda directamente el problema de confianza identificado en el sistema actual. Mientras el sistema FÉNIX centraliza el control en la SDM, generando la desconfianza reflejada en la tasa de impugnación del 34.1\%, el modelo de consorcio distribuye el poder de validación entre múltiples actores con intereses balanceados: la SDM (operación), la Contraloría (fiscalización), y la Policía (autoridad de tránsito).
-
-El modelo \textit{permissioned blockchain} (red permisionada) equilibra transparencia con privacidad de forma coherente con el marco legal colombiano:
-
-\begin{itemize}
-    \item \textbf{Transparencia:} Los metadatos publicados en Ethereum permiten verificación ciudadana independiente, cumpliendo con la Ley 1712 de 2014 (Transparencia y Acceso a Información Pública).
-
-    \item \textbf{Privacidad:} Los datos personales sensibles permanecen en Hyperledger Fabric con acceso controlado, cumpliendo con la Ley 1581 de 2012 (Protección de Datos Personales) y normativa GDPR aplicable.
-\end{itemize}
-
-La supervisión multi-entidad (\textit{multi-stakeholder oversight}) proporciona \textit{checks-and-balances} que previenen manipulación unilateral de registros, un problema recurrente en sistemas centralizados de gobierno según documentan casos internacionales revisados en el Estado del Arte (sección 4).
-
-\paragraph{Consideraciones regulatorias y viabilidad}
-
-El modelo de gobernanza propuesto es coherente con el marco regulatorio e institucional colombiano:
-
-\begin{itemize}
-    \item \textbf{Alineación legal:} Además de las Leyes 1712/2014 y 1581/2012 mencionadas, el modelo es compatible con el Código Nacional de Tránsito (Ley 769 de 2002 modificada por Ley 1843 de 2017) que establece las facultades sancionatorias de autoridades de tránsito y el debido proceso administrativo.
-
-    \item \textbf{Marco institucional:} La propuesta se alinea con la Estrategia de Gobierno Digital de MinTIC y las Guías de Transformación Digital del Departamento Administrativo de la Función Pública (DAFP), que promueven la adopción de tecnologías emergentes con gobernanza responsable.
-
-    \item \textbf{Precedentes internacionales:} El modelo de consorcio multi-entidad tiene precedentes exitosos en iniciativas como e-Estonia X-Road (infraestructura de datos gubernamentales con gobernanza distribuida entre múltiples agencias) y Dubai Land Department \textit{blockchain} (registro de propiedades con participación de desarrolladores, bancos y gobierno).
-\end{itemize}
-
-La viabilidad institucional depende de la voluntad política de las entidades participantes y acuerdos inter-administrativos que formalicen roles y responsabilidades. La experiencia internacional sugiere que proyectos piloto exitosos son el catalizador más efectivo para obtener \textit{buy-in} institucional.
-
-\subsection{Resolución de debilidades del sistema actual}
-
-El prototipo desarrollado aborda específicamente limitaciones técnicas identificadas en los informes de auditoría de la Contraloría de Bogotá sobre el sistema actual, así como desafíos técnicos generales en sistemas de registro administrativo documentados en el Estado del Arte (sección 4.4). La Tabla~\ref{tab:resolucion_debilidades_fenix} presenta un mapeo entre estos desafíos y la solución arquitectónica implementada, con referencia a las evidencias empíricas obtenidas en las pruebas de resultados.
-
-\input{tables/resolucion_debilidades_fenix.tex}
-
-Como se observa en la tabla, cada uno de los desafíos identificados tiene una solución técnica implementada en la arquitectura propuesta, validada mediante pruebas empíricas:
-
-\paragraph{Inmutabilidad criptográfica vs. susceptibilidad de modificación}
-La auditoría de la Contraloría identificó inquietudes sobre la trazabilidad de cambios en registros. La inmutabilidad criptográfica de \textit{blockchain} ofrece una solución: cualquier cambio intencional o accidental a un registro registrado sería matemáticamente detectable y trazable mediante el \textit{hash} del bloque. Las pruebas de la Tabla~\ref{tab:resumen_inmutabilidad} demuestran que en la arquitectura propuesta, el 100\% de intentos de modificación son rechazados por los mecanismos de consenso, garantizando que cualquier cambio después del registro inicial sea auditable.
-
-\paragraph{Trazabilidad completa vs. fragmentación potencial de auditoría}
-Un riesgo técnico general en sistemas basados en \textit{logs} convencionales es la dependencia de mecanismos externos para garantizar la integridad del registro de auditoría. En contraste, el \textit{blockchain ledger} implementado registra automáticamente cada transición de estado (GENERADA → NOTIFICADA → EN\_APELACION → RESUELTA\_APELACION → PAGADA/CANCELADA → CERRADA) con \textit{hash} criptográfico, \textit{timestamp} y firma digital del actor que ejecutó la transacción. Esto proporciona una cadena de custodia inherente al sistema. La Tabla~\ref{tab:validacion_estados} (sección 10.2) documenta que el prototipo cubre la totalidad de estados definidos.
-
-\paragraph{Integridad verificable de evidencia fotográfica}
-Un desafío identificado en sistemas de fotocomparendos es la dificultad para terceros de verificar de manera independiente y determinista la autenticidad de evidencia fotográfica. El uso de IPFS con CID (\textit{Content Identifier}) proporciona un mecanismo de verificación basado en contenido: cualquier alteración, incluso de un píxel, genera un CID diferente, permitiendo detectar cambios. Las pruebas de la sección 10.2 demuestran que en el prototipo, el 100\% de verificaciones de CID detectan correctamente cualquier alteración de contenido, validando que este mecanismo funciona como se espera.
-
-\paragraph{\textit{Timestamps} inmutables en registro distribuido}
-Un riesgo técnico de los sistemas convencionales es que los \textit{timestamps} son típicamente campos de base de datos editables. En una arquitectura \textit{blockchain}, los \textit{timestamps} son parte del \textit{hash} del bloque, haciendo su alteración retroactiva computacionalmente prohibitiva sin invalidar toda la cadena criptográfica. Esto proporciona mayor garantía sobre horarios de eventos registrados, lo cual es relevante para disputas sobre infracciones y notificaciones.
-
-\paragraph{Reducción de impugnaciones por transparencia}
-La tasa de impugnación del 34.1\% refleja desconfianza sistémica. Si bien no se realizaron pruebas de campo con ciudadanos reales (limitación del prototipo), la arquitectura proporciona la infraestructura técnica para verificación pública autónoma: cualquier ciudadano con el número de comparendo puede consultar metadatos en Ethereum y verificar el \textit{hash} de evidencia en IPFS público. La hipótesis, respaldada por literatura de \textit{e-government}, es que transparencia verificable reduce impugnaciones infundadas, aunque validar esto requiere un piloto controlado (propuesto en Trabajo Futuro).
-
-\paragraph{Defensa multicapa contra manipulación de registros}
-Literatura sobre fraudes en sistemas de registro documenta que la centralización de controles y opacidad en auditoría son factores de riesgo. La arquitectura propuesta implementa múltiples capas independientes de verificabilidad: (1) \textit{blockchain} con consenso distribuido para prevenir creación no autorizada de registros, (2) IPFS con contenido direccionable para detectar alteraciones de evidencia, y (3) \textit{hashing} criptográfico que vincula metadatos con contenido. Esta redundancia técnica requeriría que un atacante comprometiera simultáneamente múltiples sistemas con mecanismos de seguridad diferentes, aumentando significativamente la dificultad de manipulación no detectada.
-
-En síntesis, el prototipo demuestra viabilidad técnica y proporciona mecanismos arquitectónicos que aborden desafíos de integridad y auditabilidad identificados en la literatura sobre sistemas de registro administrativo y documentados en evaluaciones del sistema actual. La incorporación de garantías criptográficas en lugar de dependencia exclusiva de controles administrativos representa una mejora técnica con potencial de contribuir a la confianza en el sistema de fotocomparendos, aunque su validación completa requeriría un piloto con datos y usuarios reales.
-
-\subsubsection{Cierre de ciclo: Oráculos para notificación en la cadena de custodia}
-
-
-Si bien el prototipo desarrollado valida de manera rigurosa la inmutabilidad en los estados críticos del proceso (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), la transición al entorno operativo exige abordar una brecha conceptual relevante: la certificación del estado NOTIFICADA, correspondiente a la notificación física y fehaciente al ciudadano.
-
-En el marco arquitectónico propuesto, el estado NOTIFICADA requiere la intervención de un \textbf{oráculo}, entendido como un mecanismo técnico que permite incorporar evidencia verificable proveniente del mundo físico (por ejemplo, comprobantes de notificación postal, registros de mensajería SMS, o certificaciones de correo electrónico) en la infraestructura blockchain. Esta función excede el alcance experimental del prototipo, dado que implica:
-
-\begin{itemize}
-    \item Integración con sistemas de notificación operados por entidades certificadas (empresas postales, operadores de telecomunicaciones).
-    \item Implementación de mecanismos de verificación criptográfica para la validación de la entrega (por ejemplo, firmas digitales emitidas por el proveedor de notificación).
-    \item Contratación e integración de servicios de oráculos especializados (tales como ChainLink Automation, Band Protocol) que operan en ambientes de producción.
-    \item Aseguramiento de la validez jurídica de la cadena de custodia entre el evento físico y su registro en blockchain.
-\end{itemize}
-
-Para una implementación en ambiente productivo, se recomienda que la fase operativa contemple:
-
-\begin{enumerate}
-    \item \textbf{Selección de oráculo:} Evaluar soluciones consolidadas en el mercado, como Chainlink Automation, que permiten la notarización de eventos externos con garantías criptográficas robustas.
-    \item \textbf{Integración con proveedores certificados:} Formalizar convenios con empresas de mensajería y correos que actúen como \textit{attesters} de la notificación, mediante la emisión de comprobantes electrónicos firmados.
-    \item \textbf{Validación legal:} Garantizar que las pruebas criptográficas generadas por el oráculo sean reconocidas por las autoridades regulatorias competentes, tales como la Superintendencia Financiera y la Superintendencia de Industria y Comercio.
-    \item \textbf{Cierre de la cadena de custodia:} Con la certificación del estado NOTIFICADA mediante oráculo, y la gestión inmutable de los estados PENDING, PAID, APPEALED, RESOLVED\_APPEAL y CANCELLED en blockchain, se logra una trazabilidad integral y auditable de todo el ciclo de vida del fotocomparendo (GENERADA → NOTIFICADA → [proceso] → PAGADA/CANCELADA → CERRADA).
-\end{enumerate}
-
-En síntesis, el análisis realizado permite concluir que el prototipo cumple con el objetivo científico de demostrar la viabilidad técnica de blockchain para garantizar la inmutabilidad y trazabilidad en el proceso de fotocomparendos. La extensión hacia la certificación del estado NOTIFICADA mediante oráculos constituye un requisito ingenieril indispensable para la completitud operativa, sin que ello modifique las conclusiones técnicas ni la validez del enfoque propuesto.
-
-\subsection{Trabajo futuro}
-
-Para la evolución del proyecto se proponen las siguientes líneas de trabajo:
-
-\begin{enumerate}
-    \item \textbf{Escalamiento a producción:} Escalar la red Fabric a múltiples organizaciones (SDM, Policía, Auditoría), implementar Private Data Collections, y desplegar nodos IPFS en infraestructura distribuida con políticas de replicación.
-
-    \item \textbf{Piloto controlado:} Realizar un piloto con la Secretaría Distrital de Movilidad utilizando datos reales (5,000-10,000 multas), integración con SIMIT/RUNT y evaluación de rendimiento bajo carga operativa.
-
-    \item \textbf{Funcionalidades avanzadas:} Implementar módulo de pagos integrado (PSE, billeteras digitales), sistema de apelaciones en línea, notificaciones automáticas y dashboard analítico para toma de decisiones.
-
-    \item \textbf{Replicabilidad:} Adaptar la arquitectura para otras ciudades colombianas mediante federación de redes Fabric, explorar soluciones Layer 2 para reducción de costos de gas, y proponer estandarización nacional de Smart Contracts.
-\end{enumerate}
-
+Finalmente, antes de cualquier despliegue productivo, resulta imperativo ejecutar auditorías de seguridad y cumplimiento normativo. Se propone realizar análisis estático formal de contratos inteligentes utilizando herramientas especializadas como Slither o MythX, pruebas de penetración de la API REST y procesos de certificación conforme a la Ley 1581 de 2012 sobre protección de datos personales. A largo plazo, se sugiere investigar la replicabilidad y estandarización mediante la federación de redes Fabric con otras ciudades colombianas, proponiendo estándares nacionales de contratos inteligentes que permitan evaluar la viabilidad de replicar esta arquitectura en contextos institucionales diferentes, analizando las adaptaciones necesarias en marcos normativos locales.
