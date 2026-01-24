@@ -58,30 +58,7 @@ Dado que ninguna blockchain cumple simultáneamente con todos los requisitos (pr
 
 Para la capa privada se seleccionó Hyperledger Fabric tras un análisis comparativo de plataformas blockchain.
 
-\begin{table}[H]
-\centering
-\small
-\caption{Comparativo de plataformas blockchain para selección de arquitectura híbrida}
-\label{tab:comparacion_blockchains}
-\begin{tabular}{p{2.4cm}p{2.2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
-\toprule
-\textbf{Criterio} & \textbf{Hyperledger Fabric} & \textbf{Ethereum} & \textbf{Corda} & \textbf{Solana} & \textbf{Polygon} \\
-\midrule
-Tipo de red & Permisionada & Pública & Permisionada & Pública & Pública \\
-Consenso & Raft / BFT & PoS & Notario & PoH + PoS & PoS \\
-TPS & 2.000–20.000 & $\sim$30 & $\sim$1.000 & 65.000+ & 7.000+ \\
-Privacidad & Alta$^{(1)}$ & Nula & Alta (P2P) & Nula & Nula \\
-Smart contracts & Go, Java, Node.js & Solidity & Kotlin/Java & Rust/C & Solidity \\
-Control de acceso & PKI / Roles & Abierto & Identidad & Abierto & Abierto \\
-Moneda nativa & No & ETH & No & SOL & MATIC \\
-Costo / tx & Sin gas & Gas variable & Sin gas & Muy bajo & Muy bajo \\
-Madurez Gob. & Alta & Media & Alta (banca) & Baja (DeFi) & Media \\
-\bottomrule
-\end{tabular}
-\vspace{2pt}
-\footnotesize
-\label{tab:dlt_smart}
-\end{table}
+\input{tables/comparacion_plataformas_blockchain.tex}
 
 \textbf{Razones de elección de Hyperledger Fabric:}
 

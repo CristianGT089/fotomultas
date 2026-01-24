@@ -143,33 +143,7 @@ En sistemas tradicionales, "Exitoso" indica ausencia de errores. En blockchain, 
 \subsubsection{Matriz de Brechas: Entorno de Prueba vs. Producción}
 El siguiente cuadro resume las diferencias clave entre el entorno de pruebas y el contexto de producción:
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
-\hline
-\textbf{Dimensión} & \textbf{Laboratorio (Verificado)} & \textbf{Producción (Pendiente)} & \textbf{Factor de Riesgo} \\
-\hline
-\textbf{Volumen de multas} & 50-100 & 457,000 semestrales & 1000x \\
-\hline
-\textbf{Datos} & Sintéticos (formato uniforme) & Reales (inconsistencias, excepciones) & Variabilidad desconocida \\
-\hline
-\textbf{Blockchain Ethereum} & Testnet Hardhat (local) & Mainnet público & Latencia 10-30s vs. 2.7s \\
-\hline
-\textbf{IPFS} & Nodo local pinning 100\% & Cluster distribuido con retención & Complejidad operacional \\
-\hline
-\textbf{APIs externas (RUNT/SIMIT)} & Mock (respuesta instantánea) & Real (latencias 200-500ms) & Cascada de timeouts \\
-\hline
-\textbf{Auditoría de seguridad} & Testing interno (26 casos) & Auditoría formal 3eras & Vulnerabilidades no detectadas \\
-\hline
-\textbf{Gestión de claves} & Archivos .env & Hardware Security Modules & Riesgo de compromiso \\
-\hline
-\textbf{SLA de disponibilidad} & No aplicable & 99.9\% (27 min downtime/mes) & Resiliencia no probada \\
-\hline
-\end{tabular}
-\caption{Brechas Verification-Validation: Laboratorio vs. Producción. El éxito del prototipo se valida en la columna central; el riesgo en producción está en la columna derecha.}
-\label{tab:verification_validation_gaps}
-\end{table}
+\input{tables/matriz_brechas_produccion.tex}
 
 \subsubsection{Interpretación: Lo que el éxito técnico demuestra y lo que no}
 \paragraph{Aspectos validados}

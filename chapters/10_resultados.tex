@@ -107,33 +107,50 @@ Los estados conceptuales NOTIFICADA y CERRADA, no implementados en esta versión
 
 El prototipo implementa cinco estados que constituyen una base funcional para validar los principios de inmutabilidad y trazabilidad. La arquitectura del \textit{smart contract} fue diseñada para ser extensible: el tipo enumerado \texttt{FineState} en Solidity permite agregar nuevos estados sin modificar la lógica existente, siguiendo el principio abierto/cerrado de diseño de software. La matriz siguiente resume los estados implementados en esta versión:
 
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{|l|l|c|l|}
-\hline
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{10pt}
+\setlength{\LTpost}{10pt}
+\begin{longtable}{p{4cm}p{4cm}cp{4cm}}
+
+\caption{Estados implementados en el prototipo y su relevancia para la validación de integridad}
+\label{tab:cobertura_estados_justificacion} \\
+\toprule
 \textbf{Estado} & \textbf{Impacto Si se Manipula} & \textbf{Impl.} & \textbf{Razón} \\
-\hline
+\midrule
+\endfirsthead
+
+\caption[]{(Continuación)} \\
+\toprule
+\textbf{Estado} & \textbf{Impacto Si se Manipula} & \textbf{Impl.} & \textbf{Razón} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\multicolumn{4}{l}{\textbf{Nota.} Elaboración propia.} \\
+\endlastfoot
+
 GENERADA & Fraude directo & \checkmark & Registro inicial crítico \\
-\hline
+\midrule
 NOTIFICADA & Procedimiento externo & \ding{55} & Requiere oráculo físico \\
-\hline
+\midrule
 PENDIENTE\_RESPUESTA & Fraude temporal & \checkmark & Plazo legal relevante \\
-\hline
+\midrule
 EN\_APELACION & Acceso a justicia & \checkmark & Trazabilidad administrativa \\
-\hline
+\midrule
 RESUELTA\_APELACION & Autoridad judicial & \checkmark & Decisión administrativa \\
-\hline
+\midrule
 PAGADA & Fraude financiero & \checkmark & Cierre económico \\
-\hline
+\midrule
 CANCELADA & Auditabilidad & \checkmark & Control administrativo \\
-\hline
+\midrule
 CERRADA & Estado pasivo & \ding{55} & No afecta integridad \\
-\hline
-\end{tabular}
-\caption{Estados implementados en el prototipo y su relevancia para la validación de integridad.}
-\label{tab:cobertura_estados_justificacion}
-\end{table}
+\bottomrule
+\end{longtable}
 
 \subsubsection{Estados pendientes de implementación}
 Los estados NOTIFICADA y CERRADA no fueron incluidos en esta versión del prototipo:
