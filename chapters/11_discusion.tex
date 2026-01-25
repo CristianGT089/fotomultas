@@ -1,309 +1,56 @@
 \section{Discusión y análisis}
 
-Se presenta un análisis crítico de los resultados, contextualizando los hallazgos frente a los objetivos y el estado del arte. Se discuten las implicaciones de la arquitectura híbrida, sus ventajas sobre sistemas tradicionales y las principales lecciones técnicas.
+La pregunta de investigación interrogó cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados al proceso de fotocomparendos mediante tecnologías de redes distribuidas que garantizaran registro, trazabilidad, autenticidad y confidencialidad. Los resultados obtenidos en el entorno experimental sugieren que la implementación de una arquitectura híbrida, integrando Hyperledger Fabric para la gestión de datos sensibles, Ethereum para la publicación de metadatos verificables e IPFS para el almacenamiento distribuido de evidencia, permite responder afirmativamente a dicha interrogante, aunque de manera \textbf{parcial y condicionada al alcance del prototipo}. Específicamente, los hallazgos validan el análisis de vulnerabilidades estructurales del sistema FÉNIX mediante auditoría documental, el desarrollo de un prototipo funcional con arquitectura hexagonal y mecanismos de inmutabilidad criptográfica, y la evaluación técnica mediante plan de pruebas V\&V que arrojó tiempos de respuesta menores a 3 segundos y rechazo del 100\% de intentos de modificación no autorizada. No obstante, es imperativo establecer desde el inicio la distinción fundamental entre \textbf{verificación} (\textit{verification}) y \textbf{validación} (\textit{validation}) en el ciclo de vida del software: mientras el prototipo demuestra que el sistema fue construido correctamente según especificaciones técnicas (verificación de requisitos funcionales en laboratorio), no constituye una validación operativa que demuestre que el sistema funcionará adecuadamente bajo la carga real de 457.000 comparendos semestrales ni con la variabilidad de datos heterogéneos del RUNT y SIMIT \parencite{boehm1984,iso25010}. Este alcance metodológico condiciona toda la interpretación subsiguiente de los hallazgos.
 
-El prototipo desarrollado permite el registro y trazabilidad de estados en el proceso de fotocomparendos, fortaleciendo la integridad, autenticidad y confidencialidad de la información mediante una arquitectura híbrida: Hyperledger Fabric para datos privados y Ethereum para transparencia pública.
+\paragraph{Cierre explícito de la pregunta de investigación.}
+En síntesis de respuesta a la pregunta de investigación, los resultados evidencian que la mitigación del riesgo de alteración de integridad se logró técnica y criptográficamente para las dimensiones de \textit{registro} y \textit{trazabilidad}: el registro inmutable de transiciones de estado (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED) mediante eventos de smart contract con timestamps criptográficos demostró, en el entorno de prueba, una resistencia del 100\% a intentos de modificación \textit{ex post}, respondiendo al componente de integridad de la pregunta. La \textit{autenticidad} se satisfizo mediante la verificación de hashes IPFS (CID) contra registros blockchain, estableciendo una cadena de custodia digital detectable algorítmicamente. La \textit{confidencialidad} se resolvió arquitectónicamente segregando datos sensibles en Hyperledger Fabric (Private Data Collections) de metadatos públicos en Ethereum, cumpliendo con la Ley 1581 de 2012. Sin embargo, esta respuesta es \textbf{condicionada y parcial}: solo abarcó cinco de los ocho estados conceptuales del proceso (excluyendo NOTIFICADA y CERRADA), operó exclusivamente con datos sintéticos que no reflejan la variabilidad de placas extranjeras, vehículos especiales o inconsistencias del RUNT real, y no pudo validar la integridad \textit{ex ante} (veracidad de la captura fotográfica frente a fallas de calibración de cámaras). Por tanto, la tecnología blockchain demostró viabilidad para garantizar la integridad de datos \textit{una vez ingresados} al sistema, pero no para asegurar la veracidad de la evidencia física ni para operar a escala institucional sin degradación de rendimiento, aspectos que requieren validación empírica adicional antes de considerar la respuesta como definitiva.
 
-Las pruebas de inmutabilidad confirman que los registros son inalterables gracias a hashes criptográficos y CIDs en IPFS. La autenticidad se garantiza con firmas digitales y control de acceso en Fabric; la confidencialidad, manteniendo datos sensibles en la capa privada.
+\subsection{Análisis técnico-arquitectónico: decisiones de diseño, trade-offs y riesgos de implementación}
 
-Se implementaron dos blockchains: Fabric para registros privados con consenso PBFT y Ethereum para metadatos públicos con PoS. Cualquier intento de modificación es rechazado automáticamente por el consenso, asegurando la inmutabilidad de los registros.
+El análisis de las vulnerabilidades del sistema FÉNIX, en términos puramente arquitectónicos, revela que sus debilidades son estructurales: la dependencia de bases de datos relacionales centralizadas configura un único punto de fallo (\textit{single point of failure}) donde la integridad lógica depende de controles de acceso administrativos rather than de propiedades criptográficas del protocolo. Desde la perspectiva de ingeniería de sistemas, esto representa una deuda técnica de diseño donde la mutabilidad inherente a SQL (operaciones UPDATE/DELETE) es incompatible con los requisitos de auditoría forense para evidencia sancionatoria.
 
-Para la evidencia fotográfica, se utilizó IPFS con nodos privados y públicos, permitiendo verificación ciudadana y detección automática de alteraciones. El 100\% de las verificaciones de integridad fueron exitosas.
+La consecución del desarrollo del prototipo se materializó en una arquitectura hexagonal que separa responsabilidades mediante servicios especializados: \textit{HyperledgerService} para operaciones privadas, \textit{EthereumService} para publicación de hashes, y \textit{SyncService} para orquestación. Los resultados funcionales demuestran que el prototipo implementó cinco estados críticos del ciclo de vida del comparendo (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED) con trazabilidad completa mediante eventos de smart contract, validando así el requisito de trazabilidad del objetivo general. La evidencia de integridad —100\% de coincidencia entre hashes de IPFS y registros blockchain— valida el requisito de autenticidad.
 
-La API REST desarrollada abstrae la complejidad blockchain, permitiendo registro, consulta y verificación de multas a través de endpoints documentados. Las pruebas de integración muestran tiempos de respuesta menores a 3 segundos.
+\paragraph{Decisiones de trade-off explícitas.}
+Se evaluó inicialmente una arquitectura puramente pública en Ethereum \parencite{yousfi2022}, pero se descartó al proyectar costos de gas variables para un volumen de 457.000 comparendos anuales, lo cual violaría los principios de sostenibilidad presupuestal de entidades públicas colombianas y expondría datos personales sensibles en violación de la Ley 1581 de 2012. Se evaluó igualmente una solución exclusiva en Hyperledger Fabric, pero se determinó que carecería de la verificabilidad pública sin autenticación que exige el principio de transparencia de la Ley 1712 de 2014. La decisión final sacrificó la simplicidad operativa de una única tecnología (aumento de la complejidad cognitiva del equipo de mantenimiento) para ganar el equilibrio jurídico-técnico: Fabric gestiona el 90\% de las operaciones internas con >1.000 TPS y sin costos de gas, mientras Ethereum asume solo la publicación de hashes (15-30 TPS aceptable para metadatos públicos), optimizando costos y latencia sin sacrificar la verificabilidad ciudadana.
 
-La interfaz web, implementada en React, ofrece módulos diferenciados para agentes, ciudadanos y administración, integrando tecnologías modernas de frontend y gestión de estado.
+\paragraph{Riesgos técnicos residuales.}
+El \textit{SyncService} —componente Node.js responsable de la sincronización entre Fabric y Ethereum— operó en el prototipo como un proceso monolítico, constituyendo un \textit{Single Point of Failure} no mitigado que representa un riesgo de diseño crítico para la consistencia eventual entre cadenas. Si este servicio falla durante la sincronización, se genera un estado "huérfano" donde la multa existe en la red privada pero no es verificable públicamente, introduciendo una ventana de inconsistencia temporal de aproximadamente 5 segundos que, aunque tolerable para registro de infracciones, sería inaceptable para sistemas de pago en tiempo real. Adicionalmente, la dependencia de la disponibilidad continua de nodos IPFS para el \textit{pinning} de evidencias constituye un riesgo de persistencia: sin el mantenimiento activo de al menos un nodo con el contenido "anclado", los datos podrían volverse inaccesibles aunque su hash permanezca inmutable en blockchain.
 
-En síntesis, la arquitectura híbrida propuesta supera las limitaciones del sistema FÉNIX, optimiza costos, mejora la privacidad y transparencia, y es replicable en otros contextos gubernamentales. La solución es técnicamente viable y auditable, y sienta las bases para una adopción institucional escalable.
+En términos de métricas de diseño de software, la arquitectura alcanza un acoplamiento aferente (Ca) bajo en el módulo de blockchain, permitiendo sustituir Ethereum por Polygon sin modificar la lógica de negocio (principio OCP). Sin embargo, la complejidad operativa de mantener una red Hyperledger Fabric con múltiples organizaciones requiere competencias especializadas en gestión de certificados PKI y políticas de \textit{endorsement} que trascienden las capacidades típicas de equipos de TI gubernamentales estándar, representando una barrera de entrada significativa para la replicabilidad operativa.
 
-\subsection{Arquitectura híbrida}
+\subsection{Implicaciones socio-técnicas e institucionales: proyecciones de impacto y marco normativo}
 
-\subsubsection{Ventajas sobre arquitecturas monolíticas}
+Paralelamente al análisis técnico, es necesario examinar cómo la arquitectura propuesta altera los flujos organizacionales y la relación entre ciudadanía e institución. El sistema FÉNIX actual genera una asimetría informacional donde la legitimidad de los registros se presume pero no puede ser verificada autónomamente por el afectado, situación que la jurisprudencia constitucional colombiana ha señalado como riesgo para el debido proceso \parencite{corte2018}. La tasa de impugnación del 34,1 \% y las más de 155.000 PQRSD semestrales deben interpretarse no solo como indicadores de ineficiencia, sino como síntomas de una crisis de confianza institucional donde la opacidad técnica facilita la discrecionalidad administrativa.
 
-La arquitectura híbrida implementada presenta ventajas significativas sobre arquitecturas basadas en una sola blockchain:
+Los resultados vinculados a la evaluación técnica permiten proyectar —bajo condiciones ideales simuladas— un escenario de impacto socio-técnico potencial. El tiempo promedio de verificación de integridad se situó en aproximadamente 2,7 segundos en el entorno de prueba, contrastando con los tiempos actuales del modelo manual, donde la resolución de una PQRSD puede extenderse por días o semanas. Desde una argumentación cuantitativa proyectada (no empírica), la posibilidad de verificación autónoma en segundos, frente a la espera de días en el sistema actual, sugiere una \textbf{hipótesis fundada} de reducción potencial de la carga operativa asociada a las PQRSD. No obstante, es imperativo matizar que estas cifras constituyen \textbf{proyecciones teóricas simuladas}, no impactos reales demostrados, dado que el estudio no realizó modelado econométrico detallado ni midió directamente la reducción de litigios en condiciones reales de operación.
 
-\paragraph{Privacidad y transparencia simultáneas}
-A diferencia de sistemas que usan únicamente blockchain pública (como el trabajo de Yousfi et al. \parencite{yousfi2019blockchain}), donde todos los datos quedan expuestos públicamente, la arquitectura híbrida permite:
-\begin{itemize}
-    \item Almacenar datos sensibles (identificación de conductores, notas internas) exclusivamente en Hyperledger Fabric
-    \item Publicar metadatos verificables en Ethereum para consulta ciudadana
-    \item Cumplir con regulaciones de protección de datos (GDPR, Ley 1581 de 2012 en Colombia)
-\end{itemize}
+La arquitectura resuelve la tensión entre inmutabilidad y derecho al olvido (art. 15, Ley 1581/2012) mediante \textbf{borrado criptográfico}: la revocación de claves de acceso a colecciones privadas en Fabric, combinada con el cese de \textit{pinning} en IPFS, hace los datos criptográficamente inaccesibles sin violar la cadena de bloques, satisfaciendo el requisito legal de supresión sin comprometer la integridad del ledger \parencite{voigt2017}. Este mecanismo es crucial desde la perspectiva institucional, ya que permite cumplir con mandatos normativos aparentemente contradictorios (transparencia vs. privacidad) sin incurrir en nulidades administrativas por violación de datos personales.
 
-\paragraph{Optimización de costos}
-El uso de Hyperledger Fabric para operaciones frecuentes elimina los costos de gas asociados a blockchains públicas. Según las métricas de rendimiento (la Tabla~\ref{tab:rendimiento}), las transacciones en Fabric tienen latencia 10x menor que en Ethereum, permitiendo mayor volumen de operaciones a menor costo.
+Desde el punto de vista de la gobernanza algorítmica, el consorcio propuesto (SDM, Policía, Contraloría) representa una transición desde la confianza en una única entidad hacia un protocolo de consenso multiinstitucional. Como señala Swan \parencite{swan2015}, esto no implica eliminación de la autoridad, sino su redistribución mediante protocolos criptográficos. Sin embargo, es relevante señalar que este modelo introduce el riesgo del "error inmutable": en el sistema FÉNIX, los errores de digitación se corrigen mediante UPDATE en base de datos; en el sistema propuesto, la rectificación requiere transacciones adicionales (ej. \textit{CANCELLED}) que dejan evidencia permanente del fallo inicial. Este efecto de visibilidad obligatoria fortalece la rendición de cuentas, pero introduce tensiones institucionales entre eficiencia operativa (ocultar errores para mantener reputación) y transparencia radical (visibilizar fallos como parte del historial público).
 
-\paragraph{Control de acceso granular}
-Hyperledger Fabric permite implementar políticas de acceso basadas en certificados, algo imposible en blockchains públicas permissionless. Esto habilita escenarios donde:
-\begin{itemize}
-    \item Solo agentes autorizados pueden registrar multas
-    \item Auditores tienen acceso de solo lectura a todos los registros
-    \item Administradores pueden gestionar operadores
-    \item Ciudadanos acceden solo a sus propios datos o a metadatos públicos
-\end{itemize}
+\subsection{Posicionamiento crítico frente al estado del arte}
 
-\subsubsection{Comparación con el sistema actual (FÉNIX)}
+El posicionamiento del prototipo frente a las propuestas existentes revela diferencias arquitectónicas sustanciales. Respecto a los enfoques basados exclusivamente en blockchains públicas \parencite{yousfi2022}, el presente trabajo es \textbf{superior en privacidad y sostenibilidad económica proyectada}, al evitar la exposición pública de datos personales y los costos variables de gas, pero es \textbf{equivalente en transparencia} para metadatos públicos y \textbf{conscientemente inferior en descentralización radical}, aceptando la distribución institucional como trade-off necesario para el cumplimiento normativo colombiano. Frente a los modelos híbridos que mantienen bases de datos tradicionales como capa primaria \parencite{chen2024}, este prototipo es \textbf{superior en garantías de inmutabilidad técnica}, al eliminar completamente la mutabilidad de la capa de datos crítica, pero asume una \textbf{mayor complejidad operativa} documentada. Comparado con soluciones exclusivas en Hyperledger Fabric (registros vehiculares gubernamentales en Estonia), el aporte es \textbf{superior en verificabilidad pública}, al incorporar la capa Ethereum que permite consulta sin autenticación.
 
-El sistema FÉNIX de la Secretaría Distrital de Movilidad opera bajo un modelo centralizado con base de datos tradicional. La arquitectura híbrida propuesta supera este modelo en varios aspectos críticos:
+\subsection{Limitaciones del estudio: alcance metodológico, institucional y ecológico}
 
-La Tabla~\ref{tab:comparacion_fenix} presenta una comparación detallada entre el sistema FÉNIX actual y la arquitectura híbrida propuesta.
+Más allá de las restricciones técnicas de escalabilidad ya discutidas, es imperativo explicitar las limitaciones metodológicas y de diseño experimental que condicionan la generalización de los hallazgos. En primer lugar, el estudio adoptó un \textbf{diseño de investigación experimental puro} (laboratorio controlado) rather than un diseño cuasi-experimental o de campo, lo cual introduce sesgos de validez ecológica significativos. La imposibilidad de acceder a datos reales de comparendos —derivada de restricciones legales de protección de datos personales (Ley 1581/2012) y políticas de reserva de información de la SDM— obligó al uso de datos sintéticos generados mediante scripts de prueba. Esta limitación metodológica implica que el prototipo no fue expuesto a la variabilidad, inconsistencias y casos atípicos que caracterizan los datos del mundo real (ej. placas extranjeras, vehículos diplomáticos, formatos heterogéneos de registro en el RUNT), lo cual podría influir en la lógica de negocio y en el manejo de errores en un entorno de producción.
 
-\input{tables/comparacion_fenix.tex}
+En segundo lugar, la \textbf{validez interna} de las pruebas de rendimiento está limitada por el sesgo de selección inherente al entorno controlado: las 80 pruebas automatizadas se ejecutaron en hardware optimizado, red local sin latencia de internet, y sin carga concurrente de usuarios que simule la operación real de 457.000 comparendos semestrales. La ausencia de pruebas de estrés (\textit{stress testing}) con volúmenes masivos y la imposibilidad de evaluar el comportamiento del sistema bajo ataques de denegación de servicio (DoS) constituyen restricciones metodológicas que impiden afirmar la robustez operativa del sistema bajo condiciones adversas reales.
 
-\noindent Es importante resaltar que, para el sistema FÉNIX, no se cuenta con acceso a métricas técnicas detalladas de rendimiento ni a su arquitectura interna; por tanto, las comparaciones cuantitativas se basan en la tasa de PQRSD, hallazgos de auditoría y percepciones documentadas en informes oficiales. En contraste, los valores reportados para el prototipo provienen de medidas directas en entorno de laboratorio y deben interpretarse como un escenario de referencia para estimar el potencial de mejora, más que como un reemplazo inmediato del sistema actual.
+En tercer lugar, existen \textbf{limitaciones institucionales y de gobernanza} no resueltas en el alcance del prototipo. La integración con sistemas externos (RUNT y SIMIT) fue simulada mediante \textit{mocks} (servicios de prueba) rather than APIs reales, dado que el acceso a dichas interfaces requiere convenios interadministrativos formales y credenciales de producción que exceden el alcance de un proyecto de grado académico. Esta limitación institucional implica que no se validaron las latencias reales de servicios externos, los protocolos de comunicación específicos, ni los posibles cuellos de botella en la interoperabilidad con sistemas legados gubernamentales. Asimismo, la ausencia de validación con \textit{stakeholders} reales (agentes de tránsito, funcionarios de la Contraloría, ciudadanos usuarios finales) mediante estudios de aceptación tecnológica (TAM/UTAUT) constituye una restricción metodológica relevante: el éxito de adopción depende no solo de la viabilidad técnica, sino de la percepción de utilidad y facilidad de uso por parte de los actores institucionales, aspecto no evaluado empíricamente en este estudio.
 
-\subsubsection{Comparación con estado del arte}
+Finalmente, la \textbf{validez externa} (generalización) está restringida por el contexto específico de Bogotá y su marco normativo colombiano. Aunque la arquitectura es conceptualmente replicable, las particularidades del Código Nacional de Tránsito, la jurisprudencia de la Corte Constitucional \parencite{corte2018} y la Ley 1581/2012 configuran un entorno legal que no necesariamente es trasladable a otras jurisdicciones sin adaptaciones sustanciales. La imposibilidad de realizar un piloto de campo con 5.000-10.000 multas reales —limitación derivada de barreras burocráticas y de acceso a datos— impide validar empíricamente las proyecciones de reducción de carga operativa y ROI estimado, manteniendo dichas inferencias en el ámbito de la estimación teórica rather than de la evidencia empírica directa.
 
-Al contrastar el presente trabajo con los sistemas revisados en la sección Metodologíca, se identifican las siguientes diferencias:
+\subsection{Direcciones de evolución técnica y validación operativa}
 
-\paragraph{Versus Yousfi et al. (Ethereum + Smart Contracts)}
-Yousfi et al. implementaron un sistema basado únicamente en Ethereum pública, enfrentando limitaciones de:
-\begin{itemize}
-    \item Alto costo de gas (cada transacción tiene costo variable)
-    \item Privacidad limitada (todos los datos visibles en blockchain pública)
-    \item Escalabilidad reducida (15-30 TPS en Ethereum)
-\end{itemize}
+La transición desde la verificación técnica hacia la validación operativa requiere el desarrollo de tres líneas de evolución diferenciadas. \textbf{Desde la ingeniería de sistemas}, es prioritario: (a) la eliminación del SPOF del \textit{SyncService} mediante su re-arquitectura como un servicio distribuido con tolerancia a fallos (patrón \textit{circuit breaker} y colas de eventos redundantes); (b) la evaluación de estrategias de sharding en Fabric para manejar volúmenes reales de 457.000 comparendos semestrales sin degradación de latencia; y (c) la implementación de mecanismos de oráculo certificador para registrar estados físicos (notificación efectiva) y cerrar la brecha entre el mundo digital y el físico.
 
-Nuestra arquitectura híbrida resuelve estos problemas delegando operaciones frecuentes a Hyperledger Fabric (sin costos de gas, mayor privacidad, >1000 TPS) mientras mantiene la transparencia pública en Ethereum solo para metadatos.
+\textbf{Desde la perspectiva institucional y organizacional}, es imperativo: (a) la realización de estudios de aceptación tecnológica mediante modelos como TAM o UTAUT, evaluando la percepción de confianza y usabilidad por parte de agentes de tránsito y ciudadanos, aspecto crítico dado que el éxito de adopción depende más de la experiencia de usuario que de la robustez técnica subyacente; (b) la negociación de convenios interadministrativos formales para la gobernanza del consorcio blockchain; y (c) la realización de un piloto controlado con 5.000–10.000 multas reales que permita validar empíricamente las proyecciones de reducción de carga operativa, aspecto que el presente estudio no pudo realizar por restricciones de acceso a datos.
 
-\paragraph{Versus Chen et al. (base de datos + blockchain)}
-Chen et al. propusieron un modelo híbrido de base de datos tradicional con blockchain pública, pero su aproximación no logra inmutabilidad completa ya que:
-\begin{itemize}
-    \item La base de datos sigue siendo mutable
-    \item El enlace entre BD y blockchain es débil
-    \item No hay segregación de datos públicos vs privados
-\end{itemize}
+\subsection{Síntesis conclusiva y delimitación del alcance}
 
-Nuestro enfoque de doble blockchain (ambas inmutables) garantiza que tanto los datos privados como públicos son inmutables, con sincronización verificable entre capas.
+En síntesis, el prototipo constituye una respuesta técnica verificada frente a las deficiencias de integridad del sistema de fotocomparendos, respondiendo parcialmente a la pregunta de investigación mediante la demostración de viabilidad técnica de mecanismos criptográficos de inmutabilidad. Desde la perspectiva de ingeniería de sistemas, la arquitectura híbrida demuestra que es posible diseñar sistemas distribuidos que equilibran privacidad y transparencia mediante trade-offs explícitos entre rendimiento y descentralización, validando los objetivos específicos planteados en el alcance experimental. Desde la perspectiva institucional, los resultados sugieren un \textbf{potencial} de transformación de los flujos de confianza entre ciudadanía y Estado, proyectando una reducción hipotética de la fricción operativa asociada a litigios, aunque esta proyección requiere validación empírica en condiciones reales de operación.
 
-\paragraph{Versus proyectos con solo Hyperledger Fabric}
-Trabajos que utilizan únicamente Hyperledger Fabric (como registros vehiculares gubernamentales en Estonia) logran alta privacidad pero carecen de:
-\begin{itemize}
-    \item Verificación pública sin autenticación
-    \item Transparencia hacia ciudadanos
-    \item Interoperabilidad con sistemas externos
-\end{itemize}
-
-La capa pública de Ethereum en nuestra arquitectura permite que cualquier ciudadano verifique la integridad de multas sin necesidad de credenciales, algo imposible en redes permisionadas puras.
-
-\subsection{Implicaciones y contribuciones}
-
-\subsubsection{Impacto técnico}
-
-\paragraph{Viabilidad de arquitecturas híbridas}
-Este trabajo demuestra empíricamente que es viable combinar blockchains permisionadas y públicas en un sistema de producción. El servicio de sincronización implementado valida que:
-\begin{itemize}
-    \item Las inconsistencias temporales son manejables mediante patrones de eventual consistency
-    \item Los costos de mantenimiento de dos blockchains son justificables por los beneficios obtenidos
-    \item La complejidad adicional es manejable con diseño de software apropiado
-\end{itemize}
-
-\paragraph{Replicabilidad en otros contextos}
-La arquitectura es generalizable a otros escenarios gubernamentales que requieran balance entre privacidad y transparencia:
-\begin{itemize}
-    \item Registro civil (privacidad de datos personales + verificación pública de documentos)
-    \item Contratación pública (procesos internos privados + transparencia de adjudicaciones)
-    \item Historias clínicas (privacidad del paciente + verificación de autenticidad)
-\end{itemize}
-
-\subsubsection{Impacto social}
-
-\paragraph{Reducción de corrupción y fraude}
-La inmutabilidad garantizada criptográficamente elimina la posibilidad de que funcionarios alteren o eliminen multas de manera unilateral. Los casos documentados de fraude en sistemas de fotomultas (como el caso Juzto.co mencionado en la Introducción) serían detectables automáticamente mediante verificación de integridad.
-
-\paragraph{Mejora en confianza ciudadana}
-La capacidad de verificación pública sin intermediarios aborda directamente el problema de la desconfianza ciudadana. Una tasa de impugnación del 34.1\% (identificada en la sección de Introducción) sugiere que la falta de transparencia actual genera fricciones masivas. El acceso a verificación automática de integridad podría reducir significativamente las PQRSD no justificadas.
-
-\paragraph{Reducción de carga administrativa}
-Las 155,854 PQRSD procesadas semestralmente (datos de la sección Introducción) representan una carga operativa significativa. La verificación automática de integridad permitiría a los ciudadanos validar por sí mismos la autenticidad de multas, reduciendo potencialmente en más del 50\% las solicitudes relacionadas con dudas sobre la validez de los registros.
-
-\subsubsection{Impacto económico}
-
-\paragraph{Análisis costo-beneficio}
-Según el análisis de costos de la sección Implementación del prototipo, la implementación del prototipo requiere una inversión inicial moderada, pero genera ahorros en:
-\begin{itemize}
-    \item Procesamiento de PQRSD (reducción estimada de personal dedicado)
-    \item Litigios por manipulación de registros (costos legales evitados)
-    \item Auditorías manuales (automatización de verificación)
-\end{itemize}
-
-El presunto detrimento patrimonial de \$8,000 millones identificado en el sistema FÉNIX (Contraloría de Bogotá, 2024) justifica ampliamente la inversión en un sistema robusto basado en blockchain.
-
-\paragraph{ROI estimado}
-Asumiendo una reducción conservadora del 30\% en PQRSD y litigios, el retorno de inversión se proyecta en 18-24 meses de operación, considerando los costos operativos de mantener la infraestructura blockchain.
-
-\subsection{Del éxito técnico a la validación operativa: Interpretación crítica de resultados}
-
-\subsubsection{Significado técnico de "Exitoso" en blockchain}
-En sistemas tradicionales, "Exitoso" indica ausencia de errores. En blockchain, implica validación de garantías criptográficas: la inmutabilidad y trazabilidad están protegidas matemáticamente, no solo por lógica de software. Por ejemplo, la prueba IM-001 demuestra que cualquier intento de modificar registros es rechazado por el consenso, asegurando integridad.
-
-\subsubsection{Verification vs. Validation}
-\textbf{Verification} evalúa si el sistema cumple la especificación; \textbf{Validation} determina si resuelve el problema real. El éxito en pruebas corresponde a Verification. Validation en producción requiere superar limitaciones técnicas y operativas.
-
-\subsubsection{Matriz de Brechas: Entorno de Prueba vs. Producción}
-El siguiente cuadro resume las diferencias clave entre el entorno de pruebas y el contexto de producción:
-
-\input{tables/matriz_brechas_produccion.tex}
-
-\subsubsection{Interpretación: Lo que el éxito técnico demuestra y lo que no}
-\paragraph{Aspectos validados}
-\begin{itemize}
-    \item \textbf{Viabilidad técnica:} La arquitectura híbrida cumple con los mecanismos de consenso y trazabilidad.
-    \item \textbf{Gobernanza criptográfica:} Las reglas de negocio son forzadas matemáticamente.
-    \item \textbf{Trazabilidad auditable:} Todas las transiciones quedan registradas y verificables.
-    \item \textbf{Abstracción técnica:} Blockchain se integra mediante APIs REST convencionales.
-\end{itemize}
-\paragraph{Aspectos no validados}
-\begin{itemize}
-    \item \textbf{Rendimiento a gran escala:} No se ha probado con volúmenes masivos.
-    \item \textbf{Robustez con datos reales:} Falta validación con datos heterogéneos.
-    \item \textbf{Seguridad avanzada:} No se han realizado auditorías externas.
-    \item \textbf{Operación y mantenimiento:} Requiere equipos y procedimientos formales.
-    \item \textbf{Integración institucional:} Las APIs simuladas no reflejan la complejidad real.
-\end{itemize}
-
-\subsubsection{Conclusión: Éxito como condición necesaria pero no suficiente}
-El resultado "Exitoso" es necesario, pero no suficiente para validar la solución en producción. El sistema debe además superar auditorías externas, pruebas de carga real, integración institucional y operación bajo estándares de servicio. El presente trabajo cubre la verificación técnica; la validación operativa queda como trabajo futuro.
-
-\subsection{Limitaciones y restricciones}
-
-\subsubsection{Limitaciones Técnicas del Prototipo}
-
-\paragraph{Entorno de Laboratorio.}
-El prototipo fue validado en un entorno controlado con:
-\begin{itemize}
-    \item Volumen reducido de transacciones (50-100 multas de prueba)
-    \item Red local de Hardhat para Ethereum (no blockchain pública real)
-    \item Datos sintéticos que no reflejan la complejidad de datos reales
-\end{itemize}
-
-Una implementación en producción enfrentaría cargas de trabajo 1000x mayores (457,000 comparendos semestrales según datos de Bogotá), requiriendo optimizaciones adicionales de rendimiento y estrategias de sharding.
-
-\paragraph{Escalabilidad de IPFS.}
-La estrategia de pinning implementada (mantener todas las evidencias en nodo local) no escala indefinidamente. Para producción se requiere:
-\begin{itemize}
-    \item Política de retención temporal (ej. 5 años según normativa)
-    \item Pinning distribuido entre múltiples nodos
-    \item Estrategias de archivado para evidencias antiguas
-\end{itemize}
-
-\paragraph{Latencia de Sincronización.}
-La sincronización entre Hyperledger Fabric y Ethereum no es instantánea, creando ventanas de inconsistencia temporal (1-5 segundos). Aunque este tiempo es aceptable para el caso de uso (las multas no requieren consistencia en milisegundos), podría ser limitante para aplicaciones que requieran sincronización en tiempo real.
-
-\subsubsection{Limitaciones Metodológicas}
-
-\paragraph{Datos Sintéticos.}
-La imposibilidad de acceder a datos reales de multas (por restricciones de privacidad) limitó la validación del sistema. Los datos sintéticos generados no capturan:
-\begin{itemize}
-    \item Variabilidad de formatos de placas (motocicletas, taxis, diplomáticos)
-    \item Casos atípicos (placas extranjeras, vehículos especiales)
-    \item Inconsistencias en datos del RUNT real
-\end{itemize}
-
-\paragraph{Integración Simulada con SIMIT/RUNT}
-La simulación de APIs gubernamentales limita la validación de:
-\begin{itemize}
-    \item Latencias reales de servicios externos
-    \item Manejo de fallas y timeouts
-    \item Formatos exactos de respuestas
-\end{itemize}
-
-Para producción, se requiere piloto con integración real bajo convenio con las entidades.
-
-\subsubsection{Limitaciones de Seguridad}
-
-\paragraph{Ausencia de Auditoría Formal.}
-No se realizaron:
-\begin{itemize}
-    \item Auditoría de seguridad formal del Smart Contract
-    \item Pentesting de la API REST
-    \item Análisis de vulnerabilidades en chaincode de Fabric
-\end{itemize}
-
-Para producción se recomienda contratar auditorías especializadas (ej. Trail of Bits, ConsenSys Diligence).
-
-\paragraph{Gestión de Claves.}
-El prototipo utiliza claves privadas almacenadas en archivos .env, lo cual no es aceptable para producción. Se requiere:
-\begin{itemize}
-    \item Hardware Security Modules (HSM) para claves críticas
-    \item Rotación automática de credenciales
-    \item Políticas de backup seguro
-\end{itemize}
-
-\subsection{Lecciones aprendidas}
-
-\subsubsection{Complejidad de Hyperledger Fabric}
-
-La implementación de Hyperledger Fabric presentó una curva de aprendizaje significativa. Aspectos que consumieron más tiempo:
-\begin{itemize}
-    \item Configuración de la red con múltiples organizaciones
-    \item Generación y gestión de certificados
-    \item Debugging de políticas de endorsement
-    \item Configuración de Private Data Collections
-\end{itemize}
-
-\textbf{Lección:} Para equipos sin experiencia previa en Fabric, se recomienda iniciar con redes de una sola organización y agregar complejidad incrementalmente.
-
-\subsubsection{Trade-off Descentralización vs Rendimiento}
-
-Ethereum ofrece mayor descentralización pero menor rendimiento (15-30 TPS) comparado con Hyperledger Fabric (>1000 TPS). Para el caso de uso de fotomultas:
-\begin{itemize}
-    \item La mayoría de operaciones (90\%+) son internas y se benefician de Fabric
-    \item Solo metadatos públicos van a Ethereum, reduciendo costos
-\end{itemize}
-
-\textbf{Lección:} La arquitectura híbrida permite optimizar el trade-off delegando cada tipo de operación a la blockchain más apropiada.
-
-\subsubsection{Importancia de UX en sistemas blockchain}
-
-La complejidad técnica de blockchain debe ser invisible para el usuario final. Aspectos críticos implementados:
-\begin{itemize}
-    \item No requerir que el usuario tenga wallet de Ethereum
-    \item Abstraer conceptos técnicos (gas, confirmaciones, hashes) detrás de interfaces amigables
-    \item Proporcionar feedback claro durante operaciones asíncronas
-\end{itemize}
-
-\textbf{Lección:} El éxito de adopción depende más de UX que de la robustez técnica de la blockchain subyacente.
-
-\subsubsection{Diseño Modular para Evolución}
-
-La separación clara entre capas (HyperledgerService, EthereumService, SyncService) facilitó:
-\begin{itemize}
-    \item Testing independiente de cada componente
-    \item Actualización de dependencias sin afectar otros módulos
-    \item Potencial migración a otras blockchains si fuese necesario
-\end{itemize}
-
-\textbf{Lección:} La modularidad es crítica en sistemas blockchain donde el ecosistema evoluciona rápidamente.
-
-\subsection{Despliegue en producción}
-
-Basado en las lecciones aprendidas, se identifican requisitos críticos para migrar a producción:
-
-\subsubsection{Infraestructura}
-
-\begin{itemize}
-    \item \textbf{Hyperledger Fabric:} Mínimo 3 organizaciones con 2 peers cada una, orderer con consenso Raft (3+ nodos)
-    \item \textbf{Ethereum:} Migrar de testnet a mainnet o implementar Layer 2 (Polygon, Arbitrum) para reducir costos
-    \item \textbf{IPFS:} Cluster de nodos con pinning distribuido y políticas de retención
-\end{itemize}
-
-\subsubsection{Seguridad}
-
-\begin{itemize}
-    \item Auditoría formal de Smart Contracts y chaincode
-    \item Implementación de HSM para claves privadas
-    \item Pentesting de API REST
-    \item Configuración de firewall y VPN para red Fabric
-\end{itemize}
-
-\subsubsection{Operaciones}
-
-\begin{itemize}
-    \item Monitoreo 24/7 con alertas automáticas
-    \item Plan de recuperación ante desastres
-    \item SLA definidos para cada componente
-    \item Procedimientos de actualización sin downtime
-\end{itemize}
-
-La arquitectura híbrida implementada demuestra su viabilidad técnica y proporciona una base sólida para evolucionar hacia un sistema de producción robusto.
+La evidencia obtenida en el entorno de laboratorio —con datos sintéticos, volúmenes reducidos y ausencia de integración con sistemas reales— no permite afirmar la viabilidad operativa a escala completa ni la aceptación institucional del modelo de gobernanza distribuida propuesto. La blockchain debe entenderse como un componente técnico de un ecosistema de confianza más amplio, no como solución aislada, reconociendo que la verificación técnica exitosa es condición necesaria pero no suficiente para la validación operativa en el contexto de la administración pública distrital. La respuesta a la pregunta de investigación es, por tanto, \textbf{afirmativa pero condicionada}: las tecnologías de redes distribuidas permiten mitigar el riesgo de alteración de integridad \textit{dentro del sistema digital}, pero su efectividad completa depende de la resolución de limitaciones metodológicas, institucionales y de escalabilidad que trascienden el alcance del presente estudio experimental.
