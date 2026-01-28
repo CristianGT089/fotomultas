@@ -1,19 +1,19 @@
-\section{\large Estado del arte}  
+\section{Estado del arte}
 
-\subsection{Blockchain en gestión gubernamental} 
+\subsection{Blockchain en gestión gubernamental}
 
-La aplicación de la tecnología blockchain y DLT (Distributed Ledger Technology) en la administración pública ha sido un área de creciente interés, impulsada por las promesas teóricas de Inmutabilidad, Transparencia y Auditoría mejorada, fundamentales para la Confianza Descentralizada. La investigación sugiere que blockchain puede transformar la gestión de registros oficiales, como licencias, títulos de propiedad y, potencialmente, multas o sanciones como los fotocomparendos. 
+La aplicación de la tecnología blockchain y DLT (Distributed Ledger Technology) en la administración pública ha sido un área de creciente interés, impulsada por las promesas teóricas de Inmutabilidad, Transparencia y Auditoría mejorada, fundamentales para la Confianza Descentralizada. La investigación sugiere que blockchain puede transformar la gestión de registros oficiales, como licencias, títulos de propiedad y, potencialmente, multas o sanciones como los fotocomparendos.
 
 \paragraph{Análisis de aplicación}
-La capacidad de crear un registro de Transacciones criptográficamente asegurado y distribuido permite generar una pista de auditoría fiable y resistente a la manipulación. Cada registro de sanción, incluyendo sus Metadatos (fecha, hora, ubicación, tipo de infracción) y el Hash de la evidencia asociada, puede ser anclado a la cadena, proporcionando una fuente única de verdad verificable por las partes autorizadas, lo que potencialmente reduce disputas sobre la validez de registros. Esto se alinea con los principios de Sistemas Distribuidos aplicados a la gobernanza. 
+La capacidad de crear un registro de Transacciones criptográficamente asegurado y distribuido permite generar una pista de auditoría fiable y resistente a la manipulación. Cada registro de sanción, incluyendo sus Metadatos (fecha, hora, ubicación, tipo de infracción) y el Hash de la evidencia asociada, puede ser anclado a la cadena, proporcionando una fuente única de verdad verificable por las partes autorizadas, lo que potencialmente reduce disputas sobre la validez de registros. Esto se alinea con los principios de Sistemas Distribuidos aplicados a la gobernanza.
 
 \paragraph{Blockchains públicas vs. permisionadas}
-En el contexto gubernamental, la literatura y los estudios piloto tienden a favorecer las blockchains permisionadas (o de consorcio). Si bien las blockchains públicas ofrecen máxima transparencia, las permisionadas permiten a las entidades gubernamentales controlar quién puede participar en la red (validar transacciones, acceder a datos), gestionar mejor la privacidad (crucial para datos ciudadanos) y, a menudo, ofrecer mayor rendimiento y escalabilidad. La elección impacta directamente en el modelo de Confianza Descentralizada implementado. 
+En el contexto gubernamental, la literatura y los estudios piloto tienden a favorecer las blockchains permisionadas (o de consorcio). Si bien las blockchains públicas ofrecen máxima transparencia, las permisionadas permiten a las entidades gubernamentales controlar quién puede participar en la red (validar transacciones, acceder a datos), gestionar mejor la privacidad (crucial para datos ciudadanos) y, a menudo, ofrecer mayor rendimiento y escalabilidad. La elección impacta directamente en el modelo de Confianza Descentralizada implementado.
 
 \paragraph{Madurez y barreras}
-Aunque existen numerosos estudios y proyectos piloto (ej., registros de tierras en Suecia o Georgia, identidad digital en Estonia), las implementaciones a gran escala para la gestión integral de sanciones administrativas aún son limitadas. La madurez es variable. Las barreras reconocidas incluyen la complejidad técnica, la necesidad de marcos legales y regulatorios adaptados, la interoperabilidad con sistemas heredados, los costos iniciales de implementación y la adopción tanto por parte de las instituciones como de los ciudadanos. La percepción pública de la tecnología blockchain también juega un rol significativo. 
+Aunque existen numerosos estudios y proyectos piloto (ej., registros de tierras en Suecia o Georgia, identidad digital en Estonia), las implementaciones a gran escala para la gestión integral de sanciones administrativas aún son limitadas. La madurez es variable. Las barreras reconocidas incluyen la complejidad técnica, la necesidad de marcos legales y regulatorios adaptados, la interoperabilidad con sistemas heredados, los costos iniciales de implementación y la adopción tanto por parte de las instituciones como de los ciudadanos. La percepción pública de la tecnología blockchain también juega un rol significativo.
 
-\subsection{Integración blockchain-IPFS} 
+\subsection{Integración blockchain-IPFS}
 
 El almacenamiento directo de datos voluminosos (como imágenes o vídeos de alta resolución) en una blockchain es ineficiente y costoso. La literatura técnica y diversos prototipos exploran la integración de blockchain con sistemas de Almacenamiento Direccionable por Contenido como IPFS (InterPlanetary File System) para abordar este desafío.
 
@@ -21,37 +21,37 @@ El almacenamiento directo de datos voluminosos (como imágenes o vídeos de alta
 
 \paragraph{Ventajas y desafíos} Las ventajas logradas incluyen la verificabilidad (cualquier cambio en el archivo IPFS cambiaría su hash, invalidando el enlace en la blockchain), la resiliencia potencial (si múltiples nodos almacenan el archivo) y el direccionamiento por contenido inherente a IPFS. Sin embargo, persisten desafíos persistentes significativos:
 
-\paragraph{Persistencia de datos (pinning)} Los datos en IPFS solo persisten mientras algún nodo los esté "pineando" (almacenando activamente). Garantizar la persistencia a largo plazo de la evidencia requiere mecanismos o servicios de pinning fiables, que pueden tener costos asociados. 
+\paragraph{Persistencia de datos (pinning)} Los datos en IPFS solo persisten mientras algún nodo los esté "pineando" (almacenando activamente). Garantizar la persistencia a largo plazo de la evidencia requiere mecanismos o servicios de pinning fiables, que pueden tener costos asociados.
 
-\paragraph{Disponibilidad} La recuperación del archivo depende de que los nodos que lo almacenan estén en línea y accesibles. 
+\paragraph{Disponibilidad} La recuperación del archivo depende de que los nodos que lo almacenan estén en línea y accesibles.
 
-\paragraph{Costos a largo plazo} El almacenamiento distribuido no es necesariamente gratuito, especialmente si se requieren garantías de disponibilidad y persistencia. 
+\paragraph{Costos a largo plazo} El almacenamiento distribuido no es necesariamente gratuito, especialmente si se requieren garantías de disponibilidad y persistencia.
 
-\paragraph{Gestión de la privacidad} Los datos en IPFS son típicamente accesibles públicamente si se conoce el hash. Para evidencia sensible, se requerirían capas adicionales de encriptación antes de la subida a IPFS, añadiendo complejidad. 
+\paragraph{Gestión de la privacidad} Los datos en IPFS son típicamente accesibles públicamente si se conoce el hash. Para evidencia sensible, se requerirían capas adicionales de encriptación antes de la subida a IPFS, añadiendo complejidad.
 
 \subsection{Cadena de custodia digital}
 
-La integridad y la cadena de custodia de la evidencia digital son cruciales en procesos sancionatorios. Blockchain/DLT ofrece mecanismos basados en Criptografía Aplicada para fortalecer estos aspectos. 
+La integridad y la cadena de custodia de la evidencia digital son cruciales en procesos sancionatorios. Blockchain/DLT ofrece mecanismos basados en Criptografía Aplicada para fortalecer estos aspectos.
 
-\paragraph{Fortalecimiento de la integridad y trazabilidad} Al registrar el Hash de la evidencia digital (imagen del fotocomparendo) en una transacción blockchain, se crea un sello de tiempo (timestamping) inmutable y verificable. Cualquier intento posterior de modificar la evidencia original resultaría en un hash diferente, lo que permitiría detectar fácilmente la manipulación. La secuencia de transacciones en la blockchain proporciona una trazabilidad auditable del ciclo de vida de la evidencia (captura, registro). 
+\paragraph{Fortalecimiento de la integridad y trazabilidad} Al registrar el Hash de la evidencia digital (imagen del fotocomparendo) en una transacción blockchain, se crea un sello de tiempo (timestamping) inmutable y verificable. Cualquier intento posterior de modificar la evidencia original resultaría en un hash diferente, lo que permitiría detectar fácilmente la manipulación. La secuencia de transacciones en la blockchain proporciona una trazabilidad auditable del ciclo de vida de la evidencia (captura, registro).
 
-\paragraph{Comparación y valor añadido} En comparación con los sistemas tradicionales (bases de datos centralizadas, logs de servidor), que pueden ser susceptibles a alteraciones internas o fallos únicos, la DLT aporta un valor añadido significativo al distribuir la confianza y hacer que la manipulación sea computacionalmente inviable (principio de Inmutabilidad). Esto refuerza la Confianza Descentralizada en la validez de la evidencia presentada, reduciendo potenciales disputas, un factor crítico en contextos donde la percepción de manipulación de evidencia genera altas tasas de impugnación ciudadana. 
+\paragraph{Comparación y valor añadido} En comparación con los sistemas tradicionales (bases de datos centralizadas, logs de servidor), que pueden ser susceptibles a alteraciones internas o fallos únicos, la DLT aporta un valor añadido significativo al distribuir la confianza y hacer que la manipulación sea computacionalmente inviable (principio de Inmutabilidad). Esto refuerza la Confianza Descentralizada en la validez de la evidencia presentada, reduciendo potenciales disputas, un factor crítico en contextos donde la percepción de manipulación de evidencia genera altas tasas de impugnación ciudadana.
 
-\paragraph{Estándares emergentes} En el ámbito de la tecnología blockchain, observamos la consolidación de estándares emergentes en diversas áreas, que representan un consenso práctico y técnico en ausencia de normas formales universalmente ratificadas. 
+\paragraph{Estándares emergentes} En el ámbito de la tecnología blockchain, observamos la consolidación de estándares emergentes en diversas áreas, que representan un consenso práctico y técnico en ausencia de normas formales universalmente ratificadas.
 
-Un área clave es la Seguridad de Smart Contracts. Para construir confianza y fiabilidad en las aplicaciones descentralizadas (dApps) y mitigar vulnerabilidades, se están adoptando ampliamente prácticas que funcionan como estándares de facto: 
+Un área clave es la Seguridad de Smart Contracts. Para construir confianza y fiabilidad en las aplicaciones descentralizadas (dApps) y mitigar vulnerabilidades, se están adoptando ampliamente prácticas que funcionan como estándares de facto:
 \begin{itemize}
-    \item \textbf{Auditorías y Listas de Chequeo:} Metodologías promovidas por firmas especializadas como ConsenSys Diligence, Trail of Bits y OpenZeppelin se han vuelto habituales. 
-    \item \textbf{Patrones de Diseño Seguro:} Se aplican convenciones como Checks-Effects-Interactions y el uso de proxies actualizables (UUPS, Transparent Proxy), aunque estos patrones continúan evolucionando. 
-    \item \textbf{Estándares de Reporte de Vulnerabilidades:} Propuestas como las EIPs (Ethereum Improvement Proposals) relacionadas con la seguridad ayudan a estandarizar la comunicación de fallos.
+	\item \textbf{Auditorías y Listas de Chequeo:} Metodologías promovidas por firmas especializadas como ConsenSys Diligence, Trail of Bits y OpenZeppelin se han vuelto habituales.
+	\item \textbf{Patrones de Diseño Seguro:} Se aplican convenciones como Checks-Effects-Interactions y el uso de proxies actualizables (UUPS, Transparent Proxy), aunque estos patrones continúan evolucionando.
+	\item \textbf{Estándares de Reporte de Vulnerabilidades:} Propuestas como las EIPs (Ethereum Improvement Proposals) relacionadas con la seguridad ayudan a estandarizar la comunicación de fallos.
 \end{itemize}
 
 Otra área fundamental donde emergen estándares es la Gestión de Evidencia Digital y Cadena de Custodia mediante blockchain/DLT. Aunque todavía no existe una norma global única (como un estándar ISO específico para esta aplicación), sí se está formando un fuerte consenso técnico sobre los principios tecnológicos clave para asegurar la integridad y fiabilidad:
 
 \begin{itemize}
-    \item \textbf{Hashing Criptográfico:} El uso de funciones hash para generar una huella digital única e infalsificable de la evidencia (como el CID en IPFS) es la práctica estándar para garantizar la integridad y detectar manipulaciones \parencite{benet2014ipfs}. 
-    \item \textbf{Timestamping Inmutable:} Registrar el hash de la evidencia y sus metadatos en una transacción blockchain proporciona una marca de tiempo segura e inalterable, estableciendo una prueba fehaciente del momento del registro \parencite{nakamoto2008bitcoin}. 
-    \item \textbf{Registro en Ledger Distribuido (DLT):} Utilizar la DLT como el libro contable distribuido para estos registros es el mecanismo reconocido para lograr inmutabilidad, transparencia controlada y auditabilidad \parencite{swan2015blockchain}, superando las limitaciones de las bases de datos centralizadas.
+	\item \textbf{Hashing Criptográfico:} El uso de funciones hash para generar una huella digital única e infalsificable de la evidencia (como el CID en IPFS) es la práctica estándar para garantizar la integridad y detectar manipulaciones \parencite{benet2014ipfs}.
+	\item \textbf{Timestamping Inmutable:} Registrar el hash de la evidencia y sus metadatos en una transacción blockchain proporciona una marca de tiempo segura e inalterable, estableciendo una prueba fehaciente del momento del registro \parencite{nakamoto2008bitcoin}.
+	\item \textbf{Registro en Ledger Distribuido (DLT):} Utilizar la DLT como el libro contable distribuido para estos registros es el mecanismo reconocido para lograr inmutabilidad, transparencia controlada y auditabilidad \parencite{swan2015blockchain}, superando las limitaciones de las bases de datos centralizadas.
 \end{itemize}
 
 % --------- Implementaciones reales de Blockchain en Gobiernos ---------
@@ -71,19 +71,19 @@ Desde 2016 la autoridad nacional de salud de Estonia, en colaboración con Guard
 
 Estos casos evidencian que:
 \begin{itemize}
-  \item La tecnología blockchain coordina procesos complejos con múltiples partes interesadas, garantizando un registro único y verificable, con ahorros documentados de \textasciitilde{}100 millones de euros anuales en el caso sueco.
-  \item Permite verificar de forma irrefutable la integridad de datos sensibles sin exponer su contenido, manteniendo el cumplimiento normativo (ejemplo de Estonia).
+	\item La tecnología blockchain coordina procesos complejos con múltiples partes interesadas, garantizando un registro único y verificable, con ahorros documentados de \textasciitilde{}100 millones de euros anuales en el caso sueco.
+	\item Permite verificar de forma irrefutable la integridad de datos sensibles sin exponer su contenido, manteniendo el cumplimiento normativo (ejemplo de Estonia).
 \end{itemize}
 
 Las lecciones aprendidas refuerzan la pertinencia de aplicar una arquitectura basada en blockchain e IPFS para gestionar evidencias de fotocomparendos en Bogotá, buscando niveles de transparencia, inmutabilidad y confianza comparables.
 
 % --------- Fin de nueva subsección ---------
 
-\subsection{Aplicaciones en tránsito} 
+\subsection{Aplicaciones en tránsito}
 
 Al revisar las aplicaciones de blockchain en la gestión de tráfico, infracciones y fotocomparendos, como se observa en la Tabla~\ref{tab:estado_arte_comparativo}, se observa que, si bien hay discusiones teóricas \parencite{yousfi2022its}, propuestas conceptuales \parencite{chen2024blockchain} y hasta una joven PYME española, las implementaciones prácticas que integren el flujo completo descrito en el prototipo (captura -> IPFS -> Blockchain -> Verificación -> Pago Automatizado con Billetera Digital) son escasas y se encuentran en fase de propuesta o son parciales \parencite{omar2024srtm,choquevilca2024blockchain}.
 
-\input{tables/estado_arte_comparativo} 
+\input{tables/estado_arte_comparativo}
 
 \paragraph{Análisis de existencia}
 La literatura existente se centra más en componentes aislados \parencite{yousfi2022its}, uso de blockchain para registros vehiculares \parencite{mani2023smart}, seguros \parencite{dutta2023solution}, o gestión genérica de multas \parencite{omar2024srtm}, pero raramente combinando el almacenamiento de evidencia en IPFS con la automatización del pago vía billetera digital específicamente para fotocomparendos.
@@ -92,134 +92,134 @@ La literatura existente se centra más en componentes aislados \parencite{yousfi
 
 \paragraph{Lecciones aprendidas} La principal lección aprendida de áreas adyacentes es la importancia de abordar no solo los desafíos técnicos \parencite{zheng2018blockchain} sino también los regulatorios, de gobernanza y de adopción \parencite{tan2022blockchain}. La ausencia de soluciones integrales reportadas para el flujo completo de gestión de fotocomparendos representa una brecha significativa, particularmente en contextos donde la ciudadanía carece de mecanismos para verificar independientemente la validez de las sanciones impuestas.
 
-El análisis del estado del arte revela avances significativos, pero también limitaciones claras: 
-  
+El análisis del estado del arte revela avances significativos, pero también limitaciones claras:
 
-\subsection{Avances significativos} 
 
-La tecnología blockchain ha demostrado su potencial para crear registros gubernamentales más inmutables, transparentes y auditables. \parencite{balcerzak2022blockchain,meroni2023editorial} 
+\subsection{Avances significativos}
 
-La integración blockchain + IPFS es una solución técnicamente viable y reconocida para gestionar datos voluminosos referenciados desde una cadena de bloques, mejorando la verificabilidad \parencite{adel2023decentralized,mishra2024integration}. 
+La tecnología blockchain ha demostrado su potencial para crear registros gubernamentales más inmutables, transparentes y auditables. \parencite{balcerzak2022blockchain,meroni2023editorial}
 
-DLT ofrece mejoras sustanciales para la integridad y trazabilidad de la evidencia digital \parencite{thanasas2025enhancing}. 
+La integración blockchain + IPFS es una solución técnicamente viable y reconocida para gestionar datos voluminosos referenciados desde una cadena de bloques, mejorando la verificabilidad \parencite{adel2023decentralized,mishra2024integration}.
+
+DLT ofrece mejoras sustanciales para la integridad y trazabilidad de la evidencia digital \parencite{thanasas2025enhancing}.
 
 Existen mecanismos (billeteras digitales, smart contracts, stablecoins) para habilitar pagos digitales automatizados en ecosistemas blockchain \parencite{antonopoulos2023mastering}.
 
-\subsection{Limitaciones identificadas} 
+\subsection{Limitaciones identificadas}
 \paragraph{Madurez e integración}
-Muchas aplicaciones gubernamentales de blockchain son pilotos aislados \parencite{zheng2018blockchain,li2021overview}. Falta integración entre sistemas y con procesos completos. 
+Muchas aplicaciones gubernamentales de blockchain son pilotos aislados \parencite{zheng2018blockchain,li2021overview}. Falta integración entre sistemas y con procesos completos.
 
 \paragraph{Desafíos técnicos}
-La persistencia y gestión a largo plazo de datos en IPFS (pinning), la escalabilidad de algunas blockchains y la seguridad/fiabilidad de los oráculos para Smart Contracts siguen siendo áreas de desarrollo activo \parencite{zheng2018blockchain}. 
+La persistencia y gestión a largo plazo de datos en IPFS (pinning), la escalabilidad de algunas blockchains y la seguridad/fiabilidad de los oráculos para Smart Contracts siguen siendo áreas de desarrollo activo \parencite{zheng2018blockchain}.
 
 \paragraph{Adopción y regulación}
 La adopción de billeteras digitales para pagos gubernamentales, el uso de criptoactivos/stablecoins y la claridad legal sobre smart contracts en el sector público son obstáculos importantes \parencite{tan2022blockchain}.
 
 \paragraph{Política de reserva de información}
- Bogotá mantiene una política de reserva de información que restringe la divulgación completa de los datos almacenados en su base de datos. Esta política limita el acceso y la difusión de ciertos datos, lo que puede afectar la transparencia y la capacidad de realizar un análisis exhaustivo \parencite{choquevilca2024blockchain}.
+Bogotá mantiene una política de reserva de información que restringe la divulgación completa de los datos almacenados en su base de datos. Esta política limita el acceso y la difusión de ciertos datos, lo que puede afectar la transparencia y la capacidad de realizar un análisis exhaustivo \parencite{choquevilca2024blockchain}.
 
 \paragraph{Actualización de datos}
-La actualización de los datos almacenados en la base de datos es un proceso que requiere tiempo. Dada la naturaleza progresiva de este proceso, que depende de la cantidad de datos que se agregan diariamente, la actualización completa de los datos con el sistema que se desarrollará puede llevar un tiempo considerable \parencite{choquevilca2024blockchain}. 
+La actualización de los datos almacenados en la base de datos es un proceso que requiere tiempo. Dada la naturaleza progresiva de este proceso, que depende de la cantidad de datos que se agregan diariamente, la actualización completa de los datos con el sistema que se desarrollará puede llevar un tiempo considerable \parencite{choquevilca2024blockchain}.
 
 \paragraph{Aplicación específica}
 Existe una notable ausencia de soluciones documentadas que implementen el flujo completo e integrado (captura de imagen -> subida a IPFS -> registro en blockchain -> verificación vía app -> pago automático desde billetera digital) específicamente para la gestión de fotocomparendos. \parencite{yousfi2022its, chen2024blockchain}
 
 
 \paragraph{Verificación participativa}
-Los sistemas actuales raramente permiten que el ciudadano verifique independientemente la autenticidad e integridad de la evidencia presentada contra ellos, limitando los beneficios de transparencia inherentes a blockchain. Esta opacidad genera un vacío de confianza que, en algunos contextos, ha sido explotado por terceros mediante esquemas fraudulentos. 
+Los sistemas actuales raramente permiten que el ciudadano verifique independientemente la autenticidad e integridad de la evidencia presentada contra ellos, limitando los beneficios de transparencia inherentes a blockchain. Esta opacidad genera un vacío de confianza que, en algunos contextos, ha sido explotado por terceros mediante esquemas fraudulentos.
 
 \paragraph{Adopción en Bogotá}
- La literatura muestra una escasez notable de implementaciones o estudios piloto en contextos latinoamericanos, donde factores como confianza institucional, infraestructura tecnológica y marcos regulatorios presentan desafíos particulares. \parencite{choquevilca2024blockchain, rezabala2025blockchain}
+La literatura muestra una escasez notable de implementaciones o estudios piloto en contextos latinoamericanos, donde factores como confianza institucional, infraestructura tecnológica y marcos regulatorios presentan desafíos particulares. \parencite{choquevilca2024blockchain, rezabala2025blockchain}
 
-\subsection{Relevancia del prototipo} 
+\subsection{Relevancia del prototipo}
 Las brechas específicas que este prototipo busca abordar es precisamente la falta de una solución integrada y de extremo a extremo para la gestión de fotocomparendos utilizando la sinergia de blockchain, IPFS y pagos automatizados, como se evidencia en la revisión de la literatura existente \parencite{yousfi2022its,AnandSingh_ProjectReport_Year}
-La novedad principal radica en la integración holística de todo el flujo propuesto. Mientras que los componentes individuales han sido explorados por separado \parencite{adel2023decentralized,mishra2024integration} o en otros contextos \parencite{mani2023smart,dutta2023solution}, este prototipo propone conectarlos en una secuencia lógica y automatizada para este caso de uso particular. 
+La novedad principal radica en la integración holística de todo el flujo propuesto. Mientras que los componentes individuales han sido explorados por separado \parencite{adel2023decentralized,mishra2024integration} o en otros contextos \parencite{mani2023smart,dutta2023solution}, este prototipo propone conectarlos en una secuencia lógica y automatizada para este caso de uso particular.
 
-Aborda la brecha de aplicación específica, llevando los conceptos teóricos \parencite{swan2015blockchain, antonopoulos2023mastering} y las soluciones parciales existentes \parencite{choquevilca2024blockchain} a un dominio concreto (fotocomparendos en Bogotá) con un proceso completo. 
+Aborda la brecha de aplicación específica, llevando los conceptos teóricos \parencite{swan2015blockchain, antonopoulos2023mastering} y las soluciones parciales existentes \parencite{choquevilca2024blockchain} a un dominio concreto (fotocomparendos en Bogotá) con un proceso completo.
 
-\subsubsection{La relevancia del prototipo se justifica por su potencial para:} 
+\subsubsection{La relevancia del prototipo se justifica por su potencial para:}
 \begin{itemize}
-\item Mejorar la transparencia y confianza en el proceso de fotocomparendos, evidencia verificable e inmutable \parencite{meroni2023editorial,thanasas2025enhancing}. 
+	\item Mejorar la transparencia y confianza en el proceso de fotocomparendos, evidencia verificable e inmutable \parencite{meroni2023editorial,thanasas2025enhancing}.
 
-\item Aumentar la eficiencia operativa mediante la automatización del registro, verificación y pago. 
+	\item Aumentar la eficiencia operativa mediante la automatización del registro, verificación y pago.
 
-\item Reducir disputas y costos asociados a la gestión manual y a la falta de confianza en la evidencia, factores que en sistemas centralizados generan cargas operativas significativas. 
+	\item Reducir disputas y costos asociados a la gestión manual y a la falta de confianza en la evidencia, factores que en sistemas centralizados generan cargas operativas significativas.
 
-\item Explorar un modelo innovador de pago automatizado condicional basado en la verificación en blockchain. 
+	\item Explorar un modelo innovador de pago automatizado condicional basado en la verificación en blockchain.
 \end{itemize}
 \subsection{Tendencias internacionales}
 \paragraph{Producción científica por países (mapa y gráfico de líneas)}
- 
- \textbf{Descripción General:} Esta gráfica se compone de dos partes. La primera es un mapa mundial que utiliza una escala de color para representar la cantidad de producción científica por país. Las tonalidades más oscuras generalmente indican una mayor producción. La segunda parte es un gráfico de líneas que muestra la evolución de la producción científica (en artículos) a lo largo de los años para un conjunto específico de países. 
+
+\textbf{Descripción General:} Esta gráfica se compone de dos partes. La primera es un mapa mundial que utiliza una escala de color para representar la cantidad de producción científica por país. Las tonalidades más oscuras generalmente indican una mayor producción. La segunda parte es un gráfico de líneas que muestra la evolución de la producción científica (en artículos) a lo largo de los años para un conjunto específico de países.
 \paragraph{Mapa mundial}
-El mapa muestra la distribución global de la producción científica en el área de estudio. Se observa una concentración significativa de publicaciones en países como Brasil, lo que sugiere un interés y actividad investigadora importante en Latinoamérica. Otros países con una producción notable incluyen México y España. Es importante notar que algunas regiones muestran una menor actividad, lo que podría indicar diferencias en el enfoque de investigación, financiamiento o acceso a recursos. 
+El mapa muestra la distribución global de la producción científica en el área de estudio. Se observa una concentración significativa de publicaciones en países como Brasil, lo que sugiere un interés y actividad investigadora importante en Latinoamérica. Otros países con una producción notable incluyen México y España. Es importante notar que algunas regiones muestran una menor actividad, lo que podría indicar diferencias en el enfoque de investigación, financiamiento o acceso a recursos.
 
 % --- Figuras Bibliometrix añadidas ---
 \begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 2}\\[2em]
-        \textit{Distribución global de la producción científica sobre blockchain y gestión de infracciones}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 2. Distribución global de la producción científica sobre blockchain y gestión de infracciones}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Mapa mundial y gráfico de líneas mostrando la producción científica sobre blockchain por países.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:mapa_bibliometrix}
+	\begin{flushleft}
+		\textbf{Figura 2}\\[2em]
+		\textit{Distribución global de la producción científica sobre blockchain y gestión de infracciones}
+	\end{flushleft}
+	\vspace{1em}
+	\addcontentsline{lof}{figure}{Figura 2. Distribución global de la producción científica sobre blockchain y gestión de infracciones}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Images/MapaBibliometrix.png}
+	\vspace{2em}
+	\begin{flushleft}
+		\textit{Nota.} Mapa mundial y gráfico de líneas mostrando la producción científica sobre blockchain por países.
+	\end{flushleft}
+	\refstepcounter{figure}\label{fig:mapa_bibliometrix}
 \end{figure}
 
 \begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 3}\\[2em]
-        \textit{Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 3. Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Evolución anual de publicaciones científicas sobre blockchain en los países líderes.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:grafico_lineas}
+	\begin{flushleft}
+		\textbf{Figura 3}\\[2em]
+		\textit{Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
+	\end{flushleft}
+	\vspace{1em}
+	\addcontentsline{lof}{figure}{Figura 3. Evolución anual de publicaciones en los países líderes del tema (Brasil, México, Colombia, España y Perú)}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Images/GraficoLineas.png}
+	\vspace{2em}
+	\begin{flushleft}
+		\textit{Nota.} Evolución anual de publicaciones científicas sobre blockchain en los países líderes.
+	\end{flushleft}
+	\refstepcounter{figure}\label{fig:grafico_lineas}
 \end{figure}
 
 \begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 4}\\[2em]
-        \textit{Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 4. Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Nube de palabras con los términos más recurrentes en la literatura sobre blockchain e infracciones.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:nube_palabras}
+	\begin{flushleft}
+		\textbf{Figura 4}\\[2em]
+		\textit{Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
+	\end{flushleft}
+	\vspace{1em}
+	\addcontentsline{lof}{figure}{Figura 4. Nube de palabras de los términos más recurrentes en la literatura sobre blockchain e infracciones}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Images/NubePalabras.png}
+	\vspace{2em}
+	\begin{flushleft}
+		\textit{Nota.} Nube de palabras con los términos más recurrentes en la literatura sobre blockchain e infracciones.
+	\end{flushleft}
+	\refstepcounter{figure}\label{fig:nube_palabras}
 \end{figure}
 
 \paragraph{Nube de palabras}
 La Figura~\ref{fig:nube_palabras} muestra los términos más frecuentes en la literatura analizada. Destacan conceptos como \textit{blockchain}, \textit{challenges}, \textit{management} y \textit{secure}, lo que refleja el énfasis de la comunidad académica en los retos de seguridad y gestión al aplicar tecnologías DLT en contextos gubernamentales.
 
 \begin{figure}[htbp]
-    \begin{flushleft}
-        \textbf{Figura 5}\\[2em]
-        \textit{Mapa temático de los principales temas de investigación en el área}
-    \end{flushleft}
-    \vspace{1em}
-    \addcontentsline{lof}{figure}{Figura 5. Mapa temático de los principales temas de investigación en el área}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/MapaTematico.jpeg}
-    \vspace{2em}
-    \begin{flushleft}
-        \textit{Nota.} Mapa temático de los principales temas de investigación en blockchain y gestión de infracciones.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:mapa_tematico}
+	\begin{flushleft}
+		\textbf{Figura 5}\\[2em]
+		\textit{Mapa temático de los principales temas de investigación en el área}
+	\end{flushleft}
+	\vspace{1em}
+	\addcontentsline{lof}{figure}{Figura 5. Mapa temático de los principales temas de investigación en el área}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Images/MapaTematico.jpeg}
+	\vspace{2em}
+	\begin{flushleft}
+		\textit{Nota.} Mapa temático de los principales temas de investigación en blockchain y gestión de infracciones.
+	\end{flushleft}
+	\refstepcounter{figure}\label{fig:mapa_tematico}
 \end{figure}
 
 \paragraph{Mapa temático}
@@ -244,10 +244,10 @@ El sistema de fotocomparendos en Bogotá (FENIX) representa un modelo tecnológi
 La implementación de fotocomparendos en Bogotá se sustenta en la Ley 1843 de 2017 \parencite{ley1843} y su reglamentación mediante resoluciones como la Resolución 20203040011245 \parencite{resolucion11245}. Estos instrumentos establecen cuatro criterios para instalar cámaras:
 
 \begin{enumerate}
-    \item \textbf{Siniestralidad:} Ubicación en zonas con alto índice de accidentes.
-    \item \textbf{Prevención:} Disuasión de conductas peligrosas.
-    \item \textbf{Movilidad:} Optimización del flujo vehicular.
-    \item \textbf{Historial de infracciones:} Enfoque en corredores con recurrentes violaciones.
+	\item \textbf{Siniestralidad:} Ubicación en zonas con alto índice de accidentes.
+	\item \textbf{Prevención:} Disuasión de conductas peligrosas.
+	\item \textbf{Movilidad:} Optimización del flujo vehicular.
+	\item \textbf{Historial de infracciones:} Enfoque en corredores con recurrentes violaciones.
 \end{enumerate}
 
 Adicionalmente, las autoridades deben garantizar la visibilidad de los dispositivos, señalizando su presencia al menos 500 metros antes de su ubicación \parencite{ley1843}, y cumplir con planes de seguridad vial alineados con políticas distritales. La Secretaría Distrital de Movilidad (SDM) ha enfrentado cuestionamientos legales, como los señalados por la Personería en 2018 \parencite{sdm_camaras2023}.
@@ -259,8 +259,8 @@ Adicionalmente, las autoridades deben garantizar la visibilidad de los dispositi
 Las cámaras de fotodetección en Bogotá se clasifican en dos tipos \parencite{supertransporte2021, mintransporte2023}:
 
 \begin{itemize}
-    \item \textbf{Automáticas:} Monitorean velocidades, semáforos en rojo y restricciones como pico y placa.
-    \item \textbf{Semiautomáticas:} Vigilan bloqueos de calzadas, paradas prohibidas y recolección irregular de pasajeros.
+	\item \textbf{Automáticas:} Monitorean velocidades, semáforos en rojo y restricciones como pico y placa.
+	\item \textbf{Semiautomáticas:} Vigilan bloqueos de calzadas, paradas prohibidas y recolección irregular de pasajeros.
 \end{itemize}
 
 Estos dispositivos, instalados en corredores de alta accidentalidad como la Avenida NQS o la Calle 100, capturan imágenes o videos que incluyen matrícula, fecha, hora y ubicación GPS. Por ejemplo, en 2025, un conductor que exceda el límite de 50 km/h en la Avenida Boyacá será registrado por cámaras previamente señalizadas.
@@ -270,9 +270,9 @@ Estos dispositivos, instalados en corredores de alta accidentalidad como la Aven
 Una vez detectada una presunta infracción, las pruebas se envían a un centro de análisis de la SDM, donde agentes de tránsito verifican:
 
 \begin{itemize}
-    \item Legibilidad de la matrícula.
-    \item Contexto de la violación (ejemplo: si un semáforo en rojo fue respetado).
-    \item Datos del vehículo en el RUNT (Registro Único Nacional de Tránsito).
+	\item Legibilidad de la matrícula.
+	\item Contexto de la violación (ejemplo: si un semáforo en rojo fue respetado).
+	\item Datos del vehículo en el RUNT (Registro Único Nacional de Tránsito).
 \end{itemize}
 
 Tras validar la infracción, se genera un comparendo electrónico notificado al propietario del vehículo mediante correo certificado o plataformas digitales. El plazo máximo para emitir la sanción es de 10 días hábiles desde la detección, seguido de 3 días para su notificación. Si el domicilio registrado está desactualizado, el infractor podría no recibir la notificación, lo que no exime el pago \parencite{ley1843}.
@@ -282,9 +282,9 @@ Tras validar la infracción, se genera un comparendo electrónico notificado al 
 El sistema combina:
 
 \begin{itemize}
-    \item \textbf{Cámaras de última generación:} Equipadas con sensores de velocidad Lidar y visión nocturna.
-    \item \textbf{Plataforma de análisis IA:} Algoritmos que descartan falsos positivos (ejemplo: ambulancias en emergencia).
-    \item \textbf{Integración con RUNT:} Verificación instantánea de documentos como SOAT o tarjeta de operación.
+	\item \textbf{Cámaras de última generación:} Equipadas con sensores de velocidad Lidar y visión nocturna.
+	\item \textbf{Plataforma de análisis IA:} Algoritmos que descartan falsos positivos (ejemplo: ambulancias en emergencia).
+	\item \textbf{Integración con RUNT:} Verificación instantánea de documentos como SOAT o tarjeta de operación.
 \end{itemize}
 
 Los datos se almacenan en servidores con cifrado AES-256, accesibles solo para funcionarios autorizados mediante autenticación biométrica.
@@ -292,8 +292,8 @@ Los datos se almacenan en servidores con cifrado AES-256, accesibles solo para f
 \myparagraph{Problemas operativos identificados}
 
 \begin{itemize}
-    \item \textbf{Notificaciones fallidas:} Errores en direcciones del RUNT causan sanciones no recibidas, acumulando intereses moratorios.
-    \item \textbf{Latencia en validaciones:} En horas pico, el volumen de infracciones puede retrasar procesamientos hasta 72 horas.
+	\item \textbf{Notificaciones fallidas:} Errores en direcciones del RUNT causan sanciones no recibidas, acumulando intereses moratorios.
+	\item \textbf{Latencia en validaciones:} En horas pico, el volumen de infracciones puede retrasar procesamientos hasta 72 horas.
 \end{itemize}
 
 \myparagraph{Cuestionamientos legales}

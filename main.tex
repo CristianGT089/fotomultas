@@ -48,11 +48,13 @@
 \usepackage{pifont}       % Para usar símbolos como \ding
 % xcolor con opción table se carga via PassOptionsToPackage arriba
 \usepackage{caption}
+% Definir separador personalizado con espacio vertical entre número y título de tabla
+\DeclareCaptionLabelSeparator{newlinewithspace}{\\[6pt]}
 \usepackage{longtable}    % Tablas que se extienden por múltiples páginas
 \usepackage{setspace}     % Para control de interlineado
 \usepackage{ragged2e}     % Para alineación que mantiene sangría
 % \captionsetup[figure]{labelformat=default,labelsep=period,name=Figura,position=above,labelfont=bf,textfont=it}
-\captionsetup[table]{labelformat=default,labelsep=period,name=Tabla}
+\captionsetup[table]{labelformat=default,labelsep=newlinewithspace,labelfont=bf,textfont=it,skip=10pt,name=Tabla}
 % \usepackage{epstopdf}
 \usepackage{float}
 \usepackage{placeins}     % Para usar \FloatBarrier y evitar que tablas se corten
@@ -95,19 +97,19 @@
 % \maketitle
 \include{cover}
 
-\raggedbottom 
+\raggedbottom
 
 \pagenumbering{roman}
-    % Contenido
+% Contenido
 \renewcommand\contentsname{\textbf{Índice}}
 \tableofcontents
 \setcounter{tocdepth}{2}
 \newpage
-    % Fíguras
+% Fíguras
 \renewcommand{\listfigurename}{\textbf{Índice de figuras}}
 \listoffigures
 \newpage
-    % Tablas
+% Tablas
 \renewcommand{\listtablename}{\textbf{Índice de tablas}}
 \listoftables
 \newpage
@@ -133,7 +135,7 @@
 % Referencias
 \newpage
 \printbibliography[
-    heading=bibintoc,
-    title={Referencias}
+	heading=bibintoc,
+	title={Referencias}
 ]
 \end{document}

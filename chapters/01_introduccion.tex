@@ -1,4 +1,4 @@
-\section{\large Introducción}
+\section{Introducción}
 
 En Colombia, la gestión de fotocomparendos ha enfrentado cuestionamientos persistentes en materia de transparencia y confiabilidad de los registros administrativos \parencite{contraloria2024detrimento}. La evidencia disponible indica que el sistema actual, soportado en arquitecturas centralizadas como FÉNIX, presenta limitaciones en seguridad, trazabilidad y confianza ciudadana \parencite{DAFP_Lineamientos_2021}. Estas debilidades se manifiestan en indicadores críticos, como una tasa de impugnación del 34.1\% y más de 155.000 PQRSD tramitadas semestralmente, lo cual evidencia una carga administrativa difícilmente sostenible y un déficit de confianza institucional \parencite{sdm2024estadisticas}.
 
@@ -13,19 +13,19 @@ En este contexto, el presente proyecto de grado propone el diseño e implementac
 La gestión de comparendos en Bogotá es un proceso de gran escala. Según datos del Observatorio de Movilidad, entre enero de 2018 y agosto de 2024 se emitieron más de 1.9 millones de comparendos a través de cámaras salvavidas, evidenciando la importancia sistémica de este proceso para la regulación del tránsito en la ciudad, como se presenta en la Figura~\ref{fig:estadisticas_comparendos} se observa los diferentes métodos utilizados para crear los comparendos. Esta operación se apoya en el sistema FÉNIX, una aplicación con infraestructura en la nube, cuya arquitectura de datos y control de acceso opera bajo un paradigma centralizado.
 
 \begin{figure}[h!]
-    \begin{flushleft}
-        \textbf{Figura 1}\\[0.5em]
-        \textit{Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
-    \end{flushleft}
-    \vspace{0.3em}
-    \addcontentsline{lof}{figure}{Figura 1. Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
-    \centering
-    \includegraphics[width=0.75\textwidth]{Images/numComparendos.png}
-    \vspace{0.5em}
-    \begin{flushleft}
-        \textit{Nota.} Estadísticas de comparendos emitidos en Bogotá entre 2018 y 2024, mostrando los diferentes métodos de creación.
-    \end{flushleft}
-    \refstepcounter{figure}\label{fig:estadisticas_comparendos}
+	\begin{flushleft}
+		\textbf{Figura 1}\\[0.5em]
+		\textit{Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
+	\end{flushleft}
+	\vspace{0.3em}
+	\addcontentsline{lof}{figure}{Figura 1. Estadísticas de comparendos emitidos en Bogotá entre enero de 2018 y agosto de 2024}
+	\centering
+	\includegraphics[width=0.75\textwidth]{Images/numComparendos.png}
+	\vspace{0.5em}
+	\begin{flushleft}
+		\textit{Nota.} Estadísticas de comparendos emitidos en Bogotá entre 2018 y 2024, mostrando los diferentes métodos de creación.
+	\end{flushleft}
+	\refstepcounter{figure}\label{fig:estadisticas_comparendos}
 \end{figure}
 
 En el sistema actual, la validez e inmutabilidad de los registros de infracciones se fundamenta en los procedimientos administrativos y en la gestión de los funcionarios responsables del sistema \parencite{C112_2018}. Los cambios en la información solo pueden ser detectados por las entidades autorizadas, lo que implica que el control sobre los registros depende directamente de la correcta aplicación de las políticas internas y del seguimiento realizado por dichas entidades \parencite{Sentencia123_2019}.
@@ -53,21 +53,21 @@ En síntesis, el problema se formula como un Riesgo de Integridad de Datos inher
 Para comprender el alcance del problema de integridad, es fundamental identificar los estados por los que transita un comparendo desde su emisión hasta su resolución final. El proceso de fotocomparendos en Bogotá contempla los siguientes estados principales:
 
 \begin{enumerate}
-    \item \textbf{GENERADA:} Estado inicial del comparendo, creado por un agente de tránsito o sistema automático de fotodetección al registrar una infracción. En este estado se capturan los metadatos esenciales: placa del vehículo, tipo de infracción, fecha, hora, ubicación y evidencia fotográfica.
+	\item \textbf{GENERADA:} Estado inicial del comparendo, creado por un agente de tránsito o sistema automático de fotodetección al registrar una infracción. En este estado se capturan los metadatos esenciales: placa del vehículo, tipo de infracción, fecha, hora, ubicación y evidencia fotográfica.
 
-    \item \textbf{NOTIFICADA:} El comparendo ha sido oficialmente notificado al ciudadano propietario o conductor del vehículo, según lo establecido en el Código Nacional de Tránsito. La notificación puede realizarse de forma electrónica, por correo certificado o personalmente. Este estado habilita los términos legales para respuesta ciudadana.
+	\item \textbf{NOTIFICADA:} El comparendo ha sido oficialmente notificado al ciudadano propietario o conductor del vehículo, según lo establecido en el Código Nacional de Tránsito. La notificación puede realizarse de forma electrónica, por correo certificado o personalmente. Este estado habilita los términos legales para respuesta ciudadana.
 
-    \item \textbf{PENDIENTE\_RESPUESTA:} El ciudadano ha sido notificado y se encuentra dentro del plazo legal para tomar una acción: pagar voluntariamente con descuento, solicitar acuerdos de pago, o presentar una apelación mediante PQRSD. Este es un estado crítico donde la integridad de la evidencia es fundamental para la toma de decisiones.
+	\item \textbf{PENDIENTE\_RESPUESTA:} El ciudadano ha sido notificado y se encuentra dentro del plazo legal para tomar una acción: pagar voluntariamente con descuento, solicitar acuerdos de pago, o presentar una apelación mediante PQRSD. Este es un estado crítico donde la integridad de la evidencia es fundamental para la toma de decisiones.
 
-    \item \textbf{EN\_APELACION:} El ciudadano ha presentado formalmente una Petición, Queja, Reclamo, Sugerencia o Denuncia (PQRSD) cuestionando la validez del comparendo. Durante este estado, la autoridad de tránsito debe revisar la evidencia, verificar el cumplimiento del debido proceso, y emitir una resolución motivada. La trazabilidad completa del comparendo es esencial en esta etapa.
+	\item \textbf{EN\_APELACION:} El ciudadano ha presentado formalmente una Petición, Queja, Reclamo, Sugerencia o Denuncia (PQRSD) cuestionando la validez del comparendo. Durante este estado, la autoridad de tránsito debe revisar la evidencia, verificar el cumplimiento del debido proceso, y emitir una resolución motivada. La trazabilidad completa del comparendo es esencial en esta etapa.
 
-    \item \textbf{RESUELTA\_APELACION:} La autoridad competente ha tomado una decisión sobre la apelación presentada, que puede ser: (a) confirmar el comparendo, (b) revocarlo total o parcialmente, o (c) declararlo nulo por defectos procedimentales. La decisión debe estar debidamente fundamentada y ser notificada al ciudadano.
+	\item \textbf{RESUELTA\_APELACION:} La autoridad competente ha tomado una decisión sobre la apelación presentada, que puede ser: (a) confirmar el comparendo, (b) revocarlo total o parcialmente, o (c) declararlo nulo por defectos procedimentales. La decisión debe estar debidamente fundamentada y ser notificada al ciudadano.
 
-    \item \textbf{PAGADA:} El comparendo ha sido pagado, ya sea voluntariamente por el ciudadano, mediante acuerdo de pago, o tras agotar el proceso de apelación con resultado confirmatorio. El pago liquida la obligación económica pero el registro del comparendo permanece en el sistema con fines estadísticos y de antecedentes.
+	\item \textbf{PAGADA:} El comparendo ha sido pagado, ya sea voluntariamente por el ciudadano, mediante acuerdo de pago, o tras agotar el proceso de apelación con resultado confirmatorio. El pago liquida la obligación económica pero el registro del comparendo permanece en el sistema con fines estadísticos y de antecedentes.
 
-    \item \textbf{CANCELADA:} El comparendo ha sido cancelado administrativamente por razones como: anulación judicial, revocación por defectos procedimentales, o corrección de errores en la emisión (ej. placa incorrecta). Este estado requiere la mayor trazabilidad posible para prevenir cancelaciones irregulares.
+	\item \textbf{CANCELADA:} El comparendo ha sido cancelado administrativamente por razones como: anulación judicial, revocación por defectos procedimentales, o corrección de errores en la emisión (ej. placa incorrecta). Este estado requiere la mayor trazabilidad posible para prevenir cancelaciones irregulares.
 
-    \item \textbf{CERRADA:} Estado final y definitivo del comparendo. Todas las acciones administrativas, judiciales o de pago han concluido. El registro se mantiene de forma permanente en el sistema con fines de auditoría, estadística y consulta histórica.
+	\item \textbf{CERRADA:} Estado final y definitivo del comparendo. Todas las acciones administrativas, judiciales o de pago han concluido. El registro se mantiene de forma permanente en el sistema con fines de auditoría, estadística y consulta histórica.
 \end{enumerate}
 
 Cada transición entre estados representa un punto crítico donde la alteración, pérdida o manipulación de datos puede comprometer la validez del acto administrativo y generar las consecuencias descritas anteriormente: impugnaciones, detrimento patrimonial y vulnerabilidad ciudadana. En el desarrollo del proyecto se identifican explícitamente como puntos de intervención técnica: (i) el registro inicial de metadatos y evidencia en los estados \textbf{GENERADA} y \textbf{NOTIFICADA}; (ii) la trazabilidad de cambios y decisiones durante \textbf{PENDIENTE\_RESPUESTA}, \textbf{EN\_APELACION} y \textbf{RESUELTA\_APELACION}, con especial énfasis en \textbf{CANCELADA}; y (iii) la verificación independiente y permanente del cierre del caso en \textbf{CERRADA}.
@@ -81,9 +81,9 @@ Ante este panorama, surge la necesidad de explorar arquitecturas que permitan su
 Desarrollar un prototipo software tecnológico que facilite el registro y la trazabilidad de los estados en el proceso de fotocomparendos en Bogotá, mediante la aplicación de tecnologías de redes distribuidas, para el fortalecimiento de la integridad y autenticidad de la información reduciendo los riesgos asociados a su confidencialidad.
 \paragraph{Objetivos específicos}
 \begin{itemize}
-    \item Analizar el proceso actual de registro de fotocomparendos en Bogotá, a partir del marco jurídico y regulatorio que lo rige y de los informes de auditoría emitidos por la secretaria distrital de movilidad sobre la gestión de comparendos, para identificar vulnerabilidades, requisitos funcionales y no funcionales.
-    \item Desarrollar un prototipo con arquitectura híbrida basado en \textit{blockchain} permisionado (\textit{Hyperledger Fabric}) y \textit{blockchain} público (\textit{Ethereum}), integrando almacenamiento distribuido mediante \textit{IPFS}, asegurando que cada transacción incorpore los metadatos del comparendo y disponiendo de una interfaz de programación de aplicaciones (API \textit{REST}) que permita operaciones de registro, consulta y verificación de estados.
-    \item Evaluar la viabilidad técnica y funcional del prototipo a través de un plan de pruebas que incluya: pruebas de inmutabilidad ante intentos de modificación de registros, verificación de trazabilidad mediante validación de \textit{hashes} criptográficos en cada transición de estado, análisis de rendimiento para validar tiempos de respuesta ≤3 segundos, y evaluación de integridad de documentos mediante \textit{Content Identifiers} (\textit{CID}) de \textit{IPFS}.
+	\item Analizar el proceso actual de registro de fotocomparendos en Bogotá, a partir del marco jurídico y regulatorio que lo rige y de los informes de auditoría emitidos por la secretaria distrital de movilidad sobre la gestión de comparendos, para identificar vulnerabilidades, requisitos funcionales y no funcionales.
+	\item Desarrollar un prototipo con arquitectura híbrida basado en \textit{blockchain} permisionado (\textit{Hyperledger Fabric}) y \textit{blockchain} público (\textit{Ethereum}), integrando almacenamiento distribuido mediante \textit{IPFS}, asegurando que cada transacción incorpore los metadatos del comparendo y disponiendo de una interfaz de programación de aplicaciones (API \textit{REST}) que permita operaciones de registro, consulta y verificación de estados.
+	\item Evaluar la viabilidad técnica y funcional del prototipo a través de un plan de pruebas que incluya: pruebas de inmutabilidad ante intentos de modificación de registros, verificación de trazabilidad mediante validación de \textit{hashes} criptográficos en cada transición de estado, análisis de rendimiento para validar tiempos de respuesta ≤3 segundos, y evaluación de integridad de documentos mediante \textit{Content Identifiers} (\textit{CID}) de \textit{IPFS}.
 \end{itemize}
 
 \subsection{Impacto esperado}
@@ -91,10 +91,10 @@ Desarrollar un prototipo software tecnológico que facilite el registro y la tra
 El desarrollo de este prototipo tiene como propósito demostrar la viabilidad técnica de una arquitectura descentralizada para la gestión de fotocomparendos, con el potencial de:
 
 \begin{itemize}
-    \item \textbf{Fortalecer la confianza ciudadana:} Mediante la verificación independiente de infracciones y el acceso transparente a la información, sin intermediarios.
-    \item \textbf{Reducir la fricción operativa:} Disminuir los recursos destinados a la gestión de PQRSD y disputas administrativas, actualmente estimados en más de 155.000 casos semestrales.
-    \item \textbf{Prevenir fraudes:} Mitigar la vulnerabilidad de los ciudadanos ante esquemas de estafa derivados de la falta de canales oficiales confiables.
-    \item \textbf{Establecer un precedente técnico:} Servir como referencia para la implementación de soluciones similares en otros procesos gubernamentales que requieran alta integridad de datos.
+	\item \textbf{Fortalecer la confianza ciudadana:} Mediante la verificación independiente de infracciones y el acceso transparente a la información, sin intermediarios.
+	\item \textbf{Reducir la fricción operativa:} Disminuir los recursos destinados a la gestión de PQRSD y disputas administrativas, actualmente estimados en más de 155.000 casos semestrales.
+	\item \textbf{Prevenir fraudes:} Mitigar la vulnerabilidad de los ciudadanos ante esquemas de estafa derivados de la falta de canales oficiales confiables.
+	\item \textbf{Establecer un precedente técnico:} Servir como referencia para la implementación de soluciones similares en otros procesos gubernamentales que requieran alta integridad de datos.
 \end{itemize}
 
-\textbf{Nota:} Para la especificación detallada del alcance del proyecto, los componentes del prototipo, criterios de éxito y limitaciones metodológicas, consultar la sección Alcance. 
+\textbf{Nota:} Para la especificación detallada del alcance del proyecto, los componentes del prototipo, criterios de éxito y limitaciones metodológicas, consultar la sección Alcance.

@@ -1,4 +1,4 @@
-\section{\large Marco teórico}
+\section{Marco teórico}
 El marco conceptual y técnologico que sustenta la propuesta del prototipo, presentan las teorías y modelos clave que justifican la selección de blockchain e IPFS como componentes centrales, evidencian los principios inherentes de integridad, transparencia, resiliencia y auditabilidad en la gestión de evidencia digital crítica como los fotocomparendos.
 \subsection{Confianza descentralizada}
 Los sistemas de información tradicionales suelen depender de intermediarios centralizados o autoridades certificadoras para validar transacciones y garantizar la fiabilidad de los registros. La teoría de los modelos de confianza descentralizada, en cambio, analiza cómo establecer y mantener la confianza en entornos distribuidos donde tales autoridades centrales están ausentes \parencite{swan2015blockchain}.
@@ -10,9 +10,9 @@ El paradigma de la confianza descentralizada se sustenta en la teoría de los si
 
 La relevancia de esta teoría para el presente proyecto es primordial, ya que tanto blockchain como el InterPlanetary File System (IPFS) son implementaciones nativas de sistemas distribuidos. Su adopción conjunta promueve inherentemente:
 \begin{itemize}
-    \item \textbf{Resiliencia:} Al eliminar puntos únicos de fallo (Single Points of Failure - SPOF).
-    \item \textbf{Alta Disponibilidad:} Al permitir el acceso a datos y servicios desde múltiples nodos.
-    \item \textbf{Resistencia a la Censura:} Dado que ninguna entidad individual posee control absoluto sobre la red o los datos almacenados \parencite{antonopoulos2023mastering}.
+	\item \textbf{Resiliencia:} Al eliminar puntos únicos de fallo (Single Points of Failure - SPOF).
+	\item \textbf{Alta Disponibilidad:} Al permitir el acceso a datos y servicios desde múltiples nodos.
+	\item \textbf{Resistencia a la Censura:} Dado que ninguna entidad individual posee control absoluto sobre la red o los datos almacenados \parencite{antonopoulos2023mastering}.
 \end{itemize}
 
 Una característica esencial de estos sistemas es su arquitectura de red \textbf{Peer-to-Peer (P2P)}, donde los participantes se conectan y comparten recursos directamente entre sí, sin necesidad de un servidor central. En una red P2P, cada nodo puede actuar simultáneamente como cliente y servidor, lo que posibilita que el registro distribuido (ledger) se mantenga sincronizado y que los archivos puedan ser recuperados desde múltiples fuentes, garantizando la integridad de la información sin depender de una autoridad central.
@@ -31,9 +31,9 @@ La \textbf{inmutabilidad} y la \textbf{transparencia} son los beneficios central
 \paragraph{Modelos arquitectónicos y elección para el prototipo}
 La tecnología blockchain no es monolítica; existen diferentes arquitecturas:
 \begin{itemize}
-    \item \textbf{Públicas (Permissionless):} Abiertas a cualquier participante, priorizan la descentralización radical (ej. Bitcoin, Ethereum) \parencite{nakamoto2008bitcoin}.
-    \item \textbf{Privadas:} Controladas por una única entidad, ofrecen alta eficiencia pero son centralizadas.
-    \item \textbf{De Consorcio/Permisionadas (Permissioned):} Operadas por un grupo selecto de participantes autorizados. Ofrecen un equilibrio entre descentralización, rendimiento y confidencialidad, siendo la opción ideal para contextos gubernamentales y empresariales \parencite{vukolic2015quest,cachin2018architecture}.
+	\item \textbf{Públicas (Permissionless):} Abiertas a cualquier participante, priorizan la descentralización radical (ej. Bitcoin, Ethereum) \parencite{nakamoto2008bitcoin}.
+	\item \textbf{Privadas:} Controladas por una única entidad, ofrecen alta eficiencia pero son centralizadas.
+	\item \textbf{De Consorcio/Permisionadas (Permissioned):} Operadas por un grupo selecto de participantes autorizados. Ofrecen un equilibrio entre descentralización, rendimiento y confidencialidad, siendo la opción ideal para contextos gubernamentales y empresariales \parencite{vukolic2015quest,cachin2018architecture}.
 \end{itemize}
 Para este prototipo, se opta por una \textbf{implementación permisionada} (simulada con Hyperledger Fabric), permitiendo que solo entidades autorizadas operen nodos y registren transacciones, con un mecanismo de consenso eficiente (ej. Raft) adecuado para un sistema de gestión de registros.
 
@@ -45,16 +45,16 @@ En este modelo, la identidad única de un archivo, su Content Identifier (CID), 
 \subsection{Arquitectura híbrida blockchain-IPFS}
 La integración de ambas tecnologías en una arquitectura híbrida sigue el siguiente flujo de trabajo:
 \begin{enumerate}
-    \item La imagen probatoria del comparendo se carga a un nodo IPFS, obteniendo su CID único.
-    \item Se crea una transacción en la blockchain (on-chain) que contiene este CID junto con los metadatos esenciales del comparendo (fecha, hora, lugar, placa).
-    \item Esta transacción se valida y registra de forma inmutable en el ledger.
+	\item La imagen probatoria del comparendo se carga a un nodo IPFS, obteniendo su CID único.
+	\item Se crea una transacción en la blockchain (on-chain) que contiene este CID junto con los metadatos esenciales del comparendo (fecha, hora, lugar, placa).
+	\item Esta transacción se valida y registra de forma inmutable en el ledger.
 \end{enumerate}
 Este enfoque crea un enlace criptográfico inalterable entre el registro oficial (en blockchain) y la evidencia visual original (en IPFS). Cualquier intento de manipulación de la imagen almacenada en IPFS resultaría en un CID diferente, rompiendo explícitamente la cadena de custodia digital y haciendo que la alteración sea detectable de forma inmediata y algorítmica. La combinación de blockchain e IPFS no solo sigue los principios de descentralización \parencite{vanSteen2017}, sino que refuerza activamente los objetivos de inmutabilidad verificable y transparencia del sistema.
 
 \subsection{Criptografía aplicada}
 La criptografía proporciona los pilares matemáticos que garantizan la seguridad, integridad y autenticidad en todo el ecosistema del prototipo \parencite{katz2020introduction}.
 \begin{itemize}
-    \item \textbf{Funciones Hash Criptográficas:} Son algoritmos que transforman datos en una huella digital de tamaño fijo. Sus propiedades (unidireccionalidad, resistencia a colisiones, efecto avalancha) son vitales \parencite{schneier2007applied, menezes1996handbook}. En este proyecto, se utilizan para: generar el CID en IPFS, asegurar la integridad de la cadena de bloques y crear identificadores únicos para las transacciones \parencite{benet2014ipfs, nakamoto2008bitcoin}.
-    \item \textbf{Criptografía Asimétrica y Firmas Digitales:} Basada en pares de claves (pública y privada), habilita las firmas digitales \parencite{diffie2022new, rivest1978method}. Cuando un usuario autorizado registra un comparendo, utiliza su clave privada para firmar la transacción. Cualquier participante puede usar la clave pública correspondiente para verificar la firma, garantizando así la \textbf{autenticidad} y el \textbf{no repudio} de la acción \parencite{katz2020introduction}.
+	\item \textbf{Funciones Hash Criptográficas:} Son algoritmos que transforman datos en una huella digital de tamaño fijo. Sus propiedades (unidireccionalidad, resistencia a colisiones, efecto avalancha) son vitales \parencite{schneier2007applied, menezes1996handbook}. En este proyecto, se utilizan para: generar el CID en IPFS, asegurar la integridad de la cadena de bloques y crear identificadores únicos para las transacciones \parencite{benet2014ipfs, nakamoto2008bitcoin}.
+	\item \textbf{Criptografía Asimétrica y Firmas Digitales:} Basada en pares de claves (pública y privada), habilita las firmas digitales \parencite{diffie2022new, rivest1978method}. Cuando un usuario autorizado registra un comparendo, utiliza su clave privada para firmar la transacción. Cualquier participante puede usar la clave pública correspondiente para verificar la firma, garantizando así la \textbf{autenticidad} y el \textbf{no repudio} de la acción \parencite{katz2020introduction}.
 \end{itemize}
 A partir de estos fundamentos, se analizan a continuación las principales investigaciones y proyectos aplicados que exploran estas tecnologías en contextos gubernamentales.
