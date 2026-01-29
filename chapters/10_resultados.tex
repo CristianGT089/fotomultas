@@ -76,7 +76,7 @@ Un aspecto crítico señalado por el evaluador es la validación de que las prue
 
 \input{tables/validacion_estados}
 
-Como se observa en la tabla, el prototipo valida exitosamente los cinco estados implementados (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), que representan las transiciones críticas del ciclo de vida de un comparendo. Cada transición de estado fue probada mediante casos de prueba específicos que verifican:
+Como se observa en la Tabla~\ref{tab:validacion_estados}, el prototipo valida exitosamente los cinco estados implementados (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED), que representan las transiciones críticas del ciclo de vida de un comparendo. Cada transición de estado fue probada mediante casos de prueba específicos que verifican:
 
 \begin{enumerate}
     \item \textbf{Inmutabilidad del registro inicial}: Una vez que un comparendo es registrado en estado PENDING con su \textit{hash} criptográfico y CID de IPFS, cualquier intento de modificación de metadatos (placa, ubicación, hora, tipo de infracción) es rechazado por el \textit{smart contract}. Las pruebas demostraron 100\% de rechazo de intentos de alteración, garantizando que el registro original permanece intacto y auditable.
