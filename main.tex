@@ -59,6 +59,7 @@
 \usepackage{float}
 \usepackage{placeins}     % Para usar \FloatBarrier y evitar que tablas se corten
 \usepackage{afterpage}    % Para controlar colocación de flotantes
+\usepackage{eso-pic}      % Para posicionar número de página en portada
 
 % Parámetros optimizados para evitar que tablas se corten al final de página
 \renewcommand{\floatpagefraction}{0.5}       % Página necesita solo 50% de flotantes para dedicarse a ellos
@@ -80,11 +81,11 @@
 % --- Información del Documento (Ejemplo) ---
 
 \title{Prototipo para apoyar el registro y trazabilidad de estados en el proceso de fotocomparendos aplicando tecnologías de redes distribuidas}
-\shorttitle{Gestion de Comparendos}
+\shorttitle{Gestión Descentralizada de Comparendos}
 \author{Laura Catalina Preciado Ballen \\Cristian Stiven Guzman Tovar}
 \affiliation{Universidad Distrital Francisco José de Caldas}
 \course{Proyecto de grado para optar al título de: \\Ingeniero (a) de Sistemas}
-\professor{Julio Baron Velandia}
+\professor{Julio Baron Velandia, Ph.D}
 \duedate{\today}
 \abstract{Este trabajo propone el diseño e implementación de un prototipo basado en blockchain para la gestión de fotocomparendos en Bogotá, con el objetivo de garantizar la transparencia del proceso. Se utilizan contratos inteligentes para registrar cada infracción, permitiendo que cualquier actor autorizado pueda verificar su autenticidad sin necesidad de intermediarios. El prototipo, validado en entorno de laboratorio con datos sintéticos, demuestra mediante pruebas funcionales y de integridad cómo esta tecnología puede fortalecer la confianza en los procesos de control de tránsito y mejorar la eficiencia en la gestión de sanciones.}
 \keywords{Fotocomparendos, Gestión de datos, Blockchain, Ingeniería web}
@@ -116,6 +117,7 @@
 
 % Cuerpo
 \pagenumbering{arabic}
+\setcounter{page}{2} % Continuar desde 2 (portada fue 1)
 
 % Incluir capítulos modularizados
 \include{chapters/01_introduccion}
