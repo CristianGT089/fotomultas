@@ -13,12 +13,16 @@
 
     \vspace{0.5em}
 
+    \textbf{Tabla 4}
+
+    \textit{Resultados de la cobertura de pruebas automatizadas}
+
     \scriptsize
     \begin{table}
         \centering
         \begin{tabular}{p{3.5cm} c c p{5cm}}
             \toprule
-            \textbf{Módulo} & \textbf{Pruebas} & \textbf{Éxito} & \textbf{Cobertura} \\
+            Módulo & Pruebas & Éxito & Cobertura \\
             \midrule
             Utilidades (Error Handler) & 7 & 7/7 & Manejo global errores, validaciones \\
             Servicios IPFS & 8 & 8/8 & Subida, recuperación, CIDs \\
@@ -27,10 +31,12 @@
             Seguridad: Archivos & 10 & 10/10 & Límites 10MB, tipos válidos \\
             API REST & 26 & 26/26 & CRUD, blockchain/IPFS, integridad \\
             \midrule
-            \textbf{TOTAL} & \textbf{80} & \textbf{80/80} & \textbf{100\% cobertura} \\
+            TOTAL & 80 & 80/80 & 100\% cobertura \\
             \bottomrule
         \end{tabular}
     \end{table}
+
+    \textbf{Nota.} Elaboración propia.
 
     \begin{exampleblock}{Ingeniería de Software Moderna}
         No es solo un prototipo conceptual - es código de producción validado
@@ -48,7 +54,7 @@
         \centering
         \begin{tabular}{p{1cm} p{4.5cm} p{5cm}}
             \toprule
-            \textbf{ID} & \textbf{Caso de Prueba} & \textbf{Resultado} \\
+            ID & Caso de Prueba & Resultado \\
             \midrule
             IM-001 & Intento modificación directa en ledger & Transacción RECHAZADA por consenso \\
             \midrule
@@ -61,6 +67,12 @@
         \end{tabular}
     \end{table}
 
+    \textbf{Tabla 5}
+
+    \textit{Casos de prueba críticos para inmutabilidad}
+
+    \textbf{Nota.} Elaboración propia.
+
     \vspace{0.5em}
 
     \textbf{Evidencia Técnica:}
@@ -72,7 +84,7 @@
     \end{itemize}
 
     \begin{alertblock}{Validación Experimental}
-        El sistema REALMENTE previene manipulación - no es teórico, está comprobado
+        Los resultados evidencian resistencia a la manipulación de datos, validada mediante pruebas experimentales
     \end{alertblock}
 \end{frame}
 
@@ -129,7 +141,7 @@
     \vspace{0.5em}
 
     \begin{block}{Viabilidad Técnica Demostrada}
-        El sistema es RÁPIDO y SUPERIOR al actual en dimensiones críticas
+        El prototipo presenta tiempos de respuesta inferiores a 3 segundos y supera al sistema actual en integridad y transparencia
     \end{block}
 \end{frame}
 
@@ -140,7 +152,7 @@
         \centering
         \begin{tabular}{p{3.5cm} p{2.5cm} p{4.5cm}}
             \toprule
-            \textbf{Objetivo Específico} & \textbf{Técnica Validación} & \textbf{Resultado} \\
+            Objetivo Específico & Técnica Validación & Resultado \\
             \midrule
             Inmutabilidad blockchain & Pruebas IM-002, IM-003 & 100\% coincidencia hash blockchain-IPFS \\
             \midrule
@@ -157,6 +169,12 @@
         \end{tabular}
     \end{table}
 
+    \textbf{Tabla 7}
+
+    \textit{Cumplimiento de objetivos específicos}
+
+    \textbf{Nota.} Elaboración propia.
+
     \vspace{1em}
 
     \begin{exampleblock}{Validación de Hipótesis Central}
@@ -170,9 +188,13 @@
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Dashboard Agente de Tránsito}
+            \textbf{Figura 10}
+
+            \textit{Dashboard Agente de Tránsito}
 
             \includegraphics[width=\textwidth]{images/UI3.png}
+
+            \textbf{Nota.} Elaboración propia.
 
             \vspace{0.3em}
 
@@ -185,9 +207,13 @@
         \end{column}
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Consulta Ciudadana}
+            Figura 11
+
+            \textit{Consulta Ciudadana}
 
             \includegraphics[width=\textwidth]{images/UI5.png}
+
+            Nota. Elaboración propia.
 
             \vspace{0.3em}
 
@@ -203,6 +229,6 @@
     \vspace{0.5em}
 
     \begin{block}{Aplicación Web Real}
-        No es solo arquitectura abstracta - es una aplicación FUNCIONAL que demuestra viabilidad práctica
+        El prototipo incluye una interfaz funcional que valida la viabilidad práctica de la arquitectura propuesta
     \end{block}
 \end{frame}

@@ -40,12 +40,16 @@
 
     \vspace{0.5em}
 
+    \textbf{Tabla 3}
+
+    \textit{Componentes de la arquitectura híbrida}
+
     \scriptsize
     \begin{table}
         \centering
         \begin{tabular}{p{2.5cm} p{3.5cm} p{3.5cm} p{2cm}}
             \toprule
-            \textbf{Componente} & \textbf{Tecnología} & \textbf{Justificación} & \textbf{TPS} \\
+            Componente & Tecnología & Justificación & TPS \\
             \midrule
             Capa privada & Hyperledger Fabric v2.5 & Control acceso PKI, sin gas fees & 2K-20K \\
             \midrule
@@ -57,6 +61,8 @@
             \bottomrule
         \end{tabular}
     \end{table}
+
+    \textbf{Nota.} Elaboración propia.
 
     \begin{alertblock}{Arquitectura Híbrida}
         Balancea trade-offs irreconciliables mediante descomposición por niveles de confianza
@@ -116,7 +122,13 @@
 \begin{frame}[shrink=10]{Diseño Orientado a Objetos}
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
+            Figura 6
+
+            \textit{Diagrama de Clases}
+
             \includegraphics[width=\textwidth]{images/uml.png}
+
+            Nota. Elaboración propia.
         \end{column}
         \begin{column}{0.4\textwidth}
             \textbf{Patrón Controller-Service-Repository}
@@ -164,9 +176,13 @@
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Creación de Multa}
+            \textbf{Figura 7}
+
+            \textit{Creación de Multa}
 
             \includegraphics[width=0.9\textwidth]{images/ActMulta.png}
+
+            \textbf{Nota.} Elaboración propia.
 
             \vspace{0.3em}
 
@@ -209,7 +225,13 @@
 % ==================== SLIDE 15: DIAGRAMA DE DESPLIEGUE ====================
 \begin{frame}[shrink=15]{Arquitectura Híbrida del Sistema}
     \begin{center}
+        Figura 9
+
+        \textit{Arquitectura Híbrida del Sistema}
+
         \includegraphics[height=0.6\textheight]{images/Despliegue.png}
+
+        Nota. Elaboración propia.
     \end{center}
 
     \vspace{0.3em}
