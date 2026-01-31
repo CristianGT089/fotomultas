@@ -7,6 +7,7 @@
 % ==================== PACKAGES ====================
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -17,21 +18,32 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{colortbl}
+\usepackage{caption}
+
+% ==================== BIBLIOGRAFÍA APA 7 ====================
+\usepackage[style=apa, backend=biber, sortcites=true, sorting=nyt]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{../bibliography.bib}
 
 % ==================== CONFIGURACIÓN DE COLORES ====================
 % Colores institucionales Universidad Distrital
 \definecolor{udblue}{RGB}{0,51,102}
 \definecolor{udlightblue}{RGB}{51,102,153}
 \definecolor{udgray}{RGB}{89,89,89}
-\definecolor{udorange}{RGB}{230,126,34}  % Naranja para títulos
+\definecolor{udorange}{RGB}{230,126,34}
 
 \setbeamercolor{palette primary}{bg=udlightblue,fg=white}
 \setbeamercolor{palette secondary}{bg=udblue,fg=white}
-\setbeamercolor{frametitle}{bg=udlightblue,fg=white}  % Título de frames en azul claro
-\setbeamercolor{title}{fg=udblue}  % Título principal en azul oscuro (texto)
+\setbeamercolor{frametitle}{bg=udlightblue,fg=white}
+\setbeamercolor{title}{fg=udblue}
 \setbeamercolor{title separator}{fg=udlightblue}
 \setbeamercolor{block title}{bg=udblue,fg=white}
 \setbeamercolor{alerted text}{fg=udlightblue}
+
+% ==================== CONFIGURACIÓN DE CAPTIONS APA 7 ====================
+% En beamer las tablas usan caption arriba, en cursiva
+\captionsetup[table]{labelfont=bf, textfont=it, singlelinecheck=false, justification=raggedright, skip=4pt}
+\captionsetup[figure]{labelfont=bf, textfont=it, singlelinecheck=false, justification=raggedright, skip=4pt}
 
 % ==================== CONFIGURACIÓN DE HYPERREF ====================
 \hypersetup{
@@ -59,15 +71,13 @@
 \date{}
 
 % ==================== CONFIGURACIONES ADICIONALES ====================
-% Mostrar número de slide en el footer
 \setbeamertemplate{frame numbering}[fraction]
+\setbeamertemplate{caption}[numbered]
 
-% Ajustar espaciado de items
 \setlength{\leftmargini}{1em}
 \setlength{\leftmarginii}{1.5em}
 
 % ==================== COMANDOS PERSONALIZADOS ====================
-% Comando para crear secciones con página de transición
 \newcommand{\sectionframe}[1]{
     \section{#1}
     \begin{frame}[plain,noframenumbering]
@@ -78,13 +88,13 @@
     \end{frame}
 }
 
-% Comando para destacar texto
 \newcommand{\highlight}[1]{\textcolor{udlightblue}{\textbf{#1}}}
 
 % ==================== INICIO DEL DOCUMENTO ====================
 \begin{document}
 
 % ==================== PORTADA ====================
+% PRESENTADOR: CRISTIAN — Saluda, presenta el título y los autores (~30s)
 \begin{frame}[plain,noframenumbering]
     \vfill
     \begin{center}
@@ -115,26 +125,37 @@
     \vfill
 \end{frame}
 
-% ==================== TABLA DE CONTENIDOS ====================
+% ==================== AGENDA ====================
+% PRESENTADOR: CRISTIAN — Presenta la estructura de la sustentación (~30s)
 \begin{frame}{Agenda}
     \tableofcontents[hideallsubsections]
 \end{frame}
 
 % ==================== CONTENIDO ====================
-% Sección 1: Introducción y Contexto
-\input{slides/01_introduccion}
+% Contexto (sin sección formal - no aparece en agenda)
+\input{slides/00_contexto}
 
-% Sección 2: Justificación y Objetivos
-\input{slides/02_justificacion}
+% Sección 1: Metodología
+\input{slides/02_metodologia}
 
-% Sección 3: Metodología y Diseño
-\input{slides/03_metodologia}
+% Sección 2: Resultados
+\input{slides/03_resultados}
 
-% Sección 4: Resultados y Validación
-\input{slides/04_resultados}
+% Sección 3: Cumplimiento de objetivos (después de mostrar cómo se resolvió)
+\input{slides/01_cumplimiento_objetivos}
 
-% Sección 5: Conclusiones y Cierre
-\input{slides/05_conclusiones}
+% Sección 4: Conclusiones
+\input{slides/04_conclusiones}
+
+% Sección 5: Trabajo futuro
+\input{slides/05_trabajo_futuro}
+
+% ==================== REFERENCIAS ====================
+% Solo se muestra si hay preguntas sobre fuentes — no requiere presentador
+\begin{frame}[allowframebreaks]{Referencias}
+    \footnotesize
+    \printbibliography[heading=none]
+\end{frame}
 
 % ==================== FIN DEL DOCUMENTO ====================
 \end{document}

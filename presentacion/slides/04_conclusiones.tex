@@ -1,0 +1,58 @@
+% ==================== SECCIÓN 4: CONCLUSIONES ====================
+% PRESENTADORES: CATALINA (conclusiones) → CRISTIAN (respuesta a la pregunta)
+\section{Conclusiones}
+
+% ==================== SLIDE: CONCLUSIONES TÉCNICAS ====================
+% CATALINA: Presenta las 3 conclusiones principales (~1.5 min)
+\begin{frame}{Conclusiones principales}
+    \textbf{1. Viabilidad técnica demostrada:}
+    \begin{itemize}
+        \item La arquitectura híbrida (Hyperledger Fabric + Ethereum + IPFS dual) demostró ser viable para la gestión de fotocomparendos en el entorno experimental.
+    \end{itemize}
+
+    \vspace{0.3em}
+
+    \textbf{2. Garantías criptográficas verificadas:}
+    \begin{itemize}
+        \item 100\% de intentos de modificación no autorizada rechazados satisfactoriamente.
+        \item Detección automática de alteraciones mediante \textit{content-addressing} (CIDs).
+        \item Tiempos de respuesta dentro de los criterios de aceptación ($\leq$ 3s).
+    \end{itemize}
+
+    \vspace{0.3em}
+
+    \textbf{3. Modelo de confianza alternativo:}
+    \begin{itemize}
+        \item Transición hacia confianza criptográfica verificable, conciliando privacidad (Ley 1581/2012) y transparencia (Ley 1712/2014).
+    \end{itemize}
+\end{frame}
+
+% ==================== SLIDE: RESPUESTA A LA PREGUNTA ====================
+% CRISTIAN: Responde la pregunta con evidencia y oportunidades (~1.5 min)
+\begin{frame}{Respuesta a la pregunta de investigación}
+    \begin{exampleblock}{Respuesta}
+        La respuesta a la pregunta de investigación es \textbf{afirmativa} dentro del alcance experimental definido: las tecnologías de redes distribuidas permiten mitigar el riesgo de alteración de la integridad de los datos en el proceso de fotocomparendos.
+    \end{exampleblock}
+
+    \vspace{0.8em}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Evidencia obtenida:}
+            \begin{itemize}
+                \item Registro y trazabilidad de 5 estados del ciclo de vida con inmutabilidad criptográfica
+                \item Detección automática de alteraciones en documentos y evidencias
+                \item Modelo de confianza verificable sin intermediarios
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textbf{Oportunidades de extensión:}
+            \begin{itemize}
+                \item Escalamiento a volúmenes operativos reales (457,000 comparendos semestrales)
+                \item Integración con sistemas institucionales (SIMIT, RUNT)
+                \item Incorporación de los estados restantes del proceso
+                \item Estudios de aceptación tecnológica
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}

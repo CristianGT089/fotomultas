@@ -1,0 +1,63 @@
+% ==================== CONTEXTO (sin \section - no aparece en agenda) ====================
+% PRESENTADOR: CATALINA — Contexto completo (~2 min)
+
+% ==================== SLIDE: ESCALA DEL PROBLEMA ====================
+% CATALINA: Presenta cifras del sistema FÉNIX y los indicadores (~1 min)
+\begin{frame}{Contexto: el sistema de fotocomparendos en Bogotá}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{Escala operativa (Sistema FÉNIX):}
+            \begin{itemize}
+                \item \highlight{1.9 millones} de comparendos emitidos entre 2018--2024 \parencite{sdm2024estadisticas}
+                \item \highlight{457,000} comparendos semestrales en promedio
+                \item Arquitectura centralizada (BD relacional)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{images/numComparendos.png}
+            \captionof{figure}{\textit{Comparendos emitidos por semestre}}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3em}
+
+    \textbf{Indicadores de la problemática:}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Tasa de impugnación: \highlight{34.1\%}
+                \item Carga operativa: \highlight{155,854 PQRSD} semestrales
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Presunto detrimento patrimonial: \highlight{\$8,000 millones} \parencite{contraloria2024detrimento}
+                \item Vulnerabilidad ciudadana ante fraudes \parencite{semana2023juzto}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ==================== SLIDE: PREGUNTA DE INVESTIGACIÓN ====================
+% CATALINA: Lee la pregunta de investigación, limitaciones e hipótesis (~1 min)
+\begin{frame}{Formulación del problema}
+    \begin{exampleblock}{Pregunta de investigación}
+        \centering
+        \small
+        \textit{¿Cómo mitigar el riesgo de pérdida o alteración de la integridad de los datos asociados a todos los estados en el proceso de fotocomparendos en Bogotá mediante el uso de tecnologías de redes distribuidas que garanticen el registro, la trazabilidad, la autenticidad y la confidencialidad de la información?}
+    \end{exampleblock}
+
+    \vspace{0.3em}
+
+    \footnotesize
+    \textbf{Limitaciones del modelo actual (FÉNIX):} confianza en administradores centrales, inmutabilidad no garantizada criptográficamente, trazabilidad dependiente de controles internos, auditoría opaca para la ciudadanía.
+
+    \vspace{0.3em}
+
+    \normalsize
+    \begin{alertblock}{Hipótesis}
+        \small
+        Las tecnologías de redes distribuidas (blockchain + IPFS) pueden proporcionar garantías criptográficas de integridad y transparencia verificable sin intermediarios.
+    \end{alertblock}
+\end{frame}

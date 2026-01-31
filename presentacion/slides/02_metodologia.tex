@@ -1,0 +1,173 @@
+% ==================== SECCIÓN 2: METODOLOGÍA ====================
+% PRESENTADORES: CATALINA (enfoque + híbrida) → CRISTIAN (actores) → CATALINA (actividades) → CRISTIAN (sistema) → CATALINA (alcance)
+\section{Metodología}
+
+% ==================== SLIDE: ENFOQUE METODOLÓGICO ====================
+% CATALINA: Justifica el modelo de prototipos y las fases (~1.5 min)
+\begin{frame}{Enfoque metodológico: desarrollo por prototipos}
+    \textbf{Justificación del modelo:}
+    \begin{itemize}
+        \item \textbf{Naturaleza exploratoria:} integración de tecnologías emergentes sin antecedentes en el contexto local
+        \item \textbf{Requisitos evolutivos:} marco normativo y tecnológico en constante actualización
+        \item \textbf{Verificación temprana:} contrastar la hipótesis central antes de un desarrollo a escala
+    \end{itemize}
+
+    \textbf{Fases del desarrollo:}
+    \begin{enumerate}
+        \item \textbf{Análisis de requisitos} $\rightarrow$ Marco legal + auditorías
+        \item \textbf{Diseño arquitectónico} $\rightarrow$ Descomposición por niveles de confianza
+        \item \textbf{Implementación iterativa} $\rightarrow$ Backend + Frontend + Smart Contracts
+        \item \textbf{Pruebas y verificación} $\rightarrow$ 80 casos automatizados
+    \end{enumerate}
+
+    \begin{block}{Decisión metodológica}
+        \footnotesize
+        El modelo de prototipos permite mitigar riesgos técnicos y facilitar ajustes iterativos ante cambios normativos o tecnológicos.
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE: ARQUITECTURA HÍBRIDA ====================
+% CATALINA: Explica el problema y la tabla de componentes (~1.5 min)
+\begin{frame}{Arquitectura híbrida: decisión de diseño}
+    \textbf{Problema:} ninguna plataforma blockchain individual satisface todos los requisitos.
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Privacidad de datos personales (Ley 1581/2012)
+                \item Transparencia pública ciudadana (Ley 1712/2014)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Rendimiento (457,000 comparendos semestrales)
+                \item Costos operativos predecibles
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \footnotesize
+    \begin{table}
+        \caption{Componentes de la arquitectura híbrida}
+        \centering
+        \begin{tabular}{p{2.2cm} p{3cm} p{3.8cm} p{1.5cm}}
+            \toprule
+            \textbf{Componente} & \textbf{Tecnología} & \textbf{Justificación} & \textbf{TPS} \\
+            \midrule
+            Capa privada & Hyperledger Fabric v2.5 & Control de acceso PKI, sin gas fees & 2K--20K \\
+            Capa pública & Ethereum (Sepolia) & Verificación ciudadana & 15--30 \\
+            Storage privado & IPFS privado & Evidencias sensibles & -- \\
+            Storage público & IPFS público & Hashes de verificación & -- \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+% ==================== SLIDE: ACTORES Y FUNCIONALIDADES ====================
+% CRISTIAN: Describe los actores y sus funcionalidades con el diagrama (~1 min)
+\begin{frame}{Actores y funcionalidades principales}
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/CasosUso.png}
+            \captionof{figure}{\textit{Diagrama de casos de uso}}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \textbf{Actores identificados:}
+
+            \vspace{0.5em}
+
+            \begin{enumerate}
+                \item \textbf{Agente de tránsito}
+                \begin{itemize}
+                    \footnotesize
+                    \item Registrar comparendo
+                    \item Actualizar estado
+                \end{itemize}
+
+                \vspace{0.3em}
+
+                \item \textbf{Ciudadano}
+                \begin{itemize}
+                    \footnotesize
+                    \item Consultar multa
+                    \item Verificar autenticidad
+                    \item Apelar
+                \end{itemize}
+
+                \vspace{0.3em}
+
+                \item \textbf{Administrador}
+                \begin{itemize}
+                    \footnotesize
+                    \item Gestionar sistema
+                    \item Auditar operaciones
+                \end{itemize}
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ==================== SLIDE: DIAGRAMAS DE ACTIVIDADES ====================
+% CATALINA: Explica los flujos de registro de multa y apelación (~1.5 min)
+\begin{frame}{Flujos de proceso: diagramas de actividades}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[height=0.65\textheight]{images/ActMulta.png}
+            \captionof{figure}{\textit{Registro de multa}}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[height=0.65\textheight]{images/ActApelacion.png}
+            \captionof{figure}{\textit{Proceso de apelación}}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ==================== SLIDE: ARQUITECTURA DEL SISTEMA ====================
+% CRISTIAN: Explica el diagrama de despliegue y las 5 capas (~1 min)
+\begin{frame}{Arquitectura del sistema}
+    \begin{center}
+        \includegraphics[height=0.5\textheight]{images/Despliegue.png}
+        \captionof{figure}{\textit{Diagrama de despliegue del sistema}}
+    \end{center}
+
+    \vspace{0.2em}
+
+    \footnotesize
+    \textbf{Capas:} \textbf{1.} Frontend React ~|~ \textbf{2.} API REST Node.js/Express ~|~ \textbf{3.} Hyperledger Fabric ~|~ \textbf{4.} Ethereum + IPFS público ~|~ \textbf{5.} IPFS privado
+\end{frame}
+
+% ==================== SLIDE: ALCANCE Y LIMITACIONES ====================
+% CATALINA: Presenta las delimitaciones y la nota metodológica (~1.5 min)
+\begin{frame}{Alcance y delimitaciones del estudio}
+    \textbf{Delimitaciones metodológicas del prototipo:}
+
+    \vspace{0.3em}
+
+    \begin{itemize}
+        \item \textbf{Datos sintéticos:} la verificación se realizó con datos generados mediante scripts de prueba, dado que no se dispuso de acceso a datos reales del FÉNIX, RUNT ni SIMIT.
+
+        \vspace{0.2em}
+
+        \item \textbf{Cobertura parcial de estados:} se implementaron 5 de los 8 estados del ciclo de vida (PENDING, PAID, APPEALED, RESOLVED\_APPEAL, CANCELLED).
+
+        \vspace{0.2em}
+
+        \item \textbf{Volumen controlado:} se emplearon entre 50 y 100 comparendos de prueba, frente a los 457,000 semestrales registrados en producción.
+
+        \vspace{0.2em}
+
+        \item \textbf{Verificación técnica:} los resultados corresponden a una \textit{verificación} en entorno controlado, no a una \textit{validación} operativa institucional.
+    \end{itemize}
+
+    \vspace{0.2em}
+
+    \begin{block}{Nota metodológica}
+        \footnotesize
+        Se distingue entre \textit{verificación} (el sistema cumple las especificaciones de diseño) y \textit{validación} (el sistema opera adecuadamente en condiciones reales). Este trabajo se enmarca en la primera categoría.
+    \end{block}
+\end{frame}
