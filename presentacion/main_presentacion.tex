@@ -98,27 +98,30 @@
 \begin{frame}[plain,noframenumbering]
     \vfill
     \begin{center}
-        \includegraphics[width=0.15\textwidth]{images/Escudo_UD.png}
+        \includegraphics[width=0.12\textwidth]{images/Escudo_UD.png}
 
-        \vspace{0.8em}
+        \vspace{0.5em}
 
-        \normalsize
-        \inserttitle
-
-        \vspace{1.5em}
-
-        \insertauthor
+        {\footnotesize
+        Universidad Distrital Francisco José de Caldas \\
+        Facultad de Ingeniería \\
+        Programa de Ingeniería de Sistemas}
 
         \vspace{1em}
 
-        \small
-        Director: Julio Barón Velandia
+        {\normalsize \textbf{\inserttitle}}
 
-        \vspace{1.5em}
+        \vspace{1.2em}
 
-        Universidad Distrital Francisco José de Caldas \\
-        Facultad de Ingeniería \\
-        Programa de Ingeniería de Sistemas
+        {\small
+        \textbf{Presentado por:} \\[0.3em]
+        Laura Catalina Preciado Ballén \\
+        Cristian Stiven Guzmán Tovar}
+
+        \vspace{1em}
+
+        {\small
+        \textbf{Director:} Julio Barón Velandia \hspace{2em} \textbf{Jurado:} Roberto Pava}
     \end{center}
     \vfill
 \end{frame}
@@ -126,6 +129,7 @@
 % ==================== AGENDA ====================
 % PRESENTADOR: CRISTIAN — Presenta la estructura de la sustentación (~30s)
 \begin{frame}{Agenda}
+    \footnotesize
     \tableofcontents[hideallsubsections]
 \end{frame}
 
@@ -141,6 +145,9 @@
 
 % Sección 2: Resultados
 \input{slides/03_resultados}
+
+% Sección 3: Demostración del prototipo
+\input{slides/03b_demostracion}
 
 % Sección 4: Conclusiones
 \input{slides/04_conclusiones}
