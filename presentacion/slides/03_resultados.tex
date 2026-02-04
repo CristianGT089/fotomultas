@@ -80,7 +80,7 @@
 \end{frame}
 
 % ==================== SLIDE: MÉTRICAS DE DESEMPEÑO ====================
-% CATALINA: Presenta tiempos, criterios de éxito e interfaces (~1.5 min)
+% CATALINA: Presenta tiempos y criterios de éxito (~1 min)
 \begin{frame}{Métricas de desempeño}
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -93,9 +93,8 @@
                 \item Consulta de multa: \highlight{$<$ 1 segundo}
                 \item Verificación de integridad: \highlight{$<$ 2 segundos}
             \end{itemize}
-
-            \vspace{0.8em}
-
+        \end{column}
+        \begin{column}{0.5\textwidth}
             \begin{exampleblock}{Criterios de éxito}
                 $\checkmark$ Tiempo de publicación $\leq$ 3s
 
@@ -104,24 +103,38 @@
                 $\checkmark$ Trazabilidad completa en entorno de prueba
             \end{exampleblock}
         \end{column}
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \begin{block}{Resultado general}
+        \footnotesize
+        Todos los criterios de aceptación fueron satisfechos en el entorno experimental. Los tiempos de respuesta se mantuvieron dentro de los umbrales definidos en el plan de pruebas.
+    \end{block}
+\end{frame}
+
+% ==================== SLIDE: INTERFACES DEL PROTOTIPO ====================
+% CATALINA: Muestra las interfaces principales (~1 min)
+\begin{frame}{Interfaces del prototipo}
+    \begin{columns}[T]
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Figura 1}
+            \textbf{Figura 6}
 
             \textit{Dashboard del agente de tránsito}
 
-            \includegraphics[width=0.95\textwidth,height=0.25\textheight,keepaspectratio]{images/UI3.png}
+            \includegraphics[width=0.95\textwidth]{images/UI3.png}
 
             \footnotesize
             Fuente: Elaboración propia.
-
-            \vspace{0.2em}
-
-            \textbf{Figura 2}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \textbf{Figura 7}
 
             \textit{Consulta y verificación ciudadana}
 
-            \includegraphics[height=0.2\textheight]{images/UI5.png}
+            \includegraphics[width=0.95\textwidth]{images/UI5.png}
 
             \footnotesize
             Fuente: Elaboración propia.

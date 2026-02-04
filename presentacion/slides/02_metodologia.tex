@@ -5,25 +5,49 @@
 % ==================== SLIDE: ENFOQUE METODOLÓGICO ====================
 % CATALINA: Justifica el modelo de prototipos y las fases (~1.5 min)
 \begin{frame}{Enfoque metodológico: desarrollo por prototipos}
-    \textbf{Justificación del modelo:}
-    \begin{itemize}
-        \item \textbf{Naturaleza exploratoria:} integración de tecnologías emergentes sin antecedentes en el contexto local
-        \item \textbf{Requisitos evolutivos:} marco normativo y tecnológico en constante actualización
-        \item \textbf{Verificación temprana:} contrastar la hipótesis central antes de un desarrollo a escala
-    \end{itemize}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \textbf{Justificación del modelo:}
+            \begin{itemize}
+                \item \textbf{Naturaleza exploratoria:} tecnologías emergentes sin antecedentes locales
+                \item \textbf{Requisitos evolutivos:} marco normativo en constante cambio
+                \item \textbf{Verificación temprana:} validar hipótesis antes de escalar
+            \end{itemize}
 
-    \textbf{Fases del desarrollo:}
-    \begin{enumerate}
-        \item \textbf{Análisis de requisitos} $\rightarrow$ Marco legal + auditorías
-        \item \textbf{Diseño arquitectónico} $\rightarrow$ Descomposición por niveles de confianza
-        \item \textbf{Implementación iterativa} $\rightarrow$ Backend + Frontend + Smart Contracts
-        \item \textbf{Pruebas y verificación} $\rightarrow$ 80 casos automatizados
-    \end{enumerate}
+            \vspace{0.5em}
 
-    \begin{block}{Decisión metodológica}
-        \footnotesize
-        El modelo de prototipos permite mitigar riesgos técnicos y facilitar ajustes iterativos ante cambios normativos o tecnológicos.
-    \end{block}
+            \begin{block}{Decisión metodológica}
+                \footnotesize
+                El modelo de prototipos permite mitigar riesgos técnicos y facilitar ajustes iterativos ante cambios normativos o tecnológicos.
+            \end{block}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \centering
+            \textbf{Ciclo iterativo de prototipado}
+
+            \vspace{0.3em}
+
+            \begin{tikzpicture}[
+                node distance=0.6cm,
+                fase/.style={rectangle, rounded corners, draw=udblue, fill=udblue!10, text width=4cm, minimum height=0.7cm, align=center, font=\footnotesize\bfseries},
+                flecha/.style={->, thick, udlightblue},
+                retro/.style={->, thick, udorange, dashed}
+            ]
+                \node[fase] (req) {1. Análisis de requisitos\\[-1pt]\fontsize{5.5}{6.5}\selectfont Marco legal + auditorías};
+                \node[fase, below=of req] (dis) {2. Diseño arquitectónico\\[-1pt]\fontsize{5.5}{6.5}\selectfont Niveles de confianza};
+                \node[fase, below=of dis] (imp) {3. Implementación iterativa\\[-1pt]\fontsize{5.5}{6.5}\selectfont Backend + Frontend + Smart Contracts};
+                \node[fase, below=of imp] (pru) {4. Pruebas y verificación\\[-1pt]\fontsize{5.5}{6.5}\selectfont 80 casos automatizados};
+
+                \draw[flecha] (req) -- (dis);
+                \draw[flecha] (dis) -- (imp);
+                \draw[flecha] (imp) -- (pru);
+
+                % Flechas de retroalimentación
+                \draw[retro] (pru.east) to[out=0,in=0] node[right, font=\fontsize{5}{6}\selectfont, text=udorange] {Retroalimentación} (dis.east);
+                \draw[retro] (imp.west) to[out=180,in=180] node[left, font=\fontsize{5}{6}\selectfont, text=udorange] {Refinamiento} (req.west);
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 % ==================== SLIDE: ARQUITECTURA HÍBRIDA ====================
@@ -82,7 +106,7 @@
     \begin{columns}[T]
         \begin{column}{0.55\textwidth}
             \centering
-            \textbf{Figura 1}
+            \textbf{Figura 2}
 
             \textit{Diagrama de casos de uso}
 
@@ -133,7 +157,7 @@
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Figura 2}
+            \textbf{Figura 3}
 
             \textit{Registro de multa}
 
@@ -144,7 +168,7 @@
         \end{column}
         \begin{column}{0.5\textwidth}
             \centering
-            \textbf{Figura 3}
+            \textbf{Figura 4}
 
             \textit{Proceso de apelación}
 
@@ -160,7 +184,7 @@
 % CRISTIAN: Explica el diagrama de despliegue y las 5 capas (~1 min)
 \begin{frame}{Arquitectura del sistema}
     \begin{center}
-        \textbf{Figura 4}
+        \textbf{Figura 5}
 
         \textit{Diagrama de despliegue del sistema}
 

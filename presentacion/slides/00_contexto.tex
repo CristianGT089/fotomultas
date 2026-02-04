@@ -4,10 +4,10 @@
 \section{Contexto y formulación del problema}
 
 % ==================== SLIDE: ESCALA DEL PROBLEMA ====================
-% CATALINA: Presenta cifras del sistema FÉNIX y los indicadores (~1 min)
+% CATALINA: Presenta cifras del sistema FÉNIX (~1 min)
 \begin{frame}{Contexto: el sistema de fotocomparendos en Bogotá}
     \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.45\textwidth}
             \textbf{Escala operativa (Sistema FÉNIX):}
             \begin{itemize}
                 \item \highlight{1.9 millones} de comparendos emitidos entre 2018--2024 \parencite{sdm2024estadisticas}
@@ -15,33 +15,47 @@
                 \item Arquitectura centralizada (BD relacional)
             \end{itemize}
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.55\textwidth}
             \centering
             \textbf{Figura 1}
 
             \textit{Comparendos emitidos por semestre}
 
-            \includegraphics[width=\textwidth,height=0.32\textheight,keepaspectratio]{images/numComparendos.png}
+            \includegraphics[width=\textwidth,height=0.55\textheight,keepaspectratio]{images/numComparendos.png}
 
             \footnotesize
             Fuente: Secretaría Distrital de Movilidad (2024).
         \end{column}
     \end{columns}
+\end{frame}
 
-    \vspace{0.3em}
-
-    \textbf{Indicadores de la problemática:}
+% ==================== SLIDE: INDICADORES DE LA PROBLEMÁTICA ====================
+% CATALINA: Presenta indicadores clave del problema (~1 min)
+\begin{frame}{Indicadores de la problemática}
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
-            \begin{itemize}
-                \item Tasa de impugnación: \highlight{34.1\%}
-                \item Carga operativa: \highlight{155,854 PQRSD} semestrales
-            \end{itemize}
+            \begin{block}{Gestión ciudadana}
+                \begin{itemize}
+                    \item Tasa de impugnación: \highlight{34.1\%}
+                    \item Carga operativa: \highlight{155,854 PQRSD} semestrales
+                \end{itemize}
+            \end{block}
+
+            \vspace{0.5em}
+
+            \begin{block}{Impacto fiscal}
+                \begin{itemize}
+                    \item Presunto detrimento patrimonial: \highlight{\$8,000 millones} \parencite{contraloria2024detrimento}
+                \end{itemize}
+            \end{block}
         \end{column}
         \begin{column}{0.5\textwidth}
+            \textbf{Vulnerabilidades identificadas:}
             \begin{itemize}
-                \item Presunto detrimento patrimonial: \highlight{\$8,000 millones} \parencite{contraloria2024detrimento}
-                \item Vulnerabilidad ciudadana ante fraudes \parencite{semana2023juzto}
+                \item Fraude a ciudadanos mediante intermediarios ilegales \parencite{semana2023juzto}
+                \item Confianza en administradores centrales sin garantías criptográficas
+                \item Inmutabilidad no verificable por la ciudadanía
+                \item Auditoría opaca para el control institucional
             \end{itemize}
         \end{column}
     \end{columns}
