@@ -14,30 +14,34 @@
     \vspace{1.5em}
 
     \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \textbf{Flujo del ciudadano:}
-            \begin{enumerate}
+        \begin{column}{0.48\textwidth}
+            \textbf{Entorno de despliegue:}
+            \begin{itemize}
                 \footnotesize
-                \item Consulta de multa por número de comparendo
-                \item Verificación de autenticidad de evidencia fotográfica
-                \item Proceso de apelación
-            \end{enumerate}
+                \item \textbf{Servidor:} Grupo GNU Linux
+                \item \textbf{Institución:} Universidad Distrital
+                \item \textbf{URL:} \texttt{fotomultas.glud.org}
+                \item \textbf{Recursos:} 8 vCPU, 16GB RAM
+                \item \textbf{SO:} Ubuntu Server 22.04 LTS
+            \end{itemize}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \textbf{Flujo del agente de tránsito:}
-            \begin{enumerate}
+        \begin{column}{0.48\textwidth}
+            \textbf{Componentes desplegados:}
+            \begin{itemize}
                 \footnotesize
-                \item Registro de nuevo comparendo con evidencia
-                \item Actualización de estado del comparendo
-                \item Consulta de trazabilidad completa
-            \end{enumerate}
+                \item Backend API (Node.js - Puerto 3000)
+                \item Frontend Web (React - Puerto 80)
+                \item Red Hyperledger Fabric
+                \item Nodo IPFS local
+                \item Conexión Ethereum Sepolia
+            \end{itemize}
         \end{column}
     \end{columns}
 
     \vspace{1.5em}
 
-    \begin{exampleblock}{Verificación en tiempo real}
+    \begin{exampleblock}{Acceso al sistema}
         \footnotesize
-        Se demostrará el registro en Hyperledger Fabric, la publicación de hashes en Ethereum y el almacenamiento de evidencias en IPFS.
+        El prototipo está disponible públicamente para validación. Se demostrará el registro en Hyperledger Fabric, la publicación de hashes en Ethereum y el almacenamiento de evidencias en IPFS.
     \end{exampleblock}
 \end{frame}
