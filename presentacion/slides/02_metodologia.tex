@@ -27,24 +27,27 @@
 
             \vspace{0.3em}
 
+            \hspace{-0.5cm}
             \begin{tikzpicture}[
-                node distance=0.6cm,
-                fase/.style={rectangle, rounded corners, draw=udblue, fill=udblue!10, text width=4cm, minimum height=0.7cm, align=center, font=\footnotesize\bfseries},
+                node distance=0.5cm,
+                fase/.style={rectangle, rounded corners, draw=udblue, fill=udblue!10, text width=3.5cm, minimum height=0.65cm, align=center, font=\fontsize{7}{8}\selectfont\bfseries},
                 flecha/.style={->, thick, udlightblue},
                 retro/.style={->, thick, udorange, dashed}
             ]
-                \node[fase] (req) {1. Análisis de requisitos\\[-1pt]\fontsize{5.5}{6.5}\selectfont Marco legal + auditorías};
-                \node[fase, below=of req] (dis) {2. Diseño arquitectónico\\[-1pt]\fontsize{5.5}{6.5}\selectfont Niveles de confianza};
-                \node[fase, below=of dis] (imp) {3. Implementación iterativa\\[-1pt]\fontsize{5.5}{6.5}\selectfont Backend + Frontend + Smart Contracts};
-                \node[fase, below=of imp] (pru) {4. Pruebas y verificación\\[-1pt]\fontsize{5.5}{6.5}\selectfont 80 casos automatizados};
+                \node[fase] (req) {Análisis de requisitos\\[-1pt]\fontsize{5}{6}\selectfont Marco legal + auditorías};
+                \node[fase, below=of req] (dis) {Diseño arquitectónico\\[-1pt]\fontsize{5}{6}\selectfont Niveles de confianza};
+                \node[fase, below=of dis] (imp) {Implementación\\[-1pt]\fontsize{5}{6}\selectfont Backend + Frontend + SC};
+                \node[fase, below=of imp] (pru) {Pruebas y verificación\\[-1pt]\fontsize{5}{6}\selectfont 80 casos automatizados};
+                \node[fase, below=of pru] (eval) {Evaluación\\[-1pt]\fontsize{5}{6}\selectfont Validación de requisitos};
 
                 \draw[flecha] (req) -- (dis);
                 \draw[flecha] (dis) -- (imp);
                 \draw[flecha] (imp) -- (pru);
+                \draw[flecha] (pru) -- (eval);
 
                 % Flechas de retroalimentación
-                \draw[retro] (pru.east) to[out=0,in=0] node[right, font=\fontsize{5}{6}\selectfont, text=udorange] {Retroalimentación} (dis.east);
-                \draw[retro] (imp.west) to[out=180,in=180] node[left, font=\fontsize{5}{6}\selectfont, text=udorange] {Refinamiento} (req.west);
+                \draw[retro] (eval.east) to[out=0,in=0] node[right, font=\fontsize{4.5}{5.5}\selectfont, text=udorange] {Retro.} (dis.east);
+                \draw[retro] (pru.west) to[out=180,in=180] node[left, font=\fontsize{5}{6}\selectfont, text=udorange] {Refinamiento} (req.west);
             \end{tikzpicture}
         \end{column}
     \end{columns}
@@ -197,7 +200,7 @@
     \vspace{0.2em}
 
     \footnotesize
-    \textbf{Capas:} \textbf{1.} Frontend React ~|~ \textbf{2.} API REST Node.js/Express ~|~ \textbf{3.} Hyperledger Fabric ~|~ \textbf{4.} Ethereum + IPFS público ~|~ \textbf{5.} IPFS privado
+    \textbf{Capas:} \textbf{1.} Frontend React ~|~ \textbf{2.} API REST Node.js/Express ~|~ \textbf{3.} Hyperledger Fabric (privado) ~|~ \textbf{4.} Ethereum (público) ~|~ \textbf{5.} IPFS (almacenamiento distribuido)
 \end{frame}
 
 % ==================== SLIDE: ALCANCE Y LIMITACIONES ====================
